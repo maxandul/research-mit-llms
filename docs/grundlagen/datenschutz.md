@@ -17,7 +17,7 @@ sensiblen Quellen.
   abzuschalten. Pruefe die Einstellungen und die Datenschutzerklaerung.
 - **Rechte Dritter.** Urheberrecht, Personendaten in Interviews,
   Geheimhaltungsvereinbarungen — all das gilt auch beim Hochladen in ein LLM.
-- **Institutionelle Vorgaben.** Deine Hochschule oder dein Foerdergeber hat
+- **Institutionelle Vorgaben.** Deine Hochschule oder Organisation hat
   womoeglich eigene Regeln zu KI-Werkzeugen und Datenschutz.
 
 ## Lokale Alternativen
