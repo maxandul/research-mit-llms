@@ -63,7 +63,8 @@ nav:
   - Start: index.md
   - Grundlagen:
       - Research mit LLMs verstehen: grundlagen/llm-research.md
-      - RAG vs. LLM-Wiki: grundlagen/rag-vs-wiki.md
+      - Kontext, RAG & LLM-Wiki: grundlagen/rag-vs-wiki.md
+      - Das Kontextfenster: grundlagen/kontextfenster.md
       - Datenschutz & Vertraulichkeit: grundlagen/datenschutz.md
   - Werkzeuge:
       - Finden & Erkunden:
