@@ -6,10 +6,20 @@ beim Forschen unteilbar bei dir bleibt.
 
 ## Wie ein LLM grob funktioniert
 
-Ein LLM (grosses Sprachmodell) setzt Text fort: Es sagt, Schritt fuer Schritt,
-das wahrscheinlich naechste Wort voraus — gelernt aus sehr vielen Texten. Es
-ruft *kein* Faktenwissen aus einer Datenbank ab, sondern setzt sprachliche
-Muster fort. Aus diesem einen Punkt folgt fast alles Weitere.
+Vereinfacht setzt ein LLM (grosses Sprachmodell) Text fort: Es sagt, Schritt
+fuer Schritt, das wahrscheinlich naechste Wort voraus — gelernt aus sehr grossen
+Textmengen. Einen geprueften Faktenspeicher, den es gezielt abfragt, gibt es
+dabei nicht.
+
+"Wahrscheinlichkeit" ist hier aber nicht trivial. Um gut vorherzusagen, hat das
+Modell im Training enorm viel verdichtet: sprachliche Regeln, Sachzusammenhaenge,
+Argumentationsmuster. Es plappert also nicht einzelne Phrasen nach, sondern
+verarbeitet komplexe Zusammenhaenge — in diesem Sinn steckt in den "Mustern" eine
+Menge impliziten Wissens. Wie weit das an echtes Verstehen heranreicht, ist eine
+offene Debatte (der Philosoph Markus Gabriel zum Beispiel sieht darin mehr als blosse
+Autovervollstaendigung, spricht den Systemen aber echtes Denken ab). Diese Frage
+lassen wir hier bewusst offen; fuer die Praxis zaehlt, was daraus folgt — die
+Staerken und Grenzen weiter unten.
 
 ## Wo LLMs stark sind
 
