@@ -1,0 +1,89 @@
+# ====================================================================
+#  Konfiguration der Seite. Hier stellst du Titel, Navigation und
+#  Aussehen ein. Aenderungen wirken beim naechsten "git push" automatisch.
+# ====================================================================
+
+site_name: Research mit LLMs
+site_description: Niederschwelliger Wegweiser fuer wissenschaftliches Arbeiten mit LLM-Werkzeugen
+site_author: "maxandul"
+site_url: https://maxandul.github.io/research-mit-llms/
+
+theme:
+  name: material
+  language: de
+  features:
+    - navigation.sections     # Gruppen in der Seitenleiste ausklappen
+    - navigation.top          # "Nach oben"-Button
+    - navigation.instant      # schnelles Navigieren ohne Neuladen
+    - navigation.footer       # Vor/Zurueck-Links unten
+    - search.suggest          # Suchvorschlaege
+    - search.highlight        # Treffer hervorheben
+    - content.code.copy       # Kopier-Knopf bei Code-Boxen
+    - toc.follow
+  palette:
+    # Heller Modus
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Zu dunklem Modus wechseln
+    # Dunkler Modus
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Zu hellem Modus wechseln
+
+plugins:
+  - search:
+      lang: de
+
+markdown_extensions:
+  - admonition                # farbige Hinweis-Boxen (!!! note ...)
+  - pymdownx.details          # ausklappbare Boxen
+  - pymdownx.superfences      # bessere Code-Boxen
+  - pymdownx.highlight        # Syntax-Hervorhebung
+  - pymdownx.tabbed:          # Reiter (Tabs)
+      alternate_style: true
+  - attr_list                 # Attribute fuer Badges
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+# --------------------------------------------------------------------
+#  Navigation: Reihenfolge und Struktur der Seiten.
+#  Neue Seite hinzufuegen = Markdown-Datei anlegen + hier eintragen.
+# --------------------------------------------------------------------
+nav:
+  - Start: index.md
+  - Grundlagen:
+      - Research mit LLMs verstehen: grundlagen/llm-research.md
+      - RAG vs. LLM-Wiki: grundlagen/rag-vs-wiki.md
+      - Datenschutz & Vertraulichkeit: grundlagen/datenschutz.md
+  - Werkzeuge:
+      - Finden & Erkunden:
+          - Semantic Scholar: werkzeuge/finden/semantic-scholar.md
+          - Connected Papers: werkzeuge/finden/connected-papers.md
+          - Elicit: werkzeuge/finden/elicit.md
+      - Im Dialog recherchieren:
+          - ScholarAI (Custom GPT): werkzeuge/dialog/scholarai.md
+          - NotebookLM: werkzeuge/dialog/notebooklm.md
+          - Perplexity: werkzeuge/dialog/perplexity.md
+      - Sammeln & Synthetisieren:
+          - Zotero: werkzeuge/sammeln/zotero.md
+          - Notion: werkzeuge/sammeln/notion.md
+          - LLM-Wiki (nach Karpathy): werkzeuge/sammeln/llm-wiki.md
+  - Workflows:
+      - Vom Thema zur Literaturuebersicht: workflows/thema-zu-uebersicht.md
+      - Paper lesen & strukturiert ablegen: workflows/paper-lesen-ablegen.md
+      - Eigenes Forschungs-Wiki aufbauen: workflows/forschungs-wiki.md
+  - Ressourcen:
+      - Weitere Tools im Ueberblick: ressourcen/weitere-tools.md
+      - Glossar: ressourcen/glossar.md
+      - Linksammlung: ressourcen/links.md
+  - Ueber: ueber.md
