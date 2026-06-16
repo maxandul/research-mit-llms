@@ -62,7 +62,8 @@ markdown_extensions:
 nav:
   - Start: index.md
   - Grundlagen:
-      - Research mit LLMs verstehen: grundlagen/llm-research.md
+      - LLMs verstehen & verantwortungsvoll nutzen: grundlagen/llms-verstehen.md
+      - Drei Arten, LLMs zu nutzen: grundlagen/llm-research.md
       - Kontext, RAG & LLM-Wiki: grundlagen/rag-vs-wiki.md
       - Das Kontextfenster: grundlagen/kontextfenster.md
       - Datenschutz & Vertraulichkeit: grundlagen/datenschutz.md
