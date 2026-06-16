@@ -43,7 +43,8 @@ Jede Werkzeug-Seite beginnt mit einer kurzen Einordnung:
 
 Du weisst noch nicht, wo anfangen? Eine moegliche Reihenfolge:
 
-1. Lies kurz [Research mit LLMs verstehen](grundlagen/llm-research.md).
+1. Lies kurz [LLMs verstehen & verantwortungsvoll nutzen](grundlagen/llms-verstehen.md)
+   und [Drei Arten, LLMs zu nutzen](grundlagen/llm-research.md).
 2. Probiere ein Einsteiger-Werkzeug aus dem Bereich
    [Finden & Erkunden](werkzeuge/finden/semantic-scholar.md).
 3. Schau dir den Workflow
