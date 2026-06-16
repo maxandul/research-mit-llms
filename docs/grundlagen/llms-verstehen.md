@@ -15,11 +15,11 @@ dabei nicht.
 Modell im Training enorm viel verdichtet: sprachliche Regeln, Sachzusammenhaenge,
 Argumentationsmuster. Es plappert also nicht einzelne Phrasen nach, sondern
 verarbeitet komplexe Zusammenhaenge — in diesem Sinn steckt in den "Mustern" eine
-Menge impliziten Wissens. Wie weit das an echtes Verstehen heranreicht, ist eine
-offene Debatte (der Philosoph Markus Gabriel zum Beispiel sieht darin mehr als blosse
-Autovervollstaendigung, spricht den Systemen aber echtes Denken ab). Diese Frage
-lassen wir hier bewusst offen; fuer die Praxis zaehlt, was daraus folgt — die
-Staerken und Grenzen weiter unten.
+Menge impliziten Wissens. Wie weit das an echtes Verstehen heranreicht oder in Zukunft 
+heranreichen wird, ist eine offene Debatte (der Philosoph Markus Gabriel zum Beispiel 
+sieht darin heute schon deutlich mehr als blosse Autovervollstaendigung). 
+
+Fuer die aktuelle Praxis folgen aber weiterhin gewisse Staerken und Grenzen daraus:
 
 ## Wo LLMs stark sind
 
