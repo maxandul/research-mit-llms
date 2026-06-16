@@ -1,4 +1,4 @@
-# Research mit LLMs verstehen
+# Drei Arten, LLMs zu nutzen
 
 Es gibt drei grundlegend verschiedene Arten, ein LLM fuer Research zu nutzen.
 Wer den Unterschied kennt, waehlt fuer jede Aufgabe das richtige Werkzeug.
