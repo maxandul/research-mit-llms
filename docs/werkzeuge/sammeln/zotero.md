@@ -14,11 +14,16 @@ auslesen und befüllen.
 
 - Zentrale, durchsuchbare Ablage aller Quellen.
 - Anbindbar an einen LLM-Workflow: Funde automatisch ablegen lassen.
+- Liefert (mit dem Plugin Better BibTeX) die Literaturdatenbank für den
+  Schreib-Workflow
+  [Die Arbeit in Markdown aufbauen](../../schreiben/arbeit-in-markdown.md):
+  Zitate und Literaturverzeichnis entstehen dann automatisch beim
+  Word-Export.
 
 ## Voraussetzungen
 
 - Zotero-Konto (gratis). Für die API: ein API-Schlüssel aus den
-  Kontöinstellungen.
+  Kontoeinstellungen.
 
 ## Einrichtung / Nutzung (High-Level)
 

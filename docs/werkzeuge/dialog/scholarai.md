@@ -11,12 +11,12 @@ Fragen zu einzelnen Papers beantworten kann.
 
 ## Was bringt es für Research?
 
-- Im Chat nach Papers suchen — mit echten, verlinkten Quellen statt
+- Im Chat nach Papers suchen, mit echten, verlinkten Quellen statt
   erfundenen.
 - PDFs/Volltexte gezielt befragen (Methoden, Limitationen, Daten).
 - Mit weiteren Anbindungen (z.B. Zotero, Notion) zu einem durchgängigen
-  Arbeitsablauf verketten — siehe Workflow
-  [Vom Thema zur Literaturübersicht](../../workflows/thema-zu-übersicht.md).
+  Arbeitsablauf verketten, siehe Workflow
+  [Vom Thema zur Literaturübersicht](../../workflows/thema-zu-uebersicht.md).
 
 ## Voraussetzungen
 
@@ -29,7 +29,7 @@ Fragen zu einzelnen Papers beantworten kann.
 2. In ChatGPT einen neuen GPT anlegen und eine "Action" erstellen.
 3. Authentifizierung: API-Key, Custom-Header `X-ScholarAI-API-Key`.
 4. Schema importieren von `https://api.scholarai.io/openapi.yaml`.
-5. Instruktion (System-Prompt) einsetzen — siehe Bausteine unten.
+5. Instruktion (System-Prompt) einsetzen, siehe Bausteine unten.
 
 Die verbindliche, stets aktuelle Schritt-für-Schritt-Anleitung:
 <https://docs.scholarai.io/make-a-gpt>
@@ -111,7 +111,7 @@ Regel: Keine Aussage ohne verlinkte Quelle.
 ```
 
 !!! tip "Templates als Ausgabeformat"
-    Du kannst dem GPT zusätzlich ein festes Ausgabeformat vorgeben — etwa
+    Du kannst dem GPT zusätzlich ein festes Ausgabeformat vorgeben, etwa
     Markdown für dein [LLM-Wiki](../sammeln/llm-wiki.md) oder eine
     Struktur, die direkt nach [Notion](../sammeln/notion.md) /
     [Zotero](../sammeln/zotero.md) passt. So sind Funde sofort ablagefertig.

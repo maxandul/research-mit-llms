@@ -2,14 +2,23 @@
 
 ## Zweck
 
-Diese Seite zeigt niederschwellig, wie sich LLMs für wissenschaftliches
-Arbeiten einsetzen lassen. Sie richtet sich an Forschende, die einen
-praktischen Einstieg suchen.
+Diese Seite zeigt niederschwellig, wie LLMs alle Schritte des
+Forschungsprozesses unterstützen können: von der Literatur über
+Datenerhebung und Analyse bis zum Schreiben und Publizieren. Sie richtet
+sich an Forschende, die einen praktischen Einstieg suchen.
 
 ## Stand
 
 - Letzte Aktualisierung: 04.07.2026
 - Gepflegt von: [maxandul](https://github.com/maxandul)
+
+## KI-Deklaration
+
+Diese Seite ist selbst ein Beispiel für das, was sie beschreibt: Sie wurde
+mit Unterstützung von LLMs erstellt, konkret mit
+[Cursor](https://cursor.com) und den Modellen Claude Opus 4.8 und Fable 5.
+Konzept, inhaltliche Entscheidungen und Prüfung liegen beim Betreiber.
+Mehr zur Haltung dahinter: [KI-Nutzung deklarieren](haltung/ki-deklarieren.md).
 
 ## Hinweis zur Aktualität
 
@@ -28,5 +37,3 @@ für Vollständigkeit und Aktualität.
 **Fehler gefunden oder einen Vorschlag?** Eröffne ein Issue:
 
 <https://github.com/maxandul/research-mit-llms/issues>
-
-(Dafür genügt ein kostenloses GitHub-Konto.)

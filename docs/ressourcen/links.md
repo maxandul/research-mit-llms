@@ -27,3 +27,19 @@ Original-Doku.
 - scite.ai: <https://scite.ai>
 - Consensus: <https://consensus.app>
 - SciSpace: <https://scispace.com>
+
+## Daten erheben & schützen
+
+- TranscriboZH (audio-transcription):
+  <https://github.com/machinelearningZH/audio-transcription>
+- noScribe: <https://github.com/kaixxx/noScribe>
+- MacWhisper: <https://goodsnooze.gumroad.com/l/macwhisper>
+- Ollama (lokale LLMs): <https://ollama.com>
+- LM Studio (lokale LLMs): <https://lmstudio.ai>
+
+## Schreiben & Publizieren
+
+- Pandoc: <https://pandoc.org>
+- Quarto: <https://quarto.org>
+- Zotero Better BibTeX: <https://retorque.re/zotero-better-bibtex/>
+- CSL-Zitierstile: <https://www.zotero.org/styles>

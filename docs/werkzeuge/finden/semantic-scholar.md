@@ -7,7 +7,7 @@
 
 Eine kostenlose, KI-gestützte Suchmaschine für wissenschaftliche Literatur
 mit einem riesigen Paper-Korpus. Viele andere Werkzeuge (u.a.
-[Connected Papers](connected-papers.md)) bauen auf dieser Datenbasis auf —
+[Connected Papers](connected-papers.md)) bauen auf dieser Datenbasis auf,
 deshalb steht Semantic Scholar hier zuoberst.
 
 ## Was bringt es für Research?
@@ -31,7 +31,7 @@ deshalb steht Semantic Scholar hier zuoberst.
 ## Grenzen & Datenschutz
 
 - Abdeckung je nach Fachgebiet unterschiedlich.
-- Öffentliche Suchmaschine — keine sensiblen eigenen Daten nötig.
+- Öffentliche Suchmaschine; keine sensiblen eigenen Daten nötig.
 
 ## Offizielle Links
 

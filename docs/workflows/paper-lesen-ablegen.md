@@ -12,7 +12,7 @@ du sie später wiederfindest und wiederverwenden kannst.
 ## Ziel
 
 Aus einem einzelnen Paper eine strukturierte, immer gleich aufgebaute
-Lesenotiz erzeugen — ohne das Paper jedes Mal neu durchackern zu müssen.
+Lesenotiz erzeugen, ohne das Paper jedes Mal neu durchackern zu müssen.
 
 ## Beteiligte Werkzeuge
 
@@ -56,5 +56,5 @@ Schema zusammen"). So sind alle Notizen vergleichbar.
 
 !!! tip "Konsistenz zahlt sich aus"
     Ein einmal festgelegtes Schema ist Gold wert: Du kannst später über
-    viele Notizen hinweg vergleichen, filtern und synthetisieren — von Hand
+    viele Notizen hinweg vergleichen, filtern und synthetisieren, von Hand
     oder wieder mit einem LLM.

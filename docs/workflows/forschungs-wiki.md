@@ -27,18 +27,18 @@ deren Pflege das LLM übernimmt.
 
 ## Schritte
 
-1. **Stufe wählen.** Klein anfangen ist völlig in Ordnung — die händische
+1. **Stufe wählen.** Klein anfangen ist völlig in Ordnung; die händische
    Stufe reicht zum Start und lässt sich später automatisieren.
 2. **Struktur anlegen.** Ein Ordner mit ein paar Startdateien genügt (siehe
    Vorschlag unten).
 3. **Schema festlegen.** In einer Anleitungsdatei beschreiben, wie das Wiki
    aufgebaut ist und wie neue Quellen eingepflegt werden (siehe Beispiel).
-4. **ingest — einpflegen.** Eine Quelle nach der anderen: lesen lassen,
+4. **ingest (einpflegen).** Eine Quelle nach der anderen: lesen lassen,
    zusammenfassen, in vorhandene Seiten einarbeiten, Querverweise setzen,
    eine Zeile ins Log schreiben.
-5. **query — fragen.** Fragen an das Wiki stellen. Gute Antworten als neue
+5. **query (fragen).** Fragen an das Wiki stellen. Gute Antworten als neue
    Seite zurückschreiben, damit sich Erkenntnisse anhäufen.
-6. **lint — prüfen.** Regelmässig auf Widersprüche, veraltete Stellen,
+6. **lint (prüfen).** Regelmässig auf Widersprüche, veraltete Stellen,
    verwaiste Seiten und Lücken prüfen lassen.
 
 ## Vorschlag: Ordnerstruktur
@@ -80,6 +80,6 @@ mein-wiki/
 !!! tip "Erst klein, dann automatisieren"
     Starte von Hand mit fünf Quellen. Wenn der Nutzen sichtbar ist und die
     Handarbeit nervt, wechsle auf [Claude Cowork oder einen
-    Coding-Agenten](../werkzeuge/sammeln/llm-wiki.md) — oder nutze direkt das
+    Coding-Agenten](../werkzeuge/sammeln/llm-wiki.md), oder nutze direkt das
     [llm-wiki-Repo](https://github.com/mehmetgoekce/llm-wiki) mit vorgefertigtem
     Schema und ingest/query/lint-Befehlen.

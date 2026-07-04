@@ -11,16 +11,16 @@ Hintergrund: [RAG vs. LLM-Wiki](../../grundlagen/rag-vs-wiki.md).
 
 Die Architektur hat drei Schichten:
 
-- **Raw / Quellen** — deine unveränderten Originaldokumente.
-- **Wiki** — die vom LLM gepflegten, verlinkten Markdown-Seiten.
-- **Schema** — eine Anleitungsdatei (z.B. `CLAUDE.md`), die festlegt, wie
+- **Raw / Quellen**: deine unveränderten Originaldokumente.
+- **Wiki**: die vom LLM gepflegten, verlinkten Markdown-Seiten.
+- **Schema**: eine Anleitungsdatei (z.B. `CLAUDE.md`), die festlegt, wie
   das Wiki strukturiert ist und wie neue Quellen eingepflegt werden.
 
 ## Drei Umsetzungsvarianten
 
 Du kannst klein und ganz ohne Technik starten und später automatisieren.
 
-=== "Stufe 1 — Händisch (Einsteiger)"
+=== "Stufe 1: Händisch (Einsteiger)"
 
     Keine API, kein Spezial-Tool nötig.
 
@@ -33,7 +33,7 @@ Du kannst klein und ganz ohne Technik starten und später automatisieren.
     *Gewinn:* du verstehst das Prinzip und hast sofort Ergebnisse.
     *Aufwand:* das Einpflegen machst du von Hand.
 
-=== "Stufe 2 — Claude Cowork (Mittel)"
+=== "Stufe 2: Claude Cowork (Mittel)"
 
     Eine agentische Anwendung für Wissensarbeit, gedacht auch für
     Nicht-Entwickler:innen.
@@ -45,7 +45,7 @@ Du kannst klein und ganz ohne Technik starten und später automatisieren.
     *Gewinn:* deutlich weniger Handarbeit als Stufe 1.
     *Aufwand:* etwas Einrichtung, kein Programmieren nötig.
 
-=== "Stufe 3 — Claude Code / eigener Aufbau (Fortgeschritten)"
+=== "Stufe 3: Claude Code / eigener Aufbau (Fortgeschritten)"
 
     Volle Automatisierung mit einem Coding-Agenten.
 
@@ -65,7 +65,7 @@ Du kannst klein und ganz ohne Technik starten und später automatisieren.
 
 ## Grenzen & Datenschutz
 
-- Inhalte gehen durch ein LLM — bei Cloud-Modellen Datenschutz beachten,
+- Inhalte gehen durch ein LLM: bei Cloud-Modellen Datenschutz beachten,
   bei sensiblen Daten lokale Modelle erwägen.
 - Risiko von Fehlern in den Notizen: regelmässig prüfen ("lint").
 
@@ -80,5 +80,5 @@ Du kannst klein und ganz ohne Technik starten und später automatisieren.
 ## Weiterführend
 
 - Workflow: [Eigenes Forschungs-Wiki aufbauen](../../workflows/forschungs-wiki.md)
-- Praxis-Repo: [llm-wiki von Mehmet Goekce](https://github.com/mehmetgoekce/llm-wiki) —
-  Schema, Setup-Skript und Befehle `/wiki ingest`, `/wiki query`, `/wiki lint`
+- Praxis-Repo: [llm-wiki von Mehmet Goekce](https://github.com/mehmetgoekce/llm-wiki)
+  mit Schema, Setup-Skript und Befehlen `/wiki ingest`, `/wiki query`, `/wiki lint`

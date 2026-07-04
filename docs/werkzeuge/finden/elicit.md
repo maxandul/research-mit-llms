@@ -6,7 +6,7 @@
 ## Was ist es?
 
 Ein KI-Forschungsassistent, der wissenschaftliche Literatur durchsucht und
-Erkenntnisse aus mehreren Arbeiten in Tabellen zusammenfasst — gut für
+Erkenntnisse aus mehreren Arbeiten in Tabellen zusammenfasst. Gut für
 strukturierte Literaturreviews.
 
 ## Was bringt es für Research?

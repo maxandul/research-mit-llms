@@ -6,7 +6,7 @@
 ## Was ist es?
 
 Ein flexibles Notiz- und Datenbank-Werkzeug. Per API lässt sich Notion an
-einen LLM-Workflow anbinden — etwa damit ein Custom GPT Zusammenfassungen
+einen LLM-Workflow anbinden, etwa damit ein Custom GPT Zusammenfassungen
 direkt als Einträge in einer Notion-Datenbank ablegt.
 
 ## Was bringt es für Research?

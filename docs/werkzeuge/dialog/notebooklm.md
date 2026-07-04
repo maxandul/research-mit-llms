@@ -6,7 +6,7 @@
 ## Was ist es?
 
 Ein Werkzeug von Google, dem du eigene Quellen (PDFs, Texte, Links) gibst.
-Du kannst dann mit *diesen* Quellen chatten — Antworten kommen mit Verweisen
+Du kannst dann mit *diesen* Quellen chatten; Antworten kommen mit Verweisen
 auf die hochgeladenen Dokumente, nicht aus dem offenen Web.
 
 ## Was bringt es für Research?

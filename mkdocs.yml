@@ -3,8 +3,8 @@
 #  Aussehen ein. Änderungen wirken beim nächsten "git push" automatisch.
 # ====================================================================
 
-site_name: Research mit LLMs
-site_description: Niederschwelliger Wegweiser für wissenschaftliches Arbeiten mit LLM-Werkzeugen
+site_name: Forschen mit LLMs
+site_description: Niederschwelliger Wegweiser, wie LLMs alle Schritte des Forschungsprozesses unterstützen können
 site_author: "maxandul"
 site_url: https://maxandul.github.io/research-mit-llms/
 
@@ -63,11 +63,13 @@ nav:
   - Start: index.md
   - Grundlagen:
       - LLMs verstehen & verantwortungsvoll nutzen: grundlagen/llms-verstehen.md
+      - Wie ein LLM arbeitet: grundlagen/wie-llms-arbeiten.md
       - Drei Arten, LLMs zu nutzen: grundlagen/llm-research.md
       - Kontext, RAG & LLM-Wiki: grundlagen/rag-vs-wiki.md
       - Das Kontextfenster: grundlagen/kontextfenster.md
+      - Markdown als Arbeitsformat: grundlagen/markdown-arbeitsformat.md
       - Datenschutz & Vertraulichkeit: grundlagen/datenschutz.md
-  - Werkzeuge:
+  - Literatur:
       - Finden & Erkunden:
           - Semantic Scholar: werkzeuge/finden/semantic-scholar.md
           - Connected Papers: werkzeuge/finden/connected-papers.md
@@ -81,11 +83,23 @@ nav:
           - Notion: werkzeuge/sammeln/notion.md
           - LLM-Wiki (nach Karpathy): werkzeuge/sammeln/llm-wiki.md
       - Weitere Tools im Überblick: werkzeuge/weitere-tools.md
-  - Workflows:
-      - Vom Thema zur Literaturübersicht: workflows/thema-zu-übersicht.md
-      - Paper lesen & strukturiert ablegen: workflows/paper-lesen-ablegen.md
-      - Eigenes Forschungs-Wiki aufbauen: workflows/forschungs-wiki.md
+      - Workflows:
+          - Vom Thema zur Literaturübersicht: workflows/thema-zu-uebersicht.md
+          - Paper lesen & strukturiert ablegen: workflows/paper-lesen-ablegen.md
+          - Eigenes Forschungs-Wiki aufbauen: workflows/forschungs-wiki.md
+  - Daten erheben & schützen:
+      - Interviews transkribieren: erheben/transkription.md
+      - Daten anonymisieren: erheben/anonymisieren.md
+  - Daten analysieren:
+      - Qualitative Daten codieren: analysieren/qualitativ-codieren.md
+      - Quantitativ auswerten: analysieren/quantitativ-auswerten.md
+  - Schreiben & Publizieren:
+      - Die Arbeit in Markdown aufbauen: schreiben/arbeit-in-markdown.md
+      - Mit Word-Feedback umgehen: schreiben/word-feedback.md
+  - Haltung & gute Praxis:
+      - KI-Nutzung deklarieren: haltung/ki-deklarieren.md
   - Ressourcen:
       - Glossar: ressourcen/glossar.md
       - Linksammlung: ressourcen/links.md
-  - Über: über.md
+      - Prompt-Bibliothek: ressourcen/prompt-bibliothek.md
+  - Über: ueber.md

@@ -1,0 +1,7 @@
+# Build-Output von MkDocs (wird von GitHub Actions erzeugt)
+site/
+
+# Python
+__pycache__/
+.venv/
+venv/

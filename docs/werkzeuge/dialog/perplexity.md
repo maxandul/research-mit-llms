@@ -32,7 +32,7 @@ Webquellen angibt. Gut für den schnellen Einstieg in ein Thema.
 
 ## Grenzen & Datenschutz
 
-- Quellenqualität schwankt — immer die verlinkten Originale prüfen.
+- Quellenqualität schwankt; immer die verlinkten Originale prüfen.
 - Cloud-Dienst; keine sensiblen Daten in Prompts.
 
 ## Offizielle Links

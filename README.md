@@ -1,7 +1,8 @@
-# Research mit LLMs — GitHub Page
+# Forschen mit LLMs (GitHub Page)
 
-Niederschwelliger Wegweiser für wissenschaftliches Arbeiten mit
-LLM-Werkzeugen. Gebaut mit [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
+Niederschwelliger Wegweiser, wie LLMs alle Schritte des Forschungsprozesses
+unterstützen können: Literatur, Datenerhebung, Analyse, Schreiben.
+Gebaut mit [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
 ## Inhalte bearbeiten
 
@@ -35,6 +36,6 @@ angezeigt.
 ## Vor dem Live-Gang ausfüllen
 
 - `site_author` und `site_url` in `mkdocs.yml`
-- Name, Datum und Feedback-Link in `docs/über.md`
+- Name, Datum und Feedback-Link in `docs/ueber.md`
 - alle Boxen `!!! note "Noch zu ergänzen"` prüfen/füllen
 - Kosten-/Limit-Angaben bei Elicit, NotebookLM und Connected Papers verifizieren

@@ -6,7 +6,7 @@
 ## Was ist es?
 
 Ein Werkzeug, das aus einem Start-Paper eine visuelle Landkarte ähnlicher
-Arbeiten erzeugt — gruppiert nach inhaltlicher Ähnlichkeit, nicht nur nach
+Arbeiten erzeugt, gruppiert nach inhaltlicher Ähnlichkeit, nicht nur nach
 direkten Zitaten. Basiert auf dem Korpus von
 [Semantic Scholar](semantic-scholar.md).
 
@@ -33,7 +33,7 @@ direkten Zitaten. Basiert auf dem Korpus von
 
 ??? note "Für Fortgeschrittene: die API"
     Es gibt eine API mit Python- und JS-Client. Sie ist allerdings
-    "early access" (Zugangs-Token per Anfrage) und kommerziell — für den
+    "early access" (Zugangs-Token per Anfrage) und kommerziell, für den
     niederschwelligen Einstieg nicht nötig. Token-Anfrage:
     hello@connectedpapers.com
     Clients: <https://github.com/ConnectedPapers/connectedpapers-py>

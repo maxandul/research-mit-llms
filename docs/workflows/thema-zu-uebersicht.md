@@ -1,6 +1,6 @@
 # Vom Thema zur Literaturübersicht
 
-Ein durchgängiges Beispiel, das mehrere Werkzeuge verkettet — die
+Ein durchgängiges Beispiel, das mehrere Werkzeuge verkettet: die
 Blaupause für eigene Workflows.
 
 !!! abstract "Das Rezept in einem Bild"
@@ -28,7 +28,7 @@ sofort ablagefertig im gewünschten Format erhalten.
    *Gezielte Literatursuche* nutzen. Der GPT sucht über die angebundene
    Datenbasis und liefert verlinkte Treffer.
 2. **Verdichten nach Template.** Der GPT formatiert jeden Treffer nach einem
-   hinterlegten Template (als RAG im GPT abgelegt) — z.B. als Markdown-Block
+   hinterlegten Template (als RAG im GPT abgelegt), z.B. als Markdown-Block
    fürs Wiki oder als Struktur, die direkt nach Notion/Zotero passt.
 3. **Ablegen.** Über die angebundenen Actions schreibt der GPT die Einträge
    nach Zotero (als Referenzen) und/oder Notion (als Notizen), bzw. gibt
@@ -47,7 +47,7 @@ wählen. Passe sie an dein eigenes Schema an.
 
 !!! warning "Eine Regel für alle Templates"
     Keine erfundenen Angaben. Felder, die die Quelle nicht hergibt, bleiben
-    leer — lieber eine Lücke als ein falscher Wert.
+    leer. Lieber eine Lücke als ein falscher Wert.
 
 ### Router (steuert die Formatwahl)
 
@@ -113,7 +113,7 @@ Seiteninhalt (Body):
 
 ### Template Zotero (Referenz + Notiz)
 
-Zürst die Referenz über DOI/Metadaten anlegen, dann eine kompakte
+Zuerst die Referenz über DOI/Metadaten anlegen, dann eine kompakte
 Kindnotiz anhängen:
 
 ```text
@@ -128,11 +128,11 @@ damit sie filterbar sind.
 
 !!! note "Vor dem Produktiveinsatz prüfen"
     Die Property-Namen (Notion) und Feldzuordnungen (Zotero) gegen deine
-    aktuelle Datenbank bzw. die aktuelle API abgleichen — diese ändern sich
+    aktuelle Datenbank bzw. die aktuelle API abgleichen; diese ändern sich
     eher als die Markdown-Vorlage.
 
 ## Variante
 
-Statt direkt abzulegen, die Treffer zürst in
+Statt direkt abzulegen, die Treffer zuerst in
 [Connected Papers](../werkzeuge/finden/connected-papers.md) visuell prüfen
 und erst die relevanten Arbeiten übernehmen.
