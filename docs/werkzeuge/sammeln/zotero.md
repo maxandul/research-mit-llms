@@ -1,29 +1,29 @@
 # Zotero
 
 !!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** gratis (Speicher-Abo optional) · **Wofuer:** Literaturverwaltung
+    **Schwierigkeit:** Einsteiger · **Kosten:** gratis (Speicher-Abo optional) · **Wofür:** Literaturverwaltung
 
 ## Was ist es?
 
 Ein kostenloses, offenes Literaturverwaltungsprogramm. Sammelt Referenzen
-und PDFs, erstellt Zitate und Bibliografien. Ueber die Web API laesst sich
+und PDFs, erstellt Zitate und Bibliografien. Über die Web API lässt sich
 die eigene Bibliothek auch von anderen Werkzeugen (z.B. einem Custom GPT)
-auslesen und befuellen.
+auslesen und befüllen.
 
-## Was bringt es fuer Research?
+## Was bringt es für Research?
 
 - Zentrale, durchsuchbare Ablage aller Quellen.
 - Anbindbar an einen LLM-Workflow: Funde automatisch ablegen lassen.
 
 ## Voraussetzungen
 
-- Zotero-Konto (gratis). Fuer die API: ein API-Schluessel aus den
-  Kontoeinstellungen.
+- Zotero-Konto (gratis). Für die API: ein API-Schlüssel aus den
+  Kontöinstellungen.
 
 ## Einrichtung / Nutzung (High-Level)
 
 1. Zotero installieren, Konto anlegen.
-2. Fuer die Anbindung: in den Einstellungen einen API-Key erzeugen und die
+2. Für die Anbindung: in den Einstellungen einen API-Key erzeugen und die
    eigene User- bzw. Group-ID notieren.
 3. Den Key im anbindenden Werkzeug hinterlegen.
 

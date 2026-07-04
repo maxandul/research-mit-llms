@@ -1,4 +1,4 @@
-name: Seite bauen und veroeffentlichen
+name: Seite bauen und veröffentlichen
 
 on:
   push:

@@ -1,28 +1,28 @@
 # Notion
 
 !!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** Freemium · **Wofuer:** Notizen & Datenbanken als Wissensbasis
+    **Schwierigkeit:** Einsteiger · **Kosten:** Freemium · **Wofür:** Notizen & Datenbanken als Wissensbasis
 
 ## Was ist es?
 
-Ein flexibles Notiz- und Datenbank-Werkzeug. Per API laesst sich Notion an
+Ein flexibles Notiz- und Datenbank-Werkzeug. Per API lässt sich Notion an
 einen LLM-Workflow anbinden — etwa damit ein Custom GPT Zusammenfassungen
-direkt als Eintraege in einer Notion-Datenbank ablegt.
+direkt als Einträge in einer Notion-Datenbank ablegt.
 
-## Was bringt es fuer Research?
+## Was bringt es für Research?
 
 - Strukturierte Ablage von Notizen, Lesenotizen, Projektwissen.
-- Als Ziel fuer automatisch generierte Zusammenfassungen.
+- Als Ziel für automatisch generierte Zusammenfassungen.
 
 ## Voraussetzungen
 
-- Notion-Konto. Fuer die Anbindung: eine eigene "Integration" mit Token.
+- Notion-Konto. Für die Anbindung: eine eigene "Integration" mit Token.
 
 ## Einrichtung / Nutzung (High-Level)
 
-1. Konto und gewuenschte Datenbank/Seiten anlegen.
+1. Konto und gewünschte Datenbank/Seiten anlegen.
 2. Unter den Entwickler-Einstellungen eine Integration erstellen, Token kopieren.
-3. Die Ziel-Datenbank fuer die Integration freigeben.
+3. Die Ziel-Datenbank für die Integration freigeben.
 4. Token im anbindenden Werkzeug hinterlegen.
 
 ## Grenzen & Datenschutz

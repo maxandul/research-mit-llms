@@ -1,10 +1,10 @@
 # ====================================================================
 #  Konfiguration der Seite. Hier stellst du Titel, Navigation und
-#  Aussehen ein. Aenderungen wirken beim naechsten "git push" automatisch.
+#  Aussehen ein. Änderungen wirken beim nächsten "git push" automatisch.
 # ====================================================================
 
 site_name: Research mit LLMs
-site_description: Niederschwelliger Wegweiser fuer wissenschaftliches Arbeiten mit LLM-Werkzeugen
+site_description: Niederschwelliger Wegweiser für wissenschaftliches Arbeiten mit LLM-Werkzeugen
 site_author: "maxandul"
 site_url: https://maxandul.github.io/research-mit-llms/
 
@@ -15,8 +15,8 @@ theme:
     - navigation.sections     # Gruppen in der Seitenleiste ausklappen
     - navigation.top          # "Nach oben"-Button
     - navigation.instant      # schnelles Navigieren ohne Neuladen
-    - navigation.footer       # Vor/Zurueck-Links unten
-    - search.suggest          # Suchvorschlaege
+    - navigation.footer       # Vor/Zurück-Links unten
+    - search.suggest          # Suchvorschläge
     - search.highlight        # Treffer hervorheben
     - content.code.copy       # Kopier-Knopf bei Code-Boxen
     - toc.follow
@@ -49,7 +49,7 @@ markdown_extensions:
   - pymdownx.highlight        # Syntax-Hervorhebung
   - pymdownx.tabbed:          # Reiter (Tabs)
       alternate_style: true
-  - attr_list                 # Attribute fuer Badges
+  - attr_list                 # Attribute für Badges
   - md_in_html
   - tables
   - toc:
@@ -57,7 +57,7 @@ markdown_extensions:
 
 # --------------------------------------------------------------------
 #  Navigation: Reihenfolge und Struktur der Seiten.
-#  Neue Seite hinzufuegen = Markdown-Datei anlegen + hier eintragen.
+#  Neue Seite hinzufügen = Markdown-Datei anlegen + hier eintragen.
 # --------------------------------------------------------------------
 nav:
   - Start: index.md
@@ -80,12 +80,12 @@ nav:
           - Zotero: werkzeuge/sammeln/zotero.md
           - Notion: werkzeuge/sammeln/notion.md
           - LLM-Wiki (nach Karpathy): werkzeuge/sammeln/llm-wiki.md
+      - Weitere Tools im Überblick: werkzeuge/weitere-tools.md
   - Workflows:
-      - Vom Thema zur Literaturuebersicht: workflows/thema-zu-uebersicht.md
+      - Vom Thema zur Literaturübersicht: workflows/thema-zu-übersicht.md
       - Paper lesen & strukturiert ablegen: workflows/paper-lesen-ablegen.md
       - Eigenes Forschungs-Wiki aufbauen: workflows/forschungs-wiki.md
   - Ressourcen:
-      - Weitere Tools im Ueberblick: ressourcen/weitere-tools.md
       - Glossar: ressourcen/glossar.md
       - Linksammlung: ressourcen/links.md
-  - Ueber: ueber.md
+  - Über: über.md

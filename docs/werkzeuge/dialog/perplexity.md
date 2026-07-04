@@ -1,24 +1,24 @@
 # Perplexity
 
 !!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** Freemium · **Wofuer:** Antwortmaschine mit Quellenangaben
+    **Schwierigkeit:** Einsteiger · **Kosten:** Freemium · **Wofür:** Antwortmaschine mit Quellenangaben
 
 ## Was ist es?
 
 Eine Suchmaschine, die Fragen direkt beantwortet und die verwendeten
-Webquellen angibt. Gut fuer den schnellen Einstieg in ein Thema.
+Webquellen angibt. Gut für den schnellen Einstieg in ein Thema.
 
-## Was bringt es fuer Research?
+## Was bringt es für Research?
 
-- Schneller Ueberblick und Begriffsklaerung mit nachvollziehbaren Quellen.
+- Schneller Überblick und Begriffsklärung mit nachvollziehbaren Quellen.
 - Folgefragen im Dialog.
 
 !!! warning "Abgrenzung beachten"
     Perplexity durchsucht das **offene Web** (breit, aber nicht rein
-    wissenschaftlich). Fuer den wissenschaftlichen Korpus eignen sich
+    wissenschaftlich). Für den wissenschaftlichen Korpus eignen sich
     [ScholarAI](scholarai.md), [Elicit](../finden/elicit.md) oder
     [Semantic Scholar](../finden/semantic-scholar.md) besser. Perplexity
-    ist der schnelle Einstieg, nicht der Ersatz fuer eine Fachrecherche.
+    ist der schnelle Einstieg, nicht der Ersatz für eine Fachrecherche.
 
 ## Voraussetzungen
 
@@ -27,12 +27,12 @@ Webquellen angibt. Gut fuer den schnellen Einstieg in ein Thema.
 ## Einrichtung / Nutzung (High-Level)
 
 1. Frage stellen.
-2. Antwort lesen und die angegebenen Quellen pruefen.
+2. Antwort lesen und die angegebenen Quellen prüfen.
 3. Mit Folgefragen verfeinern.
 
 ## Grenzen & Datenschutz
 
-- Quellenqualitaet schwankt — immer die verlinkten Originale pruefen.
+- Quellenqualität schwankt — immer die verlinkten Originale prüfen.
 - Cloud-Dienst; keine sensiblen Daten in Prompts.
 
 ## Offizielle Links

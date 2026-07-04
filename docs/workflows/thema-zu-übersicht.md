@@ -1,7 +1,7 @@
-# Vom Thema zur Literaturuebersicht
+# Vom Thema zur Literaturübersicht
 
-Ein durchgaengiges Beispiel, das mehrere Werkzeuge verkettet — die
-Blaupause fuer eigene Workflows.
+Ein durchgängiges Beispiel, das mehrere Werkzeuge verkettet — die
+Blaupause für eigene Workflows.
 
 !!! abstract "Das Rezept in einem Bild"
     ```
@@ -11,8 +11,8 @@ Blaupause fuer eigene Workflows.
 
 ## Ziel
 
-Aus einem Stichwort eine belegte Literaturuebersicht erzeugen und die Funde
-sofort ablagefertig im gewuenschten Format erhalten.
+Aus einem Stichwort eine belegte Literaturübersicht erzeugen und die Funde
+sofort ablagefertig im gewünschten Format erhalten.
 
 ## Beteiligte Werkzeuge
 
@@ -25,36 +25,36 @@ sofort ablagefertig im gewuenschten Format erhalten.
 ## Schritte
 
 1. **Recherche anstossen.** Im Custom GPT den Baustein
-   *Gezielte Literatursuche* nutzen. Der GPT sucht ueber die angebundene
+   *Gezielte Literatursuche* nutzen. Der GPT sucht über die angebundene
    Datenbasis und liefert verlinkte Treffer.
 2. **Verdichten nach Template.** Der GPT formatiert jeden Treffer nach einem
    hinterlegten Template (als RAG im GPT abgelegt) — z.B. als Markdown-Block
-   fuers Wiki oder als Struktur, die direkt nach Notion/Zotero passt.
-3. **Ablegen.** Ueber die angebundenen Actions schreibt der GPT die Eintraege
+   fürs Wiki oder als Struktur, die direkt nach Notion/Zotero passt.
+3. **Ablegen.** Über die angebundenen Actions schreibt der GPT die Einträge
    nach Zotero (als Referenzen) und/oder Notion (als Notizen), bzw. gibt
-   Markdown fuer das Wiki aus.
-4. **Pruefen.** Stichprobe: Stimmen Zitate und Links? Keine erfundenen Quellen?
+   Markdown für das Wiki aus.
+4. **Prüfen.** Stichprobe: Stimmen Zitate und Links? Keine erfundenen Quellen?
 
 !!! tip "Warum das Template der Trick ist"
     Indem das Ausgabeformat vorgegeben ist, sind die Funde ohne Nacharbeit
-    ablagefertig. Genau das macht aus Einzeltools eine durchgaengige Kette.
+    ablagefertig. Genau das macht aus Einzeltools eine durchgängige Kette.
 
 ## Vorlagen: Ausgabe-Templates
 
 Lege diese Vorlagen im GPT ab (in der Instruktion oder als hochgeladenes
 Wissensdokument) und lass den GPT je nach Ablageziel das passende Format
-waehlen. Passe sie an dein eigenes Schema an.
+wählen. Passe sie an dein eigenes Schema an.
 
-!!! warning "Eine Regel fuer alle Templates"
+!!! warning "Eine Regel für alle Templates"
     Keine erfundenen Angaben. Felder, die die Quelle nicht hergibt, bleiben
-    leer — lieber eine Luecke als ein falscher Wert.
+    leer — lieber eine Lücke als ein falscher Wert.
 
 ### Router (steuert die Formatwahl)
 
 ```text
 Wenn ich ein Ablageziel nenne, formatiere die Ausgabe nach dem passenden
 Template:
-- "fuers Wiki"  -> Template Wiki (Markdown mit Frontmatter und [[Links]])
+- "fürs Wiki"  -> Template Wiki (Markdown mit Frontmatter und [[Links]])
 - "nach Notion" -> Template Notion (Properties exakt nach meinem DB-Schema)
 - "nach Zotero" -> Template Zotero (Referenz + kompakte Notiz)
 Ohne Angabe: Template Wiki.
@@ -84,18 +84,18 @@ added: {JJJJ-MM-TT}
 
 **Limitationen:** {Stichpunkte}
 
-**Bezug zu meinem Projekt:** {1-2 Saetze}
+**Bezug zu meinem Projekt:** {1-2 Sätze}
 
 **Verwandt:** [[{andere Wiki-Seite}]], [[{...}]]
 ```
 
-Das Frontmatter (YAML oben) macht die Seite fuer Obsidian-Dataview
+Das Frontmatter (YAML oben) macht die Seite für Obsidian-Dataview
 auswertbar; die `[[Links]]` erzeugen die Querverweise im Wiki.
 
 ### Template Notion (Datenbankeintrag)
 
-Der GPT befuellt die Properties deiner Notion-Datenbank. Die Property-Namen
-muessen **exakt** denen in deiner Datenbank entsprechen:
+Der GPT befüllt die Properties deiner Notion-Datenbank. Die Property-Namen
+müssen **exakt** denen in deiner Datenbank entsprechen:
 
 ```text
 Properties:
@@ -113,26 +113,26 @@ Seiteninhalt (Body):
 
 ### Template Zotero (Referenz + Notiz)
 
-Zuerst die Referenz ueber DOI/Metadaten anlegen, dann eine kompakte
-Kindnotiz anhaengen:
+Zürst die Referenz über DOI/Metadaten anlegen, dann eine kompakte
+Kindnotiz anhängen:
 
 ```text
-Zusammenfassung: {2-3 Saetze}
+Zusammenfassung: {2-3 Sätze}
 Kernbefunde: {Stichpunkte}
 Limitationen: {Stichpunkte}
-Eigener Bezug: {1-2 Saetze}
+Eigener Bezug: {1-2 Sätze}
 ```
 
-Schlagworte zusaetzlich als echte Zotero-Tags setzen (nicht nur im Notiztext),
+Schlagworte zusätzlich als echte Zotero-Tags setzen (nicht nur im Notiztext),
 damit sie filterbar sind.
 
-!!! note "Vor dem Produktiveinsatz pruefen"
+!!! note "Vor dem Produktiveinsatz prüfen"
     Die Property-Namen (Notion) und Feldzuordnungen (Zotero) gegen deine
-    aktuelle Datenbank bzw. die aktuelle API abgleichen — diese aendern sich
+    aktuelle Datenbank bzw. die aktuelle API abgleichen — diese ändern sich
     eher als die Markdown-Vorlage.
 
 ## Variante
 
-Statt direkt abzulegen, die Treffer zuerst in
-[Connected Papers](../werkzeuge/finden/connected-papers.md) visuell pruefen
-und erst die relevanten Arbeiten uebernehmen.
+Statt direkt abzulegen, die Treffer zürst in
+[Connected Papers](../werkzeuge/finden/connected-papers.md) visuell prüfen
+und erst die relevanten Arbeiten übernehmen.

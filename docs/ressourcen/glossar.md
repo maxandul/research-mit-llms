@@ -12,24 +12,24 @@ geben, sodass das Modell ihn komplett liest. Kein Embedding, kein Abruf. Siehe
 [Datei in den Chat, RAG oder LLM-Wiki?](../grundlagen/rag-vs-wiki.md).
 
 **Embedding** — Die Umwandlung von Text in einen Zahlenvektor, sodass sich
-inhaltlich aehnliche Texte rechnerisch finden lassen. Grundlage von RAG.
+inhaltlich ähnliche Texte rechnerisch finden lassen. Grundlage von RAG.
 
-**RAG** — Retrieval-Augmented Generation. Dokumente werden zerstueckelt,
+**RAG** — Retrieval-Augmented Generation. Dokumente werden zerstückelt,
 als Embeddings gespeichert und bei jeder Frage werden nur die passendsten
-Stuecke abgerufen und ins Kontextfenster gegeben. Im Gegensatz zum direkten
+Stücke abgerufen und ins Kontextfenster gegeben. Im Gegensatz zum direkten
 Laden (oben) sieht das Modell nie das ganze Dokument.
 
 **Custom GPT** — Ein selbst konfigurierter GPT in ChatGPT, optional mit
 "Actions" zu externen Diensten.
 
-**Action / Connector / Tool** — Eine Anbindung, ueber die ein LLM externe
+**Action / Connector / Tool** — Eine Anbindung, über die ein LLM externe
 Dienste aufruft (suchen, lesen, schreiben).
 
-**API** — Schnittstelle, ueber die Programme miteinander sprechen. Oft mit
-einem "API-Key" (Zugangsschluessel) abgesichert.
+**API** — Schnittstelle, über die Programme miteinander sprechen. Oft mit
+einem "API-Key" (Zugangsschlüssel) abgesichert.
 
 **Markdown** — Einfaches Textformat mit leichter Formatierung. Grundlage von
 LLM-Wikis und dieser Seite.
 
 **ingest / query / lint** — Die drei Operationen eines LLM-Wikis: Quellen
-einpflegen, Fragen stellen, Wissensbasis pruefen.
+einpflegen, Fragen stellen, Wissensbasis prüfen.
