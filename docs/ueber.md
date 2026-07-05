@@ -9,7 +9,9 @@ sich an Forschende, die einen praktischen Einstieg suchen.
 
 ## Stand
 
-- Letzte Aktualisierung: 04.07.2026
+- Webseite: <https://maxandul.github.io/research-mit-llms/>
+- Quellcode und Inhalte: <https://github.com/maxandul/research-mit-llms>
+- Letzte Aktualisierung: 05.07.2026
 - Gepflegt von: [maxandul](https://github.com/maxandul)
 
 ## KI-Deklaration
@@ -19,6 +21,15 @@ mit Unterstützung von LLMs erstellt, konkret mit
 [Cursor](https://cursor.com) und den Modellen Claude Opus 4.8 und Fable 5.
 Konzept, inhaltliche Entscheidungen und Prüfung liegen beim Betreiber.
 Mehr zur Haltung dahinter: [KI-Nutzung deklarieren](haltung/ki-deklarieren.md).
+
+## Lizenz & Wiederverwendung
+
+Alle Inhalte dieser Seite stehen unter der Lizenz
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de). Du
+darfst sie teilen und bearbeiten, auch kommerziell, solange du
+[maxandul](https://github.com/maxandul) als Quelle nennst, auf die Lizenz
+verlinkst und Änderungen kennzeichnest. Wiederverwendung für Lehre,
+Weiterbildung und eigene Wegweiser ist ausdrücklich erwünscht.
 
 ## Hinweis zur Aktualität
 

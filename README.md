@@ -1,16 +1,38 @@
-# Forschen mit LLMs (GitHub Page)
+# Forschen mit LLMs
 
-Niederschwelliger Wegweiser, wie LLMs alle Schritte des Forschungsprozesses
-unterstützen können: Literatur, Datenerhebung, Analyse, Schreiben.
-Gebaut mit [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
+**Zur Webseite: <https://maxandul.github.io/research-mit-llms/>**
 
-## Inhalte bearbeiten
+Ein niederschwelliger Wegweiser, wie grosse Sprachmodelle (LLMs) alle
+Schritte des Forschungsprozesses unterstützen können. Für Forschende und
+Studierende, ohne Programmierkenntnisse als Voraussetzung.
 
-Alle Inhalte liegen als Markdown unter `docs/`. Eine Seite ändern = die
-`.md`-Datei bearbeiten. Eine Seite hinzufügen = neue `.md`-Datei anlegen und
-in `mkdocs.yml` unter `nav:` eintragen.
+## Was die Seite abdeckt
 
-## Lokal ansehen (optional)
+- **Grundlagen**: wie LLMs arbeiten, wo ihre Grenzen liegen, Datenschutz,
+  Markdown als Arbeitsformat
+- **Literatur**: Werkzeuge zum Finden, Befragen und Sammeln von Literatur,
+  verkettet zu durchgängigen Workflows
+- **Daten erheben & schützen**: Interviews lokal transkribieren (auch
+  Schweizerdeutsch), Daten anonymisieren für die Arbeit mit Cloud-Diensten
+- **Daten analysieren**: qualitative Daten codieren, quantitativ auswerten
+- **Schreiben & Publizieren**: die Arbeit in Markdown aufbauen, Word als
+  Export, Umgang mit Feedback
+- **Haltung & gute Praxis**: KI-Nutzung deklarieren
+- **Ressourcen**: Glossar, Linksammlung, kopierfertige Prompt-Bibliothek
+
+## Feedback & Fragen
+
+- Frage stellen: [Q&A-Diskussionen](https://github.com/maxandul/research-mit-llms/discussions/categories/q-a)
+- Fehler oder Vorschlag: [Issue eröffnen](https://github.com/maxandul/research-mit-llms/issues)
+
+## Technisches
+
+Die Seite ist mit [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)
+gebaut. Alle Inhalte liegen als Markdown unter `docs/`. Eine Seite ändern
+heisst die `.md`-Datei bearbeiten; eine Seite hinzufügen heisst neue
+`.md`-Datei anlegen und in `mkdocs.yml` unter `nav:` eintragen.
+
+### Lokal ansehen
 
 Voraussetzung: Python 3.
 
@@ -22,20 +44,16 @@ mkdocs serve
 Dann im Browser <http://127.0.0.1:8000> öffnen. Änderungen werden live
 angezeigt.
 
-## Veröffentlichen auf GitHub Pages
+### Veröffentlichung
 
-1. Dieses Verzeichnis als GitHub-Repository hochladen (Branch `main`).
-2. Beim ersten Push baut die Action unter `.github/workflows/deploy.yml` die
-   Seite automatisch und legt sie auf dem Branch `gh-pages` ab.
-3. In den Repo-Einstellungen unter **Settings -> Pages** als Quelle den
-   Branch `gh-pages` wählen.
-4. Nach kurzer Zeit ist die Seite unter
-   `https://DEIN-NUTZERNAME.github.io/DEIN-REPO/` erreichbar.
-5. Diese URL in `mkdocs.yml` bei `site_url` eintragen.
+Bei jedem Push auf `main` baut die GitHub Action unter
+`.github/workflows/deploy.yml` die Seite automatisch und veröffentlicht sie
+auf GitHub Pages.
 
-## Vor dem Live-Gang ausfüllen
+## Lizenz
 
-- `site_author` und `site_url` in `mkdocs.yml`
-- Name, Datum und Feedback-Link in `docs/ueber.md`
-- alle Boxen `!!! note "Noch zu ergänzen"` prüfen/füllen
-- Kosten-/Limit-Angaben bei Elicit, NotebookLM und Connected Papers verifizieren
+Die Inhalte stehen unter der Lizenz
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de): Sie
+dürfen geteilt und bearbeitet werden, auch kommerziell, solange
+[maxandul](https://github.com/maxandul) als Quelle genannt wird. Details
+in der Datei [LICENSE](LICENSE).
