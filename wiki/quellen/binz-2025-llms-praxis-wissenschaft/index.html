@@ -12,7 +12,7 @@
         <meta name="author" content="maxandul">
       
       
-        <link rel="canonical" href="https://maxandul.github.io/research-mit-llms/wiki/quellen/liang-2025-llm-praevalenz/">
+        <link rel="canonical" href="https://maxandul.github.io/research-mit-llms/wiki/quellen/binz-2025-llms-praxis-wissenschaft/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>Liang et al. (2025): Quantifying LLM usage in scientific papers - Forschen mit LLMs</title>
+        <title>Binz et al. (2025): Wie sollen LLMs die Praxis der Wissenschaft verändern? - Forschen mit LLMs</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#liang-et-al-2025-quantifying-llm-usage-in-scientific-papers" class="md-skip">
+        <a href="#binz-et-al-2025-wie-sollen-llms-die-praxis-der-wissenschaft-verandern" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Liang et al. (2025): Quantifying LLM usage in scientific papers
+              Binz et al. (2025): Wie sollen LLMs die Praxis der Wissenschaft verändern?
             
           </span>
         </div>
@@ -2135,57 +2135,70 @@
 
 
 
-<h1 id="liang-et-al-2025-quantifying-llm-usage-in-scientific-papers">Liang et al. (2025): Quantifying LLM usage in scientific papers<a class="headerlink" href="#liang-et-al-2025-quantifying-llm-usage-in-scientific-papers" title="Permanent link">&para;</a></h1>
+<h1 id="binz-et-al-2025-wie-sollen-llms-die-praxis-der-wissenschaft-verandern">Binz et al. (2025): Wie sollen LLMs die Praxis der Wissenschaft verändern?<a class="headerlink" href="#binz-et-al-2025-wie-sollen-llms-die-praxis-der-wissenschaft-verandern" title="Permanent link">&para;</a></h1>
 <p><strong>Evidenzstufe:</strong> Peer-reviewed ·
-<strong>Geprüft:</strong> 06.07.2026, Volltext des Preprints gelesen (arXiv v1 vom
-01.04.2024, aus <code>rohdaten/</code>). Achtung: Die publizierte NHB-Fassung erweitert
-die Analyse (1,1 Mio. Papers bis Sep 2024, höhere Endwerte) und liegt hinter
-der Paywall; ihre Zahlen sind nur über Abstract und Artikelseite
-gegengelesen. Auf arXiv existiert keine aktualisierte Version.</p>
+<strong>Geprüft:</strong> 06.07.2026, Volltext gelesen (PNAS-PDF, Open Access CC BY,
+aus <code>rohdaten/</code>), DOI aufgelöst.</p>
 <blockquote>
-<p>Liang, W., et al. (2025): <em>Quantifying large language model usage in
-scientific papers.</em> Nature Human Behaviour.
-<a href="https://www.nature.com/articles/s41562-025-02273-8">https://www.nature.com/articles/s41562-025-02273-8</a> ·
-Preprint: <a href="https://arxiv.org/abs/2404.01268">arXiv:2404.01268</a> (v1, Apr 2024)</p>
+<p>Binz, M., Alaniz, S., Roskies, A., et al. (2025): <em>How should the
+advancement of large language models affect the practice of science?</em>
+PNAS, 122(5), e2401227121.
+DOI: <a href="https://doi.org/10.1073/pnas.2401227121">10.1073/pnas.2401227121</a></p>
 </blockquote>
 <h2 id="kernaussagen">Kernaussagen<a class="headerlink" href="#kernaussagen" title="Permanent link">&para;</a></h2>
+<p>Vier Forschungsgruppen vertreten bewusst kontroverse Positionen, jede mit
+Repliken der anderen:</p>
 <ul>
-<li>Populationsbasiertes Schätzverfahren ("distributional GPT quantification"):
-  Aus Verschiebungen von Worthäufigkeiten (z.B. plötzlicher Anstieg von
-  <em>realm</em>, <em>intricate</em>, <em>showcasing</em>, <em>pivotal</em> ab 2023) wird der Anteil α
-  LLM-modifizierter Sätze in einem Korpus geschätzt, ohne Einzeltexte zu
-  klassifizieren. Validierung im Preprint: Schätzfehler unter 3,5
-  Prozentpunkten, Fehlalarmrate vor ChatGPT-Launch bei 2-3%.</li>
-<li>Preprint (bis Feb 2024, 950'965 Papers): deutlicher Anstieg seit ChatGPT,
-  Informatik-Abstracts bis <strong>17,5%</strong>, Mathematik 4,9%, Nature-Portfolio
-  6,3%. Publizierte Fassung (bis Sep 2024, über 1,1 Mio. Papers): Informatik
-  bis ~<strong>22%</strong>, Mathematik und Nature-Portfolio bis ~9%.</li>
-<li>LLM-Nutzung ist häufiger bei Erstautor:innen mit hoher Preprint-Frequenz
-  (19,3% vs. 15,6%), in dicht besetzten Forschungsfeldern (22,2% vs. 14,7%,
-  gemessen über Embedding-Distanz zum ähnlichsten Paper) und bei kürzeren
-  Papers (17,7% vs. 13,6%); die Autoren deuten das als Hinweis auf
-  Publikationsdruck als Treiber.</li>
+<li><strong>Schulz et al. ("Kollaborator"):</strong> Die Arbeit mit LLMs unterscheidet
+  sich nicht grundsätzlich von der mit menschlichen Mitarbeitenden; beide
+  machen Fehler, beide erfordern Prüfung. Bestehende Regeln guter
+  wissenschaftlicher Praxis genügen. Wegen Reproduzierbarkeitsproblemen
+  proprietärer Modelle (dokumentierte Fälle nicht replizierbarer
+  Ergebnisse nach stillen Modell-Updates) plädieren sie stark für
+  Open-Source-Modelle.</li>
+<li><strong>Bender et al. ("Werkzeug, und oft das falsche"):</strong> LLMs modellieren
+  Wortverteilungen, nicht Bedeutung; Wissenschaft ist ein sozialer
+  Prozess, der sich nicht "autovervollständigen" lässt. Schreiben ist
+  Teil des Denkens, nicht dessen lästige Verpackung. LLMs als Ersatz für
+  Versuchspersonen kommt Datenfabrikation gleich. Der Prüfaufwand für
+  LLM-Output wird systematisch unterschätzt.</li>
+<li><strong>Marelli et al. ("Prinzipien statt Regulierung"):</strong> Verbote würden
+  Nutzung nur in die Verdecktheit treiben. Stattdessen Prinzipien:
+  Transparenz (idealerweise Prompts und Antworten als Supplement
+  veröffentlichen), Accountability (Verantwortung bleibt vollständig bei
+  den Autor:innen), Fairness (WEIRD-Bias, ungleicher Zugang zu
+  Bezahlmodellen).</li>
+<li><strong>Botvinick &amp; Gershman ("Wissenschaft ist für Menschen"):</strong> Zwei
+  Kernbereiche gehören nicht delegiert, egal wie fähig die Systeme
+  werden: die normative Entscheidung, woran geforscht wird, und
+  menschliches Verstehen als eigentliches Ziel der Wissenschaft.</li>
 </ul>
+<p>Gemeinsamer Nenner trotz Dissens: der soziale Charakter der Wissenschaft,
+der Schutz wissenschaftlicher Integrität, und dass Verantwortung nicht an
+Maschinen übergehen kann. Pikantes Detail: Schulz et al. deklarieren, dass
+der Erstentwurf ihrer Perspektive von GPT-4 aus Sitzungsnotizen
+geschrieben wurde.</p>
 <h2 id="einordnung">Einordnung<a class="headerlink" href="#einordnung" title="Permanent link">&para;</a></h2>
-<p>Schätzverfahren auf Populationsebene, keine Einzelfall-Detektion; gerade
-deshalb methodisch solider als "KI-Detektoren" für Einzeltexte, deren
-Unzuverlässigkeit das Paper selbst referenziert. Grenzen laut Volltext:
-"LLM-modifiziert" heisst substanziell verändert (mehr als Rechtschreib- und
-Grammatikkorrektur), das Trainingskorpus wurde mit GPT-3.5 erzeugt und auf
-ChatGPT zugeschnitten; die Moderator-Befunde sind Korrelationen, keine
-Kausalaussagen. Die Prozentwerte sind eher Untergrenzen.</p>
+<p>Meinungsbeitrag (PNAS Perspective, begutachtet, aber keine Empirie);
+gerade als kuratierte Kontroverse wertvoll, weil die Bandbreite seriöser
+Positionen sichtbar wird, statt einen Scheinkonsens zu suggerieren. Die
+Kollaborator-Metapher von Schulz et al. wird von zwei der drei anderen
+Gruppen explizit zurückgewiesen (LLMs fehlen Introspektion,
+Verantwortungsfähigkeit, Lernen aus Fehlern).</p>
 <h2 id="relevanz-fur-die-website">Relevanz für die Website<a class="headerlink" href="#relevanz-fur-die-website" title="Permanent link">&para;</a></h2>
-<p>Belegt für <a href="../../../haltung/ki-deklarieren/">KI-Nutzung deklarieren</a>, dass
-LLM-Nutzung beim wissenschaftlichen Schreiben <strong>verbreitete Realität</strong> ist:
-Deklarationsregeln adressieren keinen Randfall. Zusammen mit
-<a href="../glynn-2024-academ-ai/">Academ-AI</a> zeigt sich die Lücke zwischen
-tatsächlicher und deklarierter Nutzung. Die Abgrenzung "substanzielle
-Modifikation vs. blosse Korrektur" im Messverfahren spiegelt die
-Copy-Editing-Ausnahme vieler Policies.</p>
+<p>Grundsatzquelle für die Haltungs- und Grundlagen-Seiten: Die
+Rollenteilung der Website (Mensch verantwortet, urteilt, versteht) deckt
+sich mit dem Konsenskern aller vier Positionen. Die Bender-Position
+schärft die Warnung vor Delegation von Urteil und Interpretation; die
+Marelli-Prinzipien stützen die Deklarations-Empfehlungen
+(<a href="../../konzepte/deklarationspflicht/">Deklarationspflicht</a>); das
+Open-Source-Argument ist für Werkzeugwahl und Datenschutz-Seiten
+anschlussfähig.</p>
 <h2 id="querverweise">Querverweise<a class="headerlink" href="#querverweise" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../glynn-2024-academ-ai/">Glynn: Academ-AI</a> — dokumentierte Einzelfälle nicht deklarierter Nutzung</li>
-<li><a href="../schilke-reimann-2025-transparenz-dilemma/">Schilke &amp; Reimann 2025</a> — warum Deklaration schwerfällt</li>
+<li><a href="../schilke-reimann-2025-transparenz-dilemma/">Schilke &amp; Reimann 2025</a> — empirische Kehrseite der Transparenz</li>
+<li><a href="../mabirizi-2025-genai-postgrad-review/">Mabirizi et al. 2025</a> — Empirie zur Nutzung durch Forschende in Ausbildung</li>
+<li><a href="../eger-2026-transforming-science-survey/">Eger et al. 2026</a> — technischer Stand der Werkzeuge entlang des Forschungszyklus</li>
 </ul>
 
 

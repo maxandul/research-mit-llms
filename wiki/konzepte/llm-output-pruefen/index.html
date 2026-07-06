@@ -12,7 +12,7 @@
         <meta name="author" content="maxandul">
       
       
-        <link rel="canonical" href="https://maxandul.github.io/research-mit-llms/wiki/quellen/liang-2025-llm-praevalenz/">
+        <link rel="canonical" href="https://maxandul.github.io/research-mit-llms/wiki/konzepte/llm-output-pruefen/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>Liang et al. (2025): Quantifying LLM usage in scientific papers - Forschen mit LLMs</title>
+        <title>LLM-Output prüfen - Forschen mit LLMs</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#liang-et-al-2025-quantifying-llm-usage-in-scientific-papers" class="md-skip">
+        <a href="#llm-output-prufen" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Liang et al. (2025): Quantifying LLM usage in scientific papers
+              LLM-Output prüfen
             
           </span>
         </div>
@@ -1766,7 +1766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../konzepte/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1794,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../quellen/" class="md-nav__link">
         
   
   
@@ -2075,10 +2075,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#kernaussagen" class="md-nav__link">
+  <a href="#belege" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kernaussagen
+        Belege
       
     </span>
   </a>
@@ -2086,10 +2086,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#einordnung" class="md-nav__link">
+  <a href="#verwandte-konzepte" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Einordnung
+        Verwandte Konzepte
       
     </span>
   </a>
@@ -2097,21 +2097,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#relevanz-fur-die-website" class="md-nav__link">
+  <a href="#fliesst-ein-in" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Relevanz für die Website
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#querverweise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Querverweise
+        Fliesst ein in
       
     </span>
   </a>
@@ -2135,57 +2124,42 @@
 
 
 
-<h1 id="liang-et-al-2025-quantifying-llm-usage-in-scientific-papers">Liang et al. (2025): Quantifying LLM usage in scientific papers<a class="headerlink" href="#liang-et-al-2025-quantifying-llm-usage-in-scientific-papers" title="Permanent link">&para;</a></h1>
-<p><strong>Evidenzstufe:</strong> Peer-reviewed ·
-<strong>Geprüft:</strong> 06.07.2026, Volltext des Preprints gelesen (arXiv v1 vom
-01.04.2024, aus <code>rohdaten/</code>). Achtung: Die publizierte NHB-Fassung erweitert
-die Analyse (1,1 Mio. Papers bis Sep 2024, höhere Endwerte) und liegt hinter
-der Paywall; ihre Zahlen sind nur über Abstract und Artikelseite
-gegengelesen. Auf arXiv existiert keine aktualisierte Version.</p>
-<blockquote>
-<p>Liang, W., et al. (2025): <em>Quantifying large language model usage in
-scientific papers.</em> Nature Human Behaviour.
-<a href="https://www.nature.com/articles/s41562-025-02273-8">https://www.nature.com/articles/s41562-025-02273-8</a> ·
-Preprint: <a href="https://arxiv.org/abs/2404.01268">arXiv:2404.01268</a> (v1, Apr 2024)</p>
-</blockquote>
-<h2 id="kernaussagen">Kernaussagen<a class="headerlink" href="#kernaussagen" title="Permanent link">&para;</a></h2>
+<h1 id="llm-output-prufen">LLM-Output prüfen<a class="headerlink" href="#llm-output-prufen" title="Permanent link">&para;</a></h1>
+<p><strong>Konzeptnotiz</strong> · Stand: Juli 2026</p>
+<p>LLM-Output muss vor Verwendung inhaltlich geprüft werden, und dieser
+Prüfaufwand wird systematisch unterschätzt. Die Evidenz dazu ist
+konsistent: In einem Experiment mit ChatGPT-generierten Forschungsanträgen
+hatten 38% der Referenzen falsche DOIs und 16% waren komplett erfunden; in
+publizierter Literatur führte eine einzige stehengebliebene Chatbot-Phrase
+zur Entdeckung von 18 nicht existierenden Referenzen; und in einem
+Schreibexperiment reichten 68% der Teilnehmenden LLM-Output unbearbeitet
+ein. Bender et al. weisen zudem darauf hin, dass es kaum Studien dazu
+gibt, wie viel Zeit sorgfältiges Prüfen tatsächlich kostet und wie
+zuverlässig Menschen es unter Druck leisten; Marelli et al. empfehlen,
+Prüf- und Qualitätskriterien <strong>vor</strong> dem LLM-Einsatz festzulegen und den
+Effizienzgewinn ehrlich gegen den Prüfaufwand zu rechnen.</p>
+<p>Wichtige Grenze: Prüfen heilt die verräterischen Oberflächenfehler, aber
+nicht automatisch tieferliegende Probleme (verzerrte Auswahl, plausible
+Fehlinterpretationen). Leicht redigierter LLM-Text ist von aussen nicht
+mehr erkennbar; die Prüfpflicht bleibt deshalb eine Frage der
+Selbstverpflichtung, nicht der Detektierbarkeit
+(<a href="../risiken-der-nichtdeklaration/">Risiken der Nichtdeklaration</a>).</p>
+<h2 id="belege">Belege<a class="headerlink" href="#belege" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Populationsbasiertes Schätzverfahren ("distributional GPT quantification"):
-  Aus Verschiebungen von Worthäufigkeiten (z.B. plötzlicher Anstieg von
-  <em>realm</em>, <em>intricate</em>, <em>showcasing</em>, <em>pivotal</em> ab 2023) wird der Anteil α
-  LLM-modifizierter Sätze in einem Korpus geschätzt, ohne Einzeltexte zu
-  klassifizieren. Validierung im Preprint: Schätzfehler unter 3,5
-  Prozentpunkten, Fehlalarmrate vor ChatGPT-Launch bei 2-3%.</li>
-<li>Preprint (bis Feb 2024, 950'965 Papers): deutlicher Anstieg seit ChatGPT,
-  Informatik-Abstracts bis <strong>17,5%</strong>, Mathematik 4,9%, Nature-Portfolio
-  6,3%. Publizierte Fassung (bis Sep 2024, über 1,1 Mio. Papers): Informatik
-  bis ~<strong>22%</strong>, Mathematik und Nature-Portfolio bis ~9%.</li>
-<li>LLM-Nutzung ist häufiger bei Erstautor:innen mit hoher Preprint-Frequenz
-  (19,3% vs. 15,6%), in dicht besetzten Forschungsfeldern (22,2% vs. 14,7%,
-  gemessen über Embedding-Distanz zum ähnlichsten Paper) und bei kürzeren
-  Papers (17,7% vs. 13,6%); die Autoren deuten das als Hinweis auf
-  Publikationsdruck als Treiber.</li>
+<li><a href="../../quellen/mabirizi-2025-genai-postgrad-review/">Mabirizi et al. (2025)</a> — Peer-reviewed (Review; Referenzfehler-Quoten, unbearbeiteter Output)</li>
+<li><a href="../../quellen/binz-2025-llms-praxis-wissenschaft/">Binz et al. (2025)</a> — Peer-reviewed (unterschätzter Prüfaufwand, Prüfkriterien vorab)</li>
+<li><a href="../../quellen/glynn-2024-academ-ai/">Glynn (2024/2025): Academ-AI</a> — Preprint (konfabulierte Referenzen in publizierter Literatur)</li>
 </ul>
-<h2 id="einordnung">Einordnung<a class="headerlink" href="#einordnung" title="Permanent link">&para;</a></h2>
-<p>Schätzverfahren auf Populationsebene, keine Einzelfall-Detektion; gerade
-deshalb methodisch solider als "KI-Detektoren" für Einzeltexte, deren
-Unzuverlässigkeit das Paper selbst referenziert. Grenzen laut Volltext:
-"LLM-modifiziert" heisst substanziell verändert (mehr als Rechtschreib- und
-Grammatikkorrektur), das Trainingskorpus wurde mit GPT-3.5 erzeugt und auf
-ChatGPT zugeschnitten; die Moderator-Befunde sind Korrelationen, keine
-Kausalaussagen. Die Prozentwerte sind eher Untergrenzen.</p>
-<h2 id="relevanz-fur-die-website">Relevanz für die Website<a class="headerlink" href="#relevanz-fur-die-website" title="Permanent link">&para;</a></h2>
-<p>Belegt für <a href="../../../haltung/ki-deklarieren/">KI-Nutzung deklarieren</a>, dass
-LLM-Nutzung beim wissenschaftlichen Schreiben <strong>verbreitete Realität</strong> ist:
-Deklarationsregeln adressieren keinen Randfall. Zusammen mit
-<a href="../glynn-2024-academ-ai/">Academ-AI</a> zeigt sich die Lücke zwischen
-tatsächlicher und deklarierter Nutzung. Die Abgrenzung "substanzielle
-Modifikation vs. blosse Korrektur" im Messverfahren spiegelt die
-Copy-Editing-Ausnahme vieler Policies.</p>
-<h2 id="querverweise">Querverweise<a class="headerlink" href="#querverweise" title="Permanent link">&para;</a></h2>
+<h2 id="verwandte-konzepte">Verwandte Konzepte<a class="headerlink" href="#verwandte-konzepte" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../glynn-2024-academ-ai/">Glynn: Academ-AI</a> — dokumentierte Einzelfälle nicht deklarierter Nutzung</li>
-<li><a href="../schilke-reimann-2025-transparenz-dilemma/">Schilke &amp; Reimann 2025</a> — warum Deklaration schwerfällt</li>
+<li><a href="../verantwortung-bleibt-beim-menschen/">Verantwortung bleibt beim Menschen</a> — Prüfen als operative Verantwortung</li>
+<li><a href="../risiken-der-nichtdeklaration/">Risiken der Nichtdeklaration</a> — ungeprüfter Output ist der häufigste Entdeckungsgrund</li>
+<li><a href="../praevalenz-llm-nutzung/">Prävalenz der LLM-Nutzung</a> — Ausmass, in dem geprüft werden müsste</li>
+</ul>
+<h2 id="fliesst-ein-in">Fliesst ein in<a class="headerlink" href="#fliesst-ein-in" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../../haltung/ki-deklarieren/">Website: KI-Nutzung deklarieren</a> (Abschnitt "Was die Deklaration nicht ersetzt")</li>
+<li>Website: Grundlagen- und Analyse-Seiten (Kernregel "alles Belegrelevante selbst prüfen")</li>
 </ul>
 
 
