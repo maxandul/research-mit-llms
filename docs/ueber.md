@@ -18,7 +18,11 @@ sich an Forschende, die einen praktischen Einstieg suchen.
 
 Diese Seite ist selbst ein Beispiel für das, was sie beschreibt: Sie wurde
 mit Unterstützung von LLMs erstellt, konkret mit
-[Cursor](https://cursor.com) und den Modellen Claude Opus 4.8 und Fable 5.
+[Cursor](https://cursor.com) und Claude Cowork (Desktop-App von Anthropic)
+mit den Modellen Claude Opus 4.8 und Fable 5. Das
+[Forschungsstand-Wiki](wiki/index.md) inklusive Quellenrecherche wird mit
+Claude Cowork gepflegt — nach den Spielregeln der
+[CLAUDE.md im Repository](https://github.com/maxandul/research-mit-llms/blob/main/CLAUDE.md).
 Konzept, inhaltliche Entscheidungen und Prüfung liegen beim Betreiber.
 Mehr zur Haltung dahinter: [KI-Nutzung deklarieren](haltung/ki-deklarieren.md).
 

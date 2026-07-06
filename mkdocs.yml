@@ -38,9 +38,16 @@ theme:
         icon: material/weather-sunny
         name: Zu hellem Modus wechseln
 
+hooks:
+  - tools/wiki_graph.py            # erzeugt graph.json für den Wissensgraphen
+
 plugins:
   - search:
       lang: de
+  - git-revision-date-localized:   # "Zuletzt aktualisiert" pro Seite
+      type: date
+      locale: de
+      fallback_to_build_date: true
 
 markdown_extensions:
   - admonition                # farbige Hinweis-Boxen (!!! note ...)
@@ -98,8 +105,16 @@ nav:
       - Mit Word-Feedback umgehen: schreiben/word-feedback.md
   - Haltung & gute Praxis:
       - KI-Nutzung deklarieren: haltung/ki-deklarieren.md
+  - Forschungsstand:
+      - Über dieses Wiki: wiki/index.md
+      - Synthesen:
+          - KI-Nutzung deklarieren: wiki/synthese/ki-deklarieren.md
+      - Konzeptnotizen: wiki/konzepte/index.md
+      - Quellnotizen: wiki/quellen/index.md
   - Ressourcen:
       - Glossar: ressourcen/glossar.md
       - Linksammlung: ressourcen/links.md
       - Prompt-Bibliothek: ressourcen/prompt-bibliothek.md
+      - Wiki-Vorlagen: ressourcen/wiki-vorlagen.md
+      - Changelog: ressourcen/changelog.md
   - Über: ueber.md

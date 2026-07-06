@@ -4,6 +4,12 @@ Ein praktischer Wegweiser, wie du grosse Sprachmodelle (LLMs) im gesamten
 Forschungsprozess einsetzt: Literatur finden, Daten erheben und schützen,
 qualitativ und quantitativ auswerten, schreiben und publizieren.
 
+!!! warning "Diese Seite ist im Aufbau"
+    Die Inhalte werden laufend erweitert und mit wissenschaftlichen Quellen
+    unterlegt — insbesondere der [Forschungsstand](wiki/index.md) (das Wiki
+    hinter den Belegen) deckt erst einen Teil der Themen ab. Was sich
+    inhaltlich ändert, steht im [Changelog](ressourcen/changelog.md).
+
 !!! tip "Für wen ist diese Seite?"
     Für Forschende und Studierende in jeder Phase ihrer Arbeit, vom ersten
     Themenüberblick bis zur Abgabe. Programmieren können musst du nicht:

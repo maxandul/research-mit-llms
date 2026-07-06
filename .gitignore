@@ -1,6 +1,10 @@
 # Build-Output von MkDocs (wird von GitHub Actions erzeugt)
 site/
 
+# Rohquellen des Forschungsstand-Wikis (PDFs, Volltexte) — bleiben aus
+# urheberrechtlichen Gründen lokal und werden nie gepusht
+rohdaten/
+
 # Python
 __pycache__/
 .venv/

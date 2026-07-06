@@ -39,6 +39,15 @@ sofort ablagefertig im gewünschten Format erhalten.
     Indem das Ausgabeformat vorgegeben ist, sind die Funde ohne Nacharbeit
     ablagefertig. Genau das macht aus Einzeltools eine durchgängige Kette.
 
+!!! warning "Was dieser Workflow nicht ersetzt"
+    LLM-Werkzeuge durchsuchen nur **öffentlich zugängliche** Korpora
+    (Metadaten, Abstracts, Open-Access-Volltexte). Eine systematische
+    Recherche in den lizenzierten **Fachdatenbanken** deines Fachs (z.B.
+    über die Hochschulbibliothek) ersetzen sie nicht — je nach Disziplin
+    fehlt dort Wesentliches. Und: Die Treffer sind Kandidaten, keine
+    Belege. Was du zitieren willst, **liest du selbst im Volltext** —
+    Abstracts genügen nicht.
+
 ## Vorlagen: Ausgabe-Templates
 
 Lege diese Vorlagen im GPT ab (in der Instruktion oder als hochgeladenes
@@ -131,8 +140,29 @@ damit sie filterbar sind.
     aktuelle Datenbank bzw. die aktuelle API abgleichen; diese ändern sich
     eher als die Markdown-Vorlage.
 
-## Variante
+## Variante: Connected Papers zwischenschalten
 
 Statt direkt abzulegen, die Treffer zuerst in
 [Connected Papers](../werkzeuge/finden/connected-papers.md) visuell prüfen
 und erst die relevanten Arbeiten übernehmen.
+
+## Variante: Claude Cowork als Steuerzentrale
+
+Dasselbe Rezept funktioniert mit einem agentischen Desktop-Werkzeug wie
+[Claude Cowork](../werkzeuge/sammeln/llm-wiki.md) statt eines Custom GPT —
+mit zwei praktischen Vorteilen:
+
+- **Direkter Dateizugriff:** Der Agent fragt die
+  [Semantic-Scholar-API](../werkzeuge/finden/semantic-scholar.md) direkt ab
+  (geht ohne API-Key), wendet deine Templates aus einer lokalen Datei an
+  und schreibt die Ergebnisse als Markdown-Dateien direkt in deinen
+  Wiki-Ordner — ohne Kopieren aus dem Chat.
+- **Volltext-tauglich:** Legst du Paper-PDFs in einen lokalen Ordner, kann
+  der Agent sie vollständig lesen. Wichtig, denn Abstracts allein reichen
+  für belastbare Notizen nicht — erst sichten, dann den Volltext besorgen
+  und auf dieser Basis exzerpieren.
+
+Statt der GPT-Instruktion übernimmt eine Schema-Datei im Arbeitsordner die
+Steuerung (siehe [Wiki-Vorlagen](../ressourcen/wiki-vorlagen.md)). OpenAI
+geht mit seiner Desktop-App einen ähnlichen Weg; massgeblich ist die
+jeweilige Original-Doku.

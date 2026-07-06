@@ -79,6 +79,8 @@ Du kannst klein und ganz ohne Technik starten und später automatisieren.
 
 ## Weiterführend
 
+- Gelebtes Beispiel: der [Forschungsstand dieser Website](../../wiki/index.md)
+  ist ein solches Wiki (Quellnotizen + Synthesen, öffentlich einsehbar)
 - Workflow: [Eigenes Forschungs-Wiki aufbauen](../../workflows/forschungs-wiki.md)
 - Praxis-Repo: [llm-wiki von Mehmet Goekce](https://github.com/mehmetgoekce/llm-wiki)
   mit Schema, Setup-Skript und Befehlen `/wiki ingest`, `/wiki query`, `/wiki lint`
