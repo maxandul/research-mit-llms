@@ -8,35 +8,50 @@ sind nicht aufgeführt; die vollständige Historie liegt im
 
 ## Juli 2026
 
-- **[KI-Nutzung deklarieren](../haltung/ki-deklarieren.md) mit Quellen
-  unterlegt und erweitert.** Neu: Nichtdeklaration kann laut ICMJE als
-  wissenschaftliches Fehlverhalten gewertet werden; das Transparenz-Dilemma
-  (Deklaration kostet kurzfristig Vertrauen, Verschweigen bei Entdeckung
-  mehr; Schilke & Reimann 2025) wird ehrlich benannt; die Abgrenzung
-  "Copy-Editing vs. deklarationspflichtige Inhaltserzeugung" ist präzisiert
-  (Springer Nature, Elsevier). Neun verifizierte Quellen, Details im
+- **Fallbeispiel erweitert: eine Zotero-Bibliothek per MCP an ein LLM
+  anbinden.** Der [Forschungsstand](../wiki/index.md) verwaltet seine Quellen
+  jetzt zusätzlich in Zotero, angebunden über einen MCP-Server, sodass das
+  LLM Referenzen und PDFs zitierfähig ablegt. Wie das eingerichtet wird und
+  wie man sauber einpflegt, steht neu auf
+  [Zotero](../werkzeuge/sammeln/zotero.md) und im Workflow
+  [Eigenes Forschungs-Wiki aufbauen](../workflows/forschungs-wiki.md).
+
+- **Neues Themenfeld: LLMs in der Forschung allgemein.** Drei
+  Grundsatzquellen eingearbeitet (die PNAS-Debatte von Binz et al. 2025, ein
+  Systematic Review zu generativer KI in der Postgraduierten-Forschung von
+  Mabirizi et al. 2025, der AI4Science-Survey von Eger et al. 2026) und zwei
+  Konzepte ergänzt: Die Verantwortung bleibt bei den Menschen (Konsens über
+  alle Positionen hinweg) und LLM-Output muss geprüft werden (in
+  ChatGPT-generierten Anträgen waren 38% der DOIs falsch und 16% der
+  Referenzen frei erfunden).
+
+- **Thema [KI-Nutzung deklarieren](../haltung/ki-deklarieren.md) auf eine
+  breite, geprüfte Quellenbasis gestellt.** Neu belegt: Nichtdeklaration kann
+  laut ICMJE als wissenschaftliches Fehlverhalten gelten; Offenlegen kostet
+  kurzfristig Vertrauen, aufgedecktes Verschweigen bei Entdeckung rund
+  doppelt so viel (Schilke & Reimann 2025); die Grenze zwischen zulässigem
+  Copy-Editing und deklarationspflichtiger Inhaltserzeugung ist präzisiert
+  (Springer Nature, Elsevier). Von den dokumentierten Academ-AI-Fällen wurden
+  nur 4,3% je korrigiert. Neun verifizierte Quellen, Details im
   [Forschungsstand: KI-Nutzung deklarieren](../wiki/synthese/ki-deklarieren.md).
 
-- **Neu: [Forschungsstand-Wiki](../wiki/index.md)** — die Website wird
-  fortlaufend mit wissenschaftlichen Quellen unterlegt. Die Recherche läuft
-  als öffentliches LLM-Wiki (Quellnotizen → Konzeptnotizen → Synthesen)
-  mit automatisch generiertem [Wissensgraphen](../wiki/index.md#wissensgraph)
-  und dient zugleich als Fallbeispiel für den Workflow
-  [Eigenes Forschungs-Wiki aufbauen](../workflows/forschungs-wiki.md).
-- **Neu: [Wiki-Vorlagen](wiki-vorlagen.md)** — die Vorlagen, mit denen das
-  Forschungsstand-Wiki gepflegt wird (Quellnotiz, Konzeptnotiz, Synthese,
-  Schema), als kopierfertige Ressource.
-- **Diverse inhaltliche Ergänzungen:**
+- **Neu: [Forschungsstand-Wiki](../wiki/index.md).** Die Empfehlungen der
+  Website werden fortlaufend mit wissenschaftlichen Quellen unterlegt,
+  sichtbar als begehbares LLM-Wiki (Quellnotizen, Konzeptnotizen, Synthesen)
+  mit automatisch erzeugtem [Wissensgraphen](../wiki/index.md#wissensgraph).
+  Es dient zugleich als Fallbeispiel für
+  [Eigenes Forschungs-Wiki aufbauen](../workflows/forschungs-wiki.md);
+  kopierfertige [Wiki-Vorlagen](wiki-vorlagen.md) stehen bereit.
+
+- **Weitere inhaltliche Ergänzungen:**
   [Transkription via Teams/Google Meet](../erheben/transkription.md) für
   Online-Interviews; Praxis-Trick "erst zusammenfassen lassen" auf
   [Das Kontextfenster](../grundlagen/kontextfenster.md); Empfehlung zu
   bezahlten Abos auf der [Startseite](../index.md); Karpathys
   LLM-Deep-Dive-Video auf [Wie ein LLM arbeitet](../grundlagen/wie-llms-arbeiten.md);
-  durchgehende Überleitungen am Seitenende entlang des Forschungsprozesses.
-- **Ingest-Workflow verschärft: Volltext-Prinzip.** Quellnotizen entstehen
-  neu in zwei Phasen (Sichten auf Abstract-Ebene, Vertiefen auf
-  Volltext-Basis); Abstract-only-Notizen sind als vorläufig gekennzeichnet.
-  Zudem: [Claude Cowork als Steuerzentrale](../workflows/thema-zu-uebersicht.md)
-  als Workflow-Variante ergänzt.
+  [Claude Cowork als Steuerzentrale](../workflows/thema-zu-uebersicht.md) als
+  Workflow-Variante; durchgehende Überleitungen am Seitenende entlang des
+  Forschungsprozesses.
+
 - **Neu: dieser Changelog** und automatisches "Zuletzt aktualisiert"-Datum
   auf jeder Seite.

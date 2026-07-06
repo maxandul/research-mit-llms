@@ -34,6 +34,14 @@ erzeugt (`tools/wiki_graph.py`, eingebunden als Hook in `mkdocs.yml`) und
 auf `docs/wiki/index.md` gerendert. Er braucht keine manuelle Pflege —
 saubere Verlinkung genügt.
 
+**Die Evidenz führt, nicht die Website:** Synthesen entsprechen in der
+Regel den Website-Themen, müssen aber nicht entlang der bestehenden
+Website wachsen. Drängt sich aus den Konzepten eine Synthese auf, die den
+Aufbau der Website verändern würde (neue Seite, andere Gliederung,
+zusammengelegte oder gestrichene Inhalte), ist das erlaubt und erwünscht.
+Solche Strukturänderungen dem Menschen vorschlagen, nach Entscheid
+umsetzen und im Changelog begründen.
+
 ## ingest: eine neue Quelle einpflegen (zwei Phasen)
 
 **Phase 1 — Sichten** (Abstract-Ebene, LLM-tauglich):
@@ -50,7 +58,9 @@ saubere Verlinkung genügt.
 
 3. **Volltext beschaffen** (Open Access, arXiv, Verlagsseite; sonst durch
    den Menschen) und in `rohdaten/` ablegen — nie committen. Der Mensch
-   liest mit und/oder stellt dem LLM den Volltext zur Verfügung.
+   liest mit und/oder stellt dem LLM den Volltext zur Verfügung. Zugleich
+   die Quelle in die Zotero-Sammlung `research-mit-llms` einpflegen (siehe
+   Abschnitt "Zotero-Anbindung").
 4. **Quellnotiz erst auf Volltext-Basis** in `docs/wiki/quellen/` anlegen
    (Vorlage unten) und im dortigen `index.md` eintragen. Ist ausnahmsweise
    kein Volltext beschaffbar, im Feld "Geprüft" explizit **"nur Abstract"**
@@ -63,13 +73,47 @@ saubere Verlinkung genügt.
    Verwandte Konzepte gegenseitig verlinken.
 7. **Synthese** des betroffenen Themas aktualisieren.
 
+## Zotero-Anbindung
+
+Parallel zu den Quellnotizen werden alle eingepflegten Quellen in einer
+dedizierten Zotero-Sammlung `research-mit-llms` gesammelt (bibliografische
+Referenz plus PDF-Anhang). Das LLM greift über einen lokal eingerichteten
+Zotero-MCP-Server (Web-API) darauf zu und schreibt ausschliesslich in diese
+Sammlung, nie sonst in die Bibliothek. Der API-Key liegt nur in der lokalen
+Claude-Desktop-Konfiguration (`%APPDATA%\Claude\claude_desktop_config.json`),
+nie im Repo.
+
+**Einpflegen nach Quelltyp (Hybrid):** Die Metadaten sollen zitierfähig
+sein, darum führt die Referenz, nicht die lokale Datei:
+
+- arXiv-Preprint: über die arXiv-URL anlegen (`zotero_add_by_url`). Liefert
+  Titel, Autoren, Abstract, arXiv-ID und PDF.
+- Veröffentlichter Artikel: über die DOI anlegen (`zotero_add_by_doi`).
+  Liefert CrossRef-Metadaten und, wo verfügbar, ein Open-Access-PDF
+  (Unpaywall).
+- Nur wenn weder DOI noch arXiv greifen und kein OA-PDF auffindbar ist: das
+  lokale `rohdaten`-PDF über `zotero_add_from_file` anhängen und die
+  Metadaten anschliessend von Hand nachtragen (`zotero_update_item`). Der
+  reine Datei-Import erzeugt sonst nur ein leeres "document" ohne
+  brauchbare Metadaten.
+
+Vor Schreiboperationen immer erst lesend prüfen (`zotero_get_collections`),
+und neue Einträge dem Menschen zur Kontrolle in Zotero melden.
+
 ## Nach einem Sprint (Thema abgeschlossen)
 
 1. Betroffene Website-Seite anpassen: Quellen-Sektion (Muster:
    `docs/haltung/ki-deklarieren.md`), Vermerk "Evidenz zuletzt geprüft",
    inhaltliche Korrekturen, wenn die Evidenz Empfehlungen widerspricht.
-2. **Changelog-Eintrag** in `docs/ressourcen/changelog.md`: datiert,
-   menschenlesbar, mit dem Was und Warum der inhaltlichen Änderungen.
+2. **Changelog-Eintrag** in `docs/ressourcen/changelog.md`: geschrieben für
+   Besucher der Website, die sich über LLMs in der Forschung informieren,
+   nicht als internes Arbeitslog. Festhalten, was sich inhaltlich geändert
+   hat und was Leser davon haben (neue Belege und Erkenntnisse, neue oder
+   korrigierte Empfehlungen, neue Seiten oder Methoden). Rein interne
+   Vorgänge (Schema-Anpassungen, Umbauten am Ablauf, Werkzeug-Setup) gehören
+   nicht in den Changelog, sondern in die Commit-Historie bzw. dieses Schema;
+   nur wenn sie für Leser sichtbar etwas ändern, kurz und besucherorientiert
+   erwähnen. Datiert und menschenlesbar.
 3. Neue Synthese in `mkdocs.yml` unter `nav:` → Forschungsstand eintragen.
 4. Build testen: `mkdocs build --strict`.
 

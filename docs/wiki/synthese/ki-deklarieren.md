@@ -37,12 +37,14 @@ Fach trugen 2024 bis gegen 22% der Papers LLM-Spuren.
 
 **Das [Transparenz-Dilemma](../konzepte/transparenz-dilemma.md).**
 Deklaration hat kurzfristig einen sozialen Preis: Wer offenlegt, wird
-zunächst weniger vertraut. Der Befund erklärt, warum Deklarieren
+zunächst weniger vertraut. Der Effekt hängt am Akt des Offenlegens selbst
+und bleibt auch bestehen, wenn die Deklaration menschliche Überarbeitung
+oder blosses Korrekturlesen betont. Der Befund erklärt, warum Deklarieren
 schwerfällt — er ändert nichts an der normativen Lage, die eindeutig ist:
 KI-Nutzung wird deklariert, alles andere ist mit dem Transparenzgedanken
 wissenschaftlichen Arbeitens unvereinbar. Auch empirisch trägt das
 Dilemma keine andere Konsequenz: Aufgedeckte verschwiegene Nutzung schadet
-dem Vertrauen mehr als freiwillige Offenlegung.
+dem Vertrauen rund doppelt so stark wie freiwillige Offenlegung.
 
 ## Was die Evidenz kompliziert macht
 
@@ -58,6 +60,10 @@ setzen Fakultäten, Studiengänge oder einzelne Dozierende.
   noch kaum belastbare Forschung.
 - Die Policies ändern sich laufend; Elseviers Policy etwa trägt den Stand
   Juni 2026. Angaben hier veralten entsprechend schnell.
+- Von [Liang et al.](../quellen/liang-2025-llm-praevalenz.md) liegt als
+  Volltext nur der Preprint (Stand Feb 2024) vor; die erweiterten Zahlen
+  der publizierten Fassung (bis Sep 2024) sind nur auf Abstract-Ebene
+  gegengelesen.
 
 ## Konsequenzen für die Website
 

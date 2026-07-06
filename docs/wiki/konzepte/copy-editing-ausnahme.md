@@ -25,6 +25,7 @@ organisiert oder Text erzeugt, gilt die
 ## Verwandte Konzepte
 
 - [Deklarationspflicht bei inhaltlicher Mitwirkung](deklarationspflicht.md)
+- [Transparenz-Dilemma](transparenz-dilemma.md) — experimentell kostete selbst die freiwillige Angabe "KI nur fürs Korrekturlesen" Vertrauen; die Ausnahme erspart einem diese Deklaration
 
 ## Fliesst ein in
 

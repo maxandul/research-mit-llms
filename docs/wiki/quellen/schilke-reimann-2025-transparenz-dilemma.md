@@ -1,8 +1,9 @@
 # Schilke & Reimann (2025): The transparency dilemma
 
 **Evidenzstufe:** Peer-reviewed ·
-**Geprüft:** 06.07.2026, DOI aufgelöst, **nur Abstract** und Berichterstattung
-gegengelesen — Notiz vorläufig, Volltext-Lektüre ausstehend
+**Geprüft:** 06.07.2026, Volltext gelesen (Verlags-PDF, Open Access CC BY,
+aus `rohdaten/`), DOI aufgelöst. Alle 13 Studien präregistriert, Daten und
+Material auf OSF offen.
 
 > Schilke, O., & Reimann, M. (2025): *The transparency dilemma: How AI
 > disclosure erodes trust.* Organizational Behavior and Human Decision
@@ -11,29 +12,52 @@ gegengelesen — Notiz vorläufig, Volltext-Lektüre ausstehend
 
 ## Kernaussagen
 
-- **13 Experimente** über verschiedene Aufgaben (Kommunikation, Analyse,
-  Kreativarbeit) und Akteure (Vorgesetzte, Studierende, Professor:innen,
-  Analyst:innen, Organisationen) zeigen konsistent: Wer KI-Nutzung offenlegt,
-  wird **weniger vertraut** als wer schweigt.
-- Der Effekt widerspricht der Intuition, dass Transparenz Vertrauen schafft
-  ("Transparenz-Dilemma").
+- **13 präregistrierte Experimente** (Meta-Analyse über 4'093 Personen) über
+  verschiedene Aufgaben (E-Mails, Bewerbungen, Bewertungen, Analysen,
+  Grafikdesign) und Akteure (Professorin, Bewerber, Vorgesetzte,
+  Investmentfirma) zeigen konsistent: Wer KI-Nutzung offenlegt, wird
+  **weniger vertraut** als wer schweigt (Gesamteffekt θ = 0.81).
+- Der Effekt ist bemerkenswert robust: Er bleibt bestehen bei allen sechs
+  getesteten Formulierungen der Deklaration, **auch wenn sie betont, dass
+  ein Mensch alles überarbeitet hat oder KI nur fürs Korrekturlesen
+  eingesetzt wurde** (Studie 9); egal ob die Offenlegung freiwillig oder
+  vorgeschrieben ist (Studie 12); und selbst wenn die Beurteilenden schon
+  vorher wussten, dass KI im Spiel war (Studie 11). Es ist also der Akt des
+  Offenlegens selbst, nicht die KI-Nutzung an sich.
+- Mechanismus: Deklaration senkt die wahrgenommene **Legitimität** (Verstoss
+  gegen die Norm, dass Arbeit menschlicher Urteilskraft entspringt), und
+  das senkt Vertrauen (Studien 6-8, drei Mediationsdesigns).
+- Wer KI-Nutzung offenlegt, wird sogar weniger vertraut als ein autonomer
+  KI-Agent, der dieselbe Aufgabe erledigt (Studie 10).
 - Wichtige Randbedingung: Aufgedeckte, **nicht deklarierte** KI-Nutzung
-  beschädigt Vertrauen noch stärker als freiwillige Offenlegung.
+  durch Dritte beschädigt Vertrauen noch deutlich stärker als freiwillige
+  Offenlegung (Studie 13: d = 1.66 vs. d = 0.81 gegenüber Kontrolle).
+- Positive Technikeinstellung und wahrgenommene KI-Zuverlässigkeit
+  schwächen den Effekt ab, heben ihn aber nicht auf. Eigene KI-Erfahrung
+  und KI-Vertrautheit schwächen ihn **nicht**: Menschen verurteilen
+  Offenlegung auch dann, wenn sie selbst KI nutzen.
 
 ## Einordnung
 
-Kontext sind allgemeine Arbeits- und Organisationssituationen, nicht
-spezifisch die Bewertung wissenschaftlicher Arbeiten. Die Übertragbarkeit
-auf Studium und Publikationswesen ist plausibel, aber nicht direkt gemessen.
+Methodisch stark: präregistriert, 13 Experimente, US-Stichproben
+(CloudResearch-Panel, Studierende, Berufsgruppen), auch behaviorale Masse
+mit echtem Geld. Kontext sind allgemeine Arbeits- und
+Organisationssituationen, nicht spezifisch die Bewertung wissenschaftlicher
+Arbeiten; meist "swift trust" gegenüber unbekannten Personen. Die
+Übertragbarkeit auf Studium und Publikationswesen ist plausibel, aber nicht
+direkt gemessen. Randnotiz: Das Paper deklariert selbst die Nutzung von
+ChatGPT-4 und Dall-E (Stimuli, Copy-Editing).
 
 ## Relevanz für die Website
 
 Zentrale Ergänzung für [KI-Nutzung deklarieren](../../haltung/ki-deklarieren.md):
-Die Seite argumentiert, Deklaration sei ein Qualitätsmerkmal — die Evidenz
+Die Seite argumentiert, Deklaration sei ein Qualitätsmerkmal; die Evidenz
 zeigt, dass sie kurzfristig einen sozialen Preis haben kann. Ehrlich ist,
 beides zu sagen: Deklarieren kostet unter Umständen Vertrauen, Auffliegen
-ohne Deklaration kostet mehr — und ist zunehmend als Fehlverhalten
-sanktionierbar ([ICMJE](icmje-ki-nutzung-autoren.md)).
+ohne Deklaration kostet mehr, und ist zunehmend als Fehlverhalten
+sanktionierbar ([ICMJE](icmje-ki-nutzung-autoren.md)). Studie 9 ist auch
+für die Copy-Editing-Ausnahme relevant: Selbst die Angabe "KI nur fürs
+Korrekturlesen" senkte das Vertrauen.
 
 ## Querverweise
 

@@ -4,10 +4,20 @@
 
 Wer KI-Nutzung offenlegt, wird kurzfristig **weniger vertraut** als wer
 schweigt — obwohl Offenlegung als das ethisch richtige Verhalten gilt. Der
-Befund ist experimentell robust (13 Experimente, verschiedene Aufgaben und
-Rollen) und widerspricht der Intuition, dass Transparenz Vertrauen schafft.
+Befund ist experimentell robust (13 präregistrierte Experimente,
+verschiedene Aufgaben und Rollen) und widerspricht der Intuition, dass
+Transparenz Vertrauen schafft. Er hängt am Akt des Offenlegens selbst,
+nicht an der KI-Nutzung: Der Effekt bleibt bei allen getesteten
+Formulierungen bestehen, selbst wenn die Deklaration betont, dass ein
+Mensch alles überarbeitet hat oder KI nur fürs Korrekturlesen eingesetzt
+wurde, und selbst wenn die Beurteilenden die KI-Nutzung schon vorher
+kannten. Als Mechanismus zeigt sich wahrgenommene **Legitimität**:
+Deklaration signalisiert einen Verstoss gegen die Erwartung, dass Arbeit
+menschlicher Urteilskraft entspringt. Positive Technikeinstellung schwächt
+den Effekt ab; eigene KI-Erfahrung schwächt ihn nicht — Menschen
+verurteilen Offenlegung auch dann, wenn sie selbst KI nutzen.
 Entscheidende Randbedingung: Fliegt **verschwiegene** Nutzung auf, ist der
-Vertrauensschaden grösser als bei freiwilliger Offenlegung.
+Vertrauensschaden deutlich grösser als bei freiwilliger Offenlegung.
 
 Wichtig für die Einordnung: Der Befund erklärt das **Zögern**, er
 begründet keine Abwägung. Die normative Konsequenz bleibt eindeutig —
@@ -32,6 +42,7 @@ Arbeiten ist plausibel, aber nicht direkt gemessen.
 
 - [Risiken der Nichtdeklaration](risiken-der-nichtdeklaration.md) — warum Schweigen trotzdem die schlechtere Wahl ist
 - [Deklarationspflicht bei inhaltlicher Mitwirkung](deklarationspflicht.md)
+- [Copy-Editing-Ausnahme](copy-editing-ausnahme.md) — selbst die Angabe "nur Korrekturlesen" kostete im Experiment Vertrauen
 
 ## Fliesst ein in
 

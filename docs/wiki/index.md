@@ -35,7 +35,10 @@ Changelog. Es besteht aus vier Schichten:
    Themen-Sprints hinweg. Hier entsteht das eigentliche Netz.
 4. **Synthesen**: der verdichtete Forschungsstand pro Website-Thema,
    zusammengesetzt aus Konzepten. Aus ihnen fliessen die Belege in die
-   inhaltlichen Seiten.
+   inhaltlichen Seiten. Der Einfluss geht dabei in beide Richtungen: Meist
+   stützen die Synthesen bestehende Seiten, aber die Evidenz führt. Drängt
+   sich eine Synthese auf, die den Aufbau der Website verändern würde,
+   darf und soll sich die Website ändern.
 
 ## Evidenzstufen
 
@@ -127,7 +130,10 @@ Kandidaten priorisieren. **Vertiefen:** Volltext beschaffen (lokal in
 `rohdaten/` abgelegt, nicht im Repo), lesen — erst auf dieser Basis
 entstehen Quellnotiz, Konzeptnotizen und Synthese. Wo ausnahmsweise nur
 das Abstract verfügbar ist, steht das ausdrücklich in der Notiz; solche
-Notizen gelten als vorläufig. Jede inhaltliche Änderung ist im
+Notizen gelten als vorläufig. Parallel wird jede Quelle in einer
+Zotero-Sammlung abgelegt, per MCP direkt vom LLM (Referenz plus PDF, siehe
+[Zotero](../werkzeuge/sammeln/zotero.md)), damit die Belege zitierfähig
+bleiben. Jede inhaltliche Änderung ist im
 [Changelog](../ressourcen/changelog.md) dokumentiert.
 
 Die vollständigen Spielregeln — das **Schema** im Sinn von

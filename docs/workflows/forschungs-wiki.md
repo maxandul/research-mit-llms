@@ -32,6 +32,8 @@ deren Pflege das LLM übernimmt.
 - [llm-wiki](https://github.com/mehmetgoekce/llm-wiki) als fertiges Repo:
   Schema, Setup-Skript und `/wiki`-Befehle für Claude Code mit Obsidian oder Logseq
 - eine Recherchequelle aus [Finden & Erkunden](../werkzeuge/finden/semantic-scholar.md)
+- optional [Zotero](../werkzeuge/sammeln/zotero.md) als Referenzverwaltung,
+  per MCP ans LLM angebunden: Referenzen und PDFs zitierfähig ablegen lassen
 - optional [Obsidian](https://obsidian.md) zum Lesen und zur Graph-Ansicht
 
 ## Schritte
@@ -44,7 +46,9 @@ deren Pflege das LLM übernimmt.
    aufgebaut ist und wie neue Quellen eingepflegt werden (siehe Beispiel).
 4. **ingest (einpflegen).** Eine Quelle nach der anderen: lesen lassen,
    zusammenfassen, in vorhandene Seiten einarbeiten, Querverweise setzen,
-   eine Zeile ins Log schreiben.
+   die Referenz ablegen (optional per [Zotero-MCP](../werkzeuge/sammeln/zotero.md),
+   damit Zitat und Literaturverzeichnis später automatisch entstehen), eine
+   Zeile ins Log schreiben.
 5. **query (fragen).** Fragen an das Wiki stellen. Gute Antworten als neue
    Seite zurückschreiben, damit sich Erkenntnisse anhäufen.
 6. **lint (prüfen).** Regelmässig auf Widersprüche, veraltete Stellen,

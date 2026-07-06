@@ -26,3 +26,12 @@ Die Notizen entstehen sprintweise pro Thema, siehe
 - [Schilke & Reimann (2025): The transparency dilemma](schilke-reimann-2025-transparenz-dilemma.md)
 - [Liang et al. (2025): Quantifying LLM usage in scientific papers](liang-2025-llm-praevalenz.md)
 - [Glynn (2024/2025): Academ-AI](glynn-2024-academ-ai.md)
+
+## Thema: Forschen mit LLMs allgemein
+
+Themenübergreifende Grundsatzquellen, ausserhalb der Sprint-Reihenfolge
+eingepflegt (Juli 2026).
+
+- [Binz et al. (2025): Wie sollen LLMs die Praxis der Wissenschaft verändern?](binz-2025-llms-praxis-wissenschaft.md)
+- [Mabirizi et al. (2025): Systematic Review — GenAI in der Postgraduierten-Forschung](mabirizi-2025-genai-postgrad-review.md)
+- [Eger et al. (2026): Transforming Science with LLMs — Survey](eger-2026-transforming-science-survey.md)

@@ -23,6 +23,9 @@ Gremien und Verlage hinweg.
 - [Deklarationspflicht bei inhaltlicher Mitwirkung](deklarationspflicht.md) —
   die Kehrseite: weil die Verantwortung beim Menschen bleibt, muss der
   Mensch die KI-Nutzung offenlegen
+- [Verantwortung bleibt beim Menschen](verantwortung-bleibt-beim-menschen.md) —
+  das dahinterliegende Grundprinzip, über Policies hinaus auch in der
+  Grundsatzdebatte konsensfähig
 
 ## Fliesst ein in
 

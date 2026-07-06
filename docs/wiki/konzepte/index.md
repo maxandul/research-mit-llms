@@ -16,3 +16,8 @@ diesen Konzepten zusammen — und aus den Verlinkungen entsteht der
 - [Risiken der Nichtdeklaration](risiken-der-nichtdeklaration.md) — Fehlverhalten, Entdeckung
 - [Prävalenz der LLM-Nutzung](praevalenz-llm-nutzung.md) — das Ausmass des Phänomens
 - [Institution statt Einheitsregel](institution-statt-einheitsregel.md) — wer die Formalien setzt
+
+## Themenfeld: Forschen mit LLMs allgemein
+
+- [Verantwortung bleibt beim Menschen](verantwortung-bleibt-beim-menschen.md) — Konsenskern über alle Lager
+- [LLM-Output prüfen](llm-output-pruefen.md) — Prüfpflicht und unterschätzter Prüfaufwand

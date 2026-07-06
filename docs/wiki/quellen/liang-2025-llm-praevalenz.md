@@ -1,38 +1,54 @@
 # Liang et al. (2025): Quantifying LLM usage in scientific papers
 
 **Evidenzstufe:** Peer-reviewed ·
-**Geprüft:** 06.07.2026, **nur Abstract** und Artikel-Seite gegengelesen —
-Notiz vorläufig, Volltext-Lektüre ausstehend (Preprint frei: arXiv:2404.01268)
+**Geprüft:** 06.07.2026, Volltext des Preprints gelesen (arXiv v1 vom
+01.04.2024, aus `rohdaten/`). Achtung: Die publizierte NHB-Fassung erweitert
+die Analyse (1,1 Mio. Papers bis Sep 2024, höhere Endwerte) und liegt hinter
+der Paywall; ihre Zahlen sind nur über Abstract und Artikelseite
+gegengelesen. Auf arXiv existiert keine aktualisierte Version.
 
 > Liang, W., et al. (2025): *Quantifying large language model usage in
 > scientific papers.* Nature Human Behaviour.
 > <https://www.nature.com/articles/s41562-025-02273-8> ·
-> Preprint: [arXiv:2404.01268](https://arxiv.org/abs/2404.01268)
+> Preprint: [arXiv:2404.01268](https://arxiv.org/abs/2404.01268) (v1, Apr 2024)
 
 ## Kernaussagen
 
-- Analyse von über **1,1 Millionen Papers** (arXiv, bioRxiv,
-  Nature-Portfolio, Jan 2020 bis Sep 2024) mit einem populationsbasierten
-  Verfahren über Verschiebungen von Worthäufigkeiten.
-- Deutlicher Anstieg LLM-modifizierter Texte seit ChatGPT: in der
-  Informatik bis ~**22%** der Abstracts/Texte, in Mathematik und
-  Nature-Portfolio-Journals deutlich weniger (bis ~9%).
-- LLM-Nutzung häufiger bei Erstautor:innen mit hoher Preprint-Frequenz, in
-  dicht besetzten Forschungsfeldern und bei kürzeren Papers.
+- Populationsbasiertes Schätzverfahren ("distributional GPT quantification"):
+  Aus Verschiebungen von Worthäufigkeiten (z.B. plötzlicher Anstieg von
+  *realm*, *intricate*, *showcasing*, *pivotal* ab 2023) wird der Anteil α
+  LLM-modifizierter Sätze in einem Korpus geschätzt, ohne Einzeltexte zu
+  klassifizieren. Validierung im Preprint: Schätzfehler unter 3,5
+  Prozentpunkten, Fehlalarmrate vor ChatGPT-Launch bei 2-3%.
+- Preprint (bis Feb 2024, 950'965 Papers): deutlicher Anstieg seit ChatGPT,
+  Informatik-Abstracts bis **17,5%**, Mathematik 4,9%, Nature-Portfolio
+  6,3%. Publizierte Fassung (bis Sep 2024, über 1,1 Mio. Papers): Informatik
+  bis ~**22%**, Mathematik und Nature-Portfolio bis ~9%.
+- LLM-Nutzung ist häufiger bei Erstautor:innen mit hoher Preprint-Frequenz
+  (19,3% vs. 15,6%), in dicht besetzten Forschungsfeldern (22,2% vs. 14,7%,
+  gemessen über Embedding-Distanz zum ähnlichsten Paper) und bei kürzeren
+  Papers (17,7% vs. 13,6%); die Autoren deuten das als Hinweis auf
+  Publikationsdruck als Treiber.
 
 ## Einordnung
 
-Schätzverfahren auf Populationsebene, keine Einzelfall-Detektion; die
-Prozentwerte sind Untergrenzen-Schätzungen mit Modellannahmen. Gerade
-deshalb methodisch solider als "KI-Detektoren" für Einzeltexte.
+Schätzverfahren auf Populationsebene, keine Einzelfall-Detektion; gerade
+deshalb methodisch solider als "KI-Detektoren" für Einzeltexte, deren
+Unzuverlässigkeit das Paper selbst referenziert. Grenzen laut Volltext:
+"LLM-modifiziert" heisst substanziell verändert (mehr als Rechtschreib- und
+Grammatikkorrektur), das Trainingskorpus wurde mit GPT-3.5 erzeugt und auf
+ChatGPT zugeschnitten; die Moderator-Befunde sind Korrelationen, keine
+Kausalaussagen. Die Prozentwerte sind eher Untergrenzen.
 
 ## Relevanz für die Website
 
 Belegt für [KI-Nutzung deklarieren](../../haltung/ki-deklarieren.md), dass
-LLM-Nutzung beim wissenschaftlichen Schreiben **verbreitete Realität** ist —
+LLM-Nutzung beim wissenschaftlichen Schreiben **verbreitete Realität** ist:
 Deklarationsregeln adressieren keinen Randfall. Zusammen mit
 [Academ-AI](glynn-2024-academ-ai.md) zeigt sich die Lücke zwischen
-tatsächlicher und deklarierter Nutzung.
+tatsächlicher und deklarierter Nutzung. Die Abgrenzung "substanzielle
+Modifikation vs. blosse Korrektur" im Messverfahren spiegelt die
+Copy-Editing-Ausnahme vieler Policies.
 
 ## Querverweise
 
