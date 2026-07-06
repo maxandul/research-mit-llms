@@ -166,3 +166,9 @@ Statt der GPT-Instruktion übernimmt eine Schema-Datei im Arbeitsordner die
 Steuerung (siehe [Wiki-Vorlagen](../ressourcen/wiki-vorlagen.md)). OpenAI
 geht mit seiner Desktop-App einen ähnlichen Weg; massgeblich ist die
 jeweilige Original-Doku.
+
+---
+
+Die Übersicht steht, jetzt in die Tiefe: Wie du ein einzelnes Paper
+gründlich erschliesst, zeigt
+[Paper lesen & strukturiert ablegen](paper-lesen-ablegen.md).

@@ -26,8 +26,9 @@ umgewandelt (**Embedding**) und in einer Vektordatenbank gespeichert. Bei einer
 Frage wird die Frage ebenfalls in einen Vektor umgewandelt, die ähnlichsten
 Häppchen werden gesucht und *nur diese* in den Kontext gegeben.
 
-- **Vorteile:** Skaliert auf sehr grosse Mengen (Tausende Dokumente), die nie
-  ins Kontextfenster passen würden. Es wird nur das Relevante geladen.
+- **Vorteile:** Skaliert auf sehr grosse Mengen (viele Dokumente oder
+  tausende Seiten), die nie ins Kontextfenster passen würden. Es wird nur
+  das Relevante geladen.
 - **Nachteile:** Mehr Technik nötig (Embedding-Pipeline, Vektordatenbank). Das
   Modell sieht immer nur Ausschnitte, nie das ganze Dokument. Fragen, die viele
   verstreute Stellen verbinden, oder "vergleiche über alles hinweg" sind
@@ -82,3 +83,9 @@ mit den Quellen umgeht.
 - Mehmet Goekce, *llm-wiki* (fertige Umsetzung mit Claude Code; L1/L2-Architektur,
   Befehle `/wiki ingest`, `/wiki query`, `/wiki lint`; Obsidian oder Logseq):
   <https://github.com/mehmetgoekce/llm-wiki>
+
+---
+
+Alle drei Ansätze laufen durch dasselbe Nadelöhr:
+[Das Kontextfenster](kontextfenster.md) erklärt, warum mehr Material nicht
+automatisch bessere Antworten bedeutet.

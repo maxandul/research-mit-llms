@@ -38,3 +38,8 @@ verlinkte Sammlung von Notizen auf, siehe
 - **Stärke:** Wissen sammelt sich an, statt jedes Mal neu zusammengesucht
   zu werden; ideal für längere Projekte.
 - **Schwäche:** mehr Pflege; je nach Variante etwas Technik nötig.
+
+---
+
+Wie sich Ansatz 2 und 3 technisch unterscheiden und wann welcher passt,
+klärt die nächste Seite: [Kontext, RAG & LLM-Wiki](rag-vs-wiki.md).

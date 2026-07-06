@@ -33,3 +33,8 @@ direkt als Einträge in einer Notion-Datenbank ablegt.
 
 - Produkt/Entwickler: <https://www.notion.com/product/dev>
 - API-Doku: <https://developers.notion.com>
+
+---
+
+Wenn das Wissen nicht nur abgelegt, sondern vom LLM gepflegt werden soll:
+[LLM-Wiki nach Karpathy](llm-wiki.md).

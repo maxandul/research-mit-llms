@@ -92,3 +92,9 @@ mein-wiki/
     Coding-Agenten](../werkzeuge/sammeln/llm-wiki.md), oder nutze direkt das
     [llm-wiki-Repo](https://github.com/mehmetgoekce/llm-wiki) mit vorgefertigtem
     Schema und ingest/query/lint-Befehlen.
+
+---
+
+Damit ist die Literatur versorgt. Weiter im Forschungsprozess: eigene
+Daten erheben, beginnend mit
+[Interviews transkribieren](../erheben/transkription.md).

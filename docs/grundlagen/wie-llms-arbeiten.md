@@ -77,3 +77,18 @@ Antworten, im Gegenteil. Details dazu auf der Seite
     zurück: Das Modell setzt Sprache fort, es führt nichts aus. Wo Ausführung
     nötig ist (zählen, rechnen, jede Zeile bearbeiten), braucht es Werkzeuge
     oder deine Kontrolle.
+
+## Tiefer eintauchen
+
+Wer die Funktionsweise im Detail verstehen will: Andrej Karpathy erklärt in
+*Deep Dive into LLMs like ChatGPT* (YouTube, rund 3,5 Stunden, Englisch,
+Februar 2025) den ganzen Weg von den Trainingsdaten über Tokenisierung und
+Training bis zu Halluzinationen und RLHF, bewusst für ein breites Publikum
+und ohne Programmierkenntnisse als Voraussetzung:
+<https://www.youtube.com/watch?v=7xTGNNLPyMI>
+
+---
+
+Weiter in den Grundlagen: [Drei Arten, LLMs zu nutzen](llm-research.md)
+zeigt, wie du diese Mechanik konkret einspannst, im Chat, mit Werkzeugen
+oder als Wissensbasis.

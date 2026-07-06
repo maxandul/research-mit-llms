@@ -46,3 +46,8 @@ direkten Zitaten. Basiert auf dem Korpus von
     Die Angaben zu Kosten und Kontingenten sind eine Schätzung
     (Stand Juni 2026). Verbindlich sind die aktuellen Konditionen
     auf der offiziellen Seite.
+
+---
+
+Nächstes Werkzeug: [Elicit](elicit.md) fasst Erkenntnisse aus mehreren
+Arbeiten in strukturierten Vergleichstabellen zusammen.

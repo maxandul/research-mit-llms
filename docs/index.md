@@ -67,6 +67,16 @@ Jede Werkzeug-Seite beginnt mit einer kurzen Einordnung:
 - **Kosten**: *gratis*, *Freemium* (Grundfunktionen gratis, mehr kostet)
   oder ein konkretes Abo.
 
+!!! tip "Gratis oder bezahlt?"
+    Zum Ausprobieren reichen die Gratis-Stufen fast überall. Wer LLMs
+    ernsthaft im Forschungsprozess einsetzt, fährt mit einem bezahlten Abo
+    meist deutlich besser: Zugang zu den stärksten Modellen, grössere
+    Kontingente und Zusatzfunktionen wie Projekte, Dateiverarbeitung oder
+    agentische Werkzeuge. Wichtig für Lehrende: In der Lehre darf
+    kostenpflichtige Nutzung nicht vorausgesetzt werden (Chancengleichheit).
+    Für die eigene Forschungsarbeit ist ein Abo aber oft die sinnvollste
+    Investition, wenn du das aktuelle Potenzial voll nutzen willst.
+
 !!! warning "Wichtig zu den Anleitungen"
     Die Anleitungen beschreiben die *Logik* der Einrichtung auf hohem
     Niveau und verlinken auf die offizielle Dokumentation. Die Oberflächen

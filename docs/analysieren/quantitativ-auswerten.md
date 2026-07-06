@@ -63,3 +63,9 @@ gut wie der Code.
 - Die Ausführungsumgebungen haben Zeit- und Speicherlimits; komplexe
   Modelle (Mehrebenenanalysen, grosse Simulationen) gehören in eine lokale
   Umgebung.
+
+---
+
+Die Ergebnisse wollen aufgeschrieben sein. Wie die ganze Arbeit in
+Markdown entsteht und Word nur noch Exportformat ist:
+[Die Arbeit in Markdown aufbauen](../schreiben/arbeit-in-markdown.md).

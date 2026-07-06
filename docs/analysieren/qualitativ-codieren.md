@@ -132,3 +132,8 @@ gilt also dieselbe [Anonymisierungs-Regel](../erheben/anonymisieren.md).
   (siehe [Rollenteilung](../grundlagen/llms-verstehen.md)).
 - Methodisch sauber ist der Einsatz dann, wenn er dokumentiert, geprüft und
   im Methodenteil offengelegt ist.
+
+---
+
+Für Zahlen statt Texte gilt ein anderes Prinzip (Code ausführen statt
+schätzen): [Quantitativ auswerten](quantitativ-auswerten.md).

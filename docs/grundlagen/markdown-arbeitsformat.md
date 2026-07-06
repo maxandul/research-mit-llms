@@ -55,3 +55,8 @@ damit deine Dateien für Claude, ChatGPT und Co. gut les- und bearbeitbar sind.
     Markdown ist nicht nur ein Notizformat. Du kannst deine ganze Arbeit
     darin schreiben und Word nur noch als Exportformat behandeln. Wie das
     geht, zeigt [Die Arbeit in Markdown aufbauen](../schreiben/arbeit-in-markdown.md).
+
+---
+
+Bleibt das Querschnittsthema, das bei jedem Werkzeug mitläuft:
+[Datenschutz & Vertraulichkeit](datenschutz.md).

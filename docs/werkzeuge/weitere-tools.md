@@ -19,3 +19,9 @@ Werkzeuge für andere Phasen des Forschungsprozesses stehen auf den
 jeweiligen Seiten: [Transkription](../erheben/transkription.md),
 [QDA-Software mit KI-Funktionen](../analysieren/qualitativ-codieren.md),
 [Pandoc & Quarto](../schreiben/arbeit-in-markdown.md).
+
+---
+
+Einzelwerkzeuge entfalten ihren Wert erst verkettet. Wie das geht, zeigen
+die Workflows, beginnend mit
+[Vom Thema zur Literaturübersicht](../workflows/thema-zu-uebersicht.md).

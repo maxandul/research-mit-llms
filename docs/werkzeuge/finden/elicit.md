@@ -38,3 +38,8 @@ strukturierte Literaturreviews.
     Die Angaben zu Kosten und Kontingenten sind eine Schätzung
     (Stand Juni 2026). Verbindlich sind die aktuellen Konditionen
     auf der offiziellen Seite.
+
+---
+
+Vom Finden zum Befragen: [ScholarAI](../dialog/scholarai.md) macht die
+Literaturrecherche zum Dialog in einem Custom GPT.

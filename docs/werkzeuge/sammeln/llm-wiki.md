@@ -84,3 +84,8 @@ Du kannst klein und ganz ohne Technik starten und später automatisieren.
 - Workflow: [Eigenes Forschungs-Wiki aufbauen](../../workflows/forschungs-wiki.md)
 - Praxis-Repo: [llm-wiki von Mehmet Goekce](https://github.com/mehmetgoekce/llm-wiki)
   mit Schema, Setup-Skript und Befehlen `/wiki ingest`, `/wiki query`, `/wiki lint`
+
+---
+
+Was es sonst noch gibt, von Research Rabbit bis scite.ai:
+[Weitere Tools im Überblick](../weitere-tools.md).

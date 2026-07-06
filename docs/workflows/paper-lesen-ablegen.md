@@ -58,3 +58,9 @@ Schema zusammen"). So sind alle Notizen vergleichbar.
     Ein einmal festgelegtes Schema ist Gold wert: Du kannst später über
     viele Notizen hinweg vergleichen, filtern und synthetisieren, von Hand
     oder wieder mit einem LLM.
+
+---
+
+Viele solche Lesenotizen wollen zusammenwachsen:
+[Eigenes Forschungs-Wiki aufbauen](forschungs-wiki.md) macht aus
+Einzelnotizen eine gepflegte Wissensbasis.

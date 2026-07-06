@@ -41,7 +41,22 @@ Je näher am Limit, desto eher leidet die Qualität:
   und dem Modell nur das relevante Kapitel geben, siehe
   [Die Arbeit in Markdown aufbauen](../schreiben/arbeit-in-markdown.md).
 
+!!! tip "Praxis-Trick: erst detailliert zusammenfassen lassen"
+    Lade ein Paper hoch und bitte zuerst um eine detaillierte
+    Zusammenfassung, bevor du inhaltlich weiterarbeitest. Das hat zwei
+    handfeste Effekte. Erstens durchläuft das Modell das ganze Dokument
+    einmal aktiv und legt das Destillat ans Ende des Gesprächs: genau dort,
+    wo Folgeantworten am stärksten hinschauen ("lost in the middle" wird
+    entschärft). Zweitens ist die Zusammenfassung ein Kontrollschritt: Du
+    siehst sofort, ob die Datei vollständig gelesen wurde oder ob das Tool
+    im Hintergrund nur Fragmente geholt hat.
+
 !!! note "Grösse variiert"
     Wie gross das Kontextfenster ist, hängt vom Modell ab und wächst mit
     neuen Generationen. Das Grundprinzip bleibt aber bestehen: je näher am
     Limit, desto grösser das Risiko für Qualitätsverlust.
+
+---
+
+Damit Material überhaupt sauber ins Kontextfenster passt, braucht es das
+richtige Format: [Markdown als Arbeitsformat](markdown-arbeitsformat.md).

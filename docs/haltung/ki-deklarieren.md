@@ -157,3 +157,10 @@ ist der letzte Schritt eines sauberen Prozesses, nicht sein Ersatz.
 - Scribbr, *Die ChatGPT-Richtlinien der 23 Schweizer Hochschulen*:
   <https://www.scribbr.ch/ki-tools-nutzen-ch/chatgpt-richtlinien-hochschulen-schweiz/>
   · [Notiz](../wiki/quellen/scribbr-2024-ch-hochschulen.md)
+
+---
+
+Damit ist der Rundgang durch den Forschungsprozess komplett. Wie diese
+Seite selbst zu ihren Belegen kommt, zeigt der
+[Forschungsstand](../wiki/index.md); kopierfertige Prompts für alle Phasen
+sammelt die [Prompt-Bibliothek](../ressourcen/prompt-bibliothek.md).

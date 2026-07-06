@@ -54,6 +54,29 @@ Oberstaatsanwaltschaft), gebaut auf dem Whisper-v3-large-Modell.
   inzwischen eigene Whisper-Dienste, die datenschutzrechtlich geprüft sind.
   Das ist dann oft der einfachste konforme Weg.
 
+## Online-Interviews: Teams und Google Meet
+
+Führst du Interviews ohnehin per Videocall, können Microsoft Teams und
+Google Meet direkt mittranskribieren: als Live-Transkript während des
+Gesprächs oder als Transkript zur Aufzeichnung. Für Online-Interviews ist
+das oft der bequemste Einstieg, mit drei Vorbehalten:
+
+- **Datenschutz:** Die Verarbeitung läuft in der Cloud des Anbieters. Läuft
+  der Dienst über den Hochschul-Account (Microsoft-365- bzw.
+  Google-Workspace-Vertrag der Institution), ist das häufig der
+  datenschutzrechtlich geregelte Weg; der private Gratis-Account ist es
+  nicht. Vorgaben der Institution prüfen, und die Einwilligung der
+  Teilnehmenden muss Aufzeichnung *und* Transkription abdecken.
+- **Qualität:** Hochdeutsch funktioniert ordentlich, **Schweizerdeutsch
+  schlecht**; dafür bleiben die Whisper-Werkzeuge oben die bessere Wahl.
+  Sprecherzuordnung und Fachbegriffe immer gegenhören.
+- **Verfügbarkeit:** Ob Transkription aktiviert ist, hängt von Lizenz und
+  Admin-Einstellungen der Institution ab.
+
+Verbindlich sind die offiziellen Dokus:
+Teams: <https://support.microsoft.com/en-us/teams/meetings/start-stop-and-download-live-transcripts-in-microsoft-teams-meetings> ·
+Google Meet: <https://support.google.com/meet/answer/12849897>
+
 ## Grenzen & Datenschutz
 
 - Lokal heisst: Aufnahmen und Transkripte bleiben auf deinem Rechner. Das
@@ -70,3 +93,8 @@ Oberstaatsanwaltschaft), gebaut auf dem Whisper-v3-large-Modell.
 !!! note "Hinweis zu Kosten & Limits"
     Angaben Stand Juli 2026. Verbindlich sind die verlinkten
     Original-Quellen.
+
+---
+
+Bevor Transkripte in einen Cloud-Dienst dürfen, kommt der wichtigste
+Schritt: [Daten anonymisieren](anonymisieren.md).

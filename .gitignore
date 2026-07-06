@@ -1,9 +1,11 @@
 # Build-Output von MkDocs (wird von GitHub Actions erzeugt)
 site/
 
-# Rohquellen des Forschungsstand-Wikis (PDFs, Volltexte) — bleiben aus
-# urheberrechtlichen Gründen lokal und werden nie gepusht
-rohdaten/
+# Rohquellen des Forschungsstand-Wikis (PDFs, Volltexte): bleiben aus
+# urheberrechtlichen Gründen lokal und werden nie gepusht.
+# Nur die README ist versioniert, damit der Ordner im Repo sichtbar ist.
+rohdaten/*
+!rohdaten/README.md
 
 # Python
 __pycache__/

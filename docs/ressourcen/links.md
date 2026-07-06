@@ -14,6 +14,12 @@ Original-Doku.
 - Zotero: <https://www.zotero.org> · API: <https://www.zotero.org/support/dev/web_api/v3/start>
 - Notion: <https://www.notion.com/product/dev> · API: <https://developers.notion.com>
 
+## Lernen & Verstehen
+
+- Karpathy, *Deep Dive into LLMs like ChatGPT* (YouTube, ~3,5 h, Englisch;
+  Funktionsweise von LLMs für ein breites Publikum):
+  <https://www.youtube.com/watch?v=7xTGNNLPyMI>
+
 ## LLM-Wiki
 
 - Karpathy, Original-Idee: <https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f>

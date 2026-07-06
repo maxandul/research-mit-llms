@@ -26,6 +26,13 @@ sind nicht aufgeführt; die vollständige Historie liegt im
 - **Neu: [Wiki-Vorlagen](wiki-vorlagen.md)** — die Vorlagen, mit denen das
   Forschungsstand-Wiki gepflegt wird (Quellnotiz, Konzeptnotiz, Synthese,
   Schema), als kopierfertige Ressource.
+- **Diverse inhaltliche Ergänzungen:**
+  [Transkription via Teams/Google Meet](../erheben/transkription.md) für
+  Online-Interviews; Praxis-Trick "erst zusammenfassen lassen" auf
+  [Das Kontextfenster](../grundlagen/kontextfenster.md); Empfehlung zu
+  bezahlten Abos auf der [Startseite](../index.md); Karpathys
+  LLM-Deep-Dive-Video auf [Wie ein LLM arbeitet](../grundlagen/wie-llms-arbeiten.md);
+  durchgehende Überleitungen am Seitenende entlang des Forschungsprozesses.
 - **Ingest-Workflow verschärft: Volltext-Prinzip.** Quellnotizen entstehen
   neu in zwei Phasen (Sichten auf Abstract-Ebene, Vertiefen auf
   Volltext-Basis); Abstract-only-Notizen sind als vorläufig gekennzeichnet.

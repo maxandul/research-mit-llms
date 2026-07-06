@@ -38,3 +38,8 @@ Webquellen angibt. Gut für den schnellen Einstieg in ein Thema.
 ## Offizielle Links
 
 - Website: <https://www.perplexity.ai>
+
+---
+
+Gefundenes will verwaltet sein. Weiter zum Sammeln & Synthetisieren,
+beginnend mit der Literaturverwaltung: [Zotero](../sammeln/zotero.md).

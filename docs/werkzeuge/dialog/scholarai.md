@@ -127,3 +127,8 @@ Regel: Keine Aussage ohne verlinkte Quelle.
 
 - Anleitung "Make a GPT": <https://docs.scholarai.io/make-a-gpt>
 - ScholarAI: <https://scholarai.io>
+
+---
+
+Statt eigene Quellen anzubinden, kannst du auch nur mit deinen eigenen
+Dokumenten chatten: [NotebookLM](notebooklm.md).

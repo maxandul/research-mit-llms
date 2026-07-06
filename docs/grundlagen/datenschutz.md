@@ -41,3 +41,9 @@ lokal.
     Jede Werkzeug-Seite enthält einen kurzen Datenschutz-Hinweis im
     Abschnitt "Grenzen & Datenschutz". Die hier genannten Grundregeln gelten
     aber überall.
+
+---
+
+Damit sind die Grundlagen komplett. Weiter geht es im Forschungsprozess mit
+der Literatur, beginnend beim Fundament der meisten Recherche-Werkzeuge:
+[Semantic Scholar](../werkzeuge/finden/semantic-scholar.md).

@@ -70,3 +70,8 @@ inklusive sichtbarem Diff pro Änderung.
 - Kommt Feedback auf eine ältere Version, zuerst prüfen, ob die Stelle
   inzwischen schon anders ist. Auch das kann das LLM übernehmen ("Welche
   dieser Kommentare betreffen Stellen, die es so noch gibt?").
+
+---
+
+Zum Schluss des Forschungsprozesses die Haltungsfrage: Wie legst du den
+KI-Einsatz sauber offen? [KI-Nutzung deklarieren](../haltung/ki-deklarieren.md).

@@ -15,6 +15,8 @@ Rechtschreibung, CC BY 4.0). Inhalte unter `docs/`, Navigation in
 ## Schreibregeln
 
 - Kein Eszett (ß), immer Doppel-S. Umlaute (ä/ö/ü) normal verwenden.
+- Auf Gedankenstriche möglichst verzichten; stattdessen Kommas,
+  Doppelpunkte, Klammern oder kurze Sätze verwenden.
 - Niederschwelliger, praktischer Ton; keine unnötigen Anglizismen.
 - Interne Verweise als relative Markdown-Links (keine Wikilinks).
 

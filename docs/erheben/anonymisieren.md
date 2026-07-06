@@ -100,3 +100,8 @@ Bei dutzenden Transkripten wird Handarbeit unrealistisch. Dann:
 - Prüfe die Einwilligungserklärungen deiner Teilnehmenden: Deckt sie die
   Verarbeitung mit (Cloud-)Software ab?
 - Im Zweifel gilt weiter die Grundregel: weglassen oder lokal arbeiten.
+
+---
+
+Mit sauber pseudonymisierten Daten steht die Auswertung offen:
+[Qualitative Daten codieren](../analysieren/qualitativ-codieren.md).

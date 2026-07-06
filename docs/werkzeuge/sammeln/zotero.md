@@ -41,3 +41,8 @@ auslesen und befüllen.
 
 - Website: <https://www.zotero.org>
 - Web API v3: <https://www.zotero.org/support/dev/web_api/v3/start>
+
+---
+
+Für Notizen und strukturierte Wissensdatenbanken neben den reinen
+Referenzen: [Notion](notion.md).

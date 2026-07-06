@@ -39,3 +39,8 @@ auf die hochgeladenen Dokumente, nicht aus dem offenen Web.
     Die Angaben zu Kosten und Kontingenten sind eine Schätzung
     (Stand Juni 2026). Verbindlich sind die aktuellen Konditionen
     auf der offiziellen Seite.
+
+---
+
+Für den schnellen Überblick über das offene Web statt der eigenen
+Quellen: [Perplexity](perplexity.md).
