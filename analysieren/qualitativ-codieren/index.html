@@ -1517,6 +1517,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#quellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quellen
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1899,6 +1910,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wiki/synthese/llms-verstehen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLMs verstehen (Grundhaltung)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wiki/synthese/ki-deklarieren/" class="md-nav__link">
         
   
@@ -1907,6 +1946,34 @@
     
   
     KI-Nutzung deklarieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wiki/synthese/qualitativ-codieren/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qualitative Daten codieren
   
 
     
@@ -2359,6 +2426,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#quellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quellen
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2386,11 +2464,24 @@
 Fragebogen-Antworten, Feldnotizen) enorm viel Arbeit abnehmen. Der Schlüssel
 liegt darin, es als <strong>zweiten Codierer</strong> zu behandeln, nicht als Orakel: Es
 macht Vorschläge nach deinem Codebuch, du prüfst und entscheidest.</p>
+<p>Erste Studien zu diesem Vorgehen liegen vor, mit einer wichtigen
+Einschränkung: Die Forschung ist jung, lückenhaft, und die Modelle ändern
+sich schneller, als Studien erscheinen. Als Momentaufnahme (Stand Juli
+2026): Beim <strong>deduktiven Codieren mit klarem Codebuch</strong> erreichten
+aktuelle Modelle in einzelnen Untersuchungen die Zuverlässigkeit
+erfahrener menschlicher Codierer, abhängig von Modellwahl und
+Arbeitsweise (Quellen unten). Genau davon hängt viel ab; die berichteten
+Übereinstimmungen reichen von 36 bis 99 Prozent, je nach Modell, Prompt
+und Prüfstrenge. Umso wichtiger, dass du deine eigene Konfiguration
+prüfst, statt dich auf publizierte Werte zu verlassen.</p>
 <h2 id="voraussetzungen">Voraussetzungen<a class="headerlink" href="#voraussetzungen" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Daten sind <a href="../../erheben/anonymisieren/">anonymisiert bzw. pseudonymisiert</a>,
   bevor irgendetwas in einen Cloud-Dienst geht.</li>
-<li>Ein Chat-Werkzeug wie Claude oder ChatGPT.</li>
+<li>Ein Chat-Werkzeug wie Claude oder ChatGPT, möglichst mit einem
+  <strong>aktuellen Modell mit aktiviertem Reasoning</strong> ("Nachdenken"): In einem
+  Benchmark mit 46 Modellen (2026) machte genau das den Unterschied
+  zwischen zuverlässigem und unzuverlässigem Codieren aus.</li>
 <li>Die Daten als Tabelle (Excel/CSV): eine Zeile pro Aussage oder Segment.</li>
 </ul>
 <h2 id="der-workflow">Der Workflow<a class="headerlink" href="#der-workflow" title="Permanent link">&para;</a></h2>
@@ -2443,6 +2534,15 @@ dass die Bedeutung ohne Raten erschliessbar ist.</p>
 die ganze Tabelle auf einmal. Verlange pro Zeile Code, Begründung und
 Ankerzitat. Eine kopierfertige Vorlage steht in der
 <a href="../../ressourcen/prompt-bibliothek/">Prompt-Bibliothek</a>.</p>
+<p>Zwei dieser Prinzipien zeigten in bisherigen Studien übereinstimmend
+einen positiven Effekt: Nach einer <strong>Begründung pro Entscheid</strong> fragen
+verbesserte die Codierqualität, und <strong>kleinere Aufgabenpakete schlugen
+den grossen Wurf</strong>. Bei
+schwierigen oder unscharfen Codes lohnt sich die konsequenteste Variante
+davon: einen Code pro Durchgang codieren lassen statt das ganze Codebuch
+auf einmal. Die konkrete Häppchengrösse von 20 bis 30 Zeilen ist dagegen
+Praxiserfahrung, kein Forschungsergebnis; experimentiere, was bei deinem
+Material funktioniert.</p>
 <div class="admonition warning">
 <p class="admonition-title">Stolperstein: das LLM schätzt über den Daumen</p>
 <p>LLMs sind Muster-Vervollständiger, keine Schleifen (siehe
@@ -2470,12 +2570,34 @@ Zeile einzeln zu bearbeiten. Dagegen hilft:</p>
   du hier BELASTUNG_EMO vergeben?"). Die Begründungen zeigen, wo
   Definitionen nachgeschärft werden müssen. Danach ggf. einen zweiten
   Durchgang mit dem verbesserten Codebuch fahren.</li>
+<li><strong>Nach Fallhöhe staffeln:</strong> Gute Gesamtwerte können systematische
+  Schwächen bei einzelnen Codes verdecken; in Benchmarks trifft es
+  ausgerechnet heikle, indirekt geäusserte Themen. Codes, bei denen
+  Fehlcodierung am meisten schadet (etwa Belastung, Sicherheit,
+  Diskriminierung), gezielt und vollständiger prüfen als den Rest, nicht
+  nur per Zufallsstichprobe.</li>
 </ul>
 <h3 id="5-ergebnisse-zuruckfuhren-und-dokumentieren">5. Ergebnisse zurückführen und dokumentieren<a class="headerlink" href="#5-ergebnisse-zuruckfuhren-und-dokumentieren" title="Permanent link">&para;</a></h3>
 <p>Codes in die Excel-Tabelle übernehmen (per ID zuordnen) und das Vorgehen
-fürs Methodenkapitel festhalten: Codebuch-Version, Modell, Prompt,
-Prüfschritte. Das gehört auch in die
-<a href="../../haltung/ki-deklarieren/">Deklaration der KI-Nutzung</a>.</p>
+fürs Methodenkapitel festhalten: Codebuch-Version, <strong>exakte Modellversion</strong>
+(nicht nur "ChatGPT", sondern z.B. Modellname und Datum), Einsatzform
+(Web-Chat, API, lokal) und relevante Einstellungen, die verwendeten
+Prompts sowie alle Prüfschritte. Das entspricht dem Stand der
+Reporting-Diskussion (Stichwort COREQ + LLM): In der publizierten
+Forschung fehlen diese Angaben bisher meistens, was die Studien
+unvergleichbar macht; deine Arbeit macht es besser. Das gehört auch in
+die <a href="../../haltung/ki-deklarieren/">Deklaration der KI-Nutzung</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Lohnt sich das bei einer kleinen Interviewstudie?</p>
+<p>Ehrliche Einordnung aus der Forschung: Der Aufbau eines sauber
+geprüften LLM-Workflows (Codebuch schärfen, Vergleichscodierung,
+Differenzen klären) kostet bei wenigen Interviews ähnlich viel Zeit
+wie das Selbst-Codieren, das zudem Nähe zum Material stiftet. Das
+LLM spielt seine Stärke bei grossen Materialmengen aus. Bei kleinen
+Studien ist es vor allem als <strong>Zweitmeinung und Sparringpartner</strong>
+wertvoll (Differenzen zeigen unscharfe Definitionen), weniger als
+Zeitersparnis.</p>
+</div>
 <h2 id="profi-variante-der-agent-arbeitet-die-schleife-ab">Profi-Variante: der Agent arbeitet die Schleife ab<a class="headerlink" href="#profi-variante-der-agent-arbeitet-die-schleife-ab" title="Permanent link">&para;</a></h2>
 <p>Wer die Vollständigkeit nicht der Disziplin des Modells überlassen will,
 lässt einen Coding-Agenten (Claude Code, Cursor) die Tabelle
@@ -2503,12 +2625,58 @@ die Prompts, und die KI-Funktionen laufen ebenfalls über die Cloud, es
 gilt also dieselbe <a href="../../erheben/anonymisieren/">Anonymisierungs-Regel</a>.</p>
 <h2 id="grenzen">Grenzen<a class="headerlink" href="#grenzen" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Das LLM codiert nach sprachlicher Ähnlichkeit. Feine Bedeutungen, Ironie
-  und kontextabhängige Aussagen prüft besser ein Mensch.</li>
+<li>Das LLM codiert am zuverlässigsten, was explizit dasteht. Bei
+  <strong>implizit Geäussertem, Randfällen und feinen Bedeutungen</strong> (Ironie,
+  Kontextabhängiges) zeigten in bisherigen Tests auch die
+  leistungsstärksten Modelle Schwächen. Ob das so bleibt, ist offen;
+  bis auf Weiteres prüft hier der Mensch (siehe "Nach Fallhöhe
+  staffeln" oben).</li>
 <li>Interpretation, Theoriebezug und die Synthese der Befunde bleiben bei dir
-  (siehe <a href="../../grundlagen/llms-verstehen/">Rollenteilung</a>).</li>
+  (siehe <a href="../../grundlagen/llms-verstehen/">Rollenteilung</a>). Ein Teil der
+  qualitativen Community hält schon das maschinelle Codieren für
+  unvereinbar mit reflexiver qualitativer Forschung; diese Debatte ist
+  offen. Prüfe, wo deine Methodentradition (und deine Betreuungsperson)
+  steht.</li>
+<li>Eine rote Linie, die nicht an der Modellgeneration hängt:
+  <strong>LLMs simulieren keine Teilnehmenden.</strong>
+  Synthetische "Interviewdaten" aus LLM-Personas wirken plausibel, haben
+  aber keine gelebte Erfahrung hinter sich und unterlaufen Einwilligung
+  und Handlungsmacht echter Communities. LLMs helfen beim Verarbeiten
+  erhobener Daten, nicht beim Erzeugen.</li>
 <li>Methodisch sauber ist der Einsatz dann, wenn er dokumentiert, geprüft und
   im Methodenteil offengelegt ist.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Evidenz zuletzt geprüft: Juli 2026</p>
+<p>Die Belege zu dieser Seite sind im
+<a href="../../wiki/synthese/qualitativ-codieren/">Forschungsstand: Qualitative Daten codieren</a>
+zusammengefasst. Wichtig beim Lesen: Die Studienlage ist jung und
+unvollständig, Modell, Version und Einsatzart bestimmen die
+Ergebnisse. Alle Befunde sind Momentaufnahmen; beobachtete Schwächen
+können mit der nächsten Modellgeneration verschwunden sein.</p>
+</div>
+<h2 id="quellen">Quellen<a class="headerlink" href="#quellen" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Kempny et al. (2026), <em>The use and methodological reporting of large
+  language models in qualitative research: a scoping review</em>, BMC Medical
+  Research Methodology — peer-reviewed:
+  <a href="https://doi.org/10.1186/s12874-026-02913-1">https://doi.org/10.1186/s12874-026-02913-1</a>
+  · <a href="../../wiki/quellen/kempny-2026-llm-qualitativ-scoping-review/">Notiz</a></li>
+<li>Dunivin (2025), <em>Scaling hermeneutics: a guide to qualitative coding
+  with LLMs for reflexive content analysis</em>, EPJ Data Science —
+  peer-reviewed: <a href="https://doi.org/10.1140/epjds/s13688-025-00548-8">https://doi.org/10.1140/epjds/s13688-025-00548-8</a>
+  · <a href="../../wiki/quellen/dunivin-2025-scaling-hermeneutics/">Notiz</a></li>
+<li>Misra et al. (2026), <em>Large Language Models in Qualitative Analysis</em>,
+  International Journal of Qualitative Methods — peer-reviewed:
+  <a href="https://doi.org/10.1177/16094069261426100">https://doi.org/10.1177/16094069261426100</a>
+  · <a href="../../wiki/quellen/misra-2026-open-source-llms-codieren/">Notiz</a></li>
+<li>Kapania et al. (2025), <em>Simulacrum of Stories</em>, CHI '25 — peer-reviewed:
+  <a href="https://doi.org/10.1145/3706598.3713220">https://doi.org/10.1145/3706598.3713220</a>
+  · <a href="../../wiki/quellen/kapania-2025-simulacrum-of-stories/">Notiz</a></li>
+<li>Marston et al. (2026), <em>Can Large Language Models Reliably Code
+  Qualitative Humanitarian Data?</em> — Preprint:
+  <a href="https://arxiv.org/abs/2606.26541">https://arxiv.org/abs/2606.26541</a>
+  · <a href="../../wiki/quellen/marston-2026-humanitaere-daten-benchmark/">Notiz</a></li>
 </ul>
 <hr />
 <p>Für Zahlen statt Texte gilt ein anderes Prinzip (Code ausführen statt
@@ -2533,7 +2701,7 @@ schätzen): <a href="../quantitativ-auswerten/">Quantitativ auswerten</a>.</p>
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6. Juli 2026 14:25:47 UTC">6. Juli 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="7. Juli 2026 09:50:22 UTC">7. Juli 2026</span>
   </span>
 
     
