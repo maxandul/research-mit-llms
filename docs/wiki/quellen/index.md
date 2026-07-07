@@ -27,6 +27,18 @@ Die Notizen entstehen sprintweise pro Thema, siehe
 - [Liang et al. (2025): Quantifying LLM usage in scientific papers](liang-2025-llm-praevalenz.md)
 - [Glynn (2024/2025): Academ-AI](glynn-2024-academ-ai.md)
 
+## Thema: Qualitative Daten codieren
+
+Sprint Juli 2026. Beim Lesen dieser Quellen gilt besonders: Modell,
+Version und Einsatzart bestimmen die Ergebnisse, siehe
+[Modell und Einsatzart bestimmen das Ergebnis](../konzepte/modell-und-einsatzart.md).
+
+- [Kempny et al. (2026): Scoping Review zu LLMs in qualitativer Forschung](kempny-2026-llm-qualitativ-scoping-review.md)
+- [Dunivin (2025): Scaling hermeneutics](dunivin-2025-scaling-hermeneutics.md)
+- [Misra et al. (2026): Open-Source-LLMs lokal für Themenanalyse](misra-2026-open-source-llms-codieren.md)
+- [Kapania et al. (2025): Simulacrum of Stories](kapania-2025-simulacrum-of-stories.md)
+- [Marston et al. (2026): Benchmark über 46 LLMs](marston-2026-humanitaere-daten-benchmark.md)
+
 ## Thema: Forschen mit LLMs allgemein
 
 Themenübergreifende Grundsatzquellen, ausserhalb der Sprint-Reihenfolge

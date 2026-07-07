@@ -96,6 +96,33 @@ die Transparenz gegenüber anderen: siehe
     "Entscheiden". Es sind zwei gegenübergestellte Verantwortungsbereiche,
     nicht acht 1:1-Beziehungen.
 
+Diese Rollenteilung ist keine Eigenheit dieser Website, sondern der
+Konsenskern der wissenschaftlichen Debatte: Selbst Positionen, die sich
+über den Nutzen von LLMs in der Forschung heftig streiten, sind sich
+einig, dass Verantwortung, Urteil und Verstehen beim Menschen bleiben.
+Auch die Prüfregel oben ist empirisch unterlegt; in Experimenten waren
+z.B. 16% der von ChatGPT generierten Referenzen komplett erfunden.
+
+!!! info "Evidenz zuletzt geprüft: Juli 2026"
+    Die Belege sind im
+    [Forschungsstand: LLMs verstehen](../wiki/synthese/llms-verstehen.md)
+    zusammengefasst; die mechanischen Einzelaussagen der Grundlagen folgen
+    mit einem eigenen Recherche-Sprint.
+
+## Quellen
+
+- Binz et al. (2025), *How should the advancement of large language
+  models affect the practice of science?*, PNAS — peer-reviewed:
+  <https://doi.org/10.1073/pnas.2401227121>
+  · [Notiz](../wiki/quellen/binz-2025-llms-praxis-wissenschaft.md)
+- Mabirizi et al. (2025), *A systematic review of the impact of
+  generative AI on postgraduate research* — peer-reviewed:
+  <https://doi.org/10.1007/s44163-025-00495-3>
+  · [Notiz](../wiki/quellen/mabirizi-2025-genai-postgrad-review.md)
+- Eger et al. (2026), *Transforming Science with Large Language Models* —
+  Preprint: <https://arxiv.org/abs/2502.05151>
+  · [Notiz](../wiki/quellen/eger-2026-transforming-science-survey.md)
+
 ---
 
 Zwei Anschlüsse: Die mechanischen Eigenheiten hinter diesen Stärken und

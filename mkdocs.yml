@@ -108,7 +108,9 @@ nav:
   - Forschungsstand:
       - Über dieses Wiki: wiki/index.md
       - Synthesen:
+          - LLMs verstehen (Grundhaltung): wiki/synthese/llms-verstehen.md
           - KI-Nutzung deklarieren: wiki/synthese/ki-deklarieren.md
+          - Qualitative Daten codieren: wiki/synthese/qualitativ-codieren.md
       - Konzeptnotizen: wiki/konzepte/index.md
       - Quellnotizen: wiki/quellen/index.md
   - Ressourcen:

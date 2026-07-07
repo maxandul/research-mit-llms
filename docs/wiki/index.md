@@ -7,7 +7,7 @@ beschreibt. Was dort als Anleitung steht, wurde hier real durchgeführt.
 
 !!! warning "Im Aufbau"
     Das Wiki wächst sprintweise, Thema für Thema. Bisher abgedeckt:
-    KI-Nutzung deklarieren. Als Nächstes geplant: qualitatives Codieren,
+    KI-Nutzung deklarieren, qualitatives Codieren. Als Nächstes geplant:
     Transkription, Funktionsweise von LLMs. Der Stand jeder Notiz ist an
     ihrem Prüfdatum erkennbar; Änderungen stehen im
     [Changelog](../ressourcen/changelog.md).
@@ -56,6 +56,14 @@ inhaltlichen Seiten ist deshalb gekennzeichnet:
 Das Feld bewegt sich schnell: Manches ist bei Publikation schon überholt,
 zu manchen Praxisfragen existiert schlicht noch keine belastbare Forschung.
 Wo die Evidenz dünn ist, steht das dabei.
+
+Aus demselben Grund gilt hier ein zweiter Prüfblick neben der
+Evidenzstufe: **Welche Modelle wurden wie eingesetzt, und wann?** Ob eine
+Studie GPT-3.5 im Web-Chat oder ein aktuelles Reasoning-Modell per API
+getestet hat, entscheidet darüber, was ihre Ergebnisse heute noch
+bedeuten. Jede Quellnotiz hält diese Angaben deshalb fest; die
+Begründung steht im Konzept
+[Modell und Einsatzart bestimmen das Ergebnis](konzepte/modell-und-einsatzart.md).
 
 ## Wissensgraph
 

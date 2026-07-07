@@ -37,4 +37,5 @@ Selbstverpflichtung, nicht der Detektierbarkeit
 ## Fliesst ein in
 
 - [Website: KI-Nutzung deklarieren](../../haltung/ki-deklarieren.md) (Abschnitt "Was die Deklaration nicht ersetzt")
-- Website: Grundlagen- und Analyse-Seiten (Kernregel "alles Belegrelevante selbst prüfen")
+- [Synthese: LLMs verstehen](../synthese/llms-verstehen.md)
+- [Website: LLMs verstehen](../../grundlagen/llms-verstehen.md) (Kernregel "alles Belegrelevante selbst prüfen")

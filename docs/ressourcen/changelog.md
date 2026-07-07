@@ -8,6 +8,39 @@ sind nicht aufgeführt; die vollständige Historie liegt im
 
 ## Juli 2026
 
+- **Thema [Qualitative Daten codieren](../analysieren/qualitativ-codieren.md)
+  auf eine geprüfte Quellenbasis gestellt** (5 Quellen, davon 4
+  peer-reviewed). Erste Studien stützen den "zweiter Codierer"-Ansatz der
+  Seite: Beim deduktiven Codieren mit Codebuch erreichten aktuelle
+  Modelle mit aktiviertem Reasoning in Tests die Zuverlässigkeit
+  erfahrener menschlicher Codierer. Die Studienlage ist allerdings jung
+  und schnell veraltend; die Seite formuliert die Befunde deshalb als
+  Momentaufnahmen. Neu auf der Seite: pro Entscheid eine Begründung
+  verlangen, heikle Codes gezielter prüfen als per
+  Zufallsstichprobe, exakte Modellversion und Einstellungen im
+  Methodenteil dokumentieren, eine ehrliche Einordnung, wann sich der
+  Aufwand bei kleinen Interviewstudien nicht lohnt, und eine rote Linie:
+  LLMs simulieren keine Interview-Teilnehmenden. Details im
+  [Forschungsstand: Qualitative Daten codieren](../wiki/synthese/qualitativ-codieren.md).
+
+- **Neuer Lesegrundsatz im Forschungsstand: Modell und Einsatzart
+  bestimmen das Ergebnis.** Ob eine Studie GPT-3.5 im Web-Chat oder ein
+  aktuelles Reasoning-Modell per API getestet hat, entscheidet darüber,
+  was ihre Zahlen heute bedeuten. Jede Quellnotiz weist Modell, Version
+  und Einsatzart deshalb explizit aus; die Begründung steht im neuen
+  Konzept [Modell und Einsatzart](../wiki/konzepte/modell-und-einsatzart.md).
+
+- **Lokale Modelle differenzierter eingeordnet.** "Lokal heisst schwächer"
+  stimmt so pauschal nicht mehr: Kleine Modelle für den eigenen Rechner
+  fallen bei anspruchsvollen Aufgaben ab, grosse selbst gehostete offene
+  Modelle erreichen inzwischen Spitzenniveau, brauchen aber
+  Infrastruktur. Neu auf [Datenschutz](../grundlagen/datenschutz.md).
+
+- **Grundlagen mit Quellen unterlegt.** Die Rollenteilung und die
+  Prüfregel auf [LLMs verstehen](../grundlagen/llms-verstehen.md) sind
+  jetzt belegt (u.a. PNAS-Debatte); neue Synthese
+  [LLMs verstehen](../wiki/synthese/llms-verstehen.md).
+
 - **Fallbeispiel erweitert: eine Zotero-Bibliothek per MCP an ein LLM
   anbinden.** Der [Forschungsstand](../wiki/index.md) verwaltet seine Quellen
   jetzt zusätzlich in Zotero, angebunden über einen MCP-Server, sodass das

@@ -47,10 +47,20 @@ Der Schritt-für-Schritt-Workflow:
 
 Wer mit besonders sensiblen Daten arbeitet, kann LLMs auch **lokal** auf dem
 eigenen Rechner betreiben (Stichworte: Ollama, LM Studio). Dann verlässt
-nichts den eigenen Computer, auf Kosten von etwas mehr Einrichtung und
-schwächeren Modellen. Auch die
+nichts den eigenen Computer, auf Kosten von etwas mehr Einrichtung. Auch die
 [Transkription von Interviews](../erheben/transkription.md) geht komplett
 lokal.
+
+Zur Leistung lohnt sich ein differenzierter Blick, denn "lokal" heisst
+nicht mehr automatisch "deutlich schwächer": Kleine Modelle, die auf
+einem normalen Rechner laufen, fallen bei anspruchsvollen Aufgaben (etwa
+dem [Codieren](../analysieren/qualitativ-codieren.md)) messbar ab. Grosse
+offene Modelle mit Reasoning erreichen inzwischen das Niveau der
+Cloud-Spitzenmodelle, brauchen aber Server-Infrastruktur, wie sie eher
+Institute oder Hochschulen betreiben (Belege im
+[Forschungsstand](../wiki/konzepte/lokale-modelle-sensible-daten.md)).
+Vor dem Einsatz mit den eigenen Daten in jedem Fall an einer kleinen
+Stichprobe prüfen, ob die Qualität reicht.
 
 !!! note "Hinweis pro Werkzeug"
     Jede Werkzeug-Seite enthält einen kurzen Datenschutz-Hinweis im

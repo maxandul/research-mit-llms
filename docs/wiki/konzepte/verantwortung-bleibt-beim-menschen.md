@@ -35,4 +35,5 @@ Verantwortungsübernahme überprüfbar.
 ## Fliesst ein in
 
 - [Website: KI-Nutzung deklarieren](../../haltung/ki-deklarieren.md)
-- Website: Grundlagen-Seiten (Rollenteilung), Synthese folgt mit Sprint "wie-llms-arbeiten"
+- [Synthese: LLMs verstehen](../synthese/llms-verstehen.md)
+- [Website: LLMs verstehen](../../grundlagen/llms-verstehen.md) (Rollenteilung)

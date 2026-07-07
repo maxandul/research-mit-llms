@@ -23,7 +23,7 @@ Rechtschreibung, CC BY 4.0). Inhalte unter `docs/`, Navigation in
 ## Das Wiki: vier Schichten
 
 ```text
-rohdaten/               PDFs/Volltexte — gitignored, NIE committen (Urheberrecht)
+rohdaten/               PDFs/Volltexte, nur Durchgang — gitignored, NIE committen (Urheberrecht)
 docs/wiki/quellen/      eine Notiz pro Quelle (Provenienz + Verifikation)
 docs/wiki/konzepte/     atomare Themen, quellenübergreifend (das Netz)
 docs/wiki/synthese/     Forschungsstand pro Website-Thema
@@ -73,6 +73,37 @@ umsetzen und im Changelog begründen.
    Verwandte Konzepte gegenseitig verlinken.
 7. **Synthese** des betroffenen Themas aktualisieren.
 
+## Grundsatz: Modell und Einsatzart mitlesen
+
+LLM-Fähigkeiten entwickeln sich so schnell und die Einsatzarten sind so
+vielfältig, dass empirische Befunde ohne Methodenkontext wertlos oder
+irreführend sind. Deshalb bei **jeder** empirischen Quelle zu LLMs:
+
+- Im Methodenteil prüfen und in der Quellnotiz festhalten: Welche Modelle
+  (exakte Version), wie eingesetzt (Prompting, Parameter, API/Web/lokal,
+  Reasoning-Modus), wann durchgeführt (nicht nur wann publiziert)?
+- Schlussfolgerungen entsprechend datieren und begrenzen: Negative Befunde
+  mit schwachen oder falsch konfigurierten Modellen widerlegen die
+  Machbarkeit nicht; positive Befunde gelten für die getestete
+  Konfiguration, nicht für "LLMs" allgemein. Studien von 2024/2025 sind
+  bei Modellfragen oft schon überholt; ihre Werte als untere Schranke lesen.
+- In Konzeptnotizen und Synthesen Modellgeneration und Einsatzart der
+  Belege sichtbar machen, bevor daraus Website-Empfehlungen werden.
+- **Vorsichtig formulieren.** Die Studienlage zu LLM-Fähigkeiten ist jung
+  (breite Nutzung erst seit Ende 2022), unvollständig und veraltet
+  schnell. Deshalb keine Gewissheits- oder Superlativ-Rhetorik: nicht
+  "gut belegt", "gut untersucht", "gut gestützt", "bisher grösster",
+  "selbst die besten Modelle". Stattdessen datierte Momentaufnahmen und
+  Vergangenheitsform für Testergebnisse: "in bisherigen Studien", "in
+  einem Benchmark mit 46 Modellen (2026)", "Stand Juli 2026", "zeigten
+  in Tests". Beobachtete Schwächen nie als dauerhafte Eigenschaften
+  beschreiben; sie können mit der nächsten Modellgeneration behoben
+  sein. Stabiler formulieren darf man nur, was nicht an der
+  Modellgeneration hängt (z.B. Policy-Konsense, epistemologische
+  Argumente).
+
+Ankerpunkt im Wiki: `docs/wiki/konzepte/modell-und-einsatzart.md`.
+
 ## Zotero-Anbindung
 
 Parallel zu den Quellnotizen werden alle eingepflegten Quellen in einer
@@ -99,6 +130,16 @@ sein, darum führt die Referenz, nicht die lokale Datei:
 
 Vor Schreiboperationen immer erst lesend prüfen (`zotero_get_collections`),
 und neue Einträge dem Menschen zur Kontrolle in Zotero melden.
+
+**`rohdaten/` ist nur ein Durchgangsordner, Zotero die dauerhafte Ablage:**
+Sobald eine Quelle kontrolliert in Zotero liegt (zitierfähige Metadaten
+und PDF-Anhang vorhanden), das lokale PDF aus `rohdaten/` löschen. Erst
+nach dieser Kontrolle löschen, nie davor; hängt in Zotero kein PDF am
+Eintrag, bleibt die Datei lokal liegen. Vorsicht bei `zotero_add_from_file`
+mit `if_exists='file'`: schlägt die DOI-Extraktion aus dem PDF fehl,
+entsteht statt des Anhangs ein leeres "document"-Duplikat. Dann Metadaten
+ins Duplikat nachtragen (`zotero_update_item`) und den PDF-losen
+Doppelgänger löschen, so bleibt das PDF am zitierfähigen Eintrag.
 
 ## Nach einem Sprint (Thema abgeschlossen)
 
@@ -159,6 +200,21 @@ Kernaussage in 1-2 Absätzen, quellenübergreifend formuliert.
 ## Geplante Sprint-Reihenfolge
 
 1. ~~ki-deklarieren~~ (Juli 2026 abgeschlossen)
-2. qualitativ-codieren
-3. transkription
-4. wie-llms-arbeiten
+2. qualitativ-codieren (LLM als zweiter Codierer, Intercoder-Übereinstimmung,
+   methodologische Kritik)
+3. transkription (Whisper-Benchmarks Deutsch/Schweizerdeutsch, Diarisierung,
+   Wirkung von Transkriptionsfehlern auf die Analyse)
+4. wie-llms-arbeiten (erweitert um Kontextfenster und Halluzinationen:
+   lost in the middle, Tokenisierung/Rechnen, Prompt-Sensitivität)
+5. anonymisieren-datenschutz (Re-Identifikation, Grenzen der Anonymisierung
+   qualitativer Daten, Einwilligung; hohe Fallhöhe)
+6. ki-literaturrecherche (Evaluationen der Recherche-Werkzeuge, Recall und
+   Abdeckung, erfundene Referenzen vertieft)
+7. schreiben-mit-llms (Copy-Editing vs. Inhaltserzeugung, Chancen für
+   Nicht-Muttersprachler, KI-Detektoren, kognitive Auslagerung/De-Skilling)
+8. quantitativ-auswerten (Korrektheit LLM-generierten Analysecodes,
+   Reproduzierbarkeit)
+
+**Beobachtungsliste** (noch ohne Sprint, könnten neue Seiten erzwingen):
+Bias/WEIRD-Verzerrungen in Forschungsergebnissen, LLMs im Peer Review,
+Lernen mit LLMs als eigene Haltung-Seite (fällt vorerst unter Sprint 7).

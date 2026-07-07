@@ -17,7 +17,15 @@ diesen Konzepten zusammen — und aus den Verlinkungen entsteht der
 - [Prävalenz der LLM-Nutzung](praevalenz-llm-nutzung.md) — das Ausmass des Phänomens
 - [Institution statt Einheitsregel](institution-statt-einheitsregel.md) — wer die Formalien setzt
 
+## Themenfeld: Qualitative Daten codieren
+
+- [LLM als zweiter Codierer](llm-als-zweiter-codierer.md) — was das Framing trägt und unter welchen Bedingungen
+- [Grenzen interpretativer Tiefe](grenzen-interpretativer-tiefe.md) — implizites, Randfälle, heikle Kategorien
+- [Methodologische Kritik am LLM-Einsatz](methodologische-kritik-qualitativ.md) — Reflexivität, Positionalität, synthetische Daten
+- [Lokale Modelle für sensible Daten](lokale-modelle-sensible-daten.md) — Datenhoheit gegen Leistung, pro Modell zu validieren
+
 ## Themenfeld: Forschen mit LLMs allgemein
 
 - [Verantwortung bleibt beim Menschen](verantwortung-bleibt-beim-menschen.md) — Konsenskern über alle Lager
 - [LLM-Output prüfen](llm-output-pruefen.md) — Prüfpflicht und unterschätzter Prüfaufwand
+- [Modell und Einsatzart bestimmen das Ergebnis](modell-und-einsatzart.md) — Lese- und Dokumentationsgrundsatz bei schneller Modellentwicklung
