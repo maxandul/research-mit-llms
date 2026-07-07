@@ -16,6 +16,13 @@ sind nicht aufgeführt; die vollständige Historie liegt im
   [Zotero](../werkzeuge/sammeln/zotero.md) und im Workflow
   [Eigenes Forschungs-Wiki aufbauen](../workflows/forschungs-wiki.md).
 
+- **MCP verständlich erklärt.** Was hinter dem Model Context Protocol
+  steckt, erklären jetzt die Grundlagen
+  ([Drei Arten, LLMs zu nutzen](../grundlagen/llm-research.md)) und das
+  [Glossar](glossar.md). Neu auf
+  [Datenschutz & Vertraulichkeit](../grundlagen/datenschutz.md): worauf zu
+  achten ist, wenn ein LLM per Anbindung direkt auf eigene Konten zugreift.
+
 - **Neues Themenfeld: LLMs in der Forschung allgemein.** Drei
   Grundsatzquellen eingearbeitet (die PNAS-Debatte von Binz et al. 2025, ein
   Systematic Review zu generativer KI in der Postgraduierten-Forschung von

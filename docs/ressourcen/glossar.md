@@ -29,6 +29,12 @@ Laden (oben) sieht das Modell nie das ganze Dokument.
 **Action / Connector / Tool**: Eine Anbindung, über die ein LLM externe
 Dienste aufruft (suchen, lesen, schreiben).
 
+**MCP (Model Context Protocol)**: Offener Standard, der solche Anbindungen
+vereinheitlicht: Ein MCP-Server stellt einem LLM die Funktionen eines
+Dienstes (etwa Zotero) als Werkzeuge bereit, unabhängig vom verwendeten
+Chat-Programm. Siehe das Praxisbeispiel auf
+[Zotero](../werkzeuge/sammeln/zotero.md).
+
 **API**: Schnittstelle, über die Programme miteinander sprechen. Oft mit
 einem "API-Key" (Zugangsschlüssel) abgesichert.
 

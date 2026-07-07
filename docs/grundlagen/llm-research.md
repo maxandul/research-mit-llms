@@ -23,6 +23,15 @@ Code-Ausführung beim [quantitativen Auswerten](../analysieren/quantitativ-auswe
 gehört in diese Kategorie: Das Modell ruft ein Werkzeug (die
 Programmier-Umgebung) auf, statt selbst zu "rechnen".
 
+Damit nicht jeder Anbieter eigene Anbindungen erfindet, gibt es dafür
+inzwischen einen offenen Standard: **MCP** (Model Context Protocol). Ein
+MCP-Server stellt die Funktionen eines Dienstes als Werkzeuge bereit, die
+jedes MCP-fähige Chat-Programm (etwa Claude Desktop) nutzen kann. Ein
+konkretes Beispiel samt Einrichtung zeigt die Seite
+[Zotero](../werkzeuge/sammeln/zotero.md): Dort legt das LLM Referenzen und
+PDFs direkt in der Literaturverwaltung ab. Genau so pflegt auch diese
+Website ihren [Forschungsstand](../wiki/index.md).
+
 - **Stärke:** aktuelle, belegbare Antworten mit echten Quellen; kann auf
   deine eigenen Daten zugreifen und verlässlich rechnen.
 - **Schwäche:** Einrichtung nötig; Qualität hängt von den angebundenen

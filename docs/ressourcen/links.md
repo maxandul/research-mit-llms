@@ -19,6 +19,10 @@ Original-Doku.
 - Karpathy, *Deep Dive into LLMs like ChatGPT* (YouTube, ~3,5 h, Englisch;
   Funktionsweise von LLMs für ein breites Publikum):
   <https://www.youtube.com/watch?v=7xTGNNLPyMI>
+- Model Context Protocol (offizielle Doku, Englisch):
+  <https://modelcontextprotocol.io>
+- Zotero-MCP-Server (im Fallbeispiel dieser Website im Einsatz):
+  <https://github.com/54yyyu/zotero-mcp>
 
 ## LLM-Wiki
 

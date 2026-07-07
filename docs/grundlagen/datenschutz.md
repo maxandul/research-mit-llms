@@ -20,6 +20,21 @@ sensiblen Quellen.
 - **Institutionelle Vorgaben.** Deine Hochschule oder Organisation hat
   womöglich eigene Regeln zu KI-Werkzeugen und Datenschutz.
 
+## Wenn das LLM selbst zugreift: angebundene Werkzeuge
+
+Beim Hochladen entscheidest du bei jeder Eingabe neu, was das Modell sieht.
+Anders bei angebundenen Werkzeugen (Actions, Connectors, MCP-Server): Dort
+erhält das LLM dauerhaften Zugriff auf ein Konto, oft auch schreibend. Das
+ist praktisch (siehe [Zotero](../werkzeuge/sammeln/zotero.md)), verlangt
+aber eigene Vorsicht:
+
+- **So wenig Rechte wie möglich.** Zugriff auf eine dedizierte Sammlung
+  oder einen eigenen Ordner beschränken, nie auf das ganze Konto.
+- **Zugangsschlüssel lokal halten.** API-Keys gehören in die lokale
+  Konfiguration, nie in ein Repository oder einen Chat.
+- **Schreibaktionen kontrollieren.** Was das LLM anlegt oder ändert,
+  regelmässig durchsehen; LLMs machen Fehler.
+
 ## Der Ausweg für sensible Daten: anonymisieren
 
 "Nichts Sensibles hochladen" heisst nicht, auf Cloud-Werkzeuge verzichten zu
