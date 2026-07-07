@@ -2303,7 +2303,7 @@
 <h1 id="zotero">Zotero<a class="headerlink" href="#zotero" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Auf einen Blick</p>
-<p><strong>Schwierigkeit:</strong> Einsteiger · <strong>Kosten:</strong> gratis (Speicher-Abo optional) · <strong>Wofür:</strong> Literaturverwaltung</p>
+<p><strong>Schwierigkeit:</strong> Einsteiger bis Profi (Grundfunktionen einfach, LLM-Anbindung anspruchsvoller) · <strong>Kosten:</strong> gratis (Speicher-Abo optional) · <strong>Wofür:</strong> Literaturverwaltung</p>
 </div>
 <h2 id="was-ist-es">Was ist es?<a class="headerlink" href="#was-ist-es" title="Permanent link">&para;</a></h2>
 <p>Ein kostenloses, offenes Literaturverwaltungsprogramm. Sammelt Referenzen
@@ -2338,6 +2338,27 @@ auslesen und befüllen.</p>
 anbinden: Das Modell liest dann Sammlungen und legt neue Einträge samt PDF
 selbst ab. Auf dieser Website ist das gelebte Praxis, der
 <a href="../../../wiki/">Forschungsstand</a> verwaltet seine Quellen so.</p>
+<p><strong>Custom GPT Action oder MCP-Server?</strong> Beide Wege nutzen im Kern die
+Zotero Web API, unterscheiden sich aber in drei Punkten:</p>
+<ul>
+<li><strong>Einrichtung und Pflege.</strong> Für eine Action muss die API-Beschreibung
+  (ein OpenAPI-Schema) von Hand im Custom GPT hinterlegt und aktuell
+  gehalten werden. Ein MCP-Server meldet seine Funktionen dem Chat-Programm
+  selbst in standardisierter Form: Das Modell sieht automatisch, was es
+  kann, ohne dass jemand Endpunkte beschreibt.</li>
+<li><strong>Funktionsumfang.</strong> Eine Action kann genau das, was die Web API direkt
+  anbietet. Ein MCP-Server ist ein Programm mit eigener Logik: zotero-mcp
+  kombiniert etwa mehrere API-Aufrufe zu einem Schritt, liest PDFs und
+  bietet semantische Suche über die Bibliothek, alles Funktionen, die die
+  Web API allein nicht kennt.</li>
+<li><strong>Ort und Reichweite.</strong> Eine Action läuft in der Cloud des Anbieters
+  (der API-Key liegt dort) und ist an ChatGPT gebunden. Ein lokaler
+  MCP-Server läuft auf dem eigenen Rechner: Der Key bleibt lokal, derselbe
+  Server funktioniert mit jedem MCP-fähigen Chat-Programm (etwa Claude
+  Desktop) nach dem offenen
+  <a href="../../../grundlagen/llm-research/">MCP-Standard</a>, und er kann auch auf
+  lokale Dateien zugreifen. Die Einrichtung ist dafür etwas technischer.</li>
+</ul>
 <p>Ein bewährter Weg (Claude Desktop unter Windows): den Server
 <a href="https://github.com/54yyyu/zotero-mcp">zotero-mcp</a> installieren und mit dem
 Web-API-Key einrichten. Das Modell erhält so Lese- und Schreibzugriff auf
@@ -2392,7 +2413,7 @@ Referenzen: <a href="../notion/">Notion</a>.</p>
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6. Juli 2026 19:38:54 UTC">6. Juli 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="7. Juli 2026 06:22:01 UTC">7. Juli 2026</span>
   </span>
 
     
