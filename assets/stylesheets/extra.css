@@ -443,6 +443,164 @@
 }
 
 
+/* --- 4d. Chips ------------------------------------------------------
+   Kleine Marken fuer Evidenzstufe, Pruefvermerk und Status. Sie tragen
+   immer Text, nie nur Farbe: Farbe allein waere nicht barrierefrei. */
+
+.fl-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--fl-space-2xs) var(--fl-space-xs);
+  margin-bottom: var(--fl-space-s);
+}
+
+.fl-chip {
+  display: inline-block;
+  padding: .12em .7em;
+  border-radius: var(--fl-radius-pille);
+  font-size: .66rem;
+  line-height: 1.7;
+  white-space: nowrap;
+  background-color: var(--fl-bg-gedaempft);
+  color: var(--fl-text-sekundaer);
+}
+
+.fl-chip--peer     { background-color: var(--fl-ev-peer-bg);     color: var(--fl-ev-peer-fg); }
+.fl-chip--preprint { background-color: var(--fl-ev-preprint-bg); color: var(--fl-ev-preprint-fg); }
+.fl-chip--policy   { background-color: var(--fl-ev-policy-bg);   color: var(--fl-ev-policy-fg); }
+.fl-chip--doku     { background-color: var(--fl-ev-doku-bg);     color: var(--fl-ev-doku-fg); }
+.fl-chip--praxis   { background-color: var(--fl-ev-praxis-bg);   color: var(--fl-ev-praxis-fg); }
+.fl-chip--geprueft { background-color: var(--fl-ev-peer-bg);     color: var(--fl-ev-peer-fg); }
+.fl-chip--warnung  { background-color: var(--fl-ev-praxis-bg);   color: var(--fl-ev-praxis-fg); }
+.fl-chip--gefahr   { background-color: var(--fl-gefahr-bg);      color: var(--fl-ampel-rot); }
+
+
+/* --- 4e. Notizkopf und Werkzeug-Steckbrief -------------------------
+   Beide erzeugt tools/wiki_komponenten.py aus dem Frontmatter. Im
+   Markdown steht davon nichts mehr. */
+
+.md-typeset .fl-notizkopf {
+  border: var(--fl-linie-duenn) solid var(--fl-linie);
+  border-radius: var(--fl-radius-karte);
+  background-color: var(--fl-bg-karte);
+  padding: var(--fl-space-s) var(--fl-space-m) var(--fl-space-xs);
+  margin: 0 0 var(--fl-space-l);
+  font-size: .74rem;
+}
+
+.md-typeset .fl-notizkopf__notiz {
+  margin: 0 0 var(--fl-space-xs);
+  color: var(--fl-text-sekundaer);
+  line-height: 1.6;
+}
+
+.md-typeset .fl-studie {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: .2rem var(--fl-space-s);
+  margin: var(--fl-space-xs) 0 var(--fl-space-xs);
+  padding-top: var(--fl-space-xs);
+  border-top: var(--fl-linie-duenn) solid var(--fl-linie);
+}
+
+.md-typeset .fl-studie dt {
+  color: var(--fl-text-leise);
+  font-weight: 400;
+  margin: 0;
+}
+
+.md-typeset .fl-studie dd {
+  margin: 0;
+  color: var(--fl-text);
+}
+
+.md-typeset .fl-herkunft,
+.md-typeset .fl-stand {
+  margin: var(--fl-space-xs) 0 var(--fl-space-2xs);
+  padding-top: var(--fl-space-2xs);
+  border-top: var(--fl-linie-duenn) solid var(--fl-linie);
+  font-size: .62rem;
+  color: var(--fl-text-leise);
+}
+
+.md-typeset .fl-stand {
+  border-top: none;
+  padding-top: 0;
+  margin: calc(-1 * var(--fl-space-s)) 0 var(--fl-space-l);
+}
+
+.md-typeset .fl-steckbrief {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--fl-space-s) var(--fl-space-m);
+  border: var(--fl-linie-duenn) solid var(--fl-linie);
+  border-left: 3px solid var(--fl-primary);
+  border-radius: var(--fl-radius-karte);
+  background-color: var(--fl-bg-karte);
+  padding: var(--fl-space-s) var(--fl-space-m);
+  margin: 0 0 var(--fl-space-m);
+}
+
+.md-typeset .fl-steckbrief__feld dt {
+  font-size: .62rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--fl-text-leise);
+  margin: 0 0 .1rem;
+}
+
+.md-typeset .fl-steckbrief__feld dd {
+  margin: 0;
+  font-size: .76rem;
+  color: var(--fl-text);
+}
+
+/* Die Schwierigkeitsstufe zusaetzlich als Punkte, damit sie nicht nur
+   am Wort haengt und auf einen Blick vergleichbar ist. */
+.md-typeset .fl-stufe {
+  color: var(--fl-accent);
+  letter-spacing: .1em;
+  margin-right: .3em;
+  font-size: .7em;
+  vertical-align: .1em;
+}
+
+.md-typeset .fl-zusatz {
+  display: block;
+  font-size: .66rem;
+  color: var(--fl-text-leise);
+  line-height: 1.5;
+  margin-top: .1rem;
+}
+
+
+/* --- 4f. Zwei zusaetzliche Hinweisbox-Typen ------------------------
+   `evidenz` verweist von einer Inhaltsseite in den Forschungsstand,
+   `datenschutz` markiert rechtlich heikle Stellen. Beide sind eigene
+   Typen, damit dieselbe Sache überall gleich aussieht. Verwendung:
+   `!!! evidenz "Titel"` bzw. `!!! datenschutz "Titel"`. */
+
+:root {
+  --md-admonition-icon--evidenz: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9zm-7 9.09v4L12 20l7-3.91v-4L12 16z"/></svg>');
+  --md-admonition-icon--datenschutz: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11z"/></svg>');
+}
+
+.md-typeset .evidenz     { --fl-adm-linie: var(--fl-ev-preprint-linie); --fl-adm-bg: var(--fl-ev-preprint-bg); --fl-adm-fg: var(--fl-ev-preprint-fg); }
+.md-typeset .datenschutz { --fl-adm-linie: var(--fl-gefahr-linie);      --fl-adm-bg: var(--fl-gefahr-bg);      --fl-adm-fg: var(--fl-ampel-rot); }
+
+.md-typeset .evidenz > .admonition-title::before,
+.md-typeset .evidenz > summary::before {
+  -webkit-mask-image: var(--md-admonition-icon--evidenz);
+  mask-image: var(--md-admonition-icon--evidenz);
+}
+
+.md-typeset .datenschutz > .admonition-title::before,
+.md-typeset .datenschutz > summary::before {
+  -webkit-mask-image: var(--md-admonition-icon--datenschutz);
+  mask-image: var(--md-admonition-icon--datenschutz);
+}
+
+
 /* --- 5. Fusszeile und Kleinigkeiten -------------------------------- */
 
 .md-footer-meta {
