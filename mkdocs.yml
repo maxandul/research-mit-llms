@@ -120,3 +120,14 @@ nav:
       - Wiki-Vorlagen: ressourcen/wiki-vorlagen.md
       - Changelog: ressourcen/changelog.md
   - Über: ueber.md
+
+# --------------------------------------------------------------------
+#  Statusmarken: kommen aus dem Frontmatter der Wiki-Notizen (Feld
+#  `status`, siehe CLAUDE.md). Das Feld wird nur bei vorläufigen oder
+#  überholten Notizen gesetzt; fehlt es, gilt die Notiz als geprüft und
+#  bekommt keine Marke.
+# --------------------------------------------------------------------
+extra:
+  status:
+    draft: Vorläufig, nur Abstract geprüft
+    deprecated: Überholt, wird nicht mehr gepflegt

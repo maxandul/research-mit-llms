@@ -34,6 +34,10 @@ erzeugt (`tools/wiki_graph.py`, eingebunden als Hook in `mkdocs.yml`) und
 auf `docs/wiki/index.md` gerendert. Er braucht keine manuelle Pflege —
 saubere Verlinkung genügt.
 
+Jede Notiz trägt zusätzlich einen YAML-Frontmatter-Block nach dem
+**Open Knowledge Format (OKF v0.2)**, siehe eigenen Abschnitt unten. Was
+sich daraus maschinell prüfen lässt, prüft `tools/wiki_lint.py`.
+
 **Die Evidenz führt, nicht die Website:** Synthesen entsprechen in der
 Regel den Website-Themen, müssen aber nicht entlang der bestehenden
 Website wachsen. Drängt sich aus den Konzepten eine Synthese auf, die den
@@ -62,11 +66,14 @@ umsetzen und im Changelog begründen.
    die Quelle in die Zotero-Sammlung `research-mit-llms` einpflegen (siehe
    Abschnitt "Zotero-Anbindung").
 4. **Quellnotiz erst auf Volltext-Basis** in `docs/wiki/quellen/` anlegen
-   (Vorlage unten) und im dortigen `index.md` eintragen. Ist ausnahmsweise
-   kein Volltext beschaffbar, im Feld "Geprüft" explizit **"nur Abstract"**
-   vermerken — solche Notizen gelten als vorläufig.
+   (Vorlage unten, inklusive Frontmatter) und im dortigen `index.md`
+   eintragen. Ist ausnahmsweise kein Volltext beschaffbar, das im Feld
+   "Geprüft" und im Frontmatter unter `verified[].umfang: "nur Abstract"`
+   vermerken und `status: draft` setzen — solche Notizen gelten als
+   vorläufig und erscheinen auf der Website mit Statusmarke.
 5. **Evidenzstufe bestimmen:** Peer-reviewed / Preprint / Policy / Doku /
-   Praxis (Definitionen in `docs/wiki/index.md`).
+   Praxis (Definitionen in `docs/wiki/index.md`). Sie steht doppelt: als
+   Fliesstext im Kopf der Notiz und als `evidenzstufe:` im Frontmatter.
 6. **Konzeptnotizen** anlegen oder erweitern: Welche atomaren Aussagen
    stützt die Quelle? Bestehende Konzepte zuerst prüfen (`docs/wiki/konzepte/index.md`),
    nur bei echtem neuem Sachverhalt ein neues Konzept anlegen.
@@ -81,7 +88,10 @@ irreführend sind. Deshalb bei **jeder** empirischen Quelle zu LLMs:
 
 - Im Methodenteil prüfen und in der Quellnotiz festhalten: Welche Modelle
   (exakte Version), wie eingesetzt (Prompting, Parameter, API/Web/lokal,
-  Reasoning-Modus), wann durchgeführt (nicht nur wann publiziert)?
+  Reasoning-Modus), wann durchgeführt (nicht nur wann publiziert)? Diese
+  Angaben gehören zusätzlich in den `studie:`-Block des Frontmatters, damit
+  sie abfragbar sind. Nicht mit `generated:` verwechseln: dort steht, wer
+  die **Notiz** geschrieben hat, nicht welches Modell die Studie getestet hat.
 - Schlussfolgerungen entsprechend datieren und begrenzen: Negative Befunde
   mit schwachen oder falsch konfigurierten Modellen widerlegen die
   Machbarkeit nicht; positive Befunde gelten für die getestete
@@ -103,6 +113,48 @@ irreführend sind. Deshalb bei **jeder** empirischen Quelle zu LLMs:
   Argumente).
 
 Ankerpunkt im Wiki: `docs/wiki/konzepte/modell-und-einsatzart.md`.
+
+## Frontmatter: Open Knowledge Format (OKF v0.2)
+
+Jede Notiz beginnt mit einem YAML-Block nach dem
+[Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf),
+einer offenen Spezifikation für LLM-Wikis (Google Cloud, v0.1 Juni 2026,
+v0.2 Juli 2026, Stand Draft). Wir sind **kompatibel, nicht migriert**: Die
+Prosa bleibt, wie sie ist, und die Ordnerstruktur ebenfalls. Der Frontmatter
+macht nur maschinenlesbar, was ohnehin schon in Worten dastand.
+
+Warum überhaupt: nicht wegen Interoperabilität (die brauchen wir kaum),
+sondern weil die Vertrauensfelder aus v0.2 genau die Fragen abbilden, die
+das Wiki ohnehin stellt: Wer hat das geprüft, wie gründlich, und ist es
+noch aktuell? Weil OKF als Draft noch in Bewegung ist, gilt: Felder
+ergänzen ja, Prosa oder Struktur dafür umbauen nein.
+
+**Pflicht ist nur `type`.** Erlaubte Werte: `Quellnotiz`, `Konzeptnotiz`,
+`Synthese`. Alles andere ist optional, und OKF erlaubt ausdrücklich eigene
+Zusatzfelder (`evidenzstufe`, `studie` sind unsere).
+
+| Feld | Wo | Bedeutung |
+|------|-----|-----------|
+| `type` | überall | Pflichtfeld, die Wiki-Schicht |
+| `title` | überall | Kurztitel; beschriftet auch den Knoten im Wissensgraphen |
+| `description` | überall | ein Satz, erscheint als Meta-Description der Seite |
+| `resource` | Quellnotiz | DOI oder kanonische URL der Quelle |
+| `tags` | überall | Thema und Art, kleines gemeinsames Vokabular |
+| `generated` | überall | wer die **Notiz** verfasst hat, mit Datum |
+| `verified` | Quellnotiz | Liste von Prüfungen: `{ by: "human:name", at: Datum, umfang: … }` |
+| `status` | überall | nur setzen, wenn `draft` (vorläufig) oder `deprecated`; Weglassen heisst stabil und vermeidet eine leere Statusmarke |
+| `stale_after` | Quellnotiz | absolutes Datum der Nachprüfung |
+| `sources` | Quellnotiz | was tatsächlich gelesen wurde, wenn das von `resource` abweicht |
+| `evidenzstufe` | Quellnotiz | Peer-reviewed / Preprint / Policy / Doku / Praxis |
+| `studie` | empirische Quellnotiz | Modelle, Einsatzart, Durchführungszeitpunkt |
+
+**Fristen für `stale_after`:** Policy und Praxis 12 Monate, Preprint 12
+Monate, Peer-reviewed 24 Monate, je ab Prüfdatum. Bei Quellen, deren
+Aussagen an einer Modellgeneration hängen, im Zweifel kürzer.
+
+Zwei Fallstricke: Im Frontmatter keine Zeilen verwenden, die mit `# `
+beginnen (der Graph-Hook liest solche Zeilen sonst als Titel), und
+`generated` nie mit den getesteten Modellen der Studie füllen.
 
 ## Zotero-Anbindung
 
@@ -156,20 +208,46 @@ Doppelgänger löschen, so bleibt das PDF am zitierfähigen Eintrag.
    nur wenn sie für Leser sichtbar etwas ändern, kurz und besucherorientiert
    erwähnen. Datiert und menschenlesbar.
 3. Neue Synthese in `mkdocs.yml` unter `nav:` → Forschungsstand eintragen.
-4. Build testen: `mkdocs build --strict`.
+4. Prüfen und bauen: `python tools/wiki_lint.py`, dann
+   `mkdocs build --strict`.
 
 ## lint: regelmässige Prüfung
 
-- Widersprüche zwischen Konzepten markieren, nicht stillschweigend glätten.
-- Veraltete Policies kennzeichnen (Policies ändern sich laufend; das
-  Prüfdatum steht in jeder Quellnotiz).
-- **Quellnotizen mit Vermerk "nur Abstract" melden** — sie sind vorläufig
-  und sollen mit dem Volltext nachgerüstet werden.
-- Verwaiste Notizen (ohne eingehende Links) und tote Links melden.
+Maschinell, aus dem Frontmatter: **`python tools/wiki_lint.py`** meldet
+fehlendes oder unvollständiges Frontmatter, Notizen ohne Verifikation,
+Notizen mit Vermerk "nur Abstract", abgelaufene `stale_after`-Daten,
+`deprecated`- und `draft`-Notizen, verwaiste Notizen und tote interne
+Links. Rückgabewert 1 bei Befunden, damit der Aufruf in CI verwendbar ist.
+
+Von Hand bleibt: **Widersprüche zwischen Konzepten markieren**, nicht
+stillschweigend glätten. Und inhaltlich prüfen, ob eine als fällig
+gemeldete Policy tatsächlich geändert wurde.
 
 ## Vorlage: Quellnotiz
 
 ```markdown
+---
+type: Quellnotiz
+title: "Kurztitel"
+description: >-
+  Ein Satz, was die Quelle zeigt.
+resource: https://doi.org/…
+tags: [thema, art]
+
+generated: { by: "llm-assistiert, redigiert von human:name", at: JJJJ-MM-TT }
+verified:
+  - { by: "human:name", at: JJJJ-MM-TT, umfang: Volltext }
+stale_after: JJJJ-MM-TT
+# status: draft        nur bei vorläufigen Notizen (nur Abstract geprüft)
+
+evidenzstufe: Peer-reviewed
+studie:                        # nur bei empirischen Quellen zu LLMs
+  modelle: [exakte Versionen]
+  einsatzart: >-
+    API/Web/lokal, Prompting, Parameter, Reasoning-Modus.
+  durchgefuehrt: JJJJ-MM
+---
+
 # Kurztitel der Quelle
 
 **Evidenzstufe:** ... ·
@@ -186,6 +264,16 @@ Doppelgänger löschen, so bleibt das PDF am zitierfähigen Eintrag.
 ## Vorlage: Konzeptnotiz
 
 ```markdown
+---
+type: Konzeptnotiz
+title: "Name des Konzepts"
+description: >-
+  Ein Satz, was das Konzept behauptet.
+tags: [thema, art]
+
+generated: { by: "llm-assistiert, redigiert von human:name", at: JJJJ-MM-TT }
+---
+
 # Name des Konzepts
 
 **Konzeptnotiz** · Stand: Monat JJJJ
@@ -196,6 +284,11 @@ Kernaussage in 1-2 Absätzen, quellenübergreifend formuliert.
 ## Verwandte Konzepte (Links, mit einem Halbsatz zur Beziehung)
 ## Fliesst ein in     (Synthese- und Website-Seiten)
 ```
+
+Synthesen tragen denselben schlanken Block wie Konzeptnotizen, mit
+`type: Synthese`. Verifikationsfelder bleiben den Quellnotizen vorbehalten:
+Dort findet die Prüfung statt, Konzepte und Synthesen erben ihre
+Belastbarkeit aus den verlinkten Quellen.
 
 ## Geplante Sprint-Reihenfolge
 
