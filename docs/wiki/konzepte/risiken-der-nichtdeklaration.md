@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Risiken der Nichtdeklaration"
+description: >-
+  Nicht deklarierte KI-Nutzung ist normativ als Fehlverhalten einstufbar und fliegt faktisch regelmaessig auf.
+tags: [ki-deklarieren, transparenz, autorschaft]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Risiken der Nichtdeklaration
 
 **Konzeptnotiz** · Stand: Juli 2026

@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Keine KI-Autorschaft"
+description: >-
+  KI-Tools koennen nicht als Autor:innen gelistet werden, weil Autorschaft die Uebernahme von Verantwortung verlangt.
+tags: [ki-deklarieren, autorschaft, verantwortung]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Keine KI-Autorschaft
 
 **Konzeptnotiz** · Stand: Juli 2026
@@ -7,9 +17,10 @@ werden. Die Begründung ist überall dieselbe und grundsätzlich: Autorschaft
 verlangt die Übernahme von Verantwortung für Richtigkeit, Integrität und
 Originalität — das kann ein Werkzeug nicht leisten. Als Nicht-Rechtssubjekt
 kann eine KI zudem weder Interessenkonflikte erklären noch
-Urheberrechtsvereinbarungen eingehen. Es handelt sich um den am breitesten
-abgestützten Punkt im gesamten Themenfeld: vollständiger Konsens über
-Gremien und Verlage hinweg.
+Urheberrechtsvereinbarungen eingehen. Über diesen Punkt besteht in den
+untersuchten Quellen durchgehend Konsens, über Gremien und Verlage hinweg;
+er hängt zudem nicht an der Modellgeneration, sondern an der Frage, wer
+Verantwortung tragen kann.
 
 ## Belege
 

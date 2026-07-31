@@ -1,3 +1,20 @@
+---
+type: Quellnotiz
+title: "Binz et al. (2025): LLMs und die Praxis der Wissenschaft"
+description: >-
+  PNAS-Kontroverse mit vier gegensaetzlichen Positionen zur Rolle von LLMs
+  in der Wissenschaft; Konsens allein bei der menschlichen Verantwortung.
+resource: https://doi.org/10.1073/pnas.2401227121
+tags: [llms-verstehen, position, verantwortung, open-weights]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: Volltext }
+stale_after: 2028-07-06
+
+evidenzstufe: Peer-reviewed
+---
+
 # Binz et al. (2025): Wie sollen LLMs die Praxis der Wissenschaft verändern?
 
 **Evidenzstufe:** Peer-reviewed ·

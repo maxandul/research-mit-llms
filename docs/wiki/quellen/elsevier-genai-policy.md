@@ -1,3 +1,20 @@
+---
+type: Quellnotiz
+title: "Elsevier: Generative AI policies for journals"
+description: >-
+  Verlagsrichtlinie: KI-Nutzung bei der Manuskripterstellung verlangt eine
+  eigene Deklarationssektion mit Mustertext; Copy-Editing ist ausgenommen.
+resource: https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals
+tags: [ki-deklarieren, policy, autorschaft, copy-editing]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: Volltext }
+stale_after: 2027-07-06
+
+evidenzstufe: Policy
+---
+
 # Elsevier: Generative AI policies for journals
 
 **Evidenzstufe:** Policy (Doku eines Verlags) ·

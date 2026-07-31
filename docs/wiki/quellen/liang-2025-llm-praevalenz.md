@@ -1,3 +1,36 @@
+---
+type: Quellnotiz
+title: "Liang et al. (2025): Quantifying LLM usage in scientific papers"
+description: >-
+  Populationsbasierte Schaetzung ueber 1,1 Millionen Papers: LLM-modifizierte
+  Texte in der Informatik bis gegen 22 Prozent.
+resource: https://www.nature.com/articles/s41562-025-02273-8
+tags: [ki-deklarieren, empirie, praevalenz, transparenz]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: "Volltext des Preprints; publizierte Fassung nur Abstract" }
+stale_after: 2028-07-06
+
+sources:
+  - id: preprint
+    resource: https://arxiv.org/abs/2404.01268
+    title: "Quantifying Large Language Model Usage in Scientific Papers (arXiv v1)"
+    last_modified: 2024-04-01
+  - id: publiziert
+    resource: https://www.nature.com/articles/s41562-025-02273-8
+    title: "Nature Human Behaviour, publizierte Fassung (hinter Paywall)"
+
+evidenzstufe: Peer-reviewed
+studie:
+  modelle: [GPT-3.5]
+  einsatzart: >-
+    Keine Faehigkeitsmessung: GPT-3.5 erzeugte das Trainingskorpus fuer ein
+    Schaetzverfahren auf Populationsebene (distributional GPT quantification).
+  durchgefuehrt: 2024
+  sprache: Englisch
+---
+
 # Liang et al. (2025): Quantifying LLM usage in scientific papers
 
 **Evidenzstufe:** Peer-reviewed ·

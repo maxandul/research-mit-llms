@@ -1,3 +1,28 @@
+---
+type: Quellnotiz
+title: "Misra et al. (2026): Open-Source-LLMs lokal fuer Themenanalyse"
+description: >-
+  Lokal betriebene kleine Open-Source-Modelle codieren Patienteninterviews;
+  nur rund 45 Prozent der Codes lieferten sinnvollen Kontext.
+resource: https://doi.org/10.1177/16094069261426100
+tags: [qualitativ-codieren, empirie, datenschutz, open-weights]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+verified:
+  - { by: "human:andreas", at: 2026-07-07, umfang: Volltext }
+stale_after: 2028-07-07
+
+evidenzstufe: Peer-reviewed
+studie:
+  modelle: [Gemma2, Llama3.1]
+  einsatzart: >-
+    Lokal via Ollama und LangChain, Default-Parameter (Temperature 0,8),
+    Transkripte in Haeppchen von 20 Tokens, induktiv gegen deduktiv,
+    Zero-Shot gegen Few-Shot.
+  durchgefuehrt: "nicht berichtet, publiziert 2026"
+  sprache: Englisch
+---
+
 # Misra et al. (2026): Open-Source-LLMs lokal für Themenanalyse
 
 **Evidenzstufe:** Peer-reviewed ·

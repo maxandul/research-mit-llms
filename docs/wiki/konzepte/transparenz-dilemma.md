@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Transparenz-Dilemma"
+description: >-
+  Wer KI-Nutzung offenlegt, wird kurzfristig weniger vertraut als wer schweigt, obwohl Offenlegung als richtig gilt.
+tags: [ki-deklarieren, transparenz, empirie]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Transparenz-Dilemma
 
 **Konzeptnotiz** · Stand: Juli 2026

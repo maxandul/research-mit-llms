@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "LLM als zweiter Codierer"
+description: >-
+  Beim deduktiven Codieren mit klarem Codebuch erreichten aktuelle LLMs in Tests die Zuverlaessigkeit erfahrener menschlicher Codierer.
+tags: [qualitativ-codieren, intercoder-reliabilitaet, benchmark]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # LLM als zweiter Codierer
 
 **Konzeptnotiz** · Stand: Juli 2026

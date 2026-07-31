@@ -1,3 +1,27 @@
+---
+type: Quellnotiz
+title: "Kapania et al. (2025): Simulacrum of Stories"
+description: >-
+  19 erfahrene qualitativ Forschende pruefen LLM-Personas als Ersatz fuer
+  Teilnehmende; anfangs plausibel, dann grundsaetzliche Maengel.
+resource: https://doi.org/10.1145/3706598.3713220
+tags: [qualitativ-codieren, empirie, methodenkritik, synthetische-daten]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+verified:
+  - { by: "human:andreas", at: 2026-07-07, umfang: Volltext }
+stale_after: 2028-07-07
+
+evidenzstufe: Peer-reviewed
+studie:
+  modelle: [GPT-4-turbo]
+  einsatzart: >-
+    API, Persona per System-Prompt, LLM als simulierte Teilnehmende in
+    Hands-on-Interviews mit 19 Forschenden.
+  durchgefuehrt: "2024-03 bis 2024-06"
+  sprache: Englisch
+---
+
 # Kapania et al. (2025): Simulacrum of Stories — LLMs als "Teilnehmende"
 
 **Evidenzstufe:** Peer-reviewed ·

@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Grenzen interpretativer Tiefe"
+description: >-
+  LLMs codierten in bisherigen Tests zuverlaessig, was explizit im Text steht, und schwaecher, wo Bedeutung erschlossen werden muss.
+tags: [qualitativ-codieren, methodenkritik, intercoder-reliabilitaet]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Grenzen interpretativer Tiefe
 
 **Konzeptnotiz** · Stand: Juli 2026

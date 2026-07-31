@@ -1,3 +1,26 @@
+---
+type: Quellnotiz
+title: "Kempny et al. (2026): Scoping Review LLMs in qualitativer Forschung"
+description: >-
+  75 Studien nach PRISMA-ScR: Uebereinstimmung LLM/Mensch streut von 36 bis
+  99 Prozent, das technische Reporting ist massiv lueckenhaft.
+resource: https://doi.org/10.1186/s12874-026-02913-1
+tags: [qualitativ-codieren, review, intercoder-reliabilitaet, reporting]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+verified:
+  - { by: "human:andreas", at: 2026-07-07, umfang: Volltext }
+stale_after: 2028-07-07
+
+evidenzstufe: Peer-reviewed
+studie:
+  modelle: "diverse; 45 Prozent der eingeschlossenen Studien nennen nicht einmal die Einsatzform"
+  einsatzart: >-
+    Scoping Review ueber 75 Studien aus fuenf Datenbanken, Suchzeitraum
+    Januar 2020 bis Mai 2025.
+  durchgefuehrt: "2020-01 bis 2025-05"
+---
+
 # Kempny et al. (2026): Scoping Review zu LLMs in qualitativer Forschung
 
 **Evidenzstufe:** Peer-reviewed ·
@@ -50,9 +73,9 @@ Konferenzen, graue Literatur).
 ## Relevanz für die Website
 
 Der Anker-Text für [Qualitative Daten codieren](../../analysieren/qualitativ-codieren.md):
-belegt, dass der dort beschriebene Einsatz (deduktives Codieren mit
-Codebuch, Mensch prüft) dem dominanten und am besten gestützten Muster
-entspricht. Zugleich Grundlage für eine schärfere Dokumentationsempfehlung
+zeigt, dass der dort beschriebene Einsatz (deduktives Codieren mit
+Codebuch, Mensch prüft) dem in den 75 eingeschlossenen Studien mit Abstand
+häufigsten Muster entspricht. Zugleich Grundlage für eine schärfere Dokumentationsempfehlung
 auf der Website: Modellversion, Parameter und Prompts gehören in den
 Methodenteil (COREQ + LLM). Stützt ausserdem den Schema-Grundsatz, bei
 jeder Studie zuerst auf Modell, Version und Einsatzart zu schauen.

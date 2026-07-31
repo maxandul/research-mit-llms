@@ -1,3 +1,21 @@
+---
+type: Quellnotiz
+title: "COPE: Authorship and AI tools"
+description: >-
+  Position des Committee on Publication Ethics: KI-Tools koennen die
+  Anforderungen an Autorschaft nicht erfuellen, Nutzung gehoert in den
+  Methodenteil.
+resource: https://doi.org/10.24318/cCVRZBms
+tags: [ki-deklarieren, policy, autorschaft]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: Volltext }
+stale_after: 2027-07-06
+
+evidenzstufe: Policy
+---
+
 # COPE: Authorship and AI tools
 
 **Evidenzstufe:** Policy ·

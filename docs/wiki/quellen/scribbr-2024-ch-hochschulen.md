@@ -1,3 +1,20 @@
+---
+type: Quellnotiz
+title: "Scribbr: ChatGPT-Richtlinien der 23 Schweizer Hochschulen"
+description: >-
+  Systematische Recherche der Richtlinien aller 23 Schweizer Hochschulen
+  (Stand Ende 2024): kein generelles Verbot, aber viel Unklarheit.
+resource: https://www.scribbr.ch/ki-tools-nutzen-ch/chatgpt-richtlinien-hochschulen-schweiz/
+tags: [ki-deklarieren, schweiz, policy-uebersicht]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: Volltext }
+stale_after: 2027-07-06
+
+evidenzstufe: Praxis
+---
+
 # Scribbr: ChatGPT-Richtlinien der 23 Schweizer Hochschulen
 
 **Evidenzstufe:** Praxis (kommerzieller Anbieter, systematische Recherche) ·

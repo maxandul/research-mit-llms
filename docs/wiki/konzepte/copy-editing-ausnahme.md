@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Copy-Editing-Ausnahme"
+description: >-
+  Reine Sprachkorrektur an selbst verfasstem Text gilt nach weitgehendem Konsens als nicht deklarationspflichtig.
+tags: [ki-deklarieren, copy-editing, policy]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Copy-Editing-Ausnahme
 
 **Konzeptnotiz** · Stand: Juli 2026

@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Lokale Modelle fuer sensible Daten"
+description: >-
+  Lokal oder selbst gehostet betriebene Modelle sichern Datenhoheit, zeigen aber ein Leistungsgefaelle nach Modellgroesse und -generation.
+tags: [datenschutz, open-weights, qualitativ-codieren]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Lokale Modelle für sensible Daten
 
 **Konzeptnotiz** · Stand: Juli 2026

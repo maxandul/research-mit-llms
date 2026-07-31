@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Verantwortung bleibt beim Menschen"
+description: >-
+  Ueber alle Lager hinweg Konsens: Die Verantwortung fuer wissenschaftliche Arbeit kann nicht an LLMs uebergehen.
+tags: [llms-verstehen, verantwortung, autorschaft]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Verantwortung bleibt beim Menschen
 
 **Konzeptnotiz** · Stand: Juli 2026

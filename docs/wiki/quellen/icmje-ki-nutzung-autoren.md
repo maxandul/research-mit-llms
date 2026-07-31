@@ -1,3 +1,20 @@
+---
+type: Quellnotiz
+title: "ICMJE: Use of AI by Authors"
+description: >-
+  Empfehlung: Offenlegung der KI-Nutzung bereits bei Einreichung,
+  Nichtdeklaration gilt als moeglicher Fall wissenschaftlichen Fehlverhaltens.
+resource: https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html
+tags: [ki-deklarieren, policy, autorschaft]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: Volltext }
+stale_after: 2027-07-06
+
+evidenzstufe: Policy
+---
+
 # ICMJE: Use of AI by Authors
 
 **Evidenzstufe:** Policy ·

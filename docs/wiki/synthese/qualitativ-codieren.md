@@ -1,3 +1,13 @@
+---
+type: Synthese
+title: "Forschungsstand: Qualitative Daten codieren"
+description: >-
+  Verdichteter Forschungsstand zum LLM-gestuetzten Codieren qualitativer Daten, als datierte Momentaufnahme formuliert.
+tags: [qualitativ-codieren, intercoder-reliabilitaet, methodenkritik]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Forschungsstand: Qualitative Daten codieren
 
 **Synthese** · Stand: Juli 2026 · Quellenbasis: 5 Quellen (4 peer-reviewed,

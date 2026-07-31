@@ -1,3 +1,38 @@
+---
+type: Quellnotiz
+
+title: "Marston et al. (2026): Benchmark über 46 LLMs"
+description: >-
+  Benchmark von 46 LLMs beim deduktiven Codieren humanitärer Daten gegen
+  menschliche Adjudikation; 32 Modelle erreichen menschliches
+  Zuverlässigkeitsniveau, die Konfiguration entscheidet.
+resource: https://arxiv.org/abs/2606.26541
+tags: [qualitativ-codieren, benchmark, intercoder-reliabilitaet, reasoning, open-weights]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+verified:
+  - { by: "human:andreas", at: 2026-07-07, umfang: Volltext }
+stale_after: 2027-07-07
+
+sources:
+  - id: arxiv-preprint
+    resource: https://arxiv.org/abs/2606.26541
+    title: "Can Large Language Models Reliably Code Qualitative Humanitarian Data?"
+    author: "Marston, J.; Kreutzer, T.; Garnier, S.; Boone, E.; Pham, P. N.; Vinck, P."
+    last_modified: 2026-06-26
+
+evidenzstufe: Preprint
+studie:
+  modelle: [GPT-5.4, Gemini 3.1, Claude Opus 4.6, Claude Sonnet 4.5, Claude Haiku 4.5,
+            DeepSeek, Mistral, GPT-OSS, Gemma, "u.a., 46 Modelle total"]
+  einsatzart: >-
+    Deduktives Codieren mit festem Codebuch (11+1 Kategorien), Reasoning-Modi
+    gegen Basismodi verglichen, sieben Wiederholungsläufe, 48'300 Iterationen.
+  durchgefuehrt: 2026
+  sprache: Englisch
+  daten: synthetische Transkripte
+---
+
 # Marston et al. (2026): Benchmark — 46 LLMs codieren humanitäre Daten
 
 **Evidenzstufe:** Preprint ·

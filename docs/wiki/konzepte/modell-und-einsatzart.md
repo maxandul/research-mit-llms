@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Modell und Einsatzart bestimmen das Ergebnis"
+description: >-
+  Aussagen darueber, was LLMs koennen, sind ohne Angabe von Modell, Version, Konfiguration und Einsatzart kaum belastbar.
+tags: [llms-verstehen, reporting, reasoning]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Modell und Einsatzart bestimmen das Ergebnis
 
 **Konzeptnotiz** · Stand: Juli 2026

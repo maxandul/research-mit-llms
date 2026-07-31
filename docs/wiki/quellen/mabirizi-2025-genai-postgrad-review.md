@@ -1,3 +1,24 @@
+---
+type: Quellnotiz
+title: "Mabirizi et al. (2025): GenAI in der Postgraduierten-Forschung"
+description: >-
+  Systematisches Review ueber 20 Studien: Produktivitaetsgewinne, aber
+  unbearbeitet uebernommener Output und unzuverlaessige Referenzen.
+resource: https://doi.org/10.1007/s44163-025-00495-3
+tags: [llms-verstehen, review, halluzination, praevalenz]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: Volltext }
+stale_after: 2028-07-06
+
+evidenzstufe: Peer-reviewed
+studie:
+  modelle: "diverse, Review ueber Fremdstudien (u.a. ChatGPT)"
+  einsatzart: "Systematisches Review nach PRISMA ueber 20 Studien."
+  durchgefuehrt: "2019 bis 2025"
+---
+
 # Mabirizi et al. (2025): Systematic Review — GenAI in der Postgraduierten-Forschung
 
 **Evidenzstufe:** Peer-reviewed ·

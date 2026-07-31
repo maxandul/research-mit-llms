@@ -1,3 +1,28 @@
+---
+type: Quellnotiz
+title: "Dunivin (2025): Scaling hermeneutics"
+description: >-
+  Praxisleitfaden und Fallstudie zum LLM-Codieren als reflexive Praxis, mit
+  vorbildlich dokumentierter Methodik und klaren Befunden zur Einsatzart.
+resource: https://doi.org/10.1140/epjds/s13688-025-00548-8
+tags: [qualitativ-codieren, empirie, intercoder-reliabilitaet, prompting]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+verified:
+  - { by: "human:andreas", at: 2026-07-07, umfang: Volltext }
+stale_after: 2028-07-07
+
+evidenzstufe: Peer-reviewed
+studie:
+  modelle: [gpt-4-1106-preview, GPT-3.5]
+  einsatzart: >-
+    API, Temperature 0, top_p 1, Zero-Shot, Codebuch-Definition als
+    System-Prompt; verglichen wurden ein Code pro Prompt gegen das gesamte
+    Codebuch sowie mit und ohne Begruendungsschritt.
+  durchgefuehrt: 2024-01
+  sprache: Englisch
+---
+
 # Dunivin (2025): Scaling hermeneutics — LLM-Codieren als reflexive Praxis
 
 **Evidenzstufe:** Peer-reviewed ·

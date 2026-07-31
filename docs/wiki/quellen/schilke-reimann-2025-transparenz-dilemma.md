@@ -1,3 +1,20 @@
+---
+type: Quellnotiz
+title: "Schilke & Reimann (2025): The transparency dilemma"
+description: >-
+  13 praeregistrierte Experimente mit 4093 Personen: Wer KI-Nutzung offenlegt,
+  wird weniger vertraut als wer schweigt.
+resource: https://doi.org/10.1016/j.obhdp.2025.104405
+tags: [ki-deklarieren, empirie, transparenz]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: Volltext }
+stale_after: 2028-07-06
+
+evidenzstufe: Peer-reviewed
+---
+
 # Schilke & Reimann (2025): The transparency dilemma
 
 **Evidenzstufe:** Peer-reviewed ·

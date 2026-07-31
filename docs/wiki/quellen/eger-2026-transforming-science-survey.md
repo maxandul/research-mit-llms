@@ -1,3 +1,27 @@
+---
+type: Quellnotiz
+title: "Eger et al. (2026): Transforming Science with LLMs"
+description: >-
+  Workflow-zentrierter Survey ueber fuenf Etappen des Forschungszyklus;
+  Gesamtfazit: begrenzte, ungleich verteilte Faehigkeiten, ergaenzender
+  Werkzeugkasten statt Ersatz.
+resource: https://arxiv.org/abs/2502.05151
+tags: [llms-verstehen, review, literaturrecherche, peer-review]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: "Volltext teilweise" }
+stale_after: 2027-07-06
+
+evidenzstufe: Preprint
+studie:
+  modelle: "diverse, Survey ueber Fremdstudien"
+  einsatzart: >-
+    Literatur-Survey ueber fuenf Etappen des Forschungszyklus, Stand arXiv
+    v3 (Maerz 2026), begleitendes Ressourcen-Repository.
+  durchgefuehrt: 2026-03
+---
+
 # Eger et al. (2026): Transforming Science with LLMs — Survey
 
 **Evidenzstufe:** Preprint ·

@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Methodologische Kritik am LLM-Einsatz in qualitativer Forschung"
+description: >-
+  Teile der qualitativen Community sehen kein Optimierungs-, sondern ein Passungsproblem: Reflexivitaet und Positionalitaet fehlen.
+tags: [qualitativ-codieren, methodenkritik, synthetische-daten]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Methodologische Kritik am LLM-Einsatz in qualitativer Forschung
 
 **Konzeptnotiz** · Stand: Juli 2026

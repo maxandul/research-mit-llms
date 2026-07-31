@@ -1,3 +1,20 @@
+---
+type: Quellnotiz
+title: "UZH: Empfehlungen zum Umgang mit generativer KI"
+description: >-
+  Hochschulrichtlinie Schweiz: Zustaendigkeit liegt bei den Fakultaeten,
+  Musterformulierung fuer die Eigenstaendigkeitserklaerung.
+resource: https://www.uzh.ch/de/explore/basics/ai/recommendations.html
+tags: [ki-deklarieren, policy, schweiz]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: Volltext }
+stale_after: 2027-07-06
+
+evidenzstufe: Policy
+---
+
 # UZH: Empfehlungen zum Umgang mit generativer KI
 
 **Evidenzstufe:** Policy (Hochschule, Schweiz) ·

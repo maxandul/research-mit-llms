@@ -1,3 +1,20 @@
+---
+type: Quellnotiz
+title: "Glynn (2024/2025): Academ-AI"
+description: >-
+  Fallsammlung von 768 publizierten Arbeiten mit mutmasslich nicht
+  deklarierter KI-Nutzung, erkannt an stehengebliebenen Chatbot-Phrasen.
+resource: https://arxiv.org/abs/2411.15218
+tags: [ki-deklarieren, empirie, transparenz, halluzination]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: Volltext }
+stale_after: 2027-07-06
+
+evidenzstufe: Preprint
+---
+
 # Glynn (2024/2025): Academ-AI — nicht deklarierte KI in Publikationen
 
 **Evidenzstufe:** Preprint ·

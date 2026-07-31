@@ -1,3 +1,13 @@
+---
+type: Synthese
+title: "Forschungsstand: KI-Nutzung deklarieren"
+description: >-
+  Verdichteter Forschungsstand zur Deklaration von KI-Nutzung, aus sieben Konzepten und neun Quellen.
+tags: [ki-deklarieren, policy, transparenz]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Forschungsstand: KI-Nutzung deklarieren
 
 **Evidenz zuletzt geprüft:** Juli 2026 ·
@@ -6,7 +16,7 @@ Zugehörige Seite: [KI-Nutzung deklarieren](../../haltung/ki-deklarieren.md)
 Diese Synthese führt sieben [Konzepte](../konzepte/index.md) zusammen; die
 Belege im Detail stehen in den verlinkten Konzept- und Quellnotizen.
 
-## Was gut belegt ist
+## Worin die Quellen übereinstimmen
 
 **[Keine KI-Autorschaft](../konzepte/keine-ki-autorschaft.md) —
 vollständiger Konsens.** ICMJE, COPE, Elsevier und Springer Nature

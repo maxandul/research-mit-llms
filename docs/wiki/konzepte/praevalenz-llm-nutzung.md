@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Praevalenz der LLM-Nutzung im wissenschaftlichen Schreiben"
+description: >-
+  LLM-Nutzung beim wissenschaftlichen Schreiben ist Normalfall, nicht Randerscheinung.
+tags: [ki-deklarieren, praevalenz, empirie]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Prävalenz der LLM-Nutzung im wissenschaftlichen Schreiben
 
 **Konzeptnotiz** · Stand: Juli 2026

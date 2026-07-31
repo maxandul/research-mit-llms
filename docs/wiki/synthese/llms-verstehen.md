@@ -1,3 +1,13 @@
+---
+type: Synthese
+title: "Forschungsstand: LLMs verstehen"
+description: >-
+  Verdichteter Forschungsstand zum verantwortungsvollen Einsatz von LLMs in der Forschung; bewusst schmal gehalten.
+tags: [llms-verstehen, verantwortung, halluzination]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Forschungsstand: LLMs verstehen & verantwortungsvoll nutzen
 
 **Synthese** · Stand: Juli 2026 · Quellenbasis: 3 themenübergreifende
@@ -9,15 +19,15 @@ Diese Synthese bündelt das Themenfeld "Forschen mit LLMs allgemein". Sie
 ist bewusst schmal gehalten und wächst mit dem Sprint "wie-llms-arbeiten"
 (Halluzinationen, Kontextfenster, Tokenisierung) weiter.
 
-## Was gut belegt ist
+## Worin die Quellen übereinstimmen
 
 **[Verantwortung bleibt beim Menschen](../konzepte/verantwortung-bleibt-beim-menschen.md)
 — Konsens über alle Lager.** In der PNAS-Debatte tragen selbst die sich
 widersprechenden Positionen diesen Kern gemeinsam; die Policies (ICMJE,
 COPE, Verlage) ziehen daraus die Autorschafts-Konsequenz. Die
 Rollenteilung der Website (KI arbeitet zu, Mensch entscheidet, bewertet,
-verantwortet) ist damit die am besten gestützte Aussage der
-Grundlagen-Seiten.
+verantwortet) ruht damit auf einem Punkt, über den die Quellen bisher
+nicht streiten.
 
 **[LLM-Output muss geprüft werden](../konzepte/llm-output-pruefen.md), und
 der Aufwand wird unterschätzt.** Erfundene Referenzen und unbearbeitet

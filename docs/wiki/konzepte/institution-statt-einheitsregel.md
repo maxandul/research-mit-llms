@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Institution statt Einheitsregel"
+description: >-
+  Es gibt keine einheitliche Regel fuer KI-Deklaration, nur eine einheitliche Richtung; die Formalien setzt die Institution.
+tags: [ki-deklarieren, policy, schweiz]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Institution statt Einheitsregel
 
 **Konzeptnotiz** · Stand: Juli 2026

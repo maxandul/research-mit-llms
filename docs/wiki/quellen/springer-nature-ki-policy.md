@@ -1,3 +1,20 @@
+---
+type: Quellnotiz
+title: "Springer Nature: Editorial Policies zu KI"
+description: >-
+  Verlagsrichtlinie: keine KI-Autorschaft, Dokumentation im Methodenteil,
+  praezise Definition der Copy-Editing-Ausnahme.
+resource: https://www.nature.com/nature-portfolio/editorial-policies/ai
+tags: [ki-deklarieren, policy, autorschaft, copy-editing]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-06 }
+verified:
+  - { by: "human:andreas", at: 2026-07-06, umfang: Volltext }
+stale_after: 2027-07-06
+
+evidenzstufe: Policy
+---
+
 # Springer Nature / Nature Portfolio: Artificial Intelligence (AI)
 
 **Evidenzstufe:** Policy (Doku eines Verlags) ·

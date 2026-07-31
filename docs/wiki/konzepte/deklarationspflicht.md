@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "Deklarationspflicht bei inhaltlicher Mitwirkung"
+description: >-
+  Alle untersuchten Policies verlangen Offenlegung, wenn KI das Ergebnis inhaltlich mitgepraegt hat.
+tags: [ki-deklarieren, policy, transparenz]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # Deklarationspflicht bei inhaltlicher Mitwirkung
 
 **Konzeptnotiz** · Stand: Juli 2026

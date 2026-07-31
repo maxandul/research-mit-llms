@@ -1,3 +1,13 @@
+---
+type: Konzeptnotiz
+title: "LLM-Output pruefen"
+description: >-
+  LLM-Output muss inhaltlich geprueft werden, und dieser Pruefaufwand wird systematisch unterschaetzt.
+tags: [llms-verstehen, halluzination, verantwortung]
+
+generated: { by: "llm-assistiert, redigiert von human:andreas", at: 2026-07-07 }
+---
+
 # LLM-Output prüfen
 
 **Konzeptnotiz** · Stand: Juli 2026
