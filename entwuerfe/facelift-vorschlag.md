@@ -372,6 +372,77 @@ Beim ersten Push anzusehen: Wirken acht Reiter in der Kopfzeile zu voll?
 Sind die Karten mit `minmax(15rem, 1fr)` richtig dimensioniert? Ist der
 Terrakotta-Unterstrich am aktiven Reiter deutlich genug?
 
-### Etappen 3 bis 6
+### Etappe 3: Komponenten (erledigt)
 
-Offen, siehe Abschnitt 3.
+Der Kern des Umbaus. Ab jetzt ist das Frontmatter die einzige Quelle der
+Wahrheit; die sichtbaren Seitenköpfe entstehen beim Build.
+
+| Datei | Was |
+|---|---|
+| `tools/wiki_komponenten.py` | neu: Hook, der Notizkopf und Werkzeug-Steckbrief aus dem Frontmatter rendert |
+| `tools/migration_notizkopf.py` | neu: einmalige, verlustgeprüfte Migration der 17 Quellnotizen |
+| `tools/migration_steckbrief.py` | neu: einmalige Migration der 15 Werkzeugseiten, mit nachlesbarer Zuordnungstabelle |
+| `tools/wiki_lint.py` | prüft jetzt auch die Inhaltsseiten: `werkzeug:`-Blöcke, Schwierigkeitsstufen, Boxentypen, Rückfälle in Prosa |
+| `docs/assets/stylesheets/extra.css` | Abschnitte 4d bis 4f: Chips, Notizkopf, Steckbrief, zwei neue Boxentypen |
+| 17 Quellnotizen | Prosa-Kopf entfernt, `pruefnotiz` und `evidenzstufe_zusatz` ergänzt |
+| 15 Werkzeugseiten | `!!! info "Auf einen Blick"` entfernt, `werkzeug:`-Block ergänzt |
+| `CLAUDE.md` | neuer Abschnitt "Designregeln", Quellnotiz-Vorlage angepasst, Lint-Beschreibung erweitert |
+| `docs/ressourcen/wiki-vorlagen.md` | Vorlage an die neue Schreibweise angepasst, mit Erklärung warum |
+
+**Was der Notizkopf zeigt:** Evidenz-Chip (mit Zusatz wie "Doku eines
+Verlags"), Prüfvermerk mit Umfang und Datum im Tooltip, Ampel aus
+`stale_after` (neutral, ab drei Monaten vor Fälligkeit gelb, danach rot),
+die Prüfnotiz in Prosa und den `studie:`-Block mit Modellen, Einsatzart
+und Durchführungszeitpunkt. Damit sind die Angaben, die euer Grundsatz
+"Modell und Einsatzart mitlesen" verlangt, erstmals auf der Website
+sichtbar statt nur im Dateikopf.
+
+**Die Ampel rechnet bei jedem Build neu.** Eine Notiz kann fällig werden,
+ohne dass jemand die Datei anfasst.
+
+**Migration war nicht verlustfrei zu haben, ohne das Frontmatter zu
+erweitern.** Die alte Prosa enthielt mehr als das Frontmatter: den
+Klammerzusatz zur Evidenzstufe ("Policy (Doku eines Verlags)") und den
+erklärenden Teil des Prüfvermerks ("Volltext gelesen (arXiv-PDF, aus
+`rohdaten/`). Explizit als nicht begutachtet gekennzeichnet."). Ein
+blosses Löschen der Zeilen hätte das vernichtet. Deshalb zwei neue
+Felder, `evidenzstufe_zusatz` und `pruefnotiz`, und ein Migrationsskript,
+das vor dem Schreiben prüft, dass jedes inhaltstragende Wort der alten
+Prosa im neuen Frontmatter wieder vorkommt. Es hat ausserdem
+gegengeprüft, ob Evidenzstufe und Prüfdatum zwischen Prosa und
+Frontmatter übereinstimmten: bei allen 17 Notizen taten sie das.
+
+**Hinweisboxen: zwei neue Typen statt der ganzen Konvention.**
+`evidenz` (verweist von einer Inhaltsseite in den Forschungsstand, 3
+Vorkommen) und `datenschutz` (ersetzt `danger` an den zwei rechtlich
+heiklen Stellen) sind da und in CLAUDE.md dokumentiert. Die vollständige
+Umstellung der übrigen 59 Boxen von `info`/`note`/`abstract` auf die
+sechs Rollen habe ich **nicht** gemacht: Das sind lauter Einzelfall-
+Entscheidungen am Text, und sie gehören sinnvollerweise in denselben
+Durchgang wie die von dir angesprochene Vereinheitlichung des
+Seitenaufbaus. Der Lint kennt die Altbestände und lässt sie zu; CLAUDE.md
+sagt, worauf sie beim nächsten Überarbeiten abzubilden sind.
+
+**Der Prompt-Block aus dem ursprünglichen Vorschlag entfällt.** Prompts
+stehen auf dieser Website als Codeblöcke, nicht als Hinweisboxen, und
+haben über `content.code.copy` bereits einen Kopier-Knopf. Ein eigener
+Boxentyp hätte eine Migration aller Prompts erzwungen, ohne viel zu
+gewinnen.
+
+Geprüft: `mkdocs build --strict` grün, 543 interne Links, kein toter
+Link. 17 von 17 Notizköpfen und 15 von 15 Steckbriefen gerendert. Ein
+Skript vergleicht jeden gerenderten Kopf feldweise gegen das Frontmatter
+der zugehörigen Datei: **keine Abweichung**. Chips erscheinen in sechs
+Varianten, alle Kontraste stammen aus den in Etappe 1 geprüften Tokens.
+
+**Offene Lücke, absichtlich sichtbar gemacht:** Auf 11 der 15
+Werkzeugseiten fehlt `werkzeug.stand`, das Datum also, an dem Kosten und
+Funktionsumfang zuletzt geprüft wurden. Vorher war das genauso, nur
+unsichtbar. Der Lint meldet es jetzt, bis die Daten nachgetragen sind.
+
+### Etappen 4 bis 6
+
+Offen, siehe Abschnitt 3. Die Vereinheitlichung des Seitenaufbaus über
+alle Inhaltsseiten (Wiedererkennung, didaktische Reihenfolge) kommt als
+eigene Etappe dazu; dorthin gehört auch die restliche Umstellung der
+Hinweisboxen.
