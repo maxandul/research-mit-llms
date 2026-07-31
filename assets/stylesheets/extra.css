@@ -1,0 +1,354 @@
+/* ====================================================================
+   Anwendung der Design-Tokens auf MkDocs Material.
+
+   Hier steht kein einziger Hex-Wert: Alles kommt aus tokens.css. Diese
+   Datei uebersetzt nur, sie entscheidet nicht. Gliederung:
+
+     1. Bruecke zu den Material-Variablen
+     2. Typografie
+     3. Kopfzeile, Navigation, Seitenleisten
+     4. Textelemente (Links, Tabellen, Code, Zitate, Hinweisboxen)
+     5. Fusszeile und Kleinigkeiten
+   ==================================================================== */
+
+
+/* --- 1. Bruecke zu den Material-Variablen -------------------------- */
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:          var(--fl-primary);
+  --md-primary-fg-color--light:   var(--fl-petrol-400);
+  --md-primary-fg-color--dark:    var(--fl-primary-stark);
+  --md-primary-bg-color:          var(--fl-on-primary);
+  --md-primary-bg-color--light:   var(--fl-petrol-100);
+
+  --md-accent-fg-color:           var(--fl-terra-600);
+  --md-accent-fg-color--transparent: var(--fl-accent-leise);
+  --md-accent-bg-color:           var(--fl-sand-0);
+
+  --md-default-bg-color:          var(--fl-bg-seite);
+  --md-default-fg-color:          var(--fl-text);
+  --md-default-fg-color--light:   var(--fl-text-sekundaer);
+  --md-default-fg-color--lighter: var(--fl-text-leise);
+  --md-default-fg-color--lightest: var(--fl-linie);
+
+  --md-typeset-color:             var(--fl-text);
+  --md-typeset-a-color:           var(--fl-primary);
+  --md-typeset-mark-color:        var(--fl-accent-leise);
+
+  --md-code-bg-color:             var(--fl-bg-code);
+  --md-code-fg-color:             var(--fl-text);
+
+  --md-footer-bg-color:           var(--fl-sand-900);
+  --md-footer-bg-color--dark:     var(--fl-sand-950);
+}
+
+/* Im dunklen Modus traegt die Kopfzeile ein dunkles Petrol. Die
+   aufgehellte Markenfarbe (--fl-primary) waere als Flaeche zu grell,
+   sie bleibt den Links vorbehalten. */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:          var(--fl-petrol-800);
+  --md-primary-fg-color--light:   var(--fl-petrol-700);
+  --md-primary-fg-color--dark:    var(--fl-petrol-900);
+  --md-primary-bg-color:          var(--fl-text);
+  --md-primary-bg-color--light:   var(--fl-text-sekundaer);
+
+  --md-accent-fg-color:           var(--fl-accent);
+  --md-accent-fg-color--transparent: var(--fl-accent-leise);
+  --md-accent-bg-color:           var(--fl-sand-950);
+
+  --md-default-bg-color:          var(--fl-bg-seite);
+  --md-default-fg-color:          var(--fl-text);
+  --md-default-fg-color--light:   var(--fl-text-sekundaer);
+  --md-default-fg-color--lighter: var(--fl-text-leise);
+  --md-default-fg-color--lightest: var(--fl-linie);
+
+  --md-typeset-color:             var(--fl-text);
+  --md-typeset-a-color:           var(--fl-primary);
+  --md-typeset-mark-color:        var(--fl-accent-leise);
+
+  --md-code-bg-color:             var(--fl-bg-code);
+  --md-code-fg-color:             var(--fl-text);
+
+  --md-footer-bg-color:           var(--fl-petrol-900);
+  --md-footer-bg-color--dark:     var(--fl-sand-950);
+}
+
+
+/* --- 2. Typografie -------------------------------------------------
+   Grundgrad von 16 auf 17 Pixel, Zeilenhoehe von 1.6 auf 1.72. Beides
+   klingt nach wenig und ist auf einer Seite mit langen Erklaertexten
+   der groesste einzelne Lesbarkeitsgewinn. */
+
+.md-typeset {
+  font-size: .85rem;
+  line-height: 1.72;
+  hyphens: auto;
+}
+
+/* Bindestrich-Trennung nur im Fliesstext, nie in Code, Tabellen oder
+   Beschriftungen: dort fuehrt sie zu falschen Trennungen. */
+.md-typeset code,
+.md-typeset pre,
+.md-typeset table,
+.md-typeset .md-button {
+  hyphens: none;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: var(--fl-font-titel);
+  color: var(--fl-text);
+  letter-spacing: -.005em;
+}
+
+.md-typeset h1 {
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: var(--fl-space-m);
+}
+
+.md-typeset h2 {
+  font-size: 1.28rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: var(--fl-space-2xl);
+  padding-bottom: var(--fl-space-2xs);
+  border-bottom: var(--fl-linie-duenn) solid var(--fl-linie);
+}
+
+.md-typeset h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: var(--fl-space-xl);
+}
+
+.md-typeset h4 {
+  font-size: .92rem;
+  font-weight: 600;
+  margin-top: var(--fl-space-l);
+}
+
+/* Zeilenlaenge auf rund 68 Zeichen begrenzen. Nur direkte Kinder,
+   damit Tabellen, Codebloecke und Hinweisboxen die volle Breite
+   behalten. */
+.md-typeset > p,
+.md-typeset > ul,
+.md-typeset > ol,
+.md-typeset > blockquote {
+  max-width: var(--fl-mass-text);
+}
+
+.md-typeset > ul,
+.md-typeset > ol {
+  padding-left: var(--fl-space-m);
+}
+
+.md-typeset li + li {
+  margin-top: var(--fl-space-2xs);
+}
+
+/* Aufzaehlungspunkte in der Markenfarbe statt in Schwarz */
+.md-typeset ul li::marker {
+  color: var(--fl-primary);
+}
+
+.md-typeset ol li::marker {
+  color: var(--fl-text-leise);
+}
+
+
+/* --- 3. Kopfzeile, Navigation, Seitenleisten ----------------------- */
+
+.md-header {
+  box-shadow: none;
+  border-bottom: var(--fl-linie-duenn) solid rgb(0 0 0 / 12%);
+}
+
+.md-header__title {
+  font-family: var(--fl-font-titel);
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+.md-search__form {
+  border-radius: var(--fl-radius);
+  background-color: rgb(255 255 255 / 14%);
+}
+
+.md-search__form:hover {
+  background-color: rgb(255 255 255 / 22%);
+}
+
+/* Seitenleiste: leiser als der Inhalt, damit der Text fuehrt */
+.md-nav {
+  font-size: .68rem;
+}
+
+.md-nav__title {
+  font-family: var(--fl-font-titel);
+  font-weight: 600;
+  color: var(--fl-text-sekundaer);
+}
+
+.md-nav__item .md-nav__link {
+  border-radius: var(--fl-radius-klein);
+  padding: .18rem .4rem;
+  margin-left: -.4rem;
+  transition: background-color var(--fl-uebergang), color var(--fl-uebergang);
+}
+
+.md-nav__item .md-nav__link:hover {
+  background-color: var(--fl-bg-gedaempft);
+  color: var(--fl-text);
+}
+
+.md-nav__link--active,
+.md-nav__link--active:hover {
+  font-weight: 700;
+  color: var(--fl-primary);
+  background-color: var(--fl-primary-leise);
+}
+
+/* Inhaltsverzeichnis rechts: aktiver Eintrag mit Marke statt nur Farbe */
+.md-nav--secondary .md-nav__link--active {
+  background-color: transparent;
+  box-shadow: inset 2px 0 0 var(--fl-accent);
+}
+
+
+/* --- 4. Textelemente ----------------------------------------------- */
+
+.md-typeset a {
+  text-decoration-color: var(--fl-linie-stark);
+  text-underline-offset: .18em;
+  transition: color var(--fl-uebergang), text-decoration-color var(--fl-uebergang);
+}
+
+.md-typeset a:hover {
+  color: var(--fl-accent);
+  text-decoration-color: currentcolor;
+}
+
+/* Tabellen: ohne Kasten, mit klarer Kopfzeile */
+.md-typeset table:not([class]) {
+  border: none;
+  border-top: var(--fl-linie-duenn) solid var(--fl-linie-stark);
+  border-bottom: var(--fl-linie-duenn) solid var(--fl-linie-stark);
+  border-radius: 0;
+  box-shadow: none;
+  font-size: .76rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: transparent;
+  color: var(--fl-text-sekundaer);
+  font-weight: 700;
+  font-size: .68rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  border-bottom: var(--fl-linie-duenn) solid var(--fl-linie-stark);
+}
+
+.md-typeset table:not([class]) td {
+  border-top: var(--fl-linie-duenn) solid var(--fl-linie);
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: var(--fl-bg-gedaempft);
+}
+
+/* Code */
+.md-typeset code {
+  border-radius: var(--fl-radius-klein);
+  font-size: .82em;
+  padding: .1em .35em;
+}
+
+.md-typeset pre > code {
+  border-radius: var(--fl-radius);
+}
+
+.highlight,
+.md-typeset .highlighttable {
+  border-radius: var(--fl-radius);
+}
+
+/* Zitate */
+.md-typeset blockquote {
+  border-left: 3px solid var(--fl-accent);
+  color: var(--fl-text-sekundaer);
+  font-family: var(--fl-font-titel);
+  font-size: .92em;
+  padding-left: var(--fl-space-m);
+}
+
+/* Hinweisboxen: flacher, warm getoent, Farbe traegt Bedeutung.
+   Die endgueltige Typenkonvention folgt in Etappe 3; hier wird
+   zunaechst nur die Optik an die Palette angeglichen. */
+.md-typeset .admonition,
+.md-typeset details {
+  border: var(--fl-linie-duenn) solid var(--fl-linie);
+  border-left: 3px solid var(--fl-adm-linie, var(--fl-primary));
+  border-radius: var(--fl-radius);
+  background-color: var(--fl-bg-karte);
+  box-shadow: var(--fl-schatten-karte);
+  font-size: .78rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: var(--fl-adm-bg, var(--fl-primary-leise));
+  color: var(--fl-adm-fg, var(--fl-text));
+  font-weight: 700;
+  border: none;
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  background-color: var(--fl-adm-linie, var(--fl-primary));
+}
+
+.md-typeset .note,     .md-typeset .info    { --fl-adm-linie: var(--fl-ev-doku-linie);     --fl-adm-bg: var(--fl-ev-doku-bg);     --fl-adm-fg: var(--fl-ev-doku-fg); }
+.md-typeset .tip,      .md-typeset .success { --fl-adm-linie: var(--fl-ev-peer-linie);     --fl-adm-bg: var(--fl-ev-peer-bg);     --fl-adm-fg: var(--fl-ev-peer-fg); }
+.md-typeset .warning                        { --fl-adm-linie: var(--fl-ev-praxis-linie);   --fl-adm-bg: var(--fl-ev-praxis-bg);   --fl-adm-fg: var(--fl-ev-praxis-fg); }
+.md-typeset .danger,   .md-typeset .failure { --fl-adm-linie: var(--fl-gefahr-linie);      --fl-adm-bg: var(--fl-gefahr-bg);      --fl-adm-fg: var(--fl-ampel-rot); }
+.md-typeset .quote                          { --fl-adm-linie: var(--fl-accent);            --fl-adm-bg: var(--fl-accent-leise);   --fl-adm-fg: var(--fl-accent-stark); }
+.md-typeset .abstract, .md-typeset .example { --fl-adm-linie: var(--fl-ev-policy-linie);   --fl-adm-bg: var(--fl-ev-policy-bg);   --fl-adm-fg: var(--fl-ev-policy-fg); }
+
+/* Trennlinien */
+.md-typeset hr {
+  border-bottom: var(--fl-linie-duenn) solid var(--fl-linie);
+  margin: var(--fl-space-xl) 0;
+}
+
+
+/* --- 5. Fusszeile und Kleinigkeiten -------------------------------- */
+
+.md-footer-meta {
+  background-color: var(--md-footer-bg-color--dark);
+}
+
+.md-typeset ::selection {
+  background-color: var(--fl-accent-leise);
+}
+
+/* Sichtbarer Fokus fuer Tastaturnutzung. Material blendet ihn an
+   einigen Stellen fast aus. */
+.md-content a:focus-visible,
+.md-nav__link:focus-visible,
+.md-typeset .md-button:focus-visible {
+  outline: 2px solid var(--fl-accent);
+  outline-offset: 2px;
+  border-radius: var(--fl-radius-klein);
+}
+
+/* Wer Bewegung reduziert haben will, bekommt keine */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
