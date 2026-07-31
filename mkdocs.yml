@@ -19,12 +19,19 @@ theme:
     text: Atkinson Hyperlegible
     code: JetBrains Mono
   features:
+    - navigation.tabs         # Hauptbereiche als Reiter in der Kopfzeile
+    - navigation.tabs.sticky  # Reiter bleiben beim Scrollen sichtbar
+    - navigation.indexes      # jeder Bereich hat eine eigene Startseite
+    - navigation.path         # Brotkrumen über dem Seitentitel
+    - navigation.prune        # Seitenleiste zeigt nur den aktiven Bereich
+    - navigation.tracking     # Adresszeile folgt dem gelesenen Abschnitt
     - navigation.sections     # Gruppen in der Seitenleiste ausklappen
     - navigation.top          # "Nach oben"-Button
     - navigation.instant      # schnelles Navigieren ohne Neuladen
     - navigation.footer       # Vor/Zurück-Links unten
     - search.suggest          # Suchvorschläge
     - search.highlight        # Treffer hervorheben
+    - search.share            # Suchergebnis als Link teilen
     - content.code.copy       # Kopier-Knopf bei Code-Boxen
     - toc.follow
   # "custom" heisst: die Farben stehen nicht hier, sondern in
@@ -80,16 +87,29 @@ markdown_extensions:
   - attr_list                 # Attribute für Badges
   - md_in_html
   - tables
+  - pymdownx.emoji:           # Icons als :material-name: in Karten und Navigation
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       permalink: true
 
 # --------------------------------------------------------------------
 #  Navigation: Reihenfolge und Struktur der Seiten.
 #  Neue Seite hinzufügen = Markdown-Datei anlegen + hier eintragen.
+#
+#  Die oberste Ebene sind die Reiter in der Kopfzeile, gegliedert nach
+#  Forschungsphase. Der jeweils erste Eintrag eines Reiters ist seine
+#  Startseite und trägt das Icon im Frontmatter. Damit navigation.indexes
+#  greift, muss diese Startseite eine echte `index.md` in einem eigenen
+#  Ordner sein; eine flache Datei erkennt Material nicht als Bereichs-
+#  Startseite. Deshalb gibt es literatur/ und daten/ als Ordner, obwohl
+#  ihre Unterseiten anderswo liegen (werkzeuge/, workflows/, erheben/,
+#  analysieren/).
 # --------------------------------------------------------------------
 nav:
   - Start: index.md
   - Grundlagen:
+      - grundlagen/index.md
       - LLMs verstehen & verantwortungsvoll nutzen: grundlagen/llms-verstehen.md
       - Wie ein LLM arbeitet: grundlagen/wie-llms-arbeiten.md
       - Drei Arten, LLMs zu nutzen: grundlagen/llm-research.md
@@ -98,6 +118,7 @@ nav:
       - Markdown als Arbeitsformat: grundlagen/markdown-arbeitsformat.md
       - Datenschutz & Vertraulichkeit: grundlagen/datenschutz.md
   - Literatur:
+      - literatur/index.md
       - Finden & Erkunden:
           - Semantic Scholar: werkzeuge/finden/semantic-scholar.md
           - Connected Papers: werkzeuge/finden/connected-papers.md
@@ -115,19 +136,23 @@ nav:
           - Vom Thema zur Literaturübersicht: workflows/thema-zu-uebersicht.md
           - Paper lesen & strukturiert ablegen: workflows/paper-lesen-ablegen.md
           - Eigenes Forschungs-Wiki aufbauen: workflows/forschungs-wiki.md
-  - Daten erheben & schützen:
-      - Interviews transkribieren: erheben/transkription.md
-      - Daten anonymisieren: erheben/anonymisieren.md
-  - Daten analysieren:
-      - Qualitative Daten codieren: analysieren/qualitativ-codieren.md
-      - Quantitativ auswerten: analysieren/quantitativ-auswerten.md
-  - Schreiben & Publizieren:
+  - Daten:
+      - daten/index.md
+      - Erheben & schützen:
+          - Interviews transkribieren: erheben/transkription.md
+          - Daten anonymisieren: erheben/anonymisieren.md
+      - Analysieren:
+          - Qualitative Daten codieren: analysieren/qualitativ-codieren.md
+          - Quantitativ auswerten: analysieren/quantitativ-auswerten.md
+  - Schreiben:
+      - schreiben/index.md
       - Die Arbeit in Markdown aufbauen: schreiben/arbeit-in-markdown.md
       - Mit Word-Feedback umgehen: schreiben/word-feedback.md
-  - Haltung & gute Praxis:
+  - Haltung:
+      - haltung/index.md
       - KI-Nutzung deklarieren: haltung/ki-deklarieren.md
   - Forschungsstand:
-      - Über dieses Wiki: wiki/index.md
+      - wiki/index.md
       - Synthesen:
           - LLMs verstehen (Grundhaltung): wiki/synthese/llms-verstehen.md
           - KI-Nutzung deklarieren: wiki/synthese/ki-deklarieren.md
@@ -135,12 +160,13 @@ nav:
       - Konzeptnotizen: wiki/konzepte/index.md
       - Quellnotizen: wiki/quellen/index.md
   - Ressourcen:
+      - ressourcen/index.md
       - Glossar: ressourcen/glossar.md
       - Linksammlung: ressourcen/links.md
       - Prompt-Bibliothek: ressourcen/prompt-bibliothek.md
       - Wiki-Vorlagen: ressourcen/wiki-vorlagen.md
       - Changelog: ressourcen/changelog.md
-  - Über: ueber.md
+      - Über diese Website: ueber.md
 
 # --------------------------------------------------------------------
 #  Statusmarken: kommen aus dem Frontmatter der Wiki-Notizen (Feld

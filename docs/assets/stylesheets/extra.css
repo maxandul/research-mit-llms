@@ -325,6 +325,124 @@
 }
 
 
+/* --- 4b. Reiter und Brotkrumen -------------------------------------
+   Die Reiterleiste ist der neue Orientierungspunkt. Sie soll ruhig
+   wirken, aber der aktive Reiter muss ohne Suchen erkennbar sein:
+   deshalb Terrakotta als Unterstrich, nicht nur ein Fettdruck. */
+
+.md-tabs {
+  border-bottom: none;
+}
+
+.md-tabs__link {
+  font-size: .68rem;
+  opacity: .78;
+  margin-top: .55rem;
+  padding-bottom: .35rem;
+  border-bottom: 2px solid transparent;
+  transition: opacity var(--fl-uebergang), border-color var(--fl-uebergang);
+}
+
+.md-tabs__link:hover,
+.md-tabs__link:focus {
+  opacity: 1;
+}
+
+.md-tabs__link--active {
+  opacity: 1;
+  font-weight: 700;
+  border-bottom-color: var(--fl-terra-300);
+}
+
+/* Icons in Reitern und Navigation etwas kleiner als der Text daneben */
+.md-tabs__link svg,
+.md-nav__link svg.twemoji {
+  width: .95em;
+  height: .95em;
+  vertical-align: -.15em;
+  margin-right: .35em;
+}
+
+/* Brotkrumen: leise, aber vorhanden */
+.md-path {
+  font-size: .62rem;
+  color: var(--fl-text-leise);
+  margin-bottom: var(--fl-space-xs);
+}
+
+.md-path__item:last-child .md-path__link {
+  color: var(--fl-text-sekundaer);
+}
+
+
+/* --- 4c. Kartenraster ----------------------------------------------
+   Wird auf den Bereichs-Startseiten benutzt (<div class="grid cards">).
+   Material bringt ein Grundgeruest mit; hier wird es an die Palette
+   angeglichen und ruhiger gemacht. */
+
+.md-typeset .grid.cards > ul {
+  grid-gap: var(--fl-space-m);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.md-typeset .grid.cards > ul > li {
+  border: var(--fl-linie-duenn) solid var(--fl-linie);
+  border-radius: var(--fl-radius-karte);
+  background-color: var(--fl-bg-karte);
+  box-shadow: var(--fl-schatten-karte);
+  padding: var(--fl-space-m) var(--fl-space-m) var(--fl-space-s);
+  margin: 0;
+  transition: border-color var(--fl-uebergang), transform var(--fl-uebergang);
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--fl-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--fl-schatten-karte);
+}
+
+/* Das Icon oben in der Karte traegt die Markenfarbe */
+.md-typeset .grid.cards > ul > li > p:first-child > .twemoji {
+  color: var(--fl-primary);
+}
+
+.md-typeset .grid.cards > ul > li > p:first-child > .twemoji.lg svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Kartentitel als Link: ganze Zeile, ohne Unterstreichung */
+.md-typeset .grid.cards > ul > li > p:first-child strong a {
+  color: var(--fl-text);
+  text-decoration: none;
+  font-family: var(--fl-font-titel);
+  font-size: 1.06em;
+}
+
+.md-typeset .grid.cards > ul > li:hover > p:first-child strong a {
+  color: var(--fl-primary);
+}
+
+/* Trennstrich zwischen Titel und Beschreibung */
+.md-typeset .grid.cards > ul > li > hr {
+  margin: var(--fl-space-s) 0;
+  border-bottom-color: var(--fl-linie);
+}
+
+.md-typeset .grid.cards > ul > li > p:not(:first-child) {
+  font-size: .74rem;
+  color: var(--fl-text-sekundaer);
+  line-height: 1.6;
+}
+
+/* Das Raster nutzt die volle Inhaltsbreite, nicht das Textmass aus
+   Abschnitt 2: Karten sind zum Ueberfliegen da, nicht zum Lesen. */
+.md-typeset .grid.cards,
+.md-typeset .grid.cards > ul {
+  max-width: none;
+}
+
+
 /* --- 5. Fusszeile und Kleinigkeiten -------------------------------- */
 
 .md-footer-meta {

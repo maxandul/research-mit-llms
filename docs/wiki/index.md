@@ -1,3 +1,10 @@
+---
+icon: material/microscope
+description: >-
+  Die wissenschaftliche Grundlage der Empfehlungen dieser Website und
+  zugleich ein begehbares Fallbeispiel für ein LLM-gepflegtes Wiki.
+---
+
 # Forschungsstand: das Wiki hinter dieser Seite
 
 Diese Sektion ist zwei Dinge zugleich: die **wissenschaftliche Grundlage**

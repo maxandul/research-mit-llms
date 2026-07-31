@@ -315,6 +315,63 @@ sondern auch das d3 aus dem Wissensgraphen vom CDN. Die Website macht
 danach beim Besuch keine Anfrage mehr an Dritte. Für eine Seite, die
 Datenschutz erklärt, ist das mehr als Kosmetik.
 
-### Etappen 2 bis 6
+### Etappe 2: Navigation (erledigt)
+
+Acht Reiter in der Kopfzeile, je mit Icon:
+
+```
+Start · Grundlagen · Literatur · Daten · Schreiben · Haltung · Forschungsstand · Ressourcen
+```
+
+Aus neun Top-Level-Bereichen wurden sieben inhaltliche: "Daten erheben &
+schützen" und "Daten analysieren" sind zu **Daten** zusammengefasst (mit
+den Untergruppen "Erheben & schützen" und "Analysieren"), "Über" ist
+unter Ressourcen gewandert. Haltung bleibt wie entschieden eigenständig.
+
+| Datei | Was |
+|---|---|
+| `docs/grundlagen/index.md` | neu, sieben Karten |
+| `docs/literatur/index.md` | neu, vier Gruppenkarten (Finden, Dialog, Sammeln, Workflows) |
+| `docs/daten/index.md` | neu, vier Karten in zwei Gruppen |
+| `docs/schreiben/index.md` | neu, zwei Karten |
+| `docs/haltung/index.md` | neu, eigener Text zu Verantwortung und Prüfpflicht plus zwei Karten |
+| `docs/ressourcen/index.md` | neu, sechs Karten |
+| `docs/wiki/index.md` | Frontmatter mit `icon` und `description` ergänzt |
+| `docs/index.md` | Abschnitt "Wie diese Seite aufgebaut ist" auf die neue Gliederung gebracht, alle Bereiche verlinkt |
+| `mkdocs.yml` | `navigation.tabs`, `.sticky`, `.indexes`, `.path`, `.prune`, `.tracking`, `search.share`, `pymdownx.emoji`, Navigationsbaum neu |
+| `docs/assets/stylesheets/extra.css` | Abschnitte 4b (Reiter, Brotkrumen) und 4c (Kartenraster) ergänzt |
+
+**Zwei Dinge, die unterwegs aufgefallen sind.**
+
+`navigation.indexes` erkennt nur eine echte `index.md` als
+Bereichs-Startseite. "Literatur" und "Daten" spannen über mehrere Ordner
+(`werkzeuge/`, `workflows/` bzw. `erheben/`, `analysieren/`), eine flache
+`literatur.md` wurde deshalb nicht als Startseite behandelt, sondern als
+gewöhnliche erste Unterseite, ohne Icon und mit doppeltem Eintrag in der
+Seitenleiste. Gelöst durch eigene Ordner `docs/literatur/` und
+`docs/daten/`, die nur ihre `index.md` enthalten.
+
+Die Ordnernamen passen jetzt teils nicht mehr zu den Reiternamen: Unter
+"Literatur" liegen Seiten mit URLs wie `/werkzeuge/finden/elicit/`. Das
+ist kosmetisch und nur in der Adresszeile sichtbar. Ein Umbenennen würde
+alle bestehenden Links brechen und bräuchte `mkdocs-redirects`. Vorschlag:
+liegen lassen, oder in Etappe 6 zusammen mit Weiterleitungen erledigen.
+
+Geprüft: `mkdocs build --strict` grün (77 Seiten), `wiki_lint.py`
+unverändert nur der bekannte Befund. Alle **543 internen Links** im
+gebauten Site gegen den Dateibestand geprüft, **kein toter Link**. Alle
+acht Reiter zeigen auf die richtige Startseite und tragen ihr Icon.
+Brotkrumen erscheinen auf den Unterseiten, `navigation.prune` kürzt die
+Seitenleiste wie erwartet.
+
+**Keine bestehende URL hat sich geändert.** Es kamen nur Seiten dazu,
+Lesezeichen und externe Verweise bleiben gültig.
+
+**Noch nicht am echten Bild geprüft**, aus demselben Grund wie in Etappe 1.
+Beim ersten Push anzusehen: Wirken acht Reiter in der Kopfzeile zu voll?
+Sind die Karten mit `minmax(15rem, 1fr)` richtig dimensioniert? Ist der
+Terrakotta-Unterstrich am aktiven Reiter deutlich genug?
+
+### Etappen 3 bis 6
 
 Offen, siehe Abschnitt 3.

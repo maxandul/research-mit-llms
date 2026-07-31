@@ -1,3 +1,7 @@
+---
+icon: material/home-outline
+---
+
 # Forschen mit LLMs
 
 Ein praktischer Wegweiser, wie du grosse Sprachmodelle (LLMs) im gesamten
@@ -42,15 +46,24 @@ Steig direkt bei der Phase ein, die dich gerade beschäftigt:
 
 ## Wie diese Seite aufgebaut ist
 
-- **Grundlagen** erklären in wenigen Minuten, wie LLMs arbeiten, wo ihre
-  Grenzen liegen und worauf du beim Datenschutz achten musst.
-- **Literatur** stellt Werkzeuge zum Finden, Befragen und Sammeln vor und
-  verkettet sie zu durchgängigen Workflows.
-- **Daten erheben & schützen**, **Daten analysieren** und
-  **Schreiben & Publizieren** begleiten die weiteren Phasen des
-  Forschungsprozesses.
-- **Haltung & gute Praxis** behandelt Transparenz und Verantwortung.
-- **Ressourcen** sammelt ein Glossar, alle Links und kopierfertige Prompts.
+Die Reiter oben folgen dem Weg einer Forschungsarbeit. Jeder Reiter hat
+eine eigene Startseite mit Übersicht.
+
+- **[Grundlagen](grundlagen/index.md)** erklären in wenigen Minuten, wie
+  LLMs arbeiten, wo ihre Grenzen liegen und worauf du beim Datenschutz
+  achten musst.
+- **[Literatur](literatur/index.md)** stellt Werkzeuge zum Finden,
+  Befragen und Sammeln vor und verkettet sie zu durchgängigen Workflows.
+- **[Daten](daten/index.md)** behandelt Erhebung und Schutz
+  (Transkription, Anonymisierung) sowie die Auswertung, qualitativ wie
+  quantitativ.
+- **[Schreiben](schreiben/index.md)** geht um das Arbeitsformat und den
+  Umgang mit Word-Feedback.
+- **[Haltung](haltung/index.md)** behandelt Transparenz und Verantwortung.
+- **[Forschungsstand](wiki/index.md)** ist das Wiki hinter den Belegen und
+  zugleich ein Fallbeispiel für die Arbeitsweise, die hier beschrieben wird.
+- **[Ressourcen](ressourcen/index.md)** sammelt Glossar, Links,
+  kopierfertige Prompts und den Changelog.
 
 ## So liest du die Hinweis-Boxen
 
