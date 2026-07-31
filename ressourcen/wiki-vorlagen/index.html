@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2294,10 +2294,33 @@
 beschreibt. Es sind dieselben Vorlagen, mit denen der
 <a href="../../wiki/">Forschungsstand dieser Website</a> gepflegt wird — du
 siehst dort also, wie ausgefüllte Exemplare aussehen.</p>
+<p>Jede Vorlage beginnt mit einem YAML-Block (Frontmatter) nach dem
+<a href="../../werkzeuge/sammeln/llm-wiki/#ein-standard-zeichnet-sich-ab-das-open-knowledge-format">Open Knowledge Format</a>.
+Er ist optional: Ohne ihn funktionieren die Vorlagen genauso. Mit ihm wird
+maschinell prüfbar, was sonst nur im Text steht, und Werkzeuge wie
+Obsidian oder MkDocs können danach filtern. Pflicht ist im Format allein
+das Feld <code>type</code>; ergänze also ruhig nur so viel, wie du auch pflegen magst.</p>
 <h2 id="quellnotiz">Quellnotiz<a class="headerlink" href="#quellnotiz" title="Permanent link">&para;</a></h2>
 <p>Eine Notiz pro Quelle. Sie trägt die Provenienz: wer sagt was, wie wurde
 es geprüft, wie belastbar ist es.</p>
-<div class="highlight"><pre><span></span><code><span class="gh"># Kurztitel der Quelle</span>
+<div class="highlight"><pre><span></span><code>---
+type: Quellnotiz
+title: &quot;Kurztitel&quot;
+description: &gt;-
+  Ein Satz, was die Quelle zeigt.
+resource: https://doi.org/…
+tags: [thema, art]
+
+generated: { by: &quot;llm-assistiert, redigiert von human:name&quot;, at: JJJJ-MM-TT }
+verified:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>{ by: &quot;human:name&quot;, at: JJJJ-MM-TT, umfang: Volltext }
+stale_after: JJJJ-MM-TT
+<span class="gh"># status: draft        nur bei vorläufigen Notizen (nur Abstract geprüft)</span>
+
+<span class="gu">evidenzstufe: Peer-reviewed</span>
+<span class="gu">---</span>
+
+<span class="gh"># Kurztitel der Quelle</span>
 
 <span class="gs">**Evidenzstufe:**</span> Peer-reviewed | Preprint | Policy | Doku | Praxis ·
 <span class="gs">**Geprüft:**</span> TT.MM.JJJJ, was genau geprüft wurde (Original gelesen? DOI aufgelöst?)
@@ -2323,7 +2346,17 @@ Wofür brauchst du diese Quelle? Welche deiner Aussagen stützt sie?
 <h2 id="konzeptnotiz">Konzeptnotiz<a class="headerlink" href="#konzeptnotiz" title="Permanent link">&para;</a></h2>
 <p>Ein atomares Thema, quellenübergreifend. Hier entsteht das Netz: Konzepte
 verlinken Quellen und einander.</p>
-<div class="highlight"><pre><span></span><code><span class="gh"># Name des Konzepts</span>
+<div class="highlight"><pre><span></span><code>---
+type: Konzeptnotiz
+title: &quot;Name des Konzepts&quot;
+description: &gt;-
+  Ein Satz, was das Konzept behauptet.
+tags: [thema, art]
+
+<span class="gu">generated: { by: &quot;llm-assistiert, redigiert von human:name&quot;, at: JJJJ-MM-TT }</span>
+<span class="gu">---</span>
+
+<span class="gh"># Name des Konzepts</span>
 
 <span class="gs">**Konzeptnotiz**</span> · Stand: Monat JJJJ
 
@@ -2345,11 +2378,21 @@ man über diesen einen Sachverhalt, wenn man alle Quellen zusammennimmt?
 </code></pre></div>
 <h2 id="synthese">Synthese<a class="headerlink" href="#synthese" title="Permanent link">&para;</a></h2>
 <p>Der verdichtete Stand zu einem Thema, zusammengesetzt aus Konzepten.</p>
-<div class="highlight"><pre><span></span><code><span class="gh"># Forschungsstand: Thema</span>
+<div class="highlight"><pre><span></span><code>---
+type: Synthese
+title: &quot;Forschungsstand: Thema&quot;
+description: &gt;-
+  Ein Satz, was die Synthese zusammenfasst.
+tags: [thema]
+
+<span class="gu">generated: { by: &quot;llm-assistiert, redigiert von human:name&quot;, at: JJJJ-MM-TT }</span>
+<span class="gu">---</span>
+
+<span class="gh"># Forschungsstand: Thema</span>
 
 <span class="gs">**Evidenz zuletzt geprüft:**</span> Monat JJJJ
 
-<span class="gu">## Was gut belegt ist</span>
+<span class="gu">## Worin die Quellen übereinstimmen</span>
 
 Pro Absatz ein Konzept, mit Link. Konsens benennen.
 
@@ -2392,6 +2435,7 @@ Phase 2 — Vertiefen (Pflicht vor der Notiz):
 <span class="gu">## lint: regelmässige Prüfung</span>
 <span class="k">-</span><span class="w"> </span>Widersprüche markieren, nicht stillschweigend glätten.
 <span class="k">-</span><span class="w"> </span>Veraltete Aussagen kennzeichnen, verwaiste Notizen und tote Links melden.
+<span class="k">-</span><span class="w"> </span>Was im Frontmatter steht, per Skript prüfen statt von Hand.
 </code></pre></div>
 <p>Das vollständige, produktive Schema dieser Website:
 <a href="https://github.com/maxandul/research-mit-llms/blob/main/CLAUDE.md">CLAUDE.md im Repository</a>.</p>
@@ -2422,7 +2466,7 @@ weglassen solltest — siehe
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6. Juli 2026 08:04:05 UTC">6. Juli 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="31. Juli 2026 08:34:18 UTC">31. Juli 2026</span>
   </span>
 
     
@@ -2521,7 +2565,7 @@ weglassen solltest — siehe
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
