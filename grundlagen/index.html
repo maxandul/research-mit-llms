@@ -6,33 +6,37 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Hochschulrichtlinie Schweiz: Zustaendigkeit liegt bei den Fakultaeten, Musterformulierung fuer die Eigenstaendigkeitserklaerung.">
+        <meta name="description" content="Wie ein LLM arbeitet, wo seine Grenzen liegen und worauf beim Datenschutz zu achten ist: die Basis für alle weiteren Bereiche.">
       
       
         <meta name="author" content="maxandul">
       
       
-        <link rel="canonical" href="https://maxandul.github.io/research-mit-llms/wiki/quellen/uzh-empfehlungen-genki/">
+        <link rel="canonical" href="https://maxandul.github.io/research-mit-llms/grundlagen/">
       
       
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="llms-verstehen/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>UZH: Empfehlungen zum Umgang mit generativer KI - Forschen mit LLMs</title>
+        <title>Grundlagen - Forschen mit LLMs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -46,22 +50,22 @@
         
         
         
-        <link rel="stylesheet" href="../../../assets/external/fonts.googleapis.com/css.1ea56069.css">
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.1ea56069.css">
         <style>:root{--md-text-font:"Atkinson Hyperlegible";--md-code-font:"JetBrains Mono"}</style>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/tokens.css">
+      <link rel="stylesheet" href="../assets/stylesheets/tokens.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link rel="stylesheet" href="../../../assets/external/fonts.googleapis.com/css2.b8db15d1.css">
+  <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css2.b8db15d1.css">
 
   </head>
   
@@ -82,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#uzh-empfehlungen-zum-umgang-mit-generativer-ki" class="md-skip">
+        <a href="#grundlagen" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -98,7 +102,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
-    <a href="../../.." title="Forschen mit LLMs" class="md-header__button md-logo" aria-label="Forschen mit LLMs" data-md-component="logo">
+    <a href=".." title="Forschen mit LLMs" class="md-header__button md-logo" aria-label="Forschen mit LLMs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -118,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UZH: Empfehlungen zum Umgang mit generativer KI
+              Grundlagen
             
           </span>
         </div>
@@ -218,7 +222,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -237,11 +241,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../grundlagen/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -265,7 +271,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../literatur/" class="md-tabs__link">
+        <a href="../literatur/" class="md-tabs__link">
           
   
   
@@ -289,7 +295,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../daten/" class="md-tabs__link">
+        <a href="../daten/" class="md-tabs__link">
           
   
   
@@ -313,7 +319,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../schreiben/" class="md-tabs__link">
+        <a href="../schreiben/" class="md-tabs__link">
           
   
   
@@ -337,7 +343,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../haltung/" class="md-tabs__link">
+        <a href="../haltung/" class="md-tabs__link">
           
   
   
@@ -361,7 +367,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../" class="md-tabs__link">
+        <a href="../wiki/" class="md-tabs__link">
           
   
   
@@ -385,7 +391,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../ressourcen/" class="md-tabs__link">
+        <a href="../ressourcen/" class="md-tabs__link">
           
   
   
@@ -429,7 +435,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Forschen mit LLMs" class="md-nav__button md-logo" aria-label="Forschen mit LLMs" data-md-component="logo">
+    <a href=".." title="Forschen mit LLMs" class="md-nav__button md-logo" aria-label="Forschen mit LLMs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -447,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -473,6 +479,8 @@
       
   
   
+    
+  
   
   
     
@@ -500,25 +508,29 @@
     
     
       
+        
+        
+      
       
         
       
     
     
       
-        
-        
-      
     
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
   
   
-  
-    <a href="../../../grundlagen/" class="md-nav__link">
-      
-  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m7 17 3.2-6.8L17 7l-3.2 6.8zm5-5.9a.9.9 0 0 0-.9.9.9.9 0 0 0 .9.9.9.9 0 0 0 .9-.9.9.9 0 0 0-.9-.9M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8"/></svg>
   
   <span class="md-ellipsis">
     
@@ -531,12 +543,226 @@
   
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Grundlagen
   
 
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="llms-verstehen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLMs verstehen & verantwortungsvoll nutzen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wie-llms-arbeiten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wie ein LLM arbeitet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="llm-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drei Arten, LLMs zu nutzen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rag-vs-wiki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kontext, RAG & LLM-Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kontextfenster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Das Kontextfenster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="markdown-arbeitsformat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown als Arbeitsformat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="datenschutz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datenschutz & Vertraulichkeit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -585,7 +811,7 @@
   
   
   
-    <a href="../../../literatur/" class="md-nav__link">
+    <a href="../literatur/" class="md-nav__link">
       
   
   
@@ -648,7 +874,7 @@
   
   
   
-    <a href="../../../daten/" class="md-nav__link">
+    <a href="../daten/" class="md-nav__link">
       
   
   
@@ -711,7 +937,7 @@
   
   
   
-    <a href="../../../schreiben/" class="md-nav__link">
+    <a href="../schreiben/" class="md-nav__link">
       
   
   
@@ -772,7 +998,7 @@
   
   
   
-    <a href="../../../haltung/" class="md-nav__link">
+    <a href="../haltung/" class="md-nav__link">
       
   
   
@@ -837,7 +1063,7 @@
   
   
   
-    <a href="../../" class="md-nav__link">
+    <a href="../wiki/" class="md-nav__link">
       
   
   
@@ -908,7 +1134,7 @@
   
   
   
-    <a href="../../../ressourcen/" class="md-nav__link">
+    <a href="../ressourcen/" class="md-nav__link">
       
   
   
@@ -954,47 +1180,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#kernaussagen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kernaussagen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relevanz-fur-die-website" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Relevanz für die Website
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#querverweise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Querverweise
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1011,6 +1196,46 @@
   
 
 
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Start
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Grundlagen
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -1018,47 +1243,57 @@
 
 
 
-<h1 id="uzh-empfehlungen-zum-umgang-mit-generativer-ki">UZH: Empfehlungen zum Umgang mit generativer KI<a class="headerlink" href="#uzh-empfehlungen-zum-umgang-mit-generativer-ki" title="Permanent link">&para;</a></h1>
-<p><strong>Evidenzstufe:</strong> Policy (Hochschule, Schweiz) ·
-<strong>Geprüft:</strong> 06.07.2026, Original vollständig gelesen</p>
-<blockquote>
-<p>Universität Zürich: <em>Empfehlungen zum Umgang mit generativer Künstlicher
-Intelligenz an der UZH.</em>
-<a href="https://www.uzh.ch/de/explore/basics/ai/recommendations.html">https://www.uzh.ch/de/explore/basics/ai/recommendations.html</a></p>
-</blockquote>
-<h2 id="kernaussagen">Kernaussagen<a class="headerlink" href="#kernaussagen" title="Permanent link">&para;</a></h2>
+<h1 id="grundlagen">Grundlagen<a class="headerlink" href="#grundlagen" title="Permanent link">&para;</a></h1>
+<p>Bevor es um einzelne Werkzeuge geht: Was tut ein Sprachmodell eigentlich,
+was lässt sich ihm übergeben und was nicht, und welche Verantwortung
+bleibt in jedem Fall bei dir? Diese sieben Seiten sind die Basis für alle
+weiteren Bereiche. Wer wenig Zeit hat, liest die ersten beiden.</p>
+<div class="grid cards">
 <ul>
-<li>Verantwortlich für konkrete Richtlinien sind <strong>Fakultäten bzw.
-  Studienprogramme</strong> — es gibt keine einheitliche UZH-weite Regel.
-  Studierende sind verpflichtet, sich pro Lehrveranstaltung aktiv zu
-  informieren, was erlaubt ist.</li>
-<li><strong>Generative</strong> Hilfsmittel gelten typischerweise als deklarationspflichtig,
-  <strong>nicht-generative</strong> KI (z.B. Rechtschreibprüfung) nicht.</li>
-<li>Die UZH liefert einen <strong>Mustertext zur Ergänzung der
-  Eigenständigkeitserklärung</strong>: Bestätigung, dass nur erlaubte Hilfsmittel
-  verwendet wurden, dass die volle Verantwortung für KI-Output bei der
-  erklärenden Person liegt und dass die Kennzeichnung vollständig ist.</li>
-<li>Juristischer Hinweis: Die klassische Formel, die Arbeit "in eigenen
-  Worten" verfasst zu haben, muss angepasst werden, wenn generative Tools
-  erlaubt sind.</li>
-<li>Fürs Referenzieren wird Orientierung an APA oder MLA empfohlen, inkl.
-  Beispielen für Zitieren, Paraphrasieren, Übersetzen und Bildgenerierung.</li>
-<li>Tools, die Registrierung mit persönlichen Daten erfordern oder Kosten
-  verursachen, dürfen in der Lehre nicht vorausgesetzt werden
-  (Chancengleichheit).</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.27 0-2.4.8-2.82 2H3v2h1.95L2 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3L6.05 7h3.12c.33.85.98 1.5 1.83 1.83V20H2v2h20v-2h-9V8.82c.85-.32 1.5-.97 1.82-1.82h3.13L15 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3l-2.95-7H21V5h-6.17C14.4 3.8 13.27 3 12 3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-6.5 5.25L7 14H4zm13 0L20 14h-3z"/></svg></span> <strong><a href="llms-verstehen/">LLMs verstehen &amp; verantwortungsvoll nutzen</a></strong></p>
+<hr />
+<p>Was sich delegieren lässt und was nicht. Die Haltungsfrage, und
+warum die Verantwortung unteilbar bei dir bleibt.</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m-2 12c-.25 0-.46-.18-.5-.42l-.37-2.65c-.63-.25-1.17-.59-1.69-.99l-2.49 1.01c-.22.08-.49 0-.61-.22l-2-3.46a.493.493 0 0 1 .12-.64l2.11-1.66L4.5 12l.07-1-2.11-1.63a.493.493 0 0 1-.12-.64l2-3.46c.12-.22.39-.31.61-.22l2.49 1c.52-.39 1.06-.73 1.69-.98l.37-2.65c.04-.24.25-.42.5-.42h4c.25 0 .46.18.5.42l.37 2.65c.63.25 1.17.59 1.69.98l2.49-1c.22-.09.49 0 .61.22l2 3.46c.13.22.07.49-.12.64L19.43 11l.07 1-.07 1 2.11 1.63c.19.15.25.42.12.64l-2 3.46c-.12.22-.39.31-.61.22l-2.49-1c-.52.39-1.06.73-1.69.98l-.37 2.65c-.04.24-.25.42-.5.42zm1.25-18-.37 2.61c-1.2.25-2.26.89-3.03 1.78L5.44 7.35l-.75 1.3L6.8 10.2a5.55 5.55 0 0 0 0 3.6l-2.12 1.56.75 1.3 2.43-1.04c.77.88 1.82 1.52 3.01 1.76l.37 2.62h1.52l.37-2.61c1.19-.25 2.24-.89 3.01-1.77l2.43 1.04.75-1.3-2.12-1.55c.4-1.17.4-2.44 0-3.61l2.11-1.55-.75-1.3-2.41 1.04a5.42 5.42 0 0 0-3.03-1.77L12.75 4z"/></svg></span> <strong><a href="wie-llms-arbeiten/">Wie ein LLM arbeitet</a></strong></p>
+<hr />
+<p>Die Mechanik dahinter: Wortbausteine, Wahrscheinlichkeiten und was
+daraus für die Zuverlässigkeit folgt.</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7v2h5V7zM2 9v6h5V9zm10 0v2H9v2h3v2l3-3zm5 2v2h5v-2zm0 4v2h5v-2z"/></svg></span> <strong><a href="llm-research/">Drei Arten, LLMs zu nutzen</a></strong></p>
+<hr />
+<p>Wer den Unterschied zwischen den Nutzungsarten kennt, wählt für jede
+Aufgabe das passende Werkzeug.</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 18.95c-3.23-.23-5-1.5-5-1.95v-2.23c1.13.55 2.5.92 4 1.1 0-.66.04-1.33.21-1.98-1.71-.22-3.24-.73-4.21-1.44V9.64c1.43.81 3.5 1.33 5.82 1.36.03-.03.05-.07.08-.1 2.2-2.19 5.6-2.49 8.1-.87V7c0-2.21-3.58-4-8-4S4 4.79 4 7v10c0 2.21 3.59 4 8 4 .34 0 .68 0 1-.03-.38-.25-.76-.53-1.1-.87-.35-.36-.65-.74-.9-1.15M12 5c3.87 0 6 1.5 6 2s-2.13 2-6 2-6-1.5-6-2 2.13-2 6-2m8.31 12.9c.44-.69.69-1.52.69-2.4 0-2.5-2-4.5-4.5-4.5S12 13 12 15.5s2 4.5 4.5 4.5c.87 0 1.69-.25 2.38-.68L22 22.39 23.39 21zm-3.81.1a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5"/></svg></span> <strong><a href="rag-vs-wiki/">Kontext, RAG &amp; LLM-Wiki</a></strong></p>
+<hr />
+<p>Drei Wege, ein Modell mit eigenen Dokumenten arbeiten zu lassen.
+"Datei hochladen" ist dabei nicht automatisch RAG.</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16v16H4zm2 4v10h12V8z"/></svg></span> <strong><a href="kontextfenster/">Das Kontextfenster</a></strong></p>
+<hr />
+<p>Einer der häufigsten Stolpersteine: die Annahme, mehr Material im
+Chat führe automatisch zu besseren Antworten.</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.56 18H3.44C2.65 18 2 17.37 2 16.59V7.41C2 6.63 2.65 6 3.44 6h17.12c.79 0 1.44.63 1.44 1.41v9.18c0 .78-.65 1.41-1.44 1.41M3.44 6.94c-.26 0-.48.21-.48.47v9.19c0 .25.22.46.48.46h17.12c.26 0 .48-.21.48-.46V7.41c0-.26-.22-.47-.48-.47zm1.45 8.25V8.81h1.92l1.92 2.35 1.92-2.35h1.93v6.38h-1.93v-3.66l-1.92 2.35-1.92-2.35v3.66zm12.01 0-2.9-3.1h1.94V8.81h1.92v3.28h1.93z"/></svg></span> <strong><a href="markdown-arbeitsformat/">Markdown als Arbeitsformat</a></strong></p>
+<hr />
+<p>Das Format der eigenen Dateien entscheidet mit, wie gut die
+Zusammenarbeit mit einem Modell klappt.</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 11c0 5.55-3.84 10.74-9 12-5.16-1.26-9-6.45-9-12V5l9-4 9 4zm-9 10c3.75-1 7-5.46 7-9.78V6.3l-7-3.12L5 6.3v4.92C5 15.54 8.25 20 12 21m2.8-10V9.5C14.8 8.1 13.4 7 12 7S9.2 8.1 9.2 9.5V11c-.6 0-1.2.6-1.2 1.2v3.5c0 .7.6 1.3 1.2 1.3h5.5c.7 0 1.3-.6 1.3-1.2v-3.5c0-.7-.6-1.3-1.2-1.3m-1.3 0h-3V9.5c0-.8.7-1.3 1.5-1.3s1.5.5 1.5 1.3z"/></svg></span> <strong><a href="datenschutz/">Datenschutz &amp; Vertraulichkeit</a></strong></p>
+<hr />
+<p>Querschnittsthema bei jedem Werkzeug, besonders bei unveröffentlichten
+Manuskripten, fremden Daten und sensiblen Quellen.</p>
+</li>
 </ul>
-<h2 id="relevanz-fur-die-website">Relevanz für die Website<a class="headerlink" href="#relevanz-fur-die-website" title="Permanent link">&para;</a></h2>
-<p>Wichtigste Schweizer Universitäts-Referenz für
-<a href="../../../haltung/ki-deklarieren/">KI-Nutzung deklarieren</a>: bestätigt die
-Unterscheidung generativ/nicht-generativ, liefert offizielle Formulierungen
-für die Eigenständigkeitserklärung und verweist auf APA/MLA-Zitierformate.
-Bestätigt auch die Kernempfehlung "Vorgaben der Institution prüfen" — an
-der UZH entscheidet das Fach, nicht die Universität.</p>
-<h2 id="querverweise">Querverweise<a class="headerlink" href="#querverweise" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../scribbr-2024-ch-hochschulen/">Scribbr: Richtlinien der 23 Schweizer Hochschulen</a> — Gesamtbild CH</li>
-<li><a href="../icmje-ki-nutzung-autoren/">ICMJE</a>, <a href="../cope-autorschaft-ki/">COPE</a> — Publikationskontext</li>
-</ul>
+</div>
 
 
 
@@ -1079,7 +1314,7 @@ der UZH entscheidet das Fach, nicht die Universität.</p>
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="31. Juli 2026 08:33:58 UTC">31. Juli 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="31. Juli 2026 19:43:53 UTC">31. Juli 2026</span>
   </span>
 
     
@@ -1111,6 +1346,44 @@ der UZH entscheidet das Fach, nicht die Universität.</p>
         <footer class="md-footer">
   
     
+      
+      <nav class="md-footer__inner md-grid" aria-label="Fußzeile" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Zurück: Start">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              <div class="md-ellipsis">
+                Start
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="llms-verstehen/" class="md-footer__link md-footer__link--next" aria-label="Weiter: LLMs verstehen &amp; verantwortungsvoll nutzen">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              <div class="md-ellipsis">
+                LLMs verstehen & verantwortungsvoll nutzen
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1137,10 +1410,10 @@ der UZH entscheidet das Fach, nicht die Universität.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.path", "navigation.prune", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.path", "navigation.prune", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
