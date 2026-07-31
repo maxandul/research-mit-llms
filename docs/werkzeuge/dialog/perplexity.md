@@ -1,7 +1,11 @@
-# Perplexity
+---
+werkzeug:
+  schwierigkeit: Einsteiger
+  kosten: Freemium
+  wofuer: Antwortmaschine mit Quellenangaben
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** Freemium · **Wofür:** Antwortmaschine mit Quellenangaben
+# Perplexity
 
 ## Was ist es?
 

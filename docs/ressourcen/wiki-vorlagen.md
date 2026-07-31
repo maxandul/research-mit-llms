@@ -13,6 +13,14 @@ maschinell prüfbar, was sonst nur im Text steht, und Werkzeuge wie
 Obsidian oder MkDocs können danach filtern. Pflicht ist im Format allein
 das Feld `type`; ergänze also ruhig nur so viel, wie du auch pflegen magst.
 
+!!! tip "Warum im Frontmatter und nicht im Text?"
+    Evidenzstufe und Prüfvermerk standen auf dieser Website früher zusätzlich
+    als Fliesstext im Kopf jeder Notiz. Das musste doppelt gepflegt werden und
+    lief mit der Zeit auseinander. Seit Juli 2026 stehen sie nur noch im
+    Frontmatter; den sichtbaren Kopf einer Notiz erzeugt die Website daraus
+    automatisch. Wer die Vorlagen ohne solche Automatik nutzt, schreibt die
+    Angaben natürlich weiterhin in den Text.
+
 ## Quellnotiz
 
 Eine Notiz pro Quelle. Sie trägt die Provenienz: wer sagt was, wie wurde
@@ -33,13 +41,13 @@ verified:
 stale_after: JJJJ-MM-TT
 # status: draft        nur bei vorläufigen Notizen (nur Abstract geprüft)
 
-evidenzstufe: Peer-reviewed
+evidenzstufe: Peer-reviewed        # Peer-reviewed | Preprint | Policy | Doku | Praxis
+evidenzstufe_zusatz: "Doku eines Verlags"   # optional, präzisiert die Stufe
+pruefnotiz: >-
+  Was genau geprüft wurde: Original gelesen? DOI aufgelöst? Besonderheiten?
 ---
 
 # Kurztitel der Quelle
-
-**Evidenzstufe:** Peer-reviewed | Preprint | Policy | Doku | Praxis ·
-**Geprüft:** TT.MM.JJJJ, was genau geprüft wurde (Original gelesen? DOI aufgelöst?)
 
 > Vollständige bibliografische Angabe mit Link/DOI.
 

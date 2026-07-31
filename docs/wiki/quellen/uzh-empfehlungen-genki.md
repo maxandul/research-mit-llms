@@ -13,12 +13,12 @@ verified:
 stale_after: 2027-07-06
 
 evidenzstufe: Policy
+evidenzstufe_zusatz: "Hochschule, Schweiz"
+pruefnotiz: >-
+  Original vollständig gelesen
 ---
 
 # UZH: Empfehlungen zum Umgang mit generativer KI
-
-**Evidenzstufe:** Policy (Hochschule, Schweiz) ·
-**Geprüft:** 06.07.2026, Original vollständig gelesen
 
 > Universität Zürich: *Empfehlungen zum Umgang mit generativer Künstlicher
 > Intelligenz an der UZH.*

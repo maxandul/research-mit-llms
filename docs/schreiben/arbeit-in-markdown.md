@@ -1,8 +1,13 @@
-# Die Arbeit in Markdown aufbauen
+---
+werkzeug:
+  schwierigkeit: Fortgeschritten
+  kosten: gratis
+  wofuer: >-
+    die ganze Arbeit in Markdown schreiben, Word nur noch als Export
+    behandeln
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Fortgeschritten · **Kosten:** gratis ·
-    **Wofür:** die ganze Arbeit in Markdown schreiben, Word nur noch als Export behandeln
+# Die Arbeit in Markdown aufbauen
 
 Wer seine Arbeit direkt in Word schreibt, arbeitet im schlechtesten Format
 für die Zusammenarbeit mit LLMs (siehe

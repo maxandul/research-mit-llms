@@ -1,8 +1,15 @@
-# Interviews transkribieren
+---
+werkzeug:
+  schwierigkeit: Profi
+  schwierigkeit_zusatz: Einsteiger-Alternativen ohne Kommandozeile vorhanden
+  kosten: gratis
+  wofuer: >-
+    Audio- und Videoaufnahmen lokal transkribieren, auch
+    Schweizerdeutsch
+  stand: Juli 2026
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Profi (Alternativen: Einsteiger) · **Kosten:** gratis ·
-    **Wofür:** Audio- und Videoaufnahmen lokal transkribieren, auch Schweizerdeutsch
+# Interviews transkribieren
 
 Für qualitative Arbeiten ist die Transkription oft der mühsamste Schritt.
 Whisper-basierte Werkzeuge nehmen dir den Grossteil davon ab, und zwar
@@ -89,10 +96,6 @@ Google Meet: <https://support.google.com/meet/answer/12849897>
 - Soll das Transkript danach in einen Cloud-Dienst (etwa zum
   [Codieren](../analysieren/qualitativ-codieren.md)), führt der Weg zuerst
   über [Daten anonymisieren](anonymisieren.md).
-
-!!! note "Hinweis zu Kosten & Limits"
-    Angaben Stand Juli 2026. Verbindlich sind die verlinkten
-    Original-Quellen.
 
 ---
 

@@ -1,7 +1,13 @@
-# Connected Papers
+---
+werkzeug:
+  schwierigkeit: Einsteiger
+  schwierigkeit_zusatz: "API-Nutzung: Fortgeschritten"
+  kosten: gratis
+  wofuer: visuelle Literatur-Landkarten
+  stand: Juni 2026
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** gratis (API: Fortgeschritten) · **Wofür:** visuelle Literatur-Landkarten
+# Connected Papers
 
 ## Was ist es?
 
@@ -41,11 +47,6 @@ direkten Zitaten. Basiert auf dem Korpus von
 ## Offizielle Links
 
 - Website: <https://www.connectedpapers.com>
-
-!!! note "Hinweis zu Kosten & Limits"
-    Die Angaben zu Kosten und Kontingenten sind eine Schätzung
-    (Stand Juni 2026). Verbindlich sind die aktuellen Konditionen
-    auf der offiziellen Seite.
 
 ---
 

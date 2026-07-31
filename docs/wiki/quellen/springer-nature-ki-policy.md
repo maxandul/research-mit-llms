@@ -13,12 +13,12 @@ verified:
 stale_after: 2027-07-06
 
 evidenzstufe: Policy
+evidenzstufe_zusatz: "Doku eines Verlags"
+pruefnotiz: >-
+  Original vollständig gelesen
 ---
 
 # Springer Nature / Nature Portfolio: Artificial Intelligence (AI)
-
-**Evidenzstufe:** Policy (Doku eines Verlags) ·
-**Geprüft:** 06.07.2026, Original vollständig gelesen
 
 > Nature Portfolio: *Editorial Policies — Artificial Intelligence (AI).*
 > Springer Nature.

@@ -14,6 +14,12 @@ verified:
 stale_after: 2027-07-06
 
 evidenzstufe: Preprint
+pruefnotiz: >-
+  Volltext (arXiv v3 vom 05.03.2026, 46 S., aus `rohdaten/`):
+  Einleitung, Methodik, Ethik-Kapitel und Fazit vollständig gelesen,
+  die fünf Aufgaben-Kapitel kursorisch (Struktur, Limitations).
+  arXiv-Link aufgelöst; begleitendes, laufend aktualisiertes
+  Ressourcen-Repository auf GitHub.
 studie:
   modelle: "diverse, Survey ueber Fremdstudien"
   einsatzart: >-
@@ -23,13 +29,6 @@ studie:
 ---
 
 # Eger et al. (2026): Transforming Science with LLMs — Survey
-
-**Evidenzstufe:** Preprint ·
-**Geprüft:** 06.07.2026, Volltext (arXiv v3 vom 05.03.2026, 46 S., aus
-`rohdaten/`): Einleitung, Methodik, Ethik-Kapitel und Fazit vollständig
-gelesen, die fünf Aufgaben-Kapitel kursorisch (Struktur, Limitations).
-arXiv-Link aufgelöst; begleitendes, laufend aktualisiertes
-Ressourcen-Repository auf GitHub.
 
 > Eger, S., Cao, Y., D'Souza, J., et al. (2026): *Transforming Science
 > with Large Language Models: A Survey on AI-assisted Scientific

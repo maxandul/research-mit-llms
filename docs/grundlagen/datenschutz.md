@@ -4,7 +4,7 @@ Ein Querschnittsthema, das bei jedem Werkzeug mitzudenken ist, gerade in
 der Forschung mit unveröffentlichten Manuskripten, fremden Daten oder
 sensiblen Quellen.
 
-!!! danger "Grundregel"
+!!! datenschutz "Grundregel"
     Lade nichts in einen Cloud-Dienst hoch, das du nicht auch per E-Mail an
     eine fremde Firma schicken würdest. Im Zweifel: anonymisieren oder
     weglassen.

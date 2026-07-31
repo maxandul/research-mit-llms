@@ -1,7 +1,13 @@
-# Elicit
+---
+werkzeug:
+  schwierigkeit: Einsteiger
+  kosten: Freemium
+  kosten_zusatz: Kontingente sind eine Schätzung
+  wofuer: LLM-gestützte Literaturreviews
+  stand: Juni 2026
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** Freemium · **Wofür:** LLM-gestützte Literaturreviews
+# Elicit
 
 ## Was ist es?
 
@@ -33,11 +39,6 @@ strukturierte Literaturreviews.
 ## Offizielle Links
 
 - Website: <https://elicit.com>
-
-!!! note "Hinweis zu Kosten & Limits"
-    Die Angaben zu Kosten und Kontingenten sind eine Schätzung
-    (Stand Juni 2026). Verbindlich sind die aktuellen Konditionen
-    auf der offiziellen Seite.
 
 ---
 

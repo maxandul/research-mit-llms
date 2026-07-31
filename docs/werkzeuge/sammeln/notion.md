@@ -1,7 +1,11 @@
-# Notion
+---
+werkzeug:
+  schwierigkeit: Einsteiger
+  kosten: Freemium
+  wofuer: Notizen und Datenbanken als Wissensbasis
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** Freemium · **Wofür:** Notizen & Datenbanken als Wissensbasis
+# Notion
 
 ## Was ist es?
 

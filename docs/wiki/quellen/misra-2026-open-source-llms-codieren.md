@@ -13,6 +13,9 @@ verified:
 stale_after: 2028-07-07
 
 evidenzstufe: Peer-reviewed
+pruefnotiz: >-
+  Volltext gelesen (Open-Access-PDF, aus `rohdaten/`), DOI im Original
+  enthalten.
 studie:
   modelle: [Gemma2, Llama3.1]
   einsatzart: >-
@@ -24,10 +27,6 @@ studie:
 ---
 
 # Misra et al. (2026): Open-Source-LLMs lokal für Themenanalyse
-
-**Evidenzstufe:** Peer-reviewed ·
-**Geprüft:** 07.07.2026, Volltext gelesen (Open-Access-PDF, aus
-`rohdaten/`), DOI im Original enthalten.
 
 > Misra, R., Dahal, R., Kirk, B., Khan, R., Dogan, G., Chataut, R. &
 > Gyawali, P. (2026): *Large Language Models in Qualitative Analysis:

@@ -1,8 +1,13 @@
-# Quantitativ auswerten
+---
+werkzeug:
+  schwierigkeit: Einsteiger
+  kosten: Freemium
+  wofuer: >-
+    Daten deskriptiv und statistisch auswerten, ohne selbst zu
+    programmieren
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** Freemium ·
-    **Wofür:** Daten deskriptiv und statistisch auswerten, ohne selbst zu programmieren
+# Quantitativ auswerten
 
 Moderne Chat-Werkzeuge können nicht nur reden, sondern auch **Code schreiben
 und ausführen**: ChatGPT (Funktion "Datenanalyse", früher Code Interpreter)

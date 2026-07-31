@@ -1,8 +1,13 @@
-# Daten anonymisieren
+---
+werkzeug:
+  schwierigkeit: Einsteiger
+  kosten: gratis
+  wofuer: >-
+    sensible Daten so aufbereiten, dass sie in Cloud-Diensten
+    bearbeitet werden können
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** gratis ·
-    **Wofür:** sensible Daten so aufbereiten, dass sie in Cloud-Diensten bearbeitet werden können
+# Daten anonymisieren
 
 Die [Datenschutz-Grundregel](../grundlagen/datenschutz.md) sagt: nichts
 hochladen, was du nicht auch einer fremden Firma mailen würdest. Interviews,
@@ -41,7 +46,7 @@ Eine simple zweispaltige Tabelle in Excel: Original und Ersatz.
 Konsistent bleiben: dieselbe Person ist in allen Dokumenten P01. Nur so
 bleiben die Daten auswertbar und die Ergebnisse rückübersetzbar.
 
-!!! danger "Die Tabelle ist der Schlüssel"
+!!! datenschutz "Die Tabelle ist der Schlüssel"
     Die Zuordnungstabelle wird **nie** hochgeladen, in keinen Chat, keinen
     Cloud-Speicher, keine E-Mail. Sie liegt getrennt von den Daten, idealerweise
     verschlüsselt oder auf einem anderen Laufwerk.

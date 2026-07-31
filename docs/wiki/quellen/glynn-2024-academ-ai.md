@@ -13,13 +13,12 @@ verified:
 stale_after: 2027-07-06
 
 evidenzstufe: Preprint
+pruefnotiz: >-
+  Volltext gelesen (arXiv v2 vom 15.11.2025, aus `rohdaten/`),
+  arXiv-Link und Datenrepositorium (Figshare) aufgelöst.
 ---
 
 # Glynn (2024/2025): Academ-AI — nicht deklarierte KI in Publikationen
-
-**Evidenzstufe:** Preprint ·
-**Geprüft:** 06.07.2026, Volltext gelesen (arXiv v2 vom 15.11.2025, aus
-`rohdaten/`), arXiv-Link und Datenrepositorium (Figshare) aufgelöst.
 
 > Glynn, A. (2024, rev. 2025): *Academ-AI: documenting the undisclosed use
 > of generative artificial intelligence in academic publishing.*

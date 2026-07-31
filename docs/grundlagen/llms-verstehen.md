@@ -103,7 +103,7 @@ einig, dass Verantwortung, Urteil und Verstehen beim Menschen bleiben.
 Auch die Prüfregel oben ist empirisch unterlegt; in Experimenten waren
 z.B. 16% der von ChatGPT generierten Referenzen komplett erfunden.
 
-!!! info "Evidenz zuletzt geprüft: Juli 2026"
+!!! evidenz "Evidenz zuletzt geprüft: Juli 2026"
     Die Belege sind im
     [Forschungsstand: LLMs verstehen](../wiki/synthese/llms-verstehen.md)
     zusammengefasst; die mechanischen Einzelaussagen der Grundlagen folgen

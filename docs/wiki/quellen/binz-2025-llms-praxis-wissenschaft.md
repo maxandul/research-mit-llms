@@ -13,13 +13,12 @@ verified:
 stale_after: 2028-07-06
 
 evidenzstufe: Peer-reviewed
+pruefnotiz: >-
+  Volltext gelesen (PNAS-PDF, Open Access CC BY, aus `rohdaten/`), DOI
+  aufgelöst.
 ---
 
 # Binz et al. (2025): Wie sollen LLMs die Praxis der Wissenschaft verändern?
-
-**Evidenzstufe:** Peer-reviewed ·
-**Geprüft:** 06.07.2026, Volltext gelesen (PNAS-PDF, Open Access CC BY,
-aus `rohdaten/`), DOI aufgelöst.
 
 > Binz, M., Alaniz, S., Roskies, A., et al. (2025): *How should the
 > advancement of large language models affect the practice of science?*

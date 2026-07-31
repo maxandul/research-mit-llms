@@ -13,12 +13,12 @@ verified:
 stale_after: 2027-07-06
 
 evidenzstufe: Policy
+evidenzstufe_zusatz: "Doku eines Verlags"
+pruefnotiz: >-
+  Original vollständig gelesen (Stand Juni 2026)
 ---
 
 # Elsevier: Generative AI policies for journals
-
-**Evidenzstufe:** Policy (Doku eines Verlags) ·
-**Geprüft:** 06.07.2026, Original vollständig gelesen (Stand Juni 2026)
 
 > Elsevier: *Generative AI policies for journals.* Policy updated June 2026.
 > <https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals>

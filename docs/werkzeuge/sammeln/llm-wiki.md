@@ -1,7 +1,12 @@
-# LLM-Wiki (nach Karpathy)
+---
+werkzeug:
+  schwierigkeit: Einsteiger
+  schwierigkeit_zusatz: je nach Variante bis Fortgeschritten
+  kosten: gratis
+  wofuer: persistente, wachsende Wissensbasis
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger bis Fortgeschritten (je nach Variante) · **Kosten:** gratis · **Wofür:** persistente, wachsende Wissensbasis
+# LLM-Wiki (nach Karpathy)
 
 ## Was ist es?
 

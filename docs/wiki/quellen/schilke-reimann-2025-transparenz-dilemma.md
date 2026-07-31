@@ -13,14 +13,13 @@ verified:
 stale_after: 2028-07-06
 
 evidenzstufe: Peer-reviewed
+pruefnotiz: >-
+  Volltext gelesen (Verlags-PDF, Open Access CC BY, aus `rohdaten/`),
+  DOI aufgelöst. Alle 13 Studien präregistriert, Daten und Material
+  auf OSF offen.
 ---
 
 # Schilke & Reimann (2025): The transparency dilemma
-
-**Evidenzstufe:** Peer-reviewed ·
-**Geprüft:** 06.07.2026, Volltext gelesen (Verlags-PDF, Open Access CC BY,
-aus `rohdaten/`), DOI aufgelöst. Alle 13 Studien präregistriert, Daten und
-Material auf OSF offen.
 
 > Schilke, O., & Reimann, M. (2025): *The transparency dilemma: How AI
 > disclosure erodes trust.* Organizational Behavior and Human Decision

@@ -13,12 +13,11 @@ verified:
 stale_after: 2027-07-06
 
 evidenzstufe: Policy
+pruefnotiz: >-
+  Original vollständig gelesen
 ---
 
 # ICMJE: Use of AI by Authors
-
-**Evidenzstufe:** Policy ·
-**Geprüft:** 06.07.2026, Original vollständig gelesen
 
 > International Committee of Medical Journal Editors (ICMJE):
 > *Recommendations, Section V.A — Use of AI by Authors.*

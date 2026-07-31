@@ -22,6 +22,13 @@ sources:
     title: "Nature Human Behaviour, publizierte Fassung (hinter Paywall)"
 
 evidenzstufe: Peer-reviewed
+pruefnotiz: >-
+  Volltext des Preprints gelesen (arXiv v1 vom 01.04.2024, aus
+  `rohdaten/`). Achtung: Die publizierte NHB-Fassung erweitert die
+  Analyse (1,1 Mio. Papers bis Sep 2024, höhere Endwerte) und liegt
+  hinter der Paywall; ihre Zahlen sind nur über Abstract und
+  Artikelseite gegengelesen. Auf arXiv existiert keine aktualisierte
+  Version.
 studie:
   modelle: [GPT-3.5]
   einsatzart: >-
@@ -32,13 +39,6 @@ studie:
 ---
 
 # Liang et al. (2025): Quantifying LLM usage in scientific papers
-
-**Evidenzstufe:** Peer-reviewed ·
-**Geprüft:** 06.07.2026, Volltext des Preprints gelesen (arXiv v1 vom
-01.04.2024, aus `rohdaten/`). Achtung: Die publizierte NHB-Fassung erweitert
-die Analyse (1,1 Mio. Papers bis Sep 2024, höhere Endwerte) und liegt hinter
-der Paywall; ihre Zahlen sind nur über Abstract und Artikelseite
-gegengelesen. Auf arXiv existiert keine aktualisierte Version.
 
 > Liang, W., et al. (2025): *Quantifying large language model usage in
 > scientific papers.* Nature Human Behaviour.

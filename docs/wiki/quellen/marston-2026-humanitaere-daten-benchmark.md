@@ -22,6 +22,9 @@ sources:
     last_modified: 2026-06-26
 
 evidenzstufe: Preprint
+pruefnotiz: >-
+  Volltext gelesen (arXiv-PDF, aus `rohdaten/`). Explizit als nicht
+  begutachtet gekennzeichnet; Befunde als vorläufig behandeln.
 studie:
   modelle: [GPT-5.4, Gemini 3.1, Claude Opus 4.6, Claude Sonnet 4.5, Claude Haiku 4.5,
             DeepSeek, Mistral, GPT-OSS, Gemma, "u.a., 46 Modelle total"]
@@ -34,11 +37,6 @@ studie:
 ---
 
 # Marston et al. (2026): Benchmark — 46 LLMs codieren humanitäre Daten
-
-**Evidenzstufe:** Preprint ·
-**Geprüft:** 07.07.2026, Volltext gelesen (arXiv-PDF, aus `rohdaten/`).
-Explizit als nicht begutachtet gekennzeichnet; Befunde als vorläufig
-behandeln.
 
 > Marston, J., Kreutzer, T., Garnier, S., Boone, E., Pham, P. N. & Vinck,
 > P. (2026): *Can Large Language Models Reliably Code Qualitative

@@ -219,9 +219,69 @@ Notizen mit Vermerk "nur Abstract", abgelaufene `stale_after`-Daten,
 `deprecated`- und `draft`-Notizen, verwaiste Notizen und tote interne
 Links. Rückgabewert 1 bei Befunden, damit der Aufruf in CI verwendbar ist.
 
+Seit Juli 2026 prüft es zusätzlich die Inhaltsseiten ausserhalb von
+`docs/wiki/`: unvollständige oder undatierte `werkzeug:`-Blöcke,
+Schwierigkeitsstufen ausserhalb der drei erlaubten Werte, unbekannte
+Hinweisbox-Typen und Rückfälle in die alte Prosa-Schreibweise
+(`**Evidenzstufe:**`, `**Geprüft:**`, `!!! info "Auf einen Blick"`).
+
 Von Hand bleibt: **Widersprüche zwischen Konzepten markieren**, nicht
 stillschweigend glätten. Und inhaltlich prüfen, ob eine als fällig
 gemeldete Policy tatsächlich geändert wurde.
+
+## Designregeln
+
+Seit Juli 2026 gilt: **Das Frontmatter ist die einzige Quelle der
+Wahrheit.** Was maschinenlesbar dasteht, wird nicht zusätzlich in Prosa
+wiederholt. Der sichtbare Seitenkopf entsteht beim Build aus dem
+Frontmatter (`tools/wiki_komponenten.py`).
+
+Konkret heisst das:
+
+- **Nie wieder in den Text schreiben:** `**Evidenzstufe:** …`,
+  `**Geprüft:** …`, `!!! info "Auf einen Blick"`. `tools/wiki_lint.py`
+  meldet solche Rückfälle.
+- **Quellnotizen** tragen `evidenzstufe`, optional `evidenzstufe_zusatz`
+  (der Klammerzusatz, etwa "Doku eines Verlags"), `pruefnotiz` (was genau
+  geprüft wurde, in Prosa), `verified`, `stale_after` und bei empirischen
+  Quellen `studie`. Alles davon erscheint automatisch im Notizkopf.
+- **Werkzeug- und Anleitungsseiten** tragen einen `werkzeug:`-Block. Er
+  erzeugt den Steckbrief oben auf der Seite:
+
+  ```yaml
+  werkzeug:
+    schwierigkeit: Einsteiger      # genau eine der drei Stufen
+    schwierigkeit_zusatz: >-       # optional: Spannen und Vorbehalte
+      API-Nutzung: Fortgeschritten
+    kosten: Freemium
+    kosten_zusatz: Speicher-Abo optional
+    wofuer: kurz, wofür man es benutzt
+    stand: Juni 2026               # wann Kosten und Umfang geprüft wurden
+  ```
+
+  `schwierigkeit` muss **Einsteiger**, **Fortgeschritten** oder **Profi**
+  sein, nichts dazwischen. Spannen wie "Einsteiger bis Profi" gehören in
+  `schwierigkeit_zusatz`; sonst lässt sich nicht danach filtern.
+
+- **Farben und Abstände** kommen ausschliesslich aus
+  `docs/assets/stylesheets/tokens.css`. In `extra.css` und im Markdown
+  steht kein Hex-Wert. Wer eine Farbe ändern will, ändert sie dort.
+
+- **Hinweisboxen** haben feste Rollen. Zugelassen sind:
+
+  | Typ | Wofür |
+  |-----|-------|
+  | `tip` | Praxistipp, Abkürzung |
+  | `warning` | Fallstrick, Vorsicht |
+  | `datenschutz` | Rechtliches, Vertraulichkeit (ersetzt `danger`) |
+  | `evidenz` | "Was die Forschung sagt", verweist in den Forschungsstand |
+  | `quote` | Wörtliches aus Policy oder Quelle |
+  | `example` | konkreter Fall |
+
+  `info`, `note`, `abstract` und `danger` sind Altbestand: nicht neu
+  verwenden, beim Überarbeiten einer Seite auf die Rollen oben abbilden.
+  Ein neuer Typ braucht einen Eintrag in `extra.css`, in dieser Tabelle
+  und in `BOX_TYPEN` in `tools/wiki_lint.py`.
 
 ## Vorlage: Quellnotiz
 
@@ -241,6 +301,9 @@ stale_after: JJJJ-MM-TT
 # status: draft        nur bei vorläufigen Notizen (nur Abstract geprüft)
 
 evidenzstufe: Peer-reviewed
+evidenzstufe_zusatz: "Doku eines Verlags"   # optional, präzisiert die Stufe
+pruefnotiz: >-
+  Was genau geprüft wurde: Original gelesen? DOI aufgelöst? Auffälliges?
 studie:                        # nur bei empirischen Quellen zu LLMs
   modelle: [exakte Versionen]
   einsatzart: >-
@@ -250,9 +313,6 @@ studie:                        # nur bei empirischen Quellen zu LLMs
 
 # Kurztitel der Quelle
 
-**Evidenzstufe:** ... ·
-**Geprüft:** TT.MM.JJJJ, was genau geprüft wurde (Original gelesen? DOI aufgelöst?)
-
 > Vollständige bibliografische Angabe mit Link/DOI.
 
 ## Kernaussagen
@@ -260,6 +320,9 @@ studie:                        # nur bei empirischen Quellen zu LLMs
 ## Relevanz für die Website
 ## Querverweise
 ```
+
+Der Kopf mit Evidenzstufe, Prüfvermerk, Ampel und Studienangaben steht
+**nicht** im Markdown. Er wird gerendert.
 
 ## Vorlage: Konzeptnotiz
 

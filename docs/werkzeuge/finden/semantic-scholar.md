@@ -1,7 +1,11 @@
-# Semantic Scholar
+---
+werkzeug:
+  schwierigkeit: Einsteiger
+  kosten: gratis
+  wofuer: wissenschaftliche Suchmaschine und Datenbasis
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** gratis · **Wofür:** wissenschaftliche Suchmaschine & Datenbasis
+# Semantic Scholar
 
 ## Was ist es?
 

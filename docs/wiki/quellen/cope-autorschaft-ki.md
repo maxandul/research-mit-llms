@@ -14,12 +14,11 @@ verified:
 stale_after: 2027-07-06
 
 evidenzstufe: Policy
+pruefnotiz: >-
+  Original vollständig gelesen, DOI aufgelöst
 ---
 
 # COPE: Authorship and AI tools
-
-**Evidenzstufe:** Policy ·
-**Geprüft:** 06.07.2026, Original vollständig gelesen, DOI aufgelöst
 
 > COPE Council: *COPE position — Authorship and AI tools.*
 > Committee on Publication Ethics, zuletzt geprüft 13.02.2023.

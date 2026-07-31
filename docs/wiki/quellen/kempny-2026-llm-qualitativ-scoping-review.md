@@ -13,6 +13,9 @@ verified:
 stale_after: 2028-07-07
 
 evidenzstufe: Peer-reviewed
+pruefnotiz: >-
+  Volltext gelesen (Open-Access-PDF, aus `rohdaten/`), DOI im Original
+  enthalten.
 studie:
   modelle: "diverse; 45 Prozent der eingeschlossenen Studien nennen nicht einmal die Einsatzform"
   einsatzart: >-
@@ -22,10 +25,6 @@ studie:
 ---
 
 # Kempny et al. (2026): Scoping Review zu LLMs in qualitativer Forschung
-
-**Evidenzstufe:** Peer-reviewed ·
-**Geprüft:** 07.07.2026, Volltext gelesen (Open-Access-PDF, aus `rohdaten/`),
-DOI im Original enthalten.
 
 > Kempny, C., Frings, J., Rust, P., Meister, S. & Fehring, L. (2026): *The
 > use and methodological reporting of large language models in qualitative

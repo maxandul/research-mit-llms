@@ -13,6 +13,9 @@ verified:
 stale_after: 2028-07-07
 
 evidenzstufe: Peer-reviewed
+pruefnotiz: >-
+  Volltext gelesen (Open-Access-PDF, aus `rohdaten/`), DOI im Original
+  enthalten.
 studie:
   modelle: [gpt-4-1106-preview, GPT-3.5]
   einsatzart: >-
@@ -24,10 +27,6 @@ studie:
 ---
 
 # Dunivin (2025): Scaling hermeneutics — LLM-Codieren als reflexive Praxis
-
-**Evidenzstufe:** Peer-reviewed ·
-**Geprüft:** 07.07.2026, Volltext gelesen (Open-Access-PDF, aus
-`rohdaten/`), DOI im Original enthalten.
 
 > Dunivin, Z. O. (2025): *Scaling hermeneutics: a guide to qualitative
 > coding with LLMs for reflexive content analysis.* EPJ Data Science, 14:28.

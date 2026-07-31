@@ -1,8 +1,13 @@
-# Qualitative Daten codieren
+---
+werkzeug:
+  schwierigkeit: Einsteiger
+  kosten: gratis bis Abo
+  wofuer: >-
+    Interviews und offene Antworten mit einem LLM als zweitem Codierer
+    auswerten
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** gratis bis Abo ·
-    **Wofür:** Interviews und offene Antworten mit einem LLM als zweitem Codierer auswerten
+# Qualitative Daten codieren
 
 Ein LLM kann beim Codieren qualitativer Daten (Interviews, offene
 Fragebogen-Antworten, Feldnotizen) enorm viel Arbeit abnehmen. Der Schlüssel
@@ -192,7 +197,7 @@ gilt also dieselbe [Anonymisierungs-Regel](../erheben/anonymisieren.md).
 - Methodisch sauber ist der Einsatz dann, wenn er dokumentiert, geprüft und
   im Methodenteil offengelegt ist.
 
-!!! info "Evidenz zuletzt geprüft: Juli 2026"
+!!! evidenz "Evidenz zuletzt geprüft: Juli 2026"
     Die Belege zu dieser Seite sind im
     [Forschungsstand: Qualitative Daten codieren](../wiki/synthese/qualitativ-codieren.md)
     zusammengefasst. Wichtig beim Lesen: Die Studienlage ist jung und

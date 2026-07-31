@@ -112,7 +112,7 @@ Grundregeln gelten weiterhin: alles Belegrelevante selbst prüfen, Urteil
 und Interpretation nicht delegieren, Datenschutz einhalten. Die Deklaration
 ist der letzte Schritt eines sauberen Prozesses, nicht sein Ersatz.
 
-!!! info "Evidenz zuletzt geprüft: Juli 2026"
+!!! evidenz "Evidenz zuletzt geprüft: Juli 2026"
     Die Belege zu dieser Seite sind im
     [Forschungsstand: KI-Nutzung deklarieren](../wiki/synthese/ki-deklarieren.md)
     zusammengefasst; dort steht auch, worin die Quellen übereinstimmen und

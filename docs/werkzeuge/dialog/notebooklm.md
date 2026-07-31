@@ -1,7 +1,12 @@
-# NotebookLM
+---
+werkzeug:
+  schwierigkeit: Einsteiger
+  kosten: gratis
+  wofuer: mit den eigenen Quellen chatten
+  stand: Juni 2026
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** gratis · **Wofür:** mit den eigenen Quellen chatten
+# NotebookLM
 
 ## Was ist es?
 
@@ -34,11 +39,6 @@ auf die hochgeladenen Dokumente, nicht aus dem offenen Web.
 ## Offizielle Links
 
 - Website: <https://notebooklm.google.com>
-
-!!! note "Hinweis zu Kosten & Limits"
-    Die Angaben zu Kosten und Kontingenten sind eine Schätzung
-    (Stand Juni 2026). Verbindlich sind die aktuellen Konditionen
-    auf der offiziellen Seite.
 
 ---
 

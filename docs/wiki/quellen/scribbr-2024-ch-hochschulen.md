@@ -13,12 +13,12 @@ verified:
 stale_after: 2027-07-06
 
 evidenzstufe: Praxis
+evidenzstufe_zusatz: "kommerzieller Anbieter, systematische Recherche"
+pruefnotiz: >-
+  Original vollständig gelesen
 ---
 
 # Scribbr: ChatGPT-Richtlinien der 23 Schweizer Hochschulen
-
-**Evidenzstufe:** Praxis (kommerzieller Anbieter, systematische Recherche) ·
-**Geprüft:** 06.07.2026, Original vollständig gelesen
 
 > Solis, T. (2024, 18. Dezember): *Die ChatGPT-Richtlinien der 23 Schweizer
 > Hochschulen.* Scribbr.

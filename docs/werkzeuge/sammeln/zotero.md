@@ -1,7 +1,13 @@
-# Zotero
+---
+werkzeug:
+  schwierigkeit: Einsteiger
+  schwierigkeit_zusatz: Grundfunktionen einfach, LLM-Anbindung bis Profi
+  kosten: gratis
+  kosten_zusatz: Speicher-Abo optional
+  wofuer: Literaturverwaltung
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger bis Profi (Grundfunktionen einfach, LLM-Anbindung anspruchsvoller) · **Kosten:** gratis (Speicher-Abo optional) · **Wofür:** Literaturverwaltung
+# Zotero
 
 ## Was ist es?
 

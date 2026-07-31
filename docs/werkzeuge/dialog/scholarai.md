@@ -1,7 +1,12 @@
-# ScholarAI (Custom GPT)
+---
+werkzeug:
+  schwierigkeit: Fortgeschritten
+  kosten: ChatGPT Plus
+  kosten_zusatz: nötig zum Erstellen eigener GPTs
+  wofuer: Literatursuche und Volltext-Analyse im Chat
+---
 
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Fortgeschritten · **Kosten:** ChatGPT Plus (zum Erstellen eigener GPTs) · **Wofür:** Literatursuche & Volltext-Analyse im Chat
+# ScholarAI (Custom GPT)
 
 ## Was ist es?
 

@@ -13,6 +13,9 @@ verified:
 stale_after: 2028-07-06
 
 evidenzstufe: Peer-reviewed
+pruefnotiz: >-
+  Volltext gelesen (Open Access CC BY-NC-ND, aus `rohdaten/`), DOI
+  aufgelöst.
 studie:
   modelle: "diverse, Review ueber Fremdstudien (u.a. ChatGPT)"
   einsatzart: "Systematisches Review nach PRISMA ueber 20 Studien."
@@ -20,10 +23,6 @@ studie:
 ---
 
 # Mabirizi et al. (2025): Systematic Review — GenAI in der Postgraduierten-Forschung
-
-**Evidenzstufe:** Peer-reviewed ·
-**Geprüft:** 06.07.2026, Volltext gelesen (Open Access CC BY-NC-ND, aus
-`rohdaten/`), DOI aufgelöst.
 
 > Mabirizi, V., Katushabe, C., Muhoza, G., & Rugasira, J. (2025):
 > *A systematic review of the impact of generative AI on postgraduate

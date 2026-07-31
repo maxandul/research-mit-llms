@@ -65,6 +65,8 @@ extra_css:
 
 hooks:
   - tools/wiki_graph.py            # erzeugt graph.json für den Wissensgraphen
+  - tools/wiki_komponenten.py      # rendert Notizkopf und Werkzeug-Steckbrief
+                                   # aus dem Frontmatter
 
 plugins:
   - search:

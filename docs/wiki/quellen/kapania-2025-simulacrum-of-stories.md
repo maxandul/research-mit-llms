@@ -13,6 +13,9 @@ verified:
 stale_after: 2028-07-07
 
 evidenzstufe: Peer-reviewed
+pruefnotiz: >-
+  Volltext gelesen (Open-Access-PDF, aus `rohdaten/`), DOI im Original
+  enthalten.
 studie:
   modelle: [GPT-4-turbo]
   einsatzart: >-
@@ -23,10 +26,6 @@ studie:
 ---
 
 # Kapania et al. (2025): Simulacrum of Stories — LLMs als "Teilnehmende"
-
-**Evidenzstufe:** Peer-reviewed ·
-**Geprüft:** 07.07.2026, Volltext gelesen (Open-Access-PDF, aus
-`rohdaten/`), DOI im Original enthalten.
 
 > Kapania, S., Agnew, W., Eslami, M., Heidari, H. & Fox, S. E. (2025):
 > *Simulacrum of Stories: Examining Large Language Models as Qualitative
