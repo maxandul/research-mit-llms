@@ -1,2 +1,6 @@
-mkdocs-material
-mkdocs-git-revision-date-localized-plugin
+# Obergrenzen sind Absicht: MkDocs 2.0 bringt laut Ankuendigung der
+# Material-Entwickler unvereinbare Aenderungen (Plugin-System entfernt,
+# Theming neu geschrieben, kein Migrationspfad). Ohne Obergrenze wuerde
+# irgendein spaeterer Push den Build unangekuendigt brechen.
+mkdocs-material>=9.7,<10
+mkdocs-git-revision-date-localized-plugin>=1.5,<2

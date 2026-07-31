@@ -11,6 +11,13 @@ site_url: https://maxandul.github.io/research-mit-llms/
 theme:
   name: material
   language: de
+  custom_dir: overrides       # laedt zusaetzlich die Titelschrift, siehe overrides/main.html
+  font:
+    # Fliesstext: eigens auf Lesbarkeit hin entworfen (Braille Institute).
+    # Titelschrift (Source Serif 4) kommt ueber overrides/main.html dazu.
+    # Beide werden beim Build lokal abgelegt, siehe privacy-Plugin.
+    text: Atkinson Hyperlegible
+    code: JetBrains Mono
   features:
     - navigation.sections     # Gruppen in der Seitenleiste ausklappen
     - navigation.top          # "Nach oben"-Button
@@ -20,23 +27,34 @@ theme:
     - search.highlight        # Treffer hervorheben
     - content.code.copy       # Kopier-Knopf bei Code-Boxen
     - toc.follow
+  # "custom" heisst: die Farben stehen nicht hier, sondern in
+  # docs/assets/stylesheets/tokens.css. Dort ist die einzige Stelle, an
+  # der eine Farbe geändert wird.
   palette:
     # Heller Modus
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Zu dunklem Modus wechseln
     # Dunkler Modus
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Zu hellem Modus wechseln
+
+# --------------------------------------------------------------------
+#  Eigenes Stylesheet. Reihenfolge zählt: tokens.css definiert die
+#  Werte, extra.css wendet sie auf Material an.
+# --------------------------------------------------------------------
+extra_css:
+  - assets/stylesheets/tokens.css
+  - assets/stylesheets/extra.css
 
 hooks:
   - tools/wiki_graph.py            # erzeugt graph.json für den Wissensgraphen
@@ -44,6 +62,9 @@ hooks:
 plugins:
   - search:
       lang: de
+  - privacy:                       # lädt externe Schriften beim Build herunter und
+      enabled: !ENV [CI, false]    # hostet sie selbst: keine Anfragen an Google beim
+                                   # Besuch. Lokal aus, damit der Build schnell bleibt.
   - git-revision-date-localized:   # "Zuletzt aktualisiert" pro Seite
       type: date
       locale: de

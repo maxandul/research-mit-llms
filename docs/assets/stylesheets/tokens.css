@@ -1,0 +1,198 @@
+/* ====================================================================
+   Design-Tokens: die einzige Stelle, an der Farben, Abstaende, Radien
+   und Schriften definiert werden.
+
+   Aufbau in drei Schichten:
+     1. Rampen      feste Hex-Werte, in beiden Modi identisch
+     2. Zweck       was Komponenten tatsaechlich benutzen (--fl-text,
+                    --fl-bg-card ...), je einmal fuer hell und dunkel
+     3. Masse       Abstaende, Radien, Schriften, modusunabhaengig
+
+   Regel: In extra.css und in allen spaeteren Komponenten wird
+   ausschliesslich Schicht 2 und 3 verwendet, nie ein Hex-Wert und nie
+   direkt eine Rampe. Wer eine Farbe aendern will, aendert sie hier.
+   ==================================================================== */
+
+:root {
+
+  /* --- 1. Rampen ---------------------------------------------------
+     Petrol traegt die Marke (Kopfzeile, Reiter, Links), Terrakotta
+     setzt Akzente (Hervorhebungen, aktive Zustaende). Sand ersetzt das
+     kalte Standardgrau: waermere Neutrale lesen sich auf langen
+     Textstrecken freundlicher. */
+
+  --fl-petrol-50:  #e8f3f2;
+  --fl-petrol-100: #c6e3e0;
+  --fl-petrol-200: #93c9c4;
+  --fl-petrol-300: #5faea8;
+  --fl-petrol-400: #2e908a;
+  --fl-petrol-500: #0f6e6e;
+  --fl-petrol-600: #0c5c5c;
+  --fl-petrol-700: #094848;
+  --fl-petrol-800: #063535;
+  --fl-petrol-900: #042424;
+
+  --fl-terra-50:   #fbefe9;
+  --fl-terra-100:  #f6d9ca;
+  --fl-terra-200:  #efb89f;
+  --fl-terra-300:  #e4926e;
+  --fl-terra-400:  #d4713f;
+  --fl-terra-500:  #b4532a;
+  --fl-terra-600:  #9a4423;
+  --fl-terra-700:  #7c351b;
+  --fl-terra-800:  #5c2714;
+  --fl-terra-900:  #3d190c;
+
+  --fl-sand-0:     #ffffff;
+  --fl-sand-25:    #fdfbf8;
+  --fl-sand-50:    #fbf8f4;
+  --fl-sand-100:   #f4efe8;
+  --fl-sand-200:   #e7dfd4;
+  --fl-sand-300:   #d6cab9;
+  --fl-sand-400:   #b3a695;
+  --fl-sand-500:   #8c8172;
+  --fl-sand-600:   #6e6558;
+  --fl-sand-700:   #554d43;
+  --fl-sand-800:   #3a342d;
+  --fl-sand-900:   #26211c;
+  --fl-sand-950:   #1a1614;
+
+  /* --- 3. Masse ----------------------------------------------------
+     Schriften: Source Serif 4 fuer Titel (ruhig, wissenschaftlich),
+     Atkinson Hyperlegible fuer Fliesstext (eigens auf Lesbarkeit hin
+     entworfen, Braille Institute). Beide werden beim Build lokal
+     abgelegt, siehe privacy-Plugin in mkdocs.yml. */
+
+  --fl-font-titel: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --fl-font-text:  "Atkinson Hyperlegible", -apple-system, "Segoe UI", sans-serif;
+  --fl-font-code:  "JetBrains Mono", "SF Mono", Consolas, monospace;
+
+  --fl-radius-klein:  4px;
+  --fl-radius:        8px;
+  --fl-radius-karte: 12px;
+  --fl-radius-pille: 999px;
+
+  --fl-space-2xs: .25rem;
+  --fl-space-xs:  .5rem;
+  --fl-space-s:   .75rem;
+  --fl-space-m:   1rem;
+  --fl-space-l:   1.5rem;
+  --fl-space-xl:  2rem;
+  --fl-space-2xl: 3rem;
+
+  /* Textspalte: rund 68 Zeichen, die uebliche Obergrenze fuer
+     bequemes Lesen. Material setzt hier sonst keine Grenze. */
+  --fl-mass-text: 42rem;
+
+  --fl-linie-duenn: 1px;
+  --fl-uebergang:   .2s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* --- 2. Zweck: heller Modus ---------------------------------------- */
+
+[data-md-color-scheme="default"] {
+
+  --fl-primary:        var(--fl-petrol-500);
+  --fl-primary-stark:  var(--fl-petrol-700);
+  --fl-primary-leise:  var(--fl-petrol-50);
+  --fl-on-primary:     var(--fl-sand-50);
+
+  --fl-accent:         var(--fl-terra-500);
+  --fl-accent-stark:   var(--fl-terra-700);
+  --fl-accent-leise:   var(--fl-terra-50);
+
+  --fl-bg-seite:       var(--fl-sand-50);
+  --fl-bg-karte:       var(--fl-sand-0);
+  --fl-bg-gedaempft:   var(--fl-sand-100);
+  --fl-bg-code:        var(--fl-sand-100);
+
+  --fl-text:           var(--fl-sand-900);
+  --fl-text-sekundaer: var(--fl-sand-700);
+  --fl-text-leise:     var(--fl-sand-500);
+
+  --fl-linie:          var(--fl-sand-200);
+  --fl-linie-stark:    var(--fl-sand-300);
+
+  /* Evidenzstufen. Jede Stufe erscheint immer als Chip mit Text, nie
+     als blosse Farbe: Farbe allein ist nicht barrierefrei. */
+  --fl-ev-peer-bg:      #e4f1ea;
+  --fl-ev-peer-fg:      #145236;
+  --fl-ev-peer-linie:   #1f6f4a;
+  --fl-ev-preprint-bg:    #e3eef6;
+  --fl-ev-preprint-fg:    #134463;
+  --fl-ev-preprint-linie: #1b5e8a;
+  --fl-ev-policy-bg:    #ede8f6;
+  --fl-ev-policy-fg:    #4e3874;
+  --fl-ev-policy-linie: #6b4e9e;
+  --fl-ev-doku-bg:      #e9ebef;
+  --fl-ev-doku-fg:      #353e4d;
+  --fl-ev-doku-linie:   #4a5568;
+  --fl-ev-praxis-bg:    #f7eedc;
+  --fl-ev-praxis-fg:    #714b05;
+  --fl-ev-praxis-linie: #9a6708;
+
+  /* Ampel fuer stale_after: geprueft, faellig in Kuerze, ueberfaellig */
+  --fl-ampel-gruen:  #1f6f4a;
+  --fl-ampel-gelb:   #9a6708;
+  --fl-ampel-rot:    #a32d2d;
+
+  --fl-gefahr-bg:    #fbe9e8;
+  --fl-gefahr-linie: #a32d2d;
+
+  --fl-schatten-karte: 0 1px 2px rgb(38 33 28 / 5%);
+}
+
+/* --- 2. Zweck: dunkler Modus ---------------------------------------
+   Nicht das Standard-Slate von Material (blaustichig), sondern ein
+   warmes Dunkelbraun, damit hell und dunkel dieselbe Handschrift
+   haben. Primaer- und Akzentfarbe werden aufgehellt, sonst reichen
+   die Kontraste auf dunklem Grund nicht. */
+
+[data-md-color-scheme="slate"] {
+
+  --fl-primary:        var(--fl-petrol-300);
+  --fl-primary-stark:  var(--fl-petrol-200);
+  --fl-primary-leise:  var(--fl-petrol-900);
+  --fl-on-primary:     var(--fl-sand-950);
+
+  --fl-accent:         var(--fl-terra-300);
+  --fl-accent-stark:   var(--fl-terra-200);
+  --fl-accent-leise:   var(--fl-terra-900);
+
+  --fl-bg-seite:       var(--fl-sand-950);
+  --fl-bg-karte:       #241f1b;
+  --fl-bg-gedaempft:   #2e2823;
+  --fl-bg-code:        #2e2823;
+
+  --fl-text:           #f0eae3;
+  --fl-text-sekundaer: #c3b8ac;
+  --fl-text-leise:     #948a7e;
+
+  --fl-linie:          #3a332d;
+  --fl-linie-stark:    #4d443c;
+
+  --fl-ev-peer-bg:      #12301f;
+  --fl-ev-peer-fg:      #9fd9bd;
+  --fl-ev-peer-linie:   #3f9a70;
+  --fl-ev-preprint-bg:    #10293b;
+  --fl-ev-preprint-fg:    #a4cbe6;
+  --fl-ev-preprint-linie: #4b8cbc;
+  --fl-ev-policy-bg:    #241c38;
+  --fl-ev-policy-fg:    #c4b4e4;
+  --fl-ev-policy-linie: #8d75c2;
+  --fl-ev-doku-bg:      #22262d;
+  --fl-ev-doku-fg:      #b9c1cd;
+  --fl-ev-doku-linie:   #6d7a8f;
+  --fl-ev-praxis-bg:    #33260c;
+  --fl-ev-praxis-fg:    #e5c489;
+  --fl-ev-praxis-linie: #c08c2b;
+
+  --fl-ampel-gruen:  #5dbd90;
+  --fl-ampel-gelb:   #d3a24a;
+  --fl-ampel-rot:    #e0817f;
+
+  --fl-gefahr-bg:    #35191a;
+  --fl-gefahr-linie: #d4706e;
+
+  --fl-schatten-karte: none;
+}

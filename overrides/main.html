@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{#
+  Theme-Erweiterung. Aktuell nur ein Zweck: die Titelschrift laden.
+
+  Material laedt ueber `theme.font` genau eine Textschrift und eine
+  Codeschrift. Wir brauchen eine dritte, Source Serif 4 fuer die
+  Ueberschriften. Sie kommt deshalb hier dazu.
+
+  Der Verweis geht an Google Fonts, landet dort aber nicht: Das
+  privacy-Plugin (siehe mkdocs.yml) laedt die Dateien beim Build
+  herunter, legt sie neben die Seite und schreibt diesen Verweis um.
+  Beim Besuch der Website wird also nichts an Google gesendet.
+#}
+{% block extrahead %}
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap">
+{% endblock %}
