@@ -115,7 +115,8 @@ ist der letzte Schritt eines sauberen Prozesses, nicht sein Ersatz.
 !!! info "Evidenz zuletzt geprüft: Juli 2026"
     Die Belege zu dieser Seite sind im
     [Forschungsstand: KI-Nutzung deklarieren](../wiki/synthese/ki-deklarieren.md)
-    zusammengefasst; dort steht auch, was gut belegt und was offen ist.
+    zusammengefasst; dort steht auch, worin die Quellen übereinstimmen und
+    was offen ist.
 
 ## Quellen
 

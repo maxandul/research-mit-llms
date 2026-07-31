@@ -40,6 +40,24 @@ Changelog. Es besteht aus vier Schichten:
    sich eine Synthese auf, die den Aufbau der Website verändern würde,
    darf und soll sich die Website ändern.
 
+### Was sich im Juli 2026 geändert hat
+
+Jede Notiz trägt seither einen kleinen Datenblock am Dateianfang
+(YAML-Frontmatter) nach dem **[Open Knowledge Format](../werkzeuge/sammeln/llm-wiki.md#ein-standard-zeichnet-sich-ab-das-open-knowledge-format)**,
+einer offenen Spezifikation für LLM-Wikis. Für Lesende ändert sich am Text
+nichts: Der Block ist auf der Website nicht sichtbar und die Notizen sind
+dieselben geblieben. Sichtbar sind zwei Nebenwirkungen. Notizen, die noch
+vorläufig sind oder als überholt gelten, tragen in der Navigation eine
+**Statusmarke**. Und im Wissensgraphen unten zeigt der Tooltip eines Knotens
+jetzt zusätzlich die Evidenzstufe.
+
+Der eigentliche Gewinn liegt hinter den Kulissen: Was vorher als Fliesstext
+in den Notizen stand (Evidenzstufe, Prüfdatum, Prüfumfang, verwendete
+Modelle), ist jetzt zusätzlich maschinell abfragbar. Das Skript
+`tools/wiki_lint.py` meldet damit selbständig, welche Notiz nur auf einem
+Abstract beruht, welche Policy zur Nachprüfung fällig ist und welche Notiz
+verwaist. Vorher war das Handarbeit, und Handarbeit unterbleibt.
+
 ## Evidenzstufen
 
 Nicht jede Quelle trägt gleich viel. Jede Quellnotiz und jeder Beleg auf den
@@ -110,7 +128,13 @@ führt zur jeweiligen Seite.
           .on("drag", function (ev, d) { d.fx = ev.x; d.fy = ev.y; })
           .on("end", function (ev, d) { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }))
         .on("click", function (ev, d) { window.location.href = d.url; });
-      node.append("title").text(function (d) { return d.label; });
+      node.append("title").text(function (d) {
+        var zusatz = [];
+        if (d.evidenzstufe) zusatz.push(d.evidenzstufe);
+        if (d.status === "draft") zusatz.push("vorläufig");
+        if (d.status === "deprecated") zusatz.push("überholt");
+        return d.label + (zusatz.length ? " (" + zusatz.join(", ") + ")" : "");
+      });
       var text = g.selectAll("text").data(data.nodes).join("text")
         .text(function (d) { return d.label; })
         .attr("font-size", "9px")

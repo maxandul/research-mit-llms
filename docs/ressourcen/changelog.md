@@ -8,6 +8,29 @@ sind nicht aufgeführt; die vollständige Historie liegt im
 
 ## Juli 2026
 
+- **Neu erklärt: das Open Knowledge Format (OKF).** Google Cloud hat im
+  Juni 2026 eine offene Spezifikation dafür veröffentlicht, wie ein
+  LLM-Wiki aufgebaut sein sollte, im Juli gefolgt von Version 0.2 mit
+  Feldern für Herkunft, Prüfstand und Verfallsdatum einer Notiz. Was das
+  ist, was es bringt und wie neu es noch ist, steht jetzt auf
+  [LLM-Wiki (nach Karpathy)](../werkzeuge/sammeln/llm-wiki.md#ein-standard-zeichnet-sich-ab-das-open-knowledge-format);
+  die [Wiki-Vorlagen](wiki-vorlagen.md) sind entsprechend ergänzt (der
+  Datenblock bleibt dort optional).
+
+- **Der Forschungsstand dieser Website weist seinen Prüfstand jetzt
+  maschinenlesbar aus.** Evidenzstufe, Prüfdatum, Prüfumfang und die in
+  einer Studie getesteten Modelle standen bisher nur im Text der
+  Quellnotizen; sie stehen jetzt zusätzlich in einem Datenblock nach OKF.
+  Für dich als Lesende ändert sich der Text nicht, aber zwei Dinge werden
+  sichtbar: Notizen, die erst vorläufig sind oder als überholt gelten,
+  tragen in der Navigation eine Statusmarke, und der Wissensgraph zeigt die
+  Evidenzstufe im Tooltip. Wichtiger ist der unsichtbare Teil: Ob eine
+  Notiz nur auf einem Abstract beruht oder eine Policy zur Nachprüfung
+  fällig ist, meldet nun ein Prüfskript automatisch, statt dass jemand
+  daran denken muss. Aktuell offen ist genau ein Punkt, die
+  [Prävalenz-Studie von Liang et al.](../wiki/quellen/liang-2025-llm-praevalenz.md),
+  deren publizierte Fassung hinter einer Paywall liegt.
+
 - **Thema [Qualitative Daten codieren](../analysieren/qualitativ-codieren.md)
   auf eine geprüfte Quellenbasis gestellt** (5 Quellen, davon 4
   peer-reviewed). Erste Studien stützen den "zweiter Codierer"-Ansatz der

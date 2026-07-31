@@ -6,12 +6,36 @@ beschreibt. Es sind dieselben Vorlagen, mit denen der
 [Forschungsstand dieser Website](../wiki/index.md) gepflegt wird — du
 siehst dort also, wie ausgefüllte Exemplare aussehen.
 
+Jede Vorlage beginnt mit einem YAML-Block (Frontmatter) nach dem
+[Open Knowledge Format](../werkzeuge/sammeln/llm-wiki.md#ein-standard-zeichnet-sich-ab-das-open-knowledge-format).
+Er ist optional: Ohne ihn funktionieren die Vorlagen genauso. Mit ihm wird
+maschinell prüfbar, was sonst nur im Text steht, und Werkzeuge wie
+Obsidian oder MkDocs können danach filtern. Pflicht ist im Format allein
+das Feld `type`; ergänze also ruhig nur so viel, wie du auch pflegen magst.
+
 ## Quellnotiz
 
 Eine Notiz pro Quelle. Sie trägt die Provenienz: wer sagt was, wie wurde
 es geprüft, wie belastbar ist es.
 
 ```markdown
+---
+type: Quellnotiz
+title: "Kurztitel"
+description: >-
+  Ein Satz, was die Quelle zeigt.
+resource: https://doi.org/…
+tags: [thema, art]
+
+generated: { by: "llm-assistiert, redigiert von human:name", at: JJJJ-MM-TT }
+verified:
+  - { by: "human:name", at: JJJJ-MM-TT, umfang: Volltext }
+stale_after: JJJJ-MM-TT
+# status: draft        nur bei vorläufigen Notizen (nur Abstract geprüft)
+
+evidenzstufe: Peer-reviewed
+---
+
 # Kurztitel der Quelle
 
 **Evidenzstufe:** Peer-reviewed | Preprint | Policy | Doku | Praxis ·
@@ -42,6 +66,16 @@ Ein atomares Thema, quellenübergreifend. Hier entsteht das Netz: Konzepte
 verlinken Quellen und einander.
 
 ```markdown
+---
+type: Konzeptnotiz
+title: "Name des Konzepts"
+description: >-
+  Ein Satz, was das Konzept behauptet.
+tags: [thema, art]
+
+generated: { by: "llm-assistiert, redigiert von human:name", at: JJJJ-MM-TT }
+---
+
 # Name des Konzepts
 
 **Konzeptnotiz** · Stand: Monat JJJJ
@@ -68,11 +102,21 @@ man über diesen einen Sachverhalt, wenn man alle Quellen zusammennimmt?
 Der verdichtete Stand zu einem Thema, zusammengesetzt aus Konzepten.
 
 ```markdown
+---
+type: Synthese
+title: "Forschungsstand: Thema"
+description: >-
+  Ein Satz, was die Synthese zusammenfasst.
+tags: [thema]
+
+generated: { by: "llm-assistiert, redigiert von human:name", at: JJJJ-MM-TT }
+---
+
 # Forschungsstand: Thema
 
 **Evidenz zuletzt geprüft:** Monat JJJJ
 
-## Was gut belegt ist
+## Worin die Quellen übereinstimmen
 
 Pro Absatz ein Konzept, mit Link. Konsens benennen.
 
@@ -119,6 +163,7 @@ Phase 2 — Vertiefen (Pflicht vor der Notiz):
 ## lint: regelmässige Prüfung
 - Widersprüche markieren, nicht stillschweigend glätten.
 - Veraltete Aussagen kennzeichnen, verwaiste Notizen und tote Links melden.
+- Was im Frontmatter steht, per Skript prüfen statt von Hand.
 ```
 
 Das vollständige, produktive Schema dieser Website:
