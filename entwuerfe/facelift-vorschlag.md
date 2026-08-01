@@ -440,9 +440,82 @@ Werkzeugseiten fehlt `werkzeug.stand`, das Datum also, an dem Kosten und
 Funktionsumfang zuletzt geprüft wurden. Vorher war das genauso, nur
 unsichtbar. Der Lint meldet es jetzt, bis die Daten nachgetragen sind.
 
-### Etappen 4 bis 6
+### Etappe 3b: Hinweisboxen und Wiki-Navigation (erledigt)
 
-Offen, siehe Abschnitt 3. Die Vereinheitlichung des Seitenaufbaus über
-alle Inhaltsseiten (Wiedererkennung, didaktische Reihenfolge) kommt als
-eigene Etappe dazu; dorthin gehört auch die restliche Umstellung der
-Hinweisboxen.
+Ausgelöst durch die Frage, ob die Infoboxen gut genutzt werden. Die
+Auszählung aller 51 Boxen ergab: nein, und zwar aus zwei Gründen.
+
+**Keine der sechs `quote`-Boxen war ein Zitat.** "Das Grundprinzip",
+"Die Regel", "Der rote Faden": Merksätze der Website, die sich den
+Zitat-Typ ausgeliehen hatten. **Und rund ein Drittel der Boxen sprach
+nicht über das Thema, sondern über die Website** ("im Aufbau", "noch
+nicht abgedeckt", "für wen ist diese Seite?"). Die sahen aus wie eine
+inhaltliche Warnung vor Datenverlust.
+
+Aus acht Typen wurden drei plus ein Nicht-Box-Register:
+
+| | Rolle | Anzahl |
+|---|---|---|
+| `merksatz` | der eine Satz der Seite, höchstens einer | 6 |
+| `warnung` | Fallstrick, Grenze, Datenschutzrisiko | 12 |
+| `evidenz` | Verweis in den Forschungsstand | 3 |
+| `randnotiz` | **keine Box**: was die Website über sich sagt | 16 |
+| Fliesstext | Boxen, die nichts beitrugen | 13 |
+
+Merksätze wurden bewusst **nicht** vermehrt: Es sind genau die sechs,
+die vorher schon diese Rolle hatten. Ein erfundener Merksatz wirkt hohl,
+und der Lint erlaubt höchstens einen pro Seite, verlangt aber keinen.
+
+`datenschutz` ist wieder verschwunden. Beide Vorkommen waren echte
+Warnungen; ein eigener Typ für dieselbe Sprechhandlung war ein Typ zu
+viel.
+
+**Wiki-Navigation: Variante B plus C.** Quell- und Konzeptnotizen bleiben
+aus der Navigation draussen, weil eine flache Liste bei absehbar über 80
+Notizen keine Navigation mehr wäre und weil der Konzept-Layer bewusst
+querliegt, sich also gar nicht in einen Baum bringen lässt. Die leere
+Seitenleiste auf Notizseiten wird jetzt ausgeblendet (`hide: navigation`,
+gesetzt vom Hook statt in 31 Dateien). Die Nachbarnavigation aus dem
+Graphen kommt in Etappe 5.
+
+| Datei | Was |
+|---|---|
+| `tools/migration_boxen.py` | neu: einmalige Migration mit nachlesbarer Zuordnung aller 51 Boxen |
+| `tools/wiki_komponenten.py` | blendet die Seitenleiste auf Quell- und Konzeptnotizen aus |
+| `tools/wiki_lint.py` | `BOX_TYPEN` auf vier reduziert, prüft Merksatz-Höchstzahl |
+| `docs/assets/stylesheets/extra.css` | drei Boxentypen statt acht, Randnotiz-Register, Silbentrennung abgeschaltet |
+| `docs/index.md` | Legende auf Steckbrief und die drei Boxentypen umgeschrieben |
+| `CLAUDE.md` | Rollentabelle ersetzt, Merksatz als optional dokumentiert, Nav-Entscheid festgehalten |
+| 30 Inhaltsseiten | Boxen umgestellt |
+
+**Ausserdem behoben:** Die in Etappe 1 eingeschaltete Silbentrennung war
+ein Fehler. Der Browser trennt nach Seitensprache, also deutsch, und
+zerlegte damit auch englische Titel in Zitaten ("Lan-guage"); in
+Überschriften stand "codie-ren". Ist raus.
+
+Geprüft: Build grün, 544 interne Links ohne toten Link, Lint meldet nur
+die bekannten `stand`-Lücken. Die ASCII-Diagramme in den drei Workflows
+haben die Umwandlung von Box zu Fliesstext unbeschadet überstanden.
+
+### Etappe 4: Gemeinsame Wirbelsäule der Seiten (als Nächstes)
+
+Entschieden: **Reihenfolge fest, Wortlaut frei.** Sechs Positionen in
+fester Reihenfolge, die Überschriften pro Seite passend formuliert. Der
+Lint prüft nur die Klammer, nicht die Wörter.
+
+| # | Frage an den Leser | Werkzeug | Anleitung | Grundlage | Workflow |
+|---|---|---|---|---|---|
+| 1 | Lohnt sich das für mich? | da | da | **fehlt** | **fehlt** |
+| 2 | Welches Problem löst das? | "Was ist es?" | **fehlt meist** | lose da | "Ziel" |
+| 3 | Was ist die eine Sache? | optional | optional | optional | optional |
+| 4 | Wie geht das? | da | da | da | "Schritte" |
+| 5 | Wo hört es auf? | da | da | **fehlt** | **fehlt** |
+| 6 | Was als Nächstes? | da (68/71) | da | da | da |
+
+Position 3 ist der Merksatz und bleibt freiwillig. Zu klären ist noch,
+was Position 1 auf Grundlagen- und Workflowseiten sein soll: Ein
+`werkzeug:`-Block passt dort nicht.
+
+### Etappen 5 und 6
+
+Offen, siehe Abschnitt 3.
