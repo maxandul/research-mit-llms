@@ -4,7 +4,7 @@ Kopierfertige Prompts für die häufigsten Aufgaben, geordnet nach
 Forschungsphase. Alle Vorlagen sind Ausgangspunkte: an das eigene Projekt,
 Fach und Vokabular anpassen.
 
-!!! tip "Eine Regel für alle Prompts"
+!!! warnung "Eine Regel für alle Prompts"
     Keine erfundenen Angaben zulassen. Baue in jeden Prompt eine Ausstiegs-
     Klausel ein: Was das Modell nicht weiss oder nicht im Material findet,
     soll es als Lücke ausweisen, nicht füllen.

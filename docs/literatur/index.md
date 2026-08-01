@@ -12,7 +12,7 @@ Der Bereich folgt dem Weg, den Literatur bei der Arbeit nimmt: erst
 erklären je ein Werkzeug, die Workflows verketten mehrere zu einem
 durchgängigen Ablauf.
 
-!!! tip "Wenn du nur eines lesen willst"
+!!! randnotiz "Wenn du nur eines lesen willst"
     Nimm den Workflow [Vom Thema zur Literaturübersicht](../workflows/thema-zu-uebersicht.md).
     Er zeigt das Zusammenspiel an einem Beispiel und verweist an den
     passenden Stellen auf die einzelnen Werkzeuge.

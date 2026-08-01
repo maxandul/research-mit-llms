@@ -7,13 +7,13 @@ description: >-
 
 # Daten
 
-Hier wird es heikel, und zwar in beide Richtungen. Bei der Erhebung geht
-es um fremde Daten und damit um Vertraulichkeit; bei der Auswertung geht
-es um die Belastbarkeit der Ergebnisse. Beides sind Stellen, an denen ein
-unbedachter Werkzeugeinsatz nicht nur Zeit kostet, sondern der Arbeit
-schadet.
+Bei der Erhebung geht es um fremde Daten und damit um Vertraulichkeit,
+bei der Auswertung um die Belastbarkeit der Ergebnisse. Fehler lassen
+sich in beiden Fällen schlecht nachträglich reparieren: Was hochgeladen
+ist, ist hochgeladen, und eine ungeprüfte Codierung fällt oft erst im
+Kolloquium auf.
 
-!!! warning "Reihenfolge zählt"
+!!! warnung "Reihenfolge zählt"
     [Daten anonymisieren](../erheben/anonymisieren.md) kommt vor jeder
     Cloud-Verarbeitung, nicht danach. Die Grundregel steht unter
     [Datenschutz & Vertraulichkeit](../grundlagen/datenschutz.md).

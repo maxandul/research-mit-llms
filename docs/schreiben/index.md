@@ -30,7 +30,7 @@ schreibe?
 
 </div>
 
-!!! note "Noch nicht abgedeckt"
+!!! randnotiz "Noch nicht abgedeckt"
     Zum Schreiben selbst (Copy-Editing gegenüber Inhaltserzeugung,
     KI-Detektoren, kognitive Auslagerung) gibt es bisher keine eigene
     Seite. Der Recherche-Sprint dazu ist geplant, siehe

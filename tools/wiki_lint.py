@@ -117,7 +117,7 @@ def pruefen(wurzel: Path, heute: dt.date | None = None) -> list[str]:
 # --------------------------------------------------------------------
 
 DUBLETTEN = {
-    r'^!!! info "Auf einen Blick"': "Steckbrief von Hand statt im `werkzeug:`-Frontmatter",
+    r'^!!! \w+ "Auf einen Blick"': "Steckbrief von Hand statt im `werkzeug:`-Frontmatter",
     r"^\*\*Evidenzstufe:\*\*": "Evidenzstufe als Fliesstext statt im Frontmatter",
     r"^\*\*Geprüft:\*\*": "Pruefvermerk als Fliesstext statt im Frontmatter",
 }
@@ -125,11 +125,15 @@ DUBLETTEN = {
 WERKZEUG_PFLICHT = ("schwierigkeit", "kosten", "wofuer")
 STUFEN = ("Einsteiger", "Fortgeschritten", "Profi")
 
-# Zugelassene Hinweisbox-Typen. Alles andere ist entweder ein Tippfehler
-# oder ein neuer Typ, der erst in extra.css und CLAUDE.md gehoert.
-BOX_TYPEN = {"tip", "warning", "datenschutz", "evidenz", "quote", "example",
-             "note", "info", "abstract", "danger"}
+# Zugelassene Hinweisbox-Typen: drei Boxen und die Randnotiz, die keine
+# Box ist. Mehr nicht. Alles andere ist entweder ein Tippfehler oder ein
+# Rueckfall in die alten Material-Typen (tip, note, info, warning ...).
+# Ein neuer Typ braucht einen Eintrag hier, in extra.css und in CLAUDE.md.
+BOX_TYPEN = {"merksatz", "warnung", "evidenz", "randnotiz"}
 BOX_RE = re.compile(r"^(?:!!!|\?\?\?\+?)\s+([a-zA-Z-]+)", re.M)
+
+# Der Merksatz ist der eine Satz einer Seite. Zwei davon heben sich auf.
+MAX_MERKSATZ = 1
 
 
 def _pruefen_seiten(wurzel: Path) -> list[str]:
@@ -168,10 +172,14 @@ def _pruefen_seiten(wurzel: Path) -> list[str]:
                 befunde.append(f"{rel}: `werkzeug.stand` fehlt, Angaben zu "
                                f"Kosten und Funktionsumfang sind undatiert")
 
-        for treffer in BOX_RE.finditer(rumpf):
-            typ = treffer.group(1)
+        typen = [t.group(1) for t in BOX_RE.finditer(rumpf)]
+        for typ in sorted(set(typen)):
             if typ not in BOX_TYPEN:
-                befunde.append(f"{rel}: unbekannter Hinweisbox-Typ '{typ}'")
+                befunde.append(f"{rel}: unbekannter Hinweisbox-Typ '{typ}', "
+                               f"zugelassen sind {', '.join(sorted(BOX_TYPEN))}")
+        if typen.count("merksatz") > MAX_MERKSATZ:
+            befunde.append(f"{rel}: {typen.count('merksatz')} Merksaetze, "
+                           f"hoechstens {MAX_MERKSATZ} pro Seite")
 
     return befunde
 

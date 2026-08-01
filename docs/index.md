@@ -8,13 +8,13 @@ Ein praktischer Wegweiser, wie du grosse Sprachmodelle (LLMs) im gesamten
 Forschungsprozess einsetzt: Literatur finden, Daten erheben und schützen,
 qualitativ und quantitativ auswerten, schreiben und publizieren.
 
-!!! warning "Diese Seite ist im Aufbau"
+!!! randnotiz "Diese Seite ist im Aufbau"
     Die Inhalte werden laufend erweitert und mit wissenschaftlichen Quellen
     unterlegt — insbesondere der [Forschungsstand](wiki/index.md) (das Wiki
     hinter den Belegen) deckt erst einen Teil der Themen ab. Was sich
     inhaltlich ändert, steht im [Changelog](ressourcen/changelog.md).
 
-!!! tip "Für wen ist diese Seite?"
+!!! randnotiz "Für wen ist diese Seite?"
     Für Forschende und Studierende in jeder Phase ihrer Arbeit, vom ersten
     Themenüberblick bis zur Abgabe. Programmieren können musst du nicht:
     Die meisten Anleitungen brauchen nur den Browser. Wo sich mehr Technik
@@ -65,12 +65,10 @@ eine eigene Startseite mit Übersicht.
 - **[Ressourcen](ressourcen/index.md)** sammelt Glossar, Links,
   kopierfertige Prompts und den Changelog.
 
-## So liest du die Hinweis-Boxen
+## So liest du diese Seite
 
-Jede Werkzeug-Seite beginnt mit einer kurzen Einordnung:
-
-!!! info "Auf einen Blick"
-    **Schwierigkeit:** Einsteiger · **Kosten:** gratis · **Wofür:** Beispielzweck
+Jede Werkzeug- und Anleitungsseite beginnt mit einem **Steckbrief**:
+Schwierigkeit, Kosten und wofür das Werkzeug taugt, in drei Feldern.
 
 - **Schwierigkeit** hat drei Stufen:
     - *Einsteiger*: im Browser nutzbar, keine Technikkenntnisse nötig.
@@ -80,17 +78,32 @@ Jede Werkzeug-Seite beginnt mit einer kurzen Einordnung:
 - **Kosten**: *gratis*, *Freemium* (Grundfunktionen gratis, mehr kostet)
   oder ein konkretes Abo.
 
-!!! tip "Gratis oder bezahlt?"
-    Zum Ausprobieren reichen die Gratis-Stufen fast überall. Wer LLMs
-    ernsthaft im Forschungsprozess einsetzt, fährt mit einem bezahlten Abo
-    meist deutlich besser: Zugang zu den stärksten Modellen, grössere
-    Kontingente und Zusatzfunktionen wie Projekte, Dateiverarbeitung oder
-    agentische Werkzeuge. Wichtig für Lehrende: In der Lehre darf
-    kostenpflichtige Nutzung nicht vorausgesetzt werden (Chancengleichheit).
-    Für die eigene Forschungsarbeit ist ein Abo aber oft die sinnvollste
-    Investition, wenn du das aktuelle Potenzial voll nutzen willst.
+Im Text gibt es genau drei Arten von Hinweisboxen, damit eine Box wieder
+etwas bedeutet:
 
-!!! warning "Wichtig zu den Anleitungen"
+| Box | Wofür |
+|-----|-------|
+| **Merksatz** | Der eine Satz, den du von dieser Seite mitnehmen solltest. |
+| **Warnung** | Ein Fallstrick, eine Grenze oder ein Datenschutzrisiko. |
+| **Was die Forschung sagt** | Verweis auf die Belege im [Forschungsstand](wiki/index.md). |
+
+Alles andere steht im Fliesstext. Anmerkungen über die Website selbst
+(Bearbeitungsstand, offene Lücken, Lesehinweise) erscheinen als leise
+Randnotiz ohne Kasten, damit sie nicht mit inhaltlichen Warnungen
+verwechselt werden.
+
+### Gratis oder bezahlt?
+
+Zum Ausprobieren reichen die Gratis-Stufen fast überall. Wer LLMs
+ernsthaft im Forschungsprozess einsetzt, fährt mit einem bezahlten Abo
+meist deutlich besser: Zugang zu den stärksten Modellen, grössere
+Kontingente und Zusatzfunktionen wie Projekte, Dateiverarbeitung oder
+agentische Werkzeuge. Wichtig für Lehrende: In der Lehre darf
+kostenpflichtige Nutzung nicht vorausgesetzt werden (Chancengleichheit).
+Für die eigene Forschungsarbeit ist ein Abo aber oft die sinnvollste
+Investition, wenn du das aktuelle Potenzial voll nutzen willst.
+
+!!! randnotiz "Wichtig zu den Anleitungen"
     Die Anleitungen beschreiben die *Logik* der Einrichtung auf hohem
     Niveau und verlinken auf die offizielle Dokumentation. Die Oberflächen
     der Dienste ändern sich laufend. Die verlinkten Original-Docs sind

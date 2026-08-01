@@ -53,7 +53,7 @@ fertige Umsetzungen mit Schema, Befehlen und Setup gibt es z. B. im
   (siehe [LLM-Wiki nach Karpathy](../werkzeuge/sammeln/llm-wiki.md)). Fehler in
   den Notizen müssen regelmässig geprüft werden.
 
-!!! quote "Der Kernunterschied"
+!!! merksatz "Der Kernunterschied"
     Kontext und RAG geben dem Modell Dokumente zum *Abrufen*. Das Wiki
     *verdichtet* sie zu bleibendem Wissen. RAG ruft ab und vergisst, ein Wiki
     sammelt an.

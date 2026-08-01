@@ -3,11 +3,12 @@
 Ein durchgängiges Beispiel, das mehrere Werkzeuge verkettet: die
 Blaupause für eigene Workflows.
 
-!!! abstract "Das Rezept in einem Bild"
-    ```
-    Semantic Scholar  ->  Custom GPT (verarbeitet nach Template)  ->  Ablage
-       (Recherche)         ScholarAI-Action                          Zotero / Notion / Markdown
-    ```
+### Das Rezept in einem Bild
+
+```
+Semantic Scholar  ->  Custom GPT (verarbeitet nach Template)  ->  Ablage
+   (Recherche)         ScholarAI-Action                          Zotero / Notion / Markdown
+```
 
 ## Ziel
 
@@ -35,11 +36,10 @@ sofort ablagefertig im gewünschten Format erhalten.
    Markdown für das Wiki aus.
 4. **Prüfen.** Stichprobe: Stimmen Zitate und Links? Keine erfundenen Quellen?
 
-!!! tip "Warum das Template der Trick ist"
-    Indem das Ausgabeformat vorgegeben ist, sind die Funde ohne Nacharbeit
-    ablagefertig. Genau das macht aus Einzeltools eine durchgängige Kette.
+**Warum das Template der Trick ist.** Indem das Ausgabeformat vorgegeben ist, sind die Funde ohne Nacharbeit
+ablagefertig. Genau das macht aus Einzeltools eine durchgängige Kette.
 
-!!! warning "Was dieser Workflow nicht ersetzt"
+!!! warnung "Was dieser Workflow nicht ersetzt"
     LLM-Werkzeuge durchsuchen nur **öffentlich zugängliche** Korpora
     (Metadaten, Abstracts, Open-Access-Volltexte). Eine systematische
     Recherche in den lizenzierten **Fachdatenbanken** deines Fachs (z.B.
@@ -54,7 +54,7 @@ Lege diese Vorlagen im GPT ab (in der Instruktion oder als hochgeladenes
 Wissensdokument) und lass den GPT je nach Ablageziel das passende Format
 wählen. Passe sie an dein eigenes Schema an.
 
-!!! warning "Eine Regel für alle Templates"
+!!! warnung "Eine Regel für alle Templates"
     Keine erfundenen Angaben. Felder, die die Quelle nicht hergibt, bleiben
     leer. Lieber eine Lücke als ein falscher Wert.
 
@@ -135,7 +135,7 @@ Eigener Bezug: {1-2 Sätze}
 Schlagworte zusätzlich als echte Zotero-Tags setzen (nicht nur im Notiztext),
 damit sie filterbar sind.
 
-!!! note "Vor dem Produktiveinsatz prüfen"
+!!! randnotiz "Vor dem Produktiveinsatz prüfen"
     Die Property-Namen (Notion) und Feldzuordnungen (Zotero) gegen deine
     aktuelle Datenbank bzw. die aktuelle API abgleichen; diese ändern sich
     eher als die Markdown-Vorlage.

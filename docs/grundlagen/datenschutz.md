@@ -4,7 +4,7 @@ Ein Querschnittsthema, das bei jedem Werkzeug mitzudenken ist, gerade in
 der Forschung mit unveröffentlichten Manuskripten, fremden Daten oder
 sensiblen Quellen.
 
-!!! datenschutz "Grundregel"
+!!! warnung "Grundregel"
     Lade nichts in einen Cloud-Dienst hoch, das du nicht auch per E-Mail an
     eine fremde Firma schicken würdest. Im Zweifel: anonymisieren oder
     weglassen.
@@ -62,7 +62,7 @@ Institute oder Hochschulen betreiben (Belege im
 Vor dem Einsatz mit den eigenen Daten in jedem Fall an einer kleinen
 Stichprobe prüfen, ob die Qualität reicht.
 
-!!! note "Hinweis pro Werkzeug"
+!!! randnotiz "Hinweis pro Werkzeug"
     Jede Werkzeug-Seite enthält einen kurzen Datenschutz-Hinweis im
     Abschnitt "Grenzen & Datenschutz". Die hier genannten Grundregeln gelten
     aber überall.

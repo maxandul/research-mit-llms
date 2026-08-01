@@ -12,7 +12,7 @@ der Empfehlungen auf dieser Website und ein **begehbares Fallbeispiel** für
 den Workflow, den [Eigenes Forschungs-Wiki aufbauen](../workflows/forschungs-wiki.md)
 beschreibt. Was dort als Anleitung steht, wurde hier real durchgeführt.
 
-!!! warning "Im Aufbau"
+!!! randnotiz "Im Aufbau"
     Das Wiki wächst sprintweise, Thema für Thema. Bisher abgedeckt:
     KI-Nutzung deklarieren, qualitatives Codieren. Als Nächstes geplant:
     Transkription, Funktionsweise von LLMs. Der Stand jeder Notiz ist an
@@ -182,14 +182,14 @@ in der Datei
 Sie sagt dem LLM-Agenten, wie Quellen verifiziert und eingepflegt werden,
 welche Vorlagen gelten und was nach einem Sprint zu tun ist.
 
-!!! note "Warum die Verifikation so betont wird"
+!!! randnotiz "Warum die Verifikation so betont wird"
     LLMs erfinden mitunter Referenzen, inklusive plausibler DOIs (siehe
     [LLMs verstehen](../grundlagen/llms-verstehen.md)). Eine Website über
     verantwortungsvolle LLM-Nutzung kann sich keine halluzinierte Quelle
     leisten. Deshalb wird jede Quelle von Hand gegen das Original geprüft,
     bevor sie hier erscheint.
 
-!!! note "Grenzen dieser Recherche"
+!!! randnotiz "Grenzen dieser Recherche"
     Die Suche läuft über öffentlich zugängliche Korpora (Semantic Scholar,
     OpenAlex, Verlags- und Policy-Seiten). Sie ersetzt keine systematische
     Recherche in lizenzierten Fachdatenbanken — es kann also relevante

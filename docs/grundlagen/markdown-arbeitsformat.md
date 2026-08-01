@@ -51,10 +51,9 @@ damit deine Dateien für Claude, ChatGPT und Co. gut les- und bearbeitbar sind.
 - Zur Not tut es jeder Texteditor. Das ist genau der Punkt: Markdown ist
   nicht an ein Programm gebunden.
 
-!!! tip "Der nächste Schritt"
-    Markdown ist nicht nur ein Notizformat. Du kannst deine ganze Arbeit
-    darin schreiben und Word nur noch als Exportformat behandeln. Wie das
-    geht, zeigt [Die Arbeit in Markdown aufbauen](../schreiben/arbeit-in-markdown.md).
+Markdown ist nicht nur ein Notizformat. Du kannst deine ganze Arbeit
+darin schreiben und Word nur noch als Exportformat behandeln. Wie das
+geht, zeigt [Die Arbeit in Markdown aufbauen](../schreiben/arbeit-in-markdown.md).
 
 ---
 

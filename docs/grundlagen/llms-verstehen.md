@@ -50,14 +50,14 @@ gut klingen und stimmen auseinanderfallen:
   es wirkt nur so.
 - **Verzerrungen:** es spiegelt Schieflagen und Lücken seiner Trainingsdaten.
 
-!!! quote "Der gemeinsame Nenner"
+!!! merksatz "Der gemeinsame Nenner"
     Weil das Modell Muster fortsetzt, statt zu wissen, klingt Falsches oft
     genauso flüssig und überzeugend wie Richtiges. Die Form ist kein Beleg
     für den Gehalt.
 
 ## Grundregel: selbst prüfen
 
-!!! warning "Nicht delegierbar"
+!!! warnung "Nicht delegierbar"
     Alles Belegrelevante, also Fakten, Zahlen, Zitate, Quellen, selbst
     gegenprüfen. Ein LLM liefert Entwürfe und Zuarbeit, keine verlässlichen
     Belege. Was du übernimmst, verantwortest du.
@@ -91,7 +91,7 @@ und nicht delegierbar. Aus dem letzten Wort, dem Verantworten, folgt auch
 die Transparenz gegenüber anderen: siehe
 [KI-Nutzung deklarieren](../haltung/ki-deklarieren.md).
 
-!!! note "Keine feste Zuordnung"
+!!! randnotiz "Keine feste Zuordnung"
     Die Zeilen sind keine Paare: "Explorieren" gehört nicht exklusiv zu
     "Entscheiden". Es sind zwei gegenübergestellte Verantwortungsbereiche,
     nicht acht 1:1-Beziehungen.

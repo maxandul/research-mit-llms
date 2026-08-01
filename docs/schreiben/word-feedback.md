@@ -16,7 +16,7 @@ Gutachter:innen kommentieren nun mal im Word-Dokument, mit Kommentaren und
 nachverfolgten Änderungen. Das ist kein Grund, die Kette aufzugeben. Es
 braucht nur eine klare Regel.
 
-!!! quote "Die Regel"
+!!! merksatz "Die Regel"
     Feedback wird **nie im Word-Dokument eingearbeitet**. Das Word ist ein
     Export und wird beim nächsten Mal überschrieben. Jede Änderung wandert
     zurück in die Markdown-Quelle. Nur so bleibt die Quelle die Wahrheit.

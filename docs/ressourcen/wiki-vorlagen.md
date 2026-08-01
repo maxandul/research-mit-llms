@@ -13,7 +13,7 @@ maschinell prüfbar, was sonst nur im Text steht, und Werkzeuge wie
 Obsidian oder MkDocs können danach filtern. Pflicht ist im Format allein
 das Feld `type`; ergänze also ruhig nur so viel, wie du auch pflegen magst.
 
-!!! tip "Warum im Frontmatter und nicht im Text?"
+!!! randnotiz "Warum im Frontmatter und nicht im Text?"
     Evidenzstufe und Prüfvermerk standen auf dieser Website früher zusätzlich
     als Fliesstext im Kopf jeder Notiz. Das musste doppelt gepflegt werden und
     lief mit der Zeit auseinander. Seit Juli 2026 stehen sie nur noch im
@@ -177,7 +177,7 @@ Phase 2 — Vertiefen (Pflicht vor der Notiz):
 Das vollständige, produktive Schema dieser Website:
 [CLAUDE.md im Repository](https://github.com/maxandul/research-mit-llms/blob/main/CLAUDE.md).
 
-!!! tip "Verifikation ist der wichtigste Schritt"
+!!! warnung "Verifikation ist der wichtigste Schritt"
     LLMs erfinden Referenzen. Die Regel "verifizieren, bevor irgendetwas
     geschrieben wird" ist der Teil des Schemas, den du am wenigsten
     weglassen solltest — siehe

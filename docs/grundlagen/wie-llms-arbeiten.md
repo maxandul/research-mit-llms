@@ -72,7 +72,7 @@ Antworten, im Gegenteil. Details dazu auf der Seite
 | Muster statt Schleife | Bei Listenaufgaben Vollständigkeit einfordern, häppchenweise arbeiten, nachzählen |
 | Begrenztes Kontextfenster | So viel wie nötig, so wenig wie möglich mitgeben |
 
-!!! quote "Der rote Faden"
+!!! merksatz "Der rote Faden"
     Fast alle Überraschungen im Alltag mit LLMs gehen auf dieselbe Wurzel
     zurück: Das Modell setzt Sprache fort, es führt nichts aus. Wo Ausführung
     nötig ist (zählen, rechnen, jede Zeile bearbeiten), braucht es Werkzeuge

@@ -17,7 +17,7 @@ Webquellen angibt. Gut für den schnellen Einstieg in ein Thema.
 - Schneller Überblick und Begriffsklärung mit nachvollziehbaren Quellen.
 - Folgefragen im Dialog.
 
-!!! warning "Abgrenzung beachten"
+!!! warnung "Abgrenzung beachten"
     Perplexity durchsucht das **offene Web** (breit, aber nicht rein
     wissenschaftlich). Für den wissenschaftlichen Korpus eignen sich
     [ScholarAI](scholarai.md), [Elicit](../finden/elicit.md) oder

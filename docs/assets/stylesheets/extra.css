@@ -82,15 +82,16 @@
 .md-typeset {
   font-size: .85rem;
   line-height: 1.72;
-  hyphens: auto;
 }
 
-/* Bindestrich-Trennung nur im Fliesstext, nie in Code, Tabellen oder
-   Beschriftungen: dort fuehrt sie zu falschen Trennungen. */
-.md-typeset code,
-.md-typeset pre,
-.md-typeset table,
-.md-typeset .md-button {
+/* Keine automatische Silbentrennung. Der Browser trennt nach der
+   Seitensprache, hier also deutsch, und zerlegt damit auch englische
+   Titel in Zitaten falsch ("Lan-guage"). Bei linksbuendigem Satz ist
+   der Gewinn ohnehin gering, der Schaden in Ueberschriften gross. */
+.md-typeset,
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
   hyphens: none;
 }
 
@@ -285,9 +286,18 @@
   padding-left: var(--fl-space-m);
 }
 
-/* Hinweisboxen: flacher, warm getoent, Farbe traegt Bedeutung.
-   Die endgueltige Typenkonvention folgt in Etappe 3; hier wird
-   zunaechst nur die Optik an die Palette angeglichen. */
+/* Hinweisboxen: drei Typen, jeder mit einer klaren Aufgabe.
+
+     merksatz   der eine Satz, den man von der Seite mitnehmen soll
+     warnung    Fallstrick, Grenze, Datenschutzrisiko
+     evidenz    Verweis auf die Belege im Forschungsstand
+
+   Mehr gibt es nicht. Vorher waren es acht Typen, von denen die Haelfte
+   nichts bedeutete: Wenn jede Box gleich wichtig aussieht, liest man
+   keine. Alles, was frueher `tip`, `note`, `info`, `abstract` oder
+   `example` war, ist jetzt entweder Fliesstext oder eine Randnotiz
+   (siehe unten). */
+
 .md-typeset .admonition,
 .md-typeset details {
   border: var(--fl-linie-duenn) solid var(--fl-linie);
@@ -311,12 +321,40 @@
   background-color: var(--fl-adm-linie, var(--fl-primary));
 }
 
-.md-typeset .note,     .md-typeset .info    { --fl-adm-linie: var(--fl-ev-doku-linie);     --fl-adm-bg: var(--fl-ev-doku-bg);     --fl-adm-fg: var(--fl-ev-doku-fg); }
-.md-typeset .tip,      .md-typeset .success { --fl-adm-linie: var(--fl-ev-peer-linie);     --fl-adm-bg: var(--fl-ev-peer-bg);     --fl-adm-fg: var(--fl-ev-peer-fg); }
-.md-typeset .warning                        { --fl-adm-linie: var(--fl-ev-praxis-linie);   --fl-adm-bg: var(--fl-ev-praxis-bg);   --fl-adm-fg: var(--fl-ev-praxis-fg); }
-.md-typeset .danger,   .md-typeset .failure { --fl-adm-linie: var(--fl-gefahr-linie);      --fl-adm-bg: var(--fl-gefahr-bg);      --fl-adm-fg: var(--fl-ampel-rot); }
-.md-typeset .quote                          { --fl-adm-linie: var(--fl-accent);            --fl-adm-bg: var(--fl-accent-leise);   --fl-adm-fg: var(--fl-accent-stark); }
-.md-typeset .abstract, .md-typeset .example { --fl-adm-linie: var(--fl-ev-policy-linie);   --fl-adm-bg: var(--fl-ev-policy-bg);   --fl-adm-fg: var(--fl-ev-policy-fg); }
+.md-typeset .warnung { --fl-adm-linie: var(--fl-ev-praxis-linie); --fl-adm-bg: var(--fl-ev-praxis-bg); --fl-adm-fg: var(--fl-ev-praxis-fg); }
+.md-typeset .evidenz { --fl-adm-linie: var(--fl-ev-preprint-linie); --fl-adm-bg: var(--fl-ev-preprint-bg); --fl-adm-fg: var(--fl-ev-preprint-fg); }
+
+/* Der Merksatz ist die einzige Box, die ohne Kastenfarbe auskommt: Er
+   soll nicht warnen, sondern haengenbleiben. Deshalb Akzentlinie,
+   groessere Schrift und die Titelschrift. */
+.md-typeset .merksatz {
+  --fl-adm-linie: var(--fl-accent);
+  --fl-adm-bg: transparent;
+  --fl-adm-fg: var(--fl-accent-stark);
+  border-color: transparent;
+  border-left-width: 4px;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  font-family: var(--fl-font-titel);
+  font-size: .92rem;
+  line-height: 1.6;
+}
+
+.md-typeset .merksatz > .admonition-title,
+.md-typeset .merksatz > summary {
+  font-family: var(--fl-font-text);
+  font-size: .64rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 0 0 0 var(--fl-space-s);
+  margin-bottom: .2rem;
+}
+
+.md-typeset .merksatz > .admonition-title::before,
+.md-typeset .merksatz > summary::before {
+  display: none;
+}
 
 /* Trennlinien */
 .md-typeset hr {
@@ -574,19 +612,18 @@
 }
 
 
-/* --- 4f. Zwei zusaetzliche Hinweisbox-Typen ------------------------
-   `evidenz` verweist von einer Inhaltsseite in den Forschungsstand,
-   `datenschutz` markiert rechtlich heikle Stellen. Beide sind eigene
-   Typen, damit dieselbe Sache überall gleich aussieht. Verwendung:
-   `!!! evidenz "Titel"` bzw. `!!! datenschutz "Titel"`. */
+/* --- 4f. Icons der drei Typen und die Randnotiz --------------------- */
 
 :root {
+  --md-admonition-icon--warnung: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2z"/></svg>');
   --md-admonition-icon--evidenz: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9zm-7 9.09v4L12 20l7-3.91v-4L12 16z"/></svg>');
-  --md-admonition-icon--datenschutz: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11z"/></svg>');
 }
 
-.md-typeset .evidenz     { --fl-adm-linie: var(--fl-ev-preprint-linie); --fl-adm-bg: var(--fl-ev-preprint-bg); --fl-adm-fg: var(--fl-ev-preprint-fg); }
-.md-typeset .datenschutz { --fl-adm-linie: var(--fl-gefahr-linie);      --fl-adm-bg: var(--fl-gefahr-bg);      --fl-adm-fg: var(--fl-ampel-rot); }
+.md-typeset .warnung > .admonition-title::before,
+.md-typeset .warnung > summary::before {
+  -webkit-mask-image: var(--md-admonition-icon--warnung);
+  mask-image: var(--md-admonition-icon--warnung);
+}
 
 .md-typeset .evidenz > .admonition-title::before,
 .md-typeset .evidenz > summary::before {
@@ -594,10 +631,54 @@
   mask-image: var(--md-admonition-icon--evidenz);
 }
 
-.md-typeset .datenschutz > .admonition-title::before,
-.md-typeset .datenschutz > summary::before {
-  -webkit-mask-image: var(--md-admonition-icon--datenschutz);
-  mask-image: var(--md-admonition-icon--datenschutz);
+/* Randnotiz: bewusst keine Box.
+
+   Sie traegt, was die Website ueber sich selbst sagt (Bearbeitungsstand,
+   offene Luecken, Lesehinweise). Das gehoert sichtbar auf die Seite,
+   darf aber nicht wie eine inhaltliche Warnung aussehen. Deshalb kein
+   Kasten, keine Flaeche, kein Icon: nur kleiner, gedaempft und mit einer
+   duennen Linie am Rand. */
+
+.md-typeset .randnotiz {
+  border: none;
+  border-left: var(--fl-linie-duenn) solid var(--fl-linie-stark);
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  font-size: .7rem;
+  color: var(--fl-text-sekundaer);
+  padding: 0 0 0 var(--fl-space-m);
+  margin: var(--fl-space-m) 0;
+}
+
+.md-typeset .randnotiz > .admonition-title,
+.md-typeset .randnotiz > summary {
+  background-color: transparent;
+  color: var(--fl-text-leise);
+  font-weight: 700;
+  font-size: .66rem;
+  padding: 0;
+  margin: 0 0 .15rem;
+}
+
+.md-typeset .randnotiz > .admonition-title::before,
+.md-typeset .randnotiz > summary::before {
+  display: none;
+}
+
+/* Ausklappbare Randnotiz: der Pfeil bleibt, ruecken ihn aber nach links */
+.md-typeset .randnotiz > summary {
+  padding-right: 1.2rem;
+  cursor: pointer;
+}
+
+.md-typeset .randnotiz > :not(.admonition-title):not(summary) {
+  padding: 0;
+  margin: 0 0 .35rem;
+}
+
+.md-typeset .randnotiz > :last-child {
+  margin-bottom: 0;
 }
 
 

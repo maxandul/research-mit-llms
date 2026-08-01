@@ -95,7 +95,7 @@ eine Bestätigung durch einen Menschen heisst menschlich geprüft. Wer will,
 kann sein Wiki so filtern, dass nur menschlich geprüfte Notizen in eine
 Arbeit einfliessen.
 
-!!! note "Wie neu das ist"
+!!! randnotiz "Wie neu das ist"
     OKF ist als Entwurf gekennzeichnet und wenige Wochen alt; zwischen v0.1
     und v0.2 wurden bereits zwei Felder umbenannt. Es ist ein Vorschlag mit
     Gewicht, kein etablierter Standard. Wer heute ein Wiki aufbaut, kann die

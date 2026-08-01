@@ -3,11 +3,12 @@
 Ein einzelnes Paper gründlich verstehen und die Lesenotiz so ablegen, dass
 du sie später wiederfindest und wiederverwenden kannst.
 
-!!! abstract "Das Rezept in einem Bild"
-    ```
-    PDF / DOI  ->  Befragen (Deep Read)  ->  Lesenotiz nach Schema  ->  Ablage
-                   ScholarAI / NotebookLM                              Zotero / Notion
-    ```
+### Das Rezept in einem Bild
+
+```
+PDF / DOI  ->  Befragen (Deep Read)  ->  Lesenotiz nach Schema  ->  Ablage
+               ScholarAI / NotebookLM                              Zotero / Notion
+```
 
 ## Ziel
 
@@ -54,10 +55,9 @@ Schema zusammen"). So sind alle Notizen vergleichbar.
 - **Schlagworte:** {tag1, tag2, ...}
 ```
 
-!!! tip "Konsistenz zahlt sich aus"
-    Ein einmal festgelegtes Schema ist Gold wert: Du kannst später über
-    viele Notizen hinweg vergleichen, filtern und synthetisieren, von Hand
-    oder wieder mit einem LLM.
+**Konsistenz zahlt sich aus.** Ein einmal festgelegtes Schema ist Gold wert: Du kannst später über
+viele Notizen hinweg vergleichen, filtern und synthetisieren, von Hand
+oder wieder mit einem LLM.
 
 ---
 

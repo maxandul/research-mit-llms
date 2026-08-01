@@ -15,7 +15,7 @@ für die Zusammenarbeit mit LLMs (siehe
 Die Alternative: Die Arbeit lebt als Sammlung von Markdown-Dateien, und das
 abgabefertige Word-Dokument wird daraus **per Werkzeug erzeugt**.
 
-!!! quote "Das Grundprinzip"
+!!! merksatz "Das Grundprinzip"
     Markdown ist die einzige Quelle der Wahrheit. Das Word-Dokument ist ein
     Export, der jederzeit neu erzeugt werden kann, und wird **nie von Hand
     bearbeitet**. Jede inhaltliche Änderung passiert in den Markdown-Dateien.

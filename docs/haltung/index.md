@@ -54,7 +54,7 @@ dokumentierte Teil dieses Bereichs.
 
 </div>
 
-!!! note "Was hier noch fehlt"
+!!! randnotiz "Was hier noch fehlt"
     Weitere Haltungsfragen sind vorgemerkt, aber noch nicht mit Quellen
     unterlegt: Lernen mit LLMs, Verzerrungen in Forschungsergebnissen,
     LLMs im Peer Review. Die geplante Reihenfolge steht unter

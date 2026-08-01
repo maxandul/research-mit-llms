@@ -115,11 +115,10 @@ Ausgabe:
 Regel: Keine Aussage ohne verlinkte Quelle.
 ```
 
-!!! tip "Templates als Ausgabeformat"
-    Du kannst dem GPT zusätzlich ein festes Ausgabeformat vorgeben, etwa
-    Markdown für dein [LLM-Wiki](../sammeln/llm-wiki.md) oder eine
-    Struktur, die direkt nach [Notion](../sammeln/notion.md) /
-    [Zotero](../sammeln/zotero.md) passt. So sind Funde sofort ablagefertig.
+**Templates als Ausgabeformat.** Du kannst dem GPT zusätzlich ein festes Ausgabeformat vorgeben, etwa
+Markdown für dein [LLM-Wiki](../sammeln/llm-wiki.md) oder eine
+Struktur, die direkt nach [Notion](../sammeln/notion.md) /
+[Zotero](../sammeln/zotero.md) passt. So sind Funde sofort ablagefertig.
 
 ## Grenzen & Datenschutz
 

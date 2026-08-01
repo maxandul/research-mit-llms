@@ -7,7 +7,7 @@ Konsequenz. Deklariert wird nicht, weil man erwischt werden könnte, sondern
 weil Offenlegen zur wissenschaftlichen Redlichkeit gehört, genau wie das
 Zitieren von Quellen.
 
-!!! quote "Die Haltung dahinter"
+!!! merksatz "Die Haltung dahinter"
     Wer seine Werkzeuge sauber einsetzt, hat nichts zu verstecken. Eine
     Deklaration ist kein Schuldeingeständnis, sondern ein Qualitätsmerkmal:
     Sie zeigt, dass du deinen Prozess im Griff hast und ihn überprüfbar machst.
@@ -62,10 +62,9 @@ Die inhaltliche Verantwortung für alle Aussagen, Auswertungen und
 Schlussfolgerungen liegt bei mir.
 ```
 
-!!! tip "Faustregel für den Detailgrad"
-    Deklariere so, dass bei einer Nachfrage im Kolloquium nichts zum
-    Vorschein kommt, was überrascht. Wenn du zögerst, ob etwas erwähnt
-    werden muss: erwähnen.
+**Faustregel für den Detailgrad.** Deklariere so, dass bei einer Nachfrage im Kolloquium nichts zum
+Vorschein kommt, was überrascht. Wenn du zögerst, ob etwas erwähnt
+werden muss: erwähnen.
 
 ## Warum Deklarieren trotzdem manchmal schwerfällt
 

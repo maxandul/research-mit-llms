@@ -46,7 +46,7 @@ Eine simple zweispaltige Tabelle in Excel: Original und Ersatz.
 Konsistent bleiben: dieselbe Person ist in allen Dokumenten P01. Nur so
 bleiben die Daten auswertbar und die Ergebnisse rückübersetzbar.
 
-!!! datenschutz "Die Tabelle ist der Schlüssel"
+!!! warnung "Die Tabelle ist der Schlüssel"
     Die Zuordnungstabelle wird **nie** hochgeladen, in keinen Chat, keinen
     Cloud-Speicher, keine E-Mail. Sie liegt getrennt von den Daten, idealerweise
     verschlüsselt oder auf einem anderen Laufwerk.

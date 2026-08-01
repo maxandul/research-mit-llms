@@ -20,6 +20,41 @@ Rechtschreibung, CC BY 4.0). Inhalte unter `docs/`, Navigation in
 - Niederschwelliger, praktischer Ton; keine unnötigen Anglizismen.
 - Interne Verweise als relative Markdown-Links (keine Wikilinks).
 
+### Bescheidener Ton
+
+Der häufigste Fehler auf dieser Website ist nicht Ungenauigkeit, sondern
+Aufblasen: Eine Selbstverständlichkeit bekommt eine Wichtigkeits-Behauptung
+vorangestellt, und das Wichtige geht dazwischen unter. Wer alles
+hervorhebt, hat für das Folgenschwere kein Register mehr übrig.
+
+**Keine Wichtigkeits-Behauptungen.** Nicht "X ist der Schlüssel", "das
+Herzstück", "Gold wert", "der eigentliche Gewinn", "genau das ist der
+Punkt". Statt zu behaupten, dass etwas wichtig ist, die Folge nennen:
+Was passiert, wenn man es anders macht?
+
+> Statt: "Das Codebuch ist das Herzstück."
+> Besser: "Ohne scharfe Abgrenzung zwischen ähnlichen Codes weichen
+> Mensch und Modell genau dort voneinander ab, wo es zählt."
+
+**Keine Dramatisierung.** Nicht "enorm", "drastisch", "radikal", "hier
+wird es heikel". Eine Zahl oder ein Beispiel trägt mehr als ein Adjektiv.
+
+**Kein "nicht X, sondern Y", wenn X niemand vorgeschlagen hat.** Die
+Konstruktion erfindet einen Gegner, um die eigene Aussage grösser
+aussehen zu lassen.
+
+**Hervorheben nach Folgenschwere, nicht nach Erzählrhythmus.** Fettdruck,
+Merksatz und Warnung sind für das reserviert, was ein Leser falsch machen
+kann. Eine Definition, eine Zwischenüberschrift oder ein Übergang braucht
+keine Auszeichnung.
+
+**Der Merksatz-Test:** Ein Merksatz muss etwas sein, das ein Leser
+plausibel auch anders machen würde und dabei Schaden nimmt. "Feedback
+wird nie im Word-Dokument eingearbeitet" besteht den Test, weil die
+meisten es anders machen. "Das Codebuch ist das Herzstück" besteht ihn
+nicht, weil niemand das Gegenteil täte. Besteht ein Satz den Test nicht,
+gehört er in den Fliesstext oder gar nicht auf die Seite.
+
 ## Das Wiki: vier Schichten
 
 ```text
@@ -267,21 +302,38 @@ Konkret heisst das:
   `docs/assets/stylesheets/tokens.css`. In `extra.css` und im Markdown
   steht kein Hex-Wert. Wer eine Farbe ändern will, ändert sie dort.
 
-- **Hinweisboxen** haben feste Rollen. Zugelassen sind:
+- **Hinweisboxen: drei Typen, mehr nicht.** Vorher waren es acht, von
+  denen die Hälfte nichts bedeutete. Wenn jede Box gleich wichtig
+  aussieht, liest man keine.
 
-  | Typ | Wofür |
-  |-----|-------|
-  | `tip` | Praxistipp, Abkürzung |
-  | `warning` | Fallstrick, Vorsicht |
-  | `datenschutz` | Rechtliches, Vertraulichkeit (ersetzt `danger`) |
-  | `evidenz` | "Was die Forschung sagt", verweist in den Forschungsstand |
-  | `quote` | Wörtliches aus Policy oder Quelle |
-  | `example` | konkreter Fall |
+  | Typ | Wofür | Anzahl |
+  |-----|-------|--------|
+  | `merksatz` | Der eine Satz, den man von der Seite mitnehmen soll | höchstens 1 pro Seite, meist keiner |
+  | `warnung` | Fallstrick, Grenze, Datenschutzrisiko | nach Bedarf |
+  | `evidenz` | "Was die Forschung sagt", verweist in den Forschungsstand | in der Regel 1 am Seitenende |
+  | `randnotiz` | **keine Box**: was die Website über sich selbst sagt (Bearbeitungsstand, offene Lücken, Lesehinweise) | nach Bedarf |
 
-  `info`, `note`, `abstract` und `danger` sind Altbestand: nicht neu
-  verwenden, beim Überarbeiten einer Seite auf die Rollen oben abbilden.
-  Ein neuer Typ braucht einen Eintrag in `extra.css`, in dieser Tabelle
-  und in `BOX_TYPEN` in `tools/wiki_lint.py`.
+  Die Randnotiz ist bewusst kein Kasten, sondern nur kleiner, gedämpft
+  und mit dünner Linie am Rand. Sie soll sichtbar sein, aber nie mit
+  einer inhaltlichen Warnung verwechselt werden.
+
+  **Der Merksatz wird nicht erzwungen.** Eine Seite ohne Merksatz ist in
+  Ordnung; ein erfundener Merksatz wirkt hohl. Nur setzen, wenn es
+  wirklich einen Satz gibt, der die Seite trägt.
+
+  Alles andere ist Fliesstext. Ein Praxistipp braucht keinen Kasten, ein
+  Beispiel auch nicht. Die alten Material-Typen (`tip`, `note`, `info`,
+  `warning`, `abstract`, `danger`, `quote`, `example`) sind nicht mehr
+  zugelassen; `tools/wiki_lint.py` meldet sie. Ein neuer Typ braucht
+  einen Eintrag in `extra.css`, in dieser Tabelle und in `BOX_TYPEN` in
+  `tools/wiki_lint.py`.
+
+- **Wiki-Notizen stehen nicht in der Navigation.** Quell- und
+  Konzeptnotizen sind über die thematisch gruppierten Indexseiten, die
+  Suche, den Wissensgraphen und Querverweise erreichbar. Bei absehbar
+  über 80 Notizen wäre eine flache Nav-Liste keine Navigation mehr.
+  `tools/wiki_komponenten.py` blendet auf diesen Seiten die leere
+  Seitenleiste aus.
 
 ## Vorlage: Quellnotiz
 

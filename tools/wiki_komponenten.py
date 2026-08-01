@@ -230,9 +230,23 @@ def _einfuegen(markdown: str, block: str) -> str:
     return markdown[:schnitt] + "\n\n" + block + "\n" + markdown[schnitt:]
 
 
+# Notizen, die bewusst nicht in der Navigation stehen. Bei aktuell 34 und
+# absehbar ueber 80 Notizen waere eine flache Nav-Liste keine Navigation
+# mehr; sie sind ueber die thematisch gruppierten Indexseiten, die Suche,
+# den Wissensgraphen und die Querverweise erreichbar. Ohne Nav-Eintraege
+# bliebe die Seitenleiste dort aber leer, deshalb wird sie ausgeblendet.
+OHNE_SEITENLEISTE = {"Quellnotiz", "Konzeptnotiz"}
+
+
 def on_page_markdown(markdown, page, config, files):
     kopf = page.meta or {}
     heute = dt.date.today()
+
+    if kopf.get("type") in OHNE_SEITENLEISTE:
+        verstecken = list(kopf.get("hide") or [])
+        if "navigation" not in verstecken:
+            verstecken.append("navigation")
+        page.meta["hide"] = verstecken
 
     if kopf.get("type") == "Quellnotiz":
         return _einfuegen(markdown, _notizkopf(kopf, heute))

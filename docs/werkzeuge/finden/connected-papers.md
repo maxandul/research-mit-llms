@@ -37,7 +37,7 @@ direkten Zitaten. Basiert auf dem Korpus von
 - Öffentliche Daten, keine sensiblen Eingaben.
 - Gratis-Kontingent begrenzt.
 
-??? note "Für Fortgeschrittene: die API"
+??? randnotiz "Für Fortgeschrittene: die API"
     Es gibt eine API mit Python- und JS-Client. Sie ist allerdings
     "early access" (Zugangs-Token per Anfrage) und kommerziell, für den
     niederschwelligen Einstieg nicht nötig. Token-Anfrage:

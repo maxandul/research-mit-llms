@@ -10,9 +10,9 @@ werkzeug:
 # Qualitative Daten codieren
 
 Ein LLM kann beim Codieren qualitativer Daten (Interviews, offene
-Fragebogen-Antworten, Feldnotizen) enorm viel Arbeit abnehmen. Der Schlüssel
-liegt darin, es als **zweiten Codierer** zu behandeln, nicht als Orakel: Es
-macht Vorschläge nach deinem Codebuch, du prüfst und entscheidest.
+Fragebogen-Antworten, Feldnotizen) viel Arbeit abnehmen, wenn du es als
+**zweiten Codierer** behandelst: Es macht Vorschläge nach deinem Codebuch,
+du prüfst und entscheidest.
 
 Erste Studien zu diesem Vorgehen liegen vor, mit einer wichtigen
 Einschränkung: Die Forschung ist jung, lückenhaft, und die Modelle ändern
@@ -39,8 +39,9 @@ prüfst, statt dich auf publizierte Werte zu verlassen.
 
 ### 1. Codebuch definieren
 
-Das Codebuch ist das Herzstück. Pro Code: Name, Definition, ein
-Ankerbeispiel und die Abgrenzung zu ähnlichen Codes.
+Pro Code: Name, Definition, ein Ankerbeispiel und die Abgrenzung zu
+ähnlichen Codes. Wo die Abgrenzung unscharf bleibt, weichen Mensch und
+Modell später genau dort voneinander ab.
 
 ```text
 Code: BELASTUNG_ZEIT
@@ -91,7 +92,7 @@ auf einmal. Die konkrete Häppchengrösse von 20 bis 30 Zeilen ist dagegen
 Praxiserfahrung, kein Forschungsergebnis; experimentiere, was bei deinem
 Material funktioniert.
 
-!!! warning "Stolperstein: das LLM schätzt über den Daumen"
+!!! warnung "Stolperstein: das LLM schätzt über den Daumen"
     LLMs sind Muster-Vervollständiger, keine Schleifen (siehe
     [Wie ein LLM arbeitet](../grundlagen/wie-llms-arbeiten.md)). Bei langen
     Tabellen neigen sie dazu, nach ein paar dutzend Zeilen das Muster zu
@@ -135,15 +136,16 @@ Forschung fehlen diese Angaben bisher meistens, was die Studien
 unvergleichbar macht; deine Arbeit macht es besser. Das gehört auch in
 die [Deklaration der KI-Nutzung](../haltung/ki-deklarieren.md).
 
-!!! note "Lohnt sich das bei einer kleinen Interviewstudie?"
-    Ehrliche Einordnung aus der Forschung: Der Aufbau eines sauber
-    geprüften LLM-Workflows (Codebuch schärfen, Vergleichscodierung,
-    Differenzen klären) kostet bei wenigen Interviews ähnlich viel Zeit
-    wie das Selbst-Codieren, das zudem Nähe zum Material stiftet. Das
-    LLM spielt seine Stärke bei grossen Materialmengen aus. Bei kleinen
-    Studien ist es vor allem als **Zweitmeinung und Sparringpartner**
-    wertvoll (Differenzen zeigen unscharfe Definitionen), weniger als
-    Zeitersparnis.
+### Lohnt sich das bei einer kleinen Interviewstudie?
+
+Ehrliche Einordnung aus der Forschung: Der Aufbau eines sauber
+geprüften LLM-Workflows (Codebuch schärfen, Vergleichscodierung,
+Differenzen klären) kostet bei wenigen Interviews ähnlich viel Zeit
+wie das Selbst-Codieren, das zudem Nähe zum Material stiftet. Das
+LLM spielt seine Stärke bei grossen Materialmengen aus. Bei kleinen
+Studien ist es vor allem als **Zweitmeinung und Sparringpartner**
+wertvoll (Differenzen zeigen unscharfe Definitionen), weniger als
+Zeitersparnis.
 
 ## Profi-Variante: der Agent arbeitet die Schleife ab
 

@@ -83,7 +83,7 @@ zitierfähig sind, führt die Referenz, nicht die lokale Datei.
   Metadaten von Hand nachtragen. Ein reiner Datei-Import erzeugt sonst nur
   einen leeren Eintrag ohne brauchbare Angaben.
 
-!!! warning "API-Key lokal halten"
+!!! warnung "API-Key lokal halten"
     Der Zotero-API-Key gehört in die lokale Konfiguration des anbindenden
     Werkzeugs, nie in ein öffentliches Repository. Die Schreibrechte bewusst
     auf eine eigene Sammlung beschränken.

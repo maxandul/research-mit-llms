@@ -4,21 +4,23 @@
 statt Wissen bei jeder Frage neu zusammenzusuchen. Hintergrund:
 [RAG vs. LLM-Wiki](../grundlagen/rag-vs-wiki.md).
 
-!!! example "Gelebtes Beispiel auf dieser Website"
-    Dieser Workflow ist keine Theorie: Der
-    [Forschungsstand](../wiki/index.md) dieser Website ist genau so ein
-    Wiki — Quellnotizen, Konzeptnotizen, Synthesen und ein automatisch
-    generierter Wissensgraph, sprintweise aufgebaut. Das zugehörige Schema
-    ist die [CLAUDE.md im Repository](https://github.com/maxandul/research-mit-llms/blob/main/CLAUDE.md);
-    kopierfertige Vorlagen stehen unter
-    [Wiki-Vorlagen](../ressourcen/wiki-vorlagen.md).
+### Gelebtes Beispiel auf dieser Website
 
-!!! abstract "Der Kreislauf"
-    ```
-    Quelle finden  ->  ingest (einpflegen)  ->  query (fragen)  ->  lint (prüfen)
-                            ^                                          |
-                            +------------------------------------------+
-    ```
+Dieser Workflow ist keine Theorie: Der
+[Forschungsstand](../wiki/index.md) dieser Website ist genau so ein
+Wiki — Quellnotizen, Konzeptnotizen, Synthesen und ein automatisch
+generierter Wissensgraph, sprintweise aufgebaut. Das zugehörige Schema
+ist die [CLAUDE.md im Repository](https://github.com/maxandul/research-mit-llms/blob/main/CLAUDE.md);
+kopierfertige Vorlagen stehen unter
+[Wiki-Vorlagen](../ressourcen/wiki-vorlagen.md).
+
+### Der Kreislauf
+
+```
+Quelle finden  ->  ingest (einpflegen)  ->  query (fragen)  ->  lint (prüfen)
+                        ^                                          |
+                        +------------------------------------------+
+```
 
 ## Ziel
 
@@ -90,12 +92,11 @@ mein-wiki/
 - Jede Zeile beginnt mit: ## [JJJJ-MM-TT] ingest | Titel
 ```
 
-!!! tip "Erst klein, dann automatisieren"
-    Starte von Hand mit fünf Quellen. Wenn der Nutzen sichtbar ist und die
-    Handarbeit nervt, wechsle auf [Claude Cowork oder einen
-    Coding-Agenten](../werkzeuge/sammeln/llm-wiki.md), oder nutze direkt das
-    [llm-wiki-Repo](https://github.com/mehmetgoekce/llm-wiki) mit vorgefertigtem
-    Schema und ingest/query/lint-Befehlen.
+**Erst klein, dann automatisieren.** Starte von Hand mit fünf Quellen. Wenn der Nutzen sichtbar ist und die
+Handarbeit nervt, wechsle auf [Claude Cowork oder einen
+Coding-Agenten](../werkzeuge/sammeln/llm-wiki.md), oder nutze direkt das
+[llm-wiki-Repo](https://github.com/mehmetgoekce/llm-wiki) mit vorgefertigtem
+Schema und ingest/query/lint-Befehlen.
 
 ---
 
