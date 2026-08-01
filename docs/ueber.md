@@ -1,11 +1,58 @@
-# Über diese Seite
+# Über diese Website
 
-## Zweck
+## Zweck und Publikum
 
-Diese Seite zeigt niederschwellig, wie LLMs alle Schritte des
+Diese Website zeigt niederschwellig, wie LLMs alle Schritte des
 Forschungsprozesses unterstützen können: von der Literatur über
-Datenerhebung und Analyse bis zum Schreiben und Publizieren. Sie richtet
-sich an Forschende, die einen praktischen Einstieg suchen.
+Datenerhebung und Analyse bis zum Schreiben und Publizieren.
+
+Sie richtet sich an Forschende und Studierende in jeder Phase ihrer
+Arbeit, vom ersten Themenüberblick bis zur Abgabe. Programmierkenntnisse
+sind nicht nötig; die meisten Anleitungen brauchen nur den Browser. Wo
+mehr Technik nötig ist, etwa bei lokaler Transkription oder dem
+Word-Export über die Kommandozeile, steht das als *Fortgeschritten* oder
+*Profi* im Steckbrief der Seite.
+
+## So sind die Seiten aufgebaut
+
+Die Reiter oben folgen dem Weg einer Forschungsarbeit. Jeder Reiter hat
+eine eigene Startseite mit Übersicht.
+
+Werkzeug- und Anleitungsseiten beginnen mit einem **Steckbrief**:
+Schwierigkeit, Kosten und wofür das Werkzeug taugt.
+
+- **Schwierigkeit** hat drei Stufen:
+    - *Einsteiger*: im Browser nutzbar, keine Technikkenntnisse nötig.
+    - *Fortgeschritten*: etwas Einrichtung, ein Werkzeug oder
+      Grundkenntnisse nötig.
+    - *Profi*: Kommandozeile, Installation und je nach Werkzeug spezielle
+      Hardware nötig.
+- **Kosten**: *gratis*, *Freemium* (Grundfunktionen gratis, mehr kostet)
+  oder ein konkretes Abo.
+
+Im Text gibt es genau drei Arten von Hinweisboxen:
+
+| Box | Wofür |
+|-----|-------|
+| **Merksatz** | Der eine Satz, den du von dieser Seite mitnehmen solltest. Viele Seiten haben keinen. |
+| **Warnung** | Ein Fallstrick, eine Grenze oder ein Datenschutzrisiko. |
+| **Was die Forschung sagt** | Verweis auf die Belege im [Forschungsstand](wiki/index.md). |
+
+Alles andere steht im Fliesstext. Anmerkungen über die Website selbst
+(Bearbeitungsstand, offene Lücken, Lesehinweise) erscheinen als leise
+Randnotiz ohne Kasten, damit sie nicht mit inhaltlichen Warnungen
+verwechselt werden.
+
+## Gratis oder bezahlt?
+
+Zum Ausprobieren reichen die Gratis-Stufen fast überall. Wer LLMs
+regelmässig im Forschungsprozess einsetzt, kommt mit einem bezahlten Abo
+meist weiter: Zugang zu den stärksten Modellen, grössere Kontingente und
+Zusatzfunktionen wie Projekte, Dateiverarbeitung oder agentische
+Werkzeuge.
+
+Für Lehrende gilt eine Einschränkung: In der Lehre darf kostenpflichtige
+Nutzung nicht vorausgesetzt werden, sonst leidet die Chancengleichheit.
 
 ## Stand
 

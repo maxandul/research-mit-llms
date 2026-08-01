@@ -7,115 +7,82 @@ icon: material/home-outline
 Ein praktischer Wegweiser, wie du grosse Sprachmodelle (LLMs) im gesamten
 Forschungsprozess einsetzt: Literatur finden, Daten erheben und schützen,
 qualitativ und quantitativ auswerten, schreiben und publizieren.
-
-!!! randnotiz "Diese Seite ist im Aufbau"
-    Die Inhalte werden laufend erweitert und mit wissenschaftlichen Quellen
-    unterlegt — insbesondere der [Forschungsstand](wiki/index.md) (das Wiki
-    hinter den Belegen) deckt erst einen Teil der Themen ab. Was sich
-    inhaltlich ändert, steht im [Changelog](ressourcen/changelog.md).
-
-!!! randnotiz "Für wen ist diese Seite?"
-    Für Forschende und Studierende in jeder Phase ihrer Arbeit, vom ersten
-    Themenüberblick bis zur Abgabe. Programmieren können musst du nicht:
-    Die meisten Anleitungen brauchen nur den Browser. Wo sich mehr Technik
-    lohnt, etwa bei lokaler Transkription oder dem Word-Export per
-    Kommandozeile, ist das klar als *Fortgeschritten* oder *Profi* markiert
-    und du entscheidest, wie weit du gehst.
+Programmieren musst du dafür nicht, die meisten Anleitungen brauchen nur
+den Browser.
 
 ## Wo stehst du in deiner Arbeit?
 
-Steig direkt bei der Phase ein, die dich gerade beschäftigt:
+<div class="grid cards" markdown>
 
-- **Ich will verstehen, was LLMs können und was nicht.**
-  Starte bei den [Grundlagen](grundlagen/llms-verstehen.md).
-- **Ich suche und verarbeite Literatur.**
-  Zum Bereich [Literatur](werkzeuge/finden/semantic-scholar.md) mit Werkzeugen
-  und [Workflows](workflows/thema-zu-uebersicht.md).
-- **Ich habe Interviews geführt und will sie transkribieren.**
-  Siehe [Interviews transkribieren](erheben/transkription.md).
-- **Ich will sensible Daten mit Cloud-Diensten bearbeiten.**
-  Zuerst [Daten anonymisieren](erheben/anonymisieren.md).
-- **Ich will meine Daten auswerten.**
-  [Qualitativ codieren](analysieren/qualitativ-codieren.md) oder
-  [quantitativ auswerten](analysieren/quantitativ-auswerten.md).
-- **Ich schreibe an der Arbeit selbst.**
-  [Die Arbeit in Markdown aufbauen](schreiben/arbeit-in-markdown.md) und
-  [mit Word-Feedback umgehen](schreiben/word-feedback.md).
-- **Ich frage mich, wie ich die KI-Nutzung offenlege.**
-  [KI-Nutzung deklarieren](haltung/ki-deklarieren.md).
+-   :material-help-circle-outline:{ .lg .middle } **[Ich will verstehen, was LLMs können](grundlagen/index.md)**
 
-## Wie diese Seite aufgebaut ist
+    ---
 
-Die Reiter oben folgen dem Weg einer Forschungsarbeit. Jeder Reiter hat
-eine eigene Startseite mit Übersicht.
+    Was sich an ein Modell übergeben lässt, was nicht, und woran das liegt.
 
-- **[Grundlagen](grundlagen/index.md)** erklären in wenigen Minuten, wie
-  LLMs arbeiten, wo ihre Grenzen liegen und worauf du beim Datenschutz
-  achten musst.
-- **[Literatur](literatur/index.md)** stellt Werkzeuge zum Finden,
-  Befragen und Sammeln vor und verkettet sie zu durchgängigen Workflows.
-- **[Daten](daten/index.md)** behandelt Erhebung und Schutz
-  (Transkription, Anonymisierung) sowie die Auswertung, qualitativ wie
-  quantitativ.
-- **[Schreiben](schreiben/index.md)** geht um das Arbeitsformat und den
-  Umgang mit Word-Feedback.
-- **[Haltung](haltung/index.md)** behandelt Transparenz und Verantwortung.
-- **[Forschungsstand](wiki/index.md)** ist das Wiki hinter den Belegen und
-  zugleich ein Fallbeispiel für die Arbeitsweise, die hier beschrieben wird.
-- **[Ressourcen](ressourcen/index.md)** sammelt Glossar, Links,
-  kopierfertige Prompts und den Changelog.
+-   :material-magnify:{ .lg .middle } **[Ich suche und verarbeite Literatur](literatur/index.md)**
 
-## So liest du diese Seite
+    ---
 
-Jede Werkzeug- und Anleitungsseite beginnt mit einem **Steckbrief**:
-Schwierigkeit, Kosten und wofür das Werkzeug taugt, in drei Feldern.
+    Werkzeuge zum Finden, Befragen und Sammeln, dazu drei durchgängige
+    Workflows.
 
-- **Schwierigkeit** hat drei Stufen:
-    - *Einsteiger*: im Browser nutzbar, keine Technikkenntnisse nötig.
-    - *Fortgeschritten*: etwas Einrichtung, ein Tool oder Grundkenntnisse nötig.
-    - *Profi*: Kommandozeile, Installation und je nach Werkzeug spezielle
-      Hardware nötig.
-- **Kosten**: *gratis*, *Freemium* (Grundfunktionen gratis, mehr kostet)
-  oder ein konkretes Abo.
+-   :material-microphone-outline:{ .lg .middle } **[Ich habe Interviews geführt](erheben/transkription.md)**
 
-Im Text gibt es genau drei Arten von Hinweisboxen, damit eine Box wieder
-etwas bedeutet:
+    ---
 
-| Box | Wofür |
-|-----|-------|
-| **Merksatz** | Der eine Satz, den du von dieser Seite mitnehmen solltest. |
-| **Warnung** | Ein Fallstrick, eine Grenze oder ein Datenschutzrisiko. |
-| **Was die Forschung sagt** | Verweis auf die Belege im [Forschungsstand](wiki/index.md). |
+    Transkription, auch lokal auf dem eigenen Rechner und auch für
+    Schweizerdeutsch.
 
-Alles andere steht im Fliesstext. Anmerkungen über die Website selbst
-(Bearbeitungsstand, offene Lücken, Lesehinweise) erscheinen als leise
-Randnotiz ohne Kasten, damit sie nicht mit inhaltlichen Warnungen
-verwechselt werden.
+-   :material-incognito:{ .lg .middle } **[Ich arbeite mit sensiblen Daten](erheben/anonymisieren.md)**
 
-### Gratis oder bezahlt?
+    ---
 
-Zum Ausprobieren reichen die Gratis-Stufen fast überall. Wer LLMs
-ernsthaft im Forschungsprozess einsetzt, fährt mit einem bezahlten Abo
-meist deutlich besser: Zugang zu den stärksten Modellen, grössere
-Kontingente und Zusatzfunktionen wie Projekte, Dateiverarbeitung oder
-agentische Werkzeuge. Wichtig für Lehrende: In der Lehre darf
-kostenpflichtige Nutzung nicht vorausgesetzt werden (Chancengleichheit).
-Für die eigene Forschungsarbeit ist ein Abo aber oft die sinnvollste
-Investition, wenn du das aktuelle Potenzial voll nutzen willst.
+    Was vor dem ersten Upload passieren muss und wo Anonymisierung an
+    ihre Grenzen kommt.
 
-!!! randnotiz "Wichtig zu den Anleitungen"
-    Die Anleitungen beschreiben die *Logik* der Einrichtung auf hohem
-    Niveau und verlinken auf die offizielle Dokumentation. Die Oberflächen
-    der Dienste ändern sich laufend. Die verlinkten Original-Docs sind
-    immer die verbindliche Quelle.
+-   :material-tag-multiple-outline:{ .lg .middle } **[Ich will meine Daten auswerten](daten/index.md)**
 
-## Schnelleinstieg
+    ---
 
-Du weisst noch nicht, wo anfangen? Eine mögliche Reihenfolge:
+    Qualitativ codieren mit dem Modell als zweitem Codierer, oder
+    quantitativ mit ausgeführtem Code.
 
-1. Lies kurz [LLMs verstehen & verantwortungsvoll nutzen](grundlagen/llms-verstehen.md)
-   und [Wie ein LLM arbeitet](grundlagen/wie-llms-arbeiten.md).
-2. Probiere ein Einsteiger-Werkzeug aus dem Bereich
-   [Finden & Erkunden](werkzeuge/finden/semantic-scholar.md).
-3. Schau dir den Workflow
-   [Vom Thema zur Literaturübersicht](workflows/thema-zu-uebersicht.md) an.
+-   :material-fountain-pen-tip:{ .lg .middle } **[Ich schreibe an der Arbeit](schreiben/index.md)**
+
+    ---
+
+    Die Arbeit in Markdown aufbauen und mit Word-Feedback umgehen, ohne
+    das Format zu wechseln.
+
+-   :material-file-certificate-outline:{ .lg .middle } **[Ich muss die KI-Nutzung offenlegen](haltung/ki-deklarieren.md)**
+
+    ---
+
+    Was zu deklarieren ist, an welcher Stelle, und was die Institution
+    dabei entscheidet.
+
+</div>
+
+## Noch keine konkrete Frage?
+
+Eine mögliche Reihenfolge zum Einsteigen:
+
+1. [LLMs verstehen & verantwortungsvoll nutzen](grundlagen/llms-verstehen.md)
+   und [Wie ein LLM arbeitet](grundlagen/wie-llms-arbeiten.md), zusammen
+   etwa zehn Minuten.
+2. Ein Einsteiger-Werkzeug ausprobieren, etwa
+   [Semantic Scholar](werkzeuge/finden/semantic-scholar.md).
+3. Den Workflow [Vom Thema zur Literaturübersicht](workflows/thema-zu-uebersicht.md)
+   durchgehen, der die Werkzeuge zu einem Ablauf verkettet.
+
+Wie die Seiten aufgebaut sind, was die Hinweisboxen bedeuten und wie die
+Belege zustande kommen, steht unter
+[Über diese Website](ueber.md).
+
+!!! randnotiz "Bearbeitungsstand"
+    Die Inhalte werden laufend erweitert und mit wissenschaftlichen
+    Quellen unterlegt. Der [Forschungsstand](wiki/index.md), also das Wiki
+    hinter den Belegen, deckt bisher zwei Themen ab: KI-Nutzung
+    deklarieren und qualitatives Codieren. Was sich inhaltlich ändert,
+    steht im [Changelog](ressourcen/changelog.md).
