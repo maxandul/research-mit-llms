@@ -117,15 +117,26 @@ führt zur jeweiligen Seite.
     return getComputedStyle(document.body).getPropertyValue(name).trim();
   }
 
+  var zeichenLauf = 0;
+  var datenPromise = null;
+
+  // graph.json einmal holen und behalten. drawGraph laeuft mehrmals
+  // (erste Groessenmessung, Wechsel hell/dunkel), die Daten aendern
+  // sich dabei nicht.
+  function graphDaten() {
+    if (!datenPromise) {
+      datenPromise = fetch("graph.json").then(function (r) { return r.json(); });
+    }
+    return datenPromise;
+  }
+
   function drawGraph() {
     var container = document.getElementById("wiki-graph");
     if (!container || !window.d3) return;
-    // Neu zeichnen, wenn schon etwas dasteht: Beim Wechsel zwischen
-    // hellem und dunklem Modus aendern sich die Token-Farben, und der
-    // Graph liest sie nur beim Zeichnen.
-    container.innerHTML = "";
-    var alteLeiste = document.getElementById("wiki-graph-filter");
-    if (alteLeiste) alteLeiste.innerHTML = "";
+    // Nur der juengste Aufruf darf zeichnen. Geleert wird erst im
+    // Rueckruf: zwischen Aufruf und Zeichnen liegt der Netzwerkweg,
+    // und wer schon beim Aufruf leert, haengt am Ende zwei SVG an.
+    var lauf = ++zeichenLauf;
 
     var namen = { quelle: "Quellnotiz", konzept: "Konzept",
                   synthese: "Synthese", seite: "Website-Seite" };
@@ -138,14 +149,23 @@ führt zur jeweiligen Seite.
     };
     var aus = {};
 
-    fetch("graph.json").then(function (r) { return r.json(); }).then(function (data) {
+    graphDaten().then(function (data) {
+      if (lauf !== zeichenLauf) return;
+      container.innerHTML = "";
+      var alteLeiste = document.getElementById("wiki-graph-filter");
+      if (alteLeiste) alteLeiste.innerHTML = "";
+
       // Die Breite kommt aus dem Layout. Steht das noch nicht (mit
       // navigation.instant feuert document$ vorher), waere sie 0 und der
       // Graph unsichtbar. Deshalb messen wir defensiv und zeichnen bei
       // Groessenaenderung neu.
-      var w = Math.round(container.getBoundingClientRect().width)
-              || (container.parentElement && container.parentElement.clientWidth)
-              || 800;
+      // Eine Breite von 0 oder 2 (nur die Rahmen) kommt vor, solange das
+      // Layout nicht steht. Sie als viewBox zu nehmen skaliert den Graphen
+      // um ein Vielfaches, und er tritt aus dem Kasten aus. Darum eine
+      // Untergrenze statt einer blossen Pruefung auf 0.
+      var w = Math.round(container.getBoundingClientRect().width);
+      if (w < 200) { w = Math.round((container.parentElement || {}).clientWidth || 0); }
+      if (w < 200) { w = 800; }
       var h = container.clientHeight || 480;
       var svg = d3.select(container).append("svg")
         .attr("width", "100%").attr("height", h)
@@ -251,6 +271,7 @@ führt zur jeweiligen Seite.
         text.attr("x", function (d) { return d.x + radius(d) + 3; }).attr("y", function (d) { return d.y + 3; });
       });
     }).catch(function () {
+      if (lauf !== zeichenLauf) return;
       container.innerHTML = '<p style="padding:1em;">Graph-Daten nicht gefunden (graph.json entsteht beim Build).</p>';
     });
   }
