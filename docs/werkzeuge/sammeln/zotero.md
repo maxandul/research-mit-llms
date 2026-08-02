@@ -1,102 +1,113 @@
 ---
 werkzeug:
   schwierigkeit: Einsteiger
-  schwierigkeit_zusatz: Grundfunktionen einfach, LLM-Anbindung bis Profi
+  schwierigkeit_zusatz: LLM-Anbindung bis Profi
   kosten: gratis
-  kosten_zusatz: Speicher-Abo optional
-  wofuer: Literaturverwaltung
+  kosten_zusatz: Speicher-Abo nur für die Synchronisierung von PDFs
+  verarbeitung: beides
+  verarbeitung_zusatz: lokal nutzbar, Synchronisierung optional
+  wofuer: Referenzen und PDFs verwalten, Zitate und Bibliografien erzeugen
+  phase: [verwalten, schreiben]
+  stand: August 2026
 ---
 
 # Zotero
 
-## Was ist es?
+Zotero sammelt Referenzen und PDFs, erzeugt daraus Zitate und
+Bibliografien und schreibt sie in Word, LibreOffice oder Google Docs.
+Es ist quelloffen und ein Projekt der Non-Profit-Organisation Digital
+Scholar, also nicht von einem Anbieter abhängig, der es abschalten
+könnte.
 
-Ein kostenloses, offenes Literaturverwaltungsprogramm. Sammelt Referenzen
-und PDFs, erstellt Zitate und Bibliografien. Über die Web API lässt sich
-die eigene Bibliothek auch von anderen Werkzeugen (z.B. einem Custom GPT)
-auslesen und befüllen.
+Für diese Website ist Zotero doppelt relevant: als Ablage der Literatur
+und als Datenquelle beim
+[Schreiben in Markdown](../../schreiben/arbeit-in-markdown.md), wo
+Zitierschlüssel und Literaturverzeichnis automatisch aus der Bibliothek
+kommen.
 
-## Was bringt es für Research?
+## Wofür es taugt
 
-- Zentrale, durchsuchbare Ablage aller Quellen.
-- Per MCP an ein LLM anbindbar: Funde automatisch und zitierfähig ablegen
-  lassen (siehe [An ein LLM anbinden (MCP)](#an-ein-llm-anbinden-mcp) unten).
-- Liefert (mit dem Plugin Better BibTeX) die Literaturdatenbank für den
-  Schreib-Workflow
-  [Die Arbeit in Markdown aufbauen](../../schreiben/arbeit-in-markdown.md):
-  Zitate und Literaturverzeichnis entstehen dann automatisch beim
-  Word-Export.
-
-## Voraussetzungen
-
-- Zotero-Konto (gratis). Für die API: ein API-Schlüssel aus den
-  Kontoeinstellungen.
-
-## Einrichtung / Nutzung (High-Level)
-
-1. Zotero installieren, Konto anlegen.
-2. Für die Anbindung: in den Einstellungen einen API-Key erzeugen und die
-   eigene User- bzw. Group-ID notieren.
-3. Den Key im anbindenden Werkzeug hinterlegen.
+- **Quellen mit einem Klick erfassen.** Die Browser-Erweiterung liest
+  Metadaten und PDF direkt von der Verlagsseite.
+- **Zitieren im Textverarbeitungsprogramm.** Die Plugins für Word,
+  LibreOffice und Google Docs sind mitgeliefert, Zitierstil umstellbar.
+- **Die Bibliografie für den Markdown-Weg liefern.** Mit dem Plugin
+  Better BibTeX entsteht eine `.bib`-Datei, die Pandoc beim Word-Export
+  auswertet.
+- **Von einem LLM befüllen lassen**, siehe unten. So entsteht der
+  [Forschungsstand](../../wiki/index.md) dieser Website.
 
 ## An ein LLM anbinden (MCP)
 
 Über einen MCP-Server lässt sich die Zotero-Bibliothek direkt an ein LLM
-anbinden: Das Modell liest dann Sammlungen und legt neue Einträge samt PDF
-selbst ab. Auf dieser Website ist das gelebte Praxis, der
-[Forschungsstand](../../wiki/index.md) verwaltet seine Quellen so.
+anbinden: Das Modell liest Sammlungen und legt neue Einträge samt PDF
+selbst ab.
 
-**Custom GPT Action oder MCP-Server?** Beide Wege nutzen im Kern die
-Zotero Web API, unterscheiden sich aber in drei Punkten:
+**Custom GPT Action oder MCP-Server?** Beide nutzen im Kern die Zotero
+Web API, unterscheiden sich aber in drei Punkten:
 
 - **Einrichtung und Pflege.** Für eine Action muss die API-Beschreibung
-  (ein OpenAPI-Schema) von Hand im Custom GPT hinterlegt und aktuell
-  gehalten werden. Ein MCP-Server meldet seine Funktionen dem Chat-Programm
-  selbst in standardisierter Form: Das Modell sieht automatisch, was es
-  kann, ohne dass jemand Endpunkte beschreibt.
-- **Funktionsumfang.** Eine Action kann genau das, was die Web API direkt
-  anbietet. Ein MCP-Server ist ein Programm mit eigener Logik: zotero-mcp
-  kombiniert etwa mehrere API-Aufrufe zu einem Schritt, liest PDFs und
-  bietet semantische Suche über die Bibliothek, alles Funktionen, die die
-  Web API allein nicht kennt.
+  von Hand im Custom GPT hinterlegt und aktuell gehalten werden. Ein
+  MCP-Server meldet seine Funktionen dem Chat-Programm selbst.
+- **Funktionsumfang.** Eine Action kann, was die Web API direkt
+  anbietet. Ein MCP-Server ist ein Programm mit eigener Logik:
+  zotero-mcp kombiniert mehrere API-Aufrufe zu einem Schritt, liest PDFs
+  und bietet semantische Suche über die Bibliothek.
 - **Ort und Reichweite.** Eine Action läuft in der Cloud des Anbieters
-  (der API-Key liegt dort) und ist an ChatGPT gebunden. Ein lokaler
-  MCP-Server läuft auf dem eigenen Rechner: Der Key bleibt lokal, derselbe
-  Server funktioniert mit jedem MCP-fähigen Chat-Programm (etwa Claude
-  Desktop) nach dem offenen
-  [MCP-Standard](../../grundlagen/llm-research.md), und er kann auch auf
-  lokale Dateien zugreifen. Die Einrichtung ist dafür etwas technischer.
+  (der Schlüssel liegt dort) und ist an ChatGPT gebunden. Ein lokaler
+  MCP-Server läuft auf dem eigenen Rechner, der Schlüssel bleibt lokal,
+  und derselbe Server funktioniert mit jedem MCP-fähigen Chat-Programm.
 
 Ein bewährter Weg (Claude Desktop unter Windows): den Server
-[zotero-mcp](https://github.com/54yyyu/zotero-mcp) installieren und mit dem
-Web-API-Key einrichten. Das Modell erhält so Lese- und Schreibzugriff auf
-eine dedizierte Sammlung, in die es einpflegt, nie sonst in die Bibliothek.
+[zotero-mcp](https://github.com/54yyyu/zotero-mcp) installieren und mit
+einem Web-API-Schlüssel einrichten. Das Modell bekommt Lese- und
+Schreibzugriff auf eine dedizierte Sammlung, nie auf die ganze
+Bibliothek.
 
 **Sauber einpflegen (Hybrid nach Quelltyp):** Damit die Einträge
 zitierfähig sind, führt die Referenz, nicht die lokale Datei.
 
 - arXiv-Preprint über die arXiv-URL anlegen: liefert Titel, Autoren,
   Abstract, arXiv-ID und PDF.
-- Veröffentlichten Artikel über die DOI anlegen: liefert saubere
-  CrossRef-Metadaten und, wo verfügbar, ein Open-Access-PDF (via Unpaywall).
-- Nur wenn weder DOI noch arXiv greifen: das lokale PDF importieren und die
-  Metadaten von Hand nachtragen. Ein reiner Datei-Import erzeugt sonst nur
-  einen leeren Eintrag ohne brauchbare Angaben.
+- Veröffentlichten Artikel über die DOI anlegen: liefert CrossRef-Metadaten
+  und, wo verfügbar, ein Open-Access-PDF über Unpaywall.
+- Nur wenn weder DOI noch arXiv greifen: das lokale PDF importieren und
+  die Metadaten von Hand nachtragen. Ein reiner Datei-Import erzeugt
+  sonst einen leeren Eintrag ohne brauchbare Angaben.
 
-!!! warnung "API-Key lokal halten"
-    Der Zotero-API-Key gehört in die lokale Konfiguration des anbindenden
-    Werkzeugs, nie in ein öffentliches Repository. Die Schreibrechte bewusst
-    auf eine eigene Sammlung beschränken.
+!!! warnung "Schlüssel und Plugins"
+    Der Zotero-API-Schlüssel gehört in die lokale Konfiguration des
+    anbindenden Werkzeugs, nie in ein öffentliches Repository, und die
+    Schreibrechte werden bewusst auf eine eigene Sammlung beschränkt.
+    Für Plugins gilt der Hinweis des Anbieters: Sie haben vollen Zugriff
+    auf deine Bibliothek und deinen Rechner. Nur installieren, was du
+    kennst.
 
-## Grenzen & Datenschutz
+## Grenzen
 
-- Bibliotheksdaten liegen bei Zotero (sofern synchronisiert). PDFs mit
-  vertraulichem Inhalt bewusst handhaben.
+- **Synchronisierte Bibliotheken liegen bei Zotero.** Die Software
+  selbst läuft lokal und funktioniert auch ohne Konto; sobald du
+  synchronisierst, liegen Metadaten und je nach Einstellung auch PDFs
+  auf fremden Servern. Bei vertraulichen Volltexten die
+  Datei-Synchronisierung bewusst abschalten.
+- **Der Gratis-Speicher ist begrenzt.** Die Software kostet nichts, für
+  die Synchronisierung grösserer PDF-Bestände braucht es ein
+  Speicher-Abo oder einen eigenen Speicherort.
+- **Metadaten aus dem Netz sind nicht immer korrekt.** Was die
+  Browser-Erweiterung holt, sollte man bei zitierrelevanten Angaben
+  prüfen, besonders bei Sammelbänden und grauer Literatur.
 
-## Offizielle Links
+## Wann etwas anderes passt
 
-- Website: <https://www.zotero.org>
-- Web API v3: <https://www.zotero.org/support/dev/web_api/v3/start>
+Für Projektwissen, das keine Referenz ist, eignet sich
+[Notion](notion.md) besser. Und wenn nicht die Quelle, sondern das
+daraus verdichtete Wissen bleiben soll, ist das
+[LLM-Wiki](llm-wiki.md) der andere Ansatz; die beiden schliessen
+einander nicht aus, diese Website nutzt Zotero für die Belege und ein
+Wiki für die Verdichtung.
+
+Offizielle Seite: <https://www.zotero.org> ·
+Web API: <https://www.zotero.org/support/dev/web_api/v3/start>
 
 ---
 

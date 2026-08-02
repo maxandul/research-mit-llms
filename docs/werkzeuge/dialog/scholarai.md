@@ -1,42 +1,54 @@
 ---
 werkzeug:
-  schwierigkeit: Fortgeschritten
-  kosten: ChatGPT Plus
-  kosten_zusatz: nötig zum Erstellen eigener GPTs
-  wofuer: Literatursuche und Volltext-Analyse im Chat
+  schwierigkeit: Einsteiger
+  schwierigkeit_zusatz: "eigener GPT: Fortgeschritten"
+  kosten: Freemium
+  kosten_zusatz: eigener GPT braucht ein ChatGPT-Abo
+  verarbeitung: Cloud
+  wofuer: Literatur im Chat suchen und Volltexte gezielt befragen
+  phase: [finden, befragen]
+  stand: August 2026
 ---
 
-# ScholarAI (Custom GPT)
+# ScholarAI
 
-## Was ist es?
+ScholarAI gibt einem Chat Zugriff auf wissenschaftliche Datenbanken: Es
+sucht Arbeiten, holt Volltexte und beantwortet Fragen zu einzelnen
+Papers. Damit fällt der häufigste Fehler weg, den ein reiner Chat bei
+Literatur macht, nämlich Quellen zu erfinden. Was hier auftaucht, hat
+eine URL.
 
-ScholarAI ist eine Anbindung (eine "Action"), mit der ein eigener Custom GPT
-in ChatGPT wissenschaftliche Datenbanken durchsuchen, Volltexte lesen und
-Fragen zu einzelnen Papers beantworten kann.
+Es gibt zwei Wege dorthin. Der **fertige ScholarAI-GPT** ist ohne
+Einrichtung nutzbar, du öffnest ihn und legst los. Ein **eigener Custom
+GPT** kostet Einrichtungszeit, lässt sich dafür mit eigenen Instruktionen
+auf deine Arbeitsweise zuschneiden und mit weiteren Anbindungen
+kombinieren.
 
-## Was bringt es für Research?
+## Wofür es taugt
 
-- Im Chat nach Papers suchen, mit echten, verlinkten Quellen statt
-  erfundenen.
-- PDFs/Volltexte gezielt befragen (Methoden, Limitationen, Daten).
-- Mit weiteren Anbindungen (z.B. Zotero, Notion) zu einem durchgängigen
-  Arbeitsablauf verketten, siehe Workflow
-  [Vom Thema zur Literaturübersicht](../../workflows/thema-zu-uebersicht.md).
+- **Im Chat nach Literatur suchen**, mit verlinkten Treffern statt
+  erfundener Referenzen.
+- **Volltexte gezielt befragen**: Methode, Datengrundlage, Limitationen,
+  statt das ganze PDF zu lesen.
+- **Ein Feld über Zitationen erschliessen**, über die Funktion
+  `literature_map`.
+- **Funde direkt ablegen.** Die Schnittstelle kann Zitate nach
+  [Zotero](../sammeln/zotero.md) schreiben.
+- **Mehrere Arbeiten in einem Durchgang befragen**, über die
+  Projekt-Funktion.
 
-## Voraussetzungen
+## Einen eigenen GPT einrichten
 
-- ChatGPT Plus (Custom GPTs erstellen).
-- Ein kostenloser ScholarAI-API-Schlüssel.
-
-## Einrichtung (High-Level)
-
-1. API-Schlüssel bei ScholarAI anfordern.
-2. In ChatGPT einen neuen GPT anlegen und eine "Action" erstellen.
-3. Authentifizierung: API-Key, Custom-Header `X-ScholarAI-API-Key`.
+1. API-Schlüssel unter <https://app.scholarai.io/profile/api> erzeugen
+   und kopieren.
+2. In ChatGPT einen neuen GPT anlegen, im Reiter `Configure` unten
+   "Create a New Action" wählen.
+3. Authentifizierung: `API Key`, den Schlüssel einsetzen, Auth Type
+   `Custom`, Header-Name `X-ScholarAI-API-Key`.
 4. Schema importieren von `https://api.scholarai.io/openapi.yaml`.
-5. Instruktion (System-Prompt) einsetzen, siehe Bausteine unten.
+5. Instruktion einsetzen, siehe die Bausteine unten.
 
-Die verbindliche, stets aktuelle Schritt-für-Schritt-Anleitung:
+Die verbindliche, stets aktuelle Anleitung mit Bildschirmfotos:
 <https://docs.scholarai.io/make-a-gpt>
 
 ## System-Prompt-Bausteine je Einsatzzweck
@@ -115,24 +127,41 @@ Ausgabe:
 Regel: Keine Aussage ohne verlinkte Quelle.
 ```
 
-**Templates als Ausgabeformat.** Du kannst dem GPT zusätzlich ein festes Ausgabeformat vorgeben, etwa
-Markdown für dein [LLM-Wiki](../sammeln/llm-wiki.md) oder eine
-Struktur, die direkt nach [Notion](../sammeln/notion.md) /
-[Zotero](../sammeln/zotero.md) passt. So sind Funde sofort ablagefertig.
+**Templates als Ausgabeformat.** Du kannst dem GPT zusätzlich ein festes
+Ausgabeformat vorgeben, etwa Markdown für dein
+[LLM-Wiki](../sammeln/llm-wiki.md) oder eine Struktur, die direkt nach
+[Notion](../sammeln/notion.md) oder [Zotero](../sammeln/zotero.md) passt.
+So sind Funde ohne Nacharbeit ablagefertig.
 
-## Grenzen & Datenschutz
+## Grenzen
 
-- Läuft über ChatGPT (Cloud). Keine vertraulichen unveröffentlichten
-  Daten hochladen, ausser die institutionellen Vorgaben erlauben es.
-- In den ChatGPT-Einstellungen prüfen, ob Eingaben zum Training genutzt
-  werden.
+- **An ChatGPT gebunden.** ScholarAI wird als Action eingebunden, nicht
+  über den offenen [MCP-Standard](../../grundlagen/llm-einspannen.md).
+  Wer mit einem anderen Chat-Programm arbeitet, kann es so nicht nutzen.
+- **Ein eigener GPT braucht Pflege.** Der Anbieter aktualisiert das
+  Schema; nach einem Funktionsupdate muss man es im eigenen GPT von Hand
+  neu importieren, sonst fehlen neue Funktionen stillschweigend.
+- **Die Schnittstelle ist als Alpha gekennzeichnet.** Verhalten und
+  Umfang können sich ändern.
+- **Verlinkt heisst nicht geprüft.** Die Quellen existieren, aber ob die
+  Zusammenfassung sie richtig wiedergibt, siehst du erst im Original.
+- **Cloud-Dienst über ChatGPT.** Für die Einordnung siehe die
+  [Grundregel zum Datenschutz](../../grundlagen/datenschutz.md); zusätzlich
+  lohnt ein Blick in die ChatGPT-Einstellungen zur Trainingsnutzung.
 
-## Offizielle Links
+## Wann etwas anderes passt
 
-- Anleitung "Make a GPT": <https://docs.scholarai.io/make-a-gpt>
-- ScholarAI: <https://scholarai.io>
+Wenn du nicht im Chat, sondern in einer Oberfläche mit Tabellen arbeiten
+willst, nimmt [Elicit](../finden/elicit.md) dir mehr ab. Geht es um deine
+*eigenen* PDFs statt um den Korpus, ist
+[Gemini Notebook](gemini-notebook.md) einfacher. Und für die blosse Suche
+ohne Chat ist [Semantic Scholar](../finden/semantic-scholar.md) direkter.
+
+Fertiger GPT: <https://chatgpt.com/g/g-L2HknCZTC-scholar-ai> ·
+Anleitung: <https://docs.scholarai.io/make-a-gpt> ·
+Anbieter: <https://scholarai.io>
 
 ---
 
-Statt eigene Quellen anzubinden, kannst du auch nur mit deinen eigenen
-Dokumenten chatten: [NotebookLM](notebooklm.md).
+Statt Quellen anzubinden, kannst du auch nur mit deinen eigenen
+Dokumenten chatten: [Gemini Notebook](gemini-notebook.md).

@@ -1,13 +1,3 @@
----
-werkzeug:
-  schwierigkeit: Einsteiger
-  schwierigkeit_zusatz: "maschineller Weg über Pandoc: Fortgeschritten"
-  kosten: gratis
-  wofuer: >-
-    Kommentare aus Word zurück in die Markdown-Quelle bringen, ohne
-    die Kette zu brechen
----
-
 # Mit Word-Feedback umgehen
 
 Wer die Arbeit [in Markdown aufbaut](arbeit-in-markdown.md), stösst schnell

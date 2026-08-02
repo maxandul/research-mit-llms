@@ -13,7 +13,7 @@ passt nichts mehr hinein.
 
 **Kontext / Datei in den Chat laden**: Einen Text direkt ins Kontextfenster
 geben, sodass das Modell ihn komplett liest. Kein Embedding, kein Abruf. Siehe
-[Datei in den Chat, RAG oder LLM-Wiki?](../grundlagen/rag-vs-wiki.md).
+[Wie du ein LLM einspannst](../grundlagen/llm-einspannen.md).
 
 **Embedding**: Die Umwandlung von Text in einen Zahlenvektor, sodass sich
 inhaltlich ähnliche Texte rechnerisch finden lassen. Grundlage von RAG.

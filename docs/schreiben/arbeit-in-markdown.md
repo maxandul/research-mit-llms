@@ -1,12 +1,3 @@
----
-werkzeug:
-  schwierigkeit: Fortgeschritten
-  kosten: gratis
-  wofuer: >-
-    die ganze Arbeit in Markdown schreiben, Word nur noch als Export
-    behandeln
----
-
 # Die Arbeit in Markdown aufbauen
 
 Wer seine Arbeit direkt in Word schreibt, arbeitet im schlechtesten Format
@@ -35,13 +26,14 @@ abgabefertige Word-Dokument wird daraus **per Werkzeug erzeugt**.
 ## Die Werkzeugkette
 
 - **Ordner mit Kapiteldateien** als Quelle
-- **[Pandoc](https://pandoc.org)** (gratis, Kommandozeile) erzeugt daraus
-  das Word-Dokument
+- **[Pandoc](../werkzeuge/schreiben/pandoc.md)** erzeugt daraus das
+  Word-Dokument
 - **`reference.docx`** als Formatvorlage: ein Word-Dokument, dessen
   Formatvorlagen (Schrift, Abstände, Überschriften) Pandoc auf den Export
   anwendet. Hier hinterlegst du die Layoutvorgaben deiner Hochschule.
-- **Zotero mit Better BibTeX** exportiert die Literatur als `.bib`-Datei,
-  ein **CSL-Stil** (z. B. APA) bestimmt das Zitierformat.
+- **[Zotero](../werkzeuge/sammeln/zotero.md) mit Better BibTeX**
+  exportiert die Literatur als `.bib`-Datei, ein **CSL-Stil** (etwa APA)
+  bestimmt das Zitierformat.
 
 ## Aufbau
 
@@ -90,7 +82,7 @@ Literaturverzeichnis und wendet die Formatvorlage an.
 
 Die Einrichtung ist übrigens eine ideale Aufgabe für ein LLM: Fehlermeldungen
 hineinkopieren, erklären lassen, nachbessern. Wer gar nicht an die
-Kommandozeile will, findet in **[Quarto](https://quarto.org)** dasselbe
+Kommandozeile will, findet in **[Quarto](../werkzeuge/schreiben/quarto.md)** dasselbe
 Prinzip mit mehr Komfort (baut intern ebenfalls auf Pandoc auf).
 
 ## Grenzen

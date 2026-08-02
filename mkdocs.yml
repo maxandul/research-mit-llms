@@ -74,6 +74,14 @@ plugins:
   - privacy:                       # lädt externe Schriften beim Build herunter und
       enabled: !ENV [CI, false]    # hostet sie selbst: keine Anfragen an Google beim
                                    # Besuch. Lokal aus, damit der Build schnell bleibt.
+  # Weiterleitungen für Seiten, die zusammengelegt oder umbenannt wurden.
+  # Alte Adressen bleiben so gültig: Lesezeichen und externe Verweise
+  # laufen nicht ins Leere.
+  - redirects:
+      redirect_maps:
+        grundlagen/llm-research.md: grundlagen/llm-einspannen.md
+        grundlagen/rag-vs-wiki.md: grundlagen/llm-einspannen.md
+        werkzeuge/dialog/notebooklm.md: werkzeuge/dialog/gemini-notebook.md
   - git-revision-date-localized:   # "Zuletzt aktualisiert" pro Seite
       type: date
       locale: de
@@ -114,26 +122,12 @@ nav:
       - grundlagen/index.md
       - LLMs verstehen & verantwortungsvoll nutzen: grundlagen/llms-verstehen.md
       - Wie ein LLM arbeitet: grundlagen/wie-llms-arbeiten.md
-      - Drei Arten, LLMs zu nutzen: grundlagen/llm-research.md
-      - Kontext, RAG & LLM-Wiki: grundlagen/rag-vs-wiki.md
+      - Wie du ein LLM einspannst: grundlagen/llm-einspannen.md
       - Das Kontextfenster: grundlagen/kontextfenster.md
       - Markdown als Arbeitsformat: grundlagen/markdown-arbeitsformat.md
       - Datenschutz & Vertraulichkeit: grundlagen/datenschutz.md
   - Literatur:
       - literatur/index.md
-      - Finden & Erkunden:
-          - Semantic Scholar: werkzeuge/finden/semantic-scholar.md
-          - Connected Papers: werkzeuge/finden/connected-papers.md
-          - Elicit: werkzeuge/finden/elicit.md
-      - Im Dialog recherchieren:
-          - ScholarAI (Custom GPT): werkzeuge/dialog/scholarai.md
-          - NotebookLM: werkzeuge/dialog/notebooklm.md
-          - Perplexity: werkzeuge/dialog/perplexity.md
-      - Sammeln & Synthetisieren:
-          - Zotero: werkzeuge/sammeln/zotero.md
-          - Notion: werkzeuge/sammeln/notion.md
-          - LLM-Wiki (nach Karpathy): werkzeuge/sammeln/llm-wiki.md
-      - Weitere Tools im Überblick: werkzeuge/weitere-tools.md
       - Workflows:
           - Vom Thema zur Literaturübersicht: workflows/thema-zu-uebersicht.md
           - Paper lesen & strukturiert ablegen: workflows/paper-lesen-ablegen.md
@@ -153,6 +147,36 @@ nav:
   - Haltung:
       - haltung/index.md
       - KI-Nutzung deklarieren: haltung/ki-deklarieren.md
+  - Werkzeuge:
+      - werkzeuge/index.md
+      - Literatur finden:
+          - Semantic Scholar: werkzeuge/finden/semantic-scholar.md
+          - Connected Papers: werkzeuge/finden/connected-papers.md
+          - Elicit: werkzeuge/finden/elicit.md
+      - Literatur befragen:
+          - ScholarAI: werkzeuge/dialog/scholarai.md
+          - Gemini Notebook: werkzeuge/dialog/gemini-notebook.md
+          - Perplexity: werkzeuge/dialog/perplexity.md
+      - Sammeln und verwalten:
+          - Zotero: werkzeuge/sammeln/zotero.md
+          - Notion: werkzeuge/sammeln/notion.md
+          - LLM-Wiki (nach Karpathy): werkzeuge/sammeln/llm-wiki.md
+      - Transkribieren:
+          - TranscriboZH: werkzeuge/transkribieren/transcribozh.md
+          - noScribe: werkzeuge/transkribieren/noscribe.md
+          - MacWhisper: werkzeuge/transkribieren/macwhisper.md
+          - Teams und Google Meet: werkzeuge/transkribieren/online-meetings.md
+      - Daten analysieren:
+          - MAXQDA: werkzeuge/analysieren/maxqda.md
+          - ATLAS.ti: werkzeuge/analysieren/atlasti.md
+      - Schreiben und exportieren:
+          - Pandoc: werkzeuge/schreiben/pandoc.md
+          - Quarto: werkzeuge/schreiben/quarto.md
+      - Lokal betreiben:
+          - Ollama und LM Studio: werkzeuge/lokal/ollama-lmstudio.md
+      - Agentisch arbeiten:
+          - Coding-Agenten: werkzeuge/agenten/coding-agenten.md
+      - Weitere Tools im Überblick: werkzeuge/weitere-tools.md
   - Forschungsstand:
       - wiki/index.md
       - Synthesen:

@@ -1,13 +1,15 @@
 # Datenschutz & Vertraulichkeit
 
-Ein Querschnittsthema, das bei jedem Werkzeug mitzudenken ist, gerade in
-der Forschung mit unveröffentlichten Manuskripten, fremden Daten oder
-sensiblen Quellen.
+Diese Frage läuft bei jedem Werkzeug auf dieser Website mit. In der
+Forschung geht es dabei selten nur um eigene Daten: unveröffentlichte
+Manuskripte, Interviews mit Dritten, Material unter
+Geheimhaltungsvereinbarung.
 
 !!! warnung "Grundregel"
-    Lade nichts in einen Cloud-Dienst hoch, das du nicht auch per E-Mail an
-    eine fremde Firma schicken würdest. Im Zweifel: anonymisieren oder
-    weglassen.
+    Ein Upload ist keine Werkzeugnutzung, sondern eine Weitergabe an ein
+    fremdes Unternehmen. Ob du dazu befugt bist, entscheidet das Material,
+    nicht das Werkzeug. Kläre das, bevor du hochlädst; im Zweifel
+    anonymisieren oder weglassen.
 
 ## Worauf achten?
 
@@ -15,10 +17,18 @@ sensiblen Quellen.
   fremden Servern, oft ausserhalb der Schweiz/EU.
 - **Werden Eingaben zum Training genutzt?** Viele Dienste bieten an, das
   abzuschalten. Prüfe die Einstellungen und die Datenschutzerklärung.
-- **Rechte Dritter.** Urheberrecht, Personendaten in Interviews,
-  Geheimhaltungsvereinbarungen: all das gilt auch beim Hochladen in ein LLM.
-- **Institutionelle Vorgaben.** Deine Hochschule oder Organisation hat
-  womöglich eigene Regeln zu KI-Werkzeugen und Datenschutz.
+- **Was für dein Material gilt.** Je nach Fall greifen Datenschutzrecht,
+  Auflagen der Ethikkommission, Bedingungen von Fördergebern,
+  Geheimhaltungsvereinbarungen, Urheberrecht, Verlagsverträge oder ein
+  Berufsgeheimnis. Welche davon, hängt von Fach, Datenart, Institution
+  und Land ab.
+- **Institutionelle Vorgaben.** Viele Hochschulen haben eigene Regeln zu
+  KI-Werkzeugen. Sie sind der erste Ort zum Nachschauen, ersetzen aber
+  die übrigen Pflichten nicht.
+
+Diese Seite kann nicht klären, was in deinem Fall gilt, und ersetzt keine
+Rechts- oder Datenschutzberatung. Sie soll nur erreichen, dass du die
+Frage stellst, bevor die Datei hochgeladen ist.
 
 ## Wenn das LLM selbst zugreift: angebundene Werkzeuge
 
@@ -35,21 +45,29 @@ aber eigene Vorsicht:
 - **Schreibaktionen kontrollieren.** Was das LLM anlegt oder ändert,
   regelmässig durchsehen; LLMs machen Fehler.
 
-## Der Ausweg für sensible Daten: anonymisieren
+## Sensible Daten: anonymisieren statt verzichten
 
-"Nichts Sensibles hochladen" heisst nicht, auf Cloud-Werkzeuge verzichten zu
-müssen. Mit einer sauberen Pseudonymisierung vor dem ersten Upload lassen
-sich Interviews und andere Personendaten datenschutzkonform bearbeiten.
-Der Schritt-für-Schritt-Workflow:
-[Daten anonymisieren](../erheben/anonymisieren.md).
+Die Grundregel oben verlangt keinen Verzicht auf Cloud-Werkzeuge. Mit
+einer sauberen Pseudonymisierung vor dem ersten Upload lassen sich
+Interviews und andere Personendaten bearbeiten, ohne die Regel zu
+verletzen. Wie das Schritt für Schritt geht, steht unter
+[Daten anonymisieren](../erheben/anonymisieren.md); dort stehen auch die
+Grenzen des Verfahrens.
 
 ## Lokale Alternativen
 
-Wer mit besonders sensiblen Daten arbeitet, kann LLMs auch **lokal** auf dem
-eigenen Rechner betreiben (Stichworte: Ollama, LM Studio). Dann verlässt
-nichts den eigenen Computer, auf Kosten von etwas mehr Einrichtung. Auch die
-[Transkription von Interviews](../erheben/transkription.md) geht komplett
-lokal.
+Wer mit besonders sensiblen Daten arbeitet, kann LLMs auch **lokal** auf
+dem eigenen Rechner betreiben, etwa mit
+[Ollama oder LM Studio](../werkzeuge/lokal/ollama-lmstudio.md). Auch die
+[Transkription von Interviews](../erheben/transkription.md) geht
+vollständig lokal.
+
+!!! warnung "Werkzeug heisst nicht Verarbeitungsort"
+    Mehrere dieser Werkzeuge bieten inzwischen zusätzlich Cloud-Modelle
+    an, erreichbar aus derselben Oberfläche. Ollama etwa lässt sich
+    weiterhin offline betreiben, führt aber auch bezahlte Cloud-Modelle.
+    Dass ein Werkzeug installiert ist, sagt also nichts darüber, wo
+    gerechnet wird. Prüfe, welches Modell tatsächlich antwortet.
 
 Zur Leistung lohnt sich ein differenzierter Blick, denn "lokal" heisst
 nicht mehr automatisch "deutlich schwächer": Kleine Modelle, die auf
@@ -69,6 +87,6 @@ Stichprobe prüfen, ob die Qualität reicht.
 
 ---
 
-Damit sind die Grundlagen komplett. Weiter geht es im Forschungsprozess mit
-der Literatur, beginnend beim Fundament der meisten Recherche-Werkzeuge:
-[Semantic Scholar](../werkzeuge/finden/semantic-scholar.md).
+Damit sind die Grundlagen durch. Weiter im Forschungsprozess mit dem
+Bereich [Literatur](../literatur/index.md): Werkzeuge zum Finden,
+Befragen und Sammeln, dazu drei durchgängige Workflows.

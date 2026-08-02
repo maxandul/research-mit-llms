@@ -1,12 +1,3 @@
----
-werkzeug:
-  schwierigkeit: Einsteiger
-  kosten: gratis bis Abo
-  wofuer: >-
-    Interviews und offene Antworten mit einem LLM als zweitem Codierer
-    auswerten
----
-
 # Qualitative Daten codieren
 
 Ein LLM kann beim Codieren qualitativer Daten (Interviews, offene
@@ -158,23 +149,23 @@ das der verlässlichere Weg.
 
 ## Alternative: QDA-Software mit KI-Funktionen
 
-Für grosse Projekte oder wenn die Methodik im Zentrum steht, lohnt sich ein
-Blick auf etablierte QDA-Software, die inzwischen eigene KI-Funktionen
-mitbringt:
+Für grosse Projekte oder wenn die Methodik im Zentrum steht, lohnt sich
+ein Blick auf etablierte QDA-Software, die inzwischen eigene
+KI-Funktionen mitbringt: [MAXQDA](../werkzeuge/analysieren/maxqda.md)
+und [ATLAS.ti](../werkzeuge/analysieren/atlasti.md).
 
-- **MAXQDA** (mit "AI Assist"): Zusammenfassungen, Codevorschläge und
-  Chat mit den eigenen Dokumenten, eingebettet in die volle
-  QDA-Umgebung (Codesystem, Memos, Visualisierungen).
-  <https://www.maxqda.com>
-- **ATLAS.ti** (mit "AI Coding"): automatische Codierungsvorschläge über
-  ganze Dokumente. <https://atlasti.com>
+Der Vorteil gegenüber dem Chat-Workflow: Codesystem, Fundstellen und
+Dokumente bleiben in einer dafür gebauten Umgebung, statt dass du
+Ergebnisse aus einem Chatfenster zurückkopierst. Der Nachteil: weniger
+Kontrolle über die Prompts, und die KI-Funktionen laufen ebenfalls über
+die Cloud, es gilt also dieselbe
+[Anonymisierungs-Regel](../erheben/anonymisieren.md). Beides sind
+kostenpflichtige Programme; viele Hochschulen haben Campuslizenzen,
+vorher nachfragen.
 
-Beides sind kostenpflichtige Programme (viele Hochschulen haben
-Campuslizenzen, vorher nachfragen). Der Vorteil gegenüber dem
-Chat-Workflow: Codesystem, Fundstellen und Dokumente bleiben in einer
-dafür gebauten Umgebung verwaltet. Der Nachteil: weniger Kontrolle über
-die Prompts, und die KI-Funktionen laufen ebenfalls über die Cloud, es
-gilt also dieselbe [Anonymisierungs-Regel](../erheben/anonymisieren.md).
+## Werkzeuge für die Auswertung
+
+{{ werkzeuge:analysieren }}
 
 ## Grenzen
 

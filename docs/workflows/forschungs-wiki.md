@@ -2,7 +2,7 @@
 
 Über ein längeres Projekt eine wachsende, verlinkte Wissensbasis aufbauen,
 statt Wissen bei jeder Frage neu zusammenzusuchen. Hintergrund:
-[RAG vs. LLM-Wiki](../grundlagen/rag-vs-wiki.md).
+[Wie du ein LLM einspannst](../grundlagen/llm-einspannen.md).
 
 ### Gelebtes Beispiel auf dieser Website
 

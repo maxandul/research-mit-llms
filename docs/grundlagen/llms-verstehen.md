@@ -2,7 +2,7 @@
 
 Bevor es um einzelne Werkzeuge geht: ein kurzer Blick darauf, *was* ein LLM
 eigentlich tut, wo seine Stärken und Grenzen liegen, und welche Verantwortung
-beim Forschen unteilbar bei dir bleibt.
+beim Forschen bei dir bleibt.
 
 ## Wie ein LLM grob funktioniert
 
@@ -12,8 +12,8 @@ Textmengen. Einen geprüften Faktenspeicher, den es gezielt abfragt, gibt es
 dabei nicht.
 
 "Wahrscheinlichkeit" ist hier aber nicht trivial. Um gut vorherzusagen, hat das
-Modell im Training enorm viel verdichtet: sprachliche Regeln, Sachzusammenhänge,
-Argumentationsmuster. Es plappert also nicht einzelne Phrasen nach, sondern
+Modell im Training viel verdichtet: sprachliche Regeln, Sachzusammenhänge,
+Argumentationsmuster. Es reiht also nicht einzelne Phrasen aneinander, sondern
 verarbeitet komplexe Zusammenhänge. In diesem Sinn steckt in den "Mustern" eine
 Menge impliziten Wissens.
 
@@ -57,17 +57,32 @@ gut klingen und stimmen auseinanderfallen:
 
 ## Grundregel: selbst prüfen
 
+Alles Belegrelevante, also Fakten, Zahlen, Zitate und Quellen, gehört
+gegengeprüft, bevor du es übernimmst.
+
+Wie nötig das ist, zeigen die bisher gesichteten Studien. In einem
+Experiment mit ChatGPT-generierten Forschungsanträgen hatten 38 Prozent
+der Referenzen falsche DOIs, 16 Prozent existierten gar nicht. In einem
+Schreibexperiment reichten 68 Prozent der Teilnehmenden LLM-Output
+unbearbeitet ein. Die Werte stammen aus einem Review über Studien von
+2019 bis 2025, hängen also an älteren Modellgenerationen; aussagekräftig
+ist die Grössenordnung, nicht die einzelne Zahl.
+
+Eine Einschränkung, die nicht an der Modellgeneration hängt: Prüfen
+findet die auffälligen Fehler, also erfundene Quellen und falsche Zahlen.
+Verzerrte Auswahl und plausible Fehlinterpretationen findet es nicht
+zuverlässig.
+
 !!! warnung "Nicht delegierbar"
-    Alles Belegrelevante, also Fakten, Zahlen, Zitate, Quellen, selbst
-    gegenprüfen. Ein LLM liefert Entwürfe und Zuarbeit, keine verlässlichen
-    Belege. Was du übernimmst, verantwortest du.
+    Was du übernimmst, verantwortest du. Ein LLM liefert Entwürfe und
+    Zuarbeit, keine Belege.
 
-## Partner, nicht Abkürzung
+## Was das Auslagern kostet
 
-KI kann dir beim Durchgehen helfen: strukturieren, spiegeln, verdichten,
-Anschlussfragen formulieren. Sie kann dir **nicht** das eigene Denken und
-Urteilen abnehmen. Wer nur die fertige Antwort abholt, verliert genau den
-Gewinn des Forschens: den Weg der Erkenntnis selbst zu gehen.
+Ein LLM kann strukturieren, spiegeln, verdichten und Anschlussfragen
+formulieren. Das Urteil nimmt es nicht ab. Ob und wie stark sich das
+Auslagern von Zwischenschritten auf das eigene Verstehen auswirkt, ist
+bisher wenig untersucht; ein Recherche-Sprint dazu ist geplant.
 
 ## Rollenteilung: was sich delegieren lässt und was nicht
 
@@ -85,23 +100,19 @@ Zuarbeit übernehmen; das Urteil bleibt bei den Forschenden.
 | Variieren                 | Begründen         |
 | Explizieren               | Verantworten      |
 
-Die linke Spalte ist Zuarbeit und lässt sich delegieren. Die rechte Spalte
-bleibt bei den Forschenden. Sie ist der Kern wissenschaftlicher Verantwortung
-und nicht delegierbar. Aus dem letzten Wort, dem Verantworten, folgt auch
-die Transparenz gegenüber anderen: siehe
-[KI-Nutzung deklarieren](../haltung/ki-deklarieren.md).
+Die linke Spalte lässt sich delegieren, die rechte nicht. Aus dem letzten
+Wort, dem Verantworten, folgt auch die Transparenz gegenüber anderen:
+siehe [KI-Nutzung deklarieren](../haltung/ki-deklarieren.md).
 
 !!! randnotiz "Keine feste Zuordnung"
     Die Zeilen sind keine Paare: "Explorieren" gehört nicht exklusiv zu
     "Entscheiden". Es sind zwei gegenübergestellte Verantwortungsbereiche,
     nicht acht 1:1-Beziehungen.
 
-Diese Rollenteilung ist keine Eigenheit dieser Website, sondern der
-Konsenskern der wissenschaftlichen Debatte: Selbst Positionen, die sich
-über den Nutzen von LLMs in der Forschung heftig streiten, sind sich
-einig, dass Verantwortung, Urteil und Verstehen beim Menschen bleiben.
-Auch die Prüfregel oben ist empirisch unterlegt; in Experimenten waren
-z.B. 16% der von ChatGPT generierten Referenzen komplett erfunden.
+Die Rollenteilung ist keine Setzung dieser Website. Sie ist der
+Konsenskern der bisherigen Debatte: Auch Positionen, die sich über den
+Nutzen von LLMs in der Forschung heftig streiten, sind sich einig, dass
+Verantwortung, Urteil und Verstehen beim Menschen bleiben.
 
 !!! evidenz "Evidenz zuletzt geprüft: Juli 2026"
     Die Belege sind im
@@ -126,6 +137,6 @@ z.B. 16% der von ChatGPT generierten Referenzen komplett erfunden.
 ---
 
 Zwei Anschlüsse: Die mechanischen Eigenheiten hinter diesen Stärken und
-Schwächen erklärt [Wie ein LLM arbeitet](wie-llms-arbeiten.md). Wie du ein
-LLM konkret einbindest, im Chat, mit Werkzeugen oder als Wissensbasis, zeigt
-[Drei Arten, LLMs zu nutzen](llm-research.md).
+Schwächen erklärt [Wie ein LLM arbeitet](wie-llms-arbeiten.md). Die fünf
+Wege, dem Modell eigenes Material zugänglich zu machen, zeigt
+[Wie du ein LLM einspannst](llm-einspannen.md).

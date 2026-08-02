@@ -1,103 +1,71 @@
----
-werkzeug:
-  schwierigkeit: Profi
-  schwierigkeit_zusatz: Einsteiger-Alternativen ohne Kommandozeile vorhanden
-  kosten: gratis
-  wofuer: >-
-    Audio- und Videoaufnahmen lokal transkribieren, auch
-    Schweizerdeutsch
-  stand: Juli 2026
----
-
 # Interviews transkribieren
 
-Für qualitative Arbeiten ist die Transkription oft der mühsamste Schritt.
-Whisper-basierte Werkzeuge nehmen dir den Grossteil davon ab, und zwar
-**lokal auf dem eigenen Rechner**: Die Aufnahmen verlassen deinen Computer
-nicht. Genau das macht sie für vertrauliche Interviews interessant.
+Für qualitative Arbeiten ist die Transkription oft der mühsamste
+Schritt. Whisper-basierte Werkzeuge nehmen den Grossteil davon ab. Die
+Frage ist nicht, ob du eines benutzt, sondern welches, und die
+Antwort hängt an einer Entscheidung, die vor der Werkzeugwahl kommt.
 
-## TranscriboZH (audio-transcription)
+## Die Entscheidung vorweg: lokal oder Cloud
 
-Ein Open-Source-Werkzeug der Kantonsverwaltung Zürich (Statistisches Amt und
-Oberstaatsanwaltschaft), gebaut auf dem Whisper-v3-large-Modell.
+Bei Interviews geht es um fremde Daten. Ein Cloud-Dienst bedeutet, die
+Aufnahmen an ein Unternehmen weiterzugeben, ein lokales Werkzeug
+bedeutet, dass sie den Rechner nicht verlassen. Was für dein Material
+gilt, klärt die
+[Grundregel zum Datenschutz](../grundlagen/datenschutz.md); die
+technische Vorfrage ist einfacher.
 
-**Was es kann:**
+- **Lokal** heisst: mehr Einrichtungsaufwand, dafür keine
+  Upload-Frage. Bei vertraulichen Gesprächen ist das meist der
+  einfachere Weg, weil die Klärung entfällt statt zu beginnen.
+- **Cloud** heisst: sofort einsatzbereit, dafür muss die Weitergabe
+  gedeckt sein. Läuft der Dienst über einen Vertrag deiner Hochschule,
+  ist der Rahmen oft schon geklärt.
+- **Ein dritter Weg wird häufig übersehen:** Viele Hochschulen betreiben
+  inzwischen eigene, datenschutzrechtlich geprüfte Whisper-Dienste. Das
+  ist der einfachste konforme Weg, wenn es ihn gibt. Vor allem anderen
+  bei der eigenen IT nachfragen.
 
-- Transkribiert Audio- und Videodateien in hoher Qualität, mit brauchbaren
-  Ergebnissen **auch für Schweizerdeutsch**.
-- **Sprecher-Diarisierung:** erkennt und unterscheidet Sprecher:innen
-  automatisch.
-- **Eigenes Vokabular:** Schreibweisen von Namen und Fachbegriffen vorgeben
-  ("Hotwords").
-- **Integrierter Editor:** Transkript im Browser korrigieren, synchron zur
-  Aufnahme, mit Tastatur-Shortcuts. Export als Text, SRT oder
-  synchronisierter Viewer.
+{{ werkzeuge:transkribieren }}
 
-**Was es braucht:**
+## Schweizerdeutsch
 
-- Am besten eine NVIDIA-Grafikkarte mit mindestens 8 GB VRAM. **Ohne GPU
-  geht es auch, dauert dann aber sehr lange**: rechne mit einem Vielfachen
-  der Aufnahmedauer. Für ein einzelnes wichtiges Interview vertretbar, für
-  eine ganze Interviewstudie unpraktisch.
-- Installation über die Kommandozeile: Conda-Umgebung, ffmpeg,
-  PyTorch passend zur CUDA-Version, HuggingFace-Token für die
-  Diarisierungs-Modelle. Alternativ Docker.
-- Deshalb die Einstufung **Profi**. Die Anleitung im Repository ist gut,
-  aber ohne Kommandozeilen-Erfahrung wird es zäh. Tipp: Die Einrichtung ist
-  eine ideale Aufgabe für einen Coding-Agenten oder die IT-Abteilung, danach
-  ist die Nutzung per Browser-Oberfläche einfach.
+Der Punkt, an dem sich die Werkzeuge unterscheiden. Whisper kommt mit
+Dialekt ordentlich zurecht, das Ergebnis braucht aber mehr Korrektur
+als Hochdeutsch. Die Transkription in Teams und Google Meet fällt hier
+deutlich ab.
 
-**Link:** <https://github.com/machinelearningZH/audio-transcription>
+Wer Interviews auf Schweizerdeutsch führt, sollte das an einer kurzen
+Probeaufnahme testen, bevor er sich auf ein Werkzeug festlegt. Zehn
+Minuten Material zeigen mehr als jede Produktbeschreibung.
 
-## Einsteiger-Alternativen
+## Was danach kommt
 
-- **noScribe** (gratis, lokal): Whisper-Transkription mit grafischer
-  Oberfläche und Sprechererkennung, entwickelt für qualitative
-  Sozialforschung. Deutlich einfachere Installation, läuft auch ohne
-  dedizierte GPU (langsamer). <https://github.com/kaixxx/noScribe>
-- **MacWhisper** (Freemium, lokal, nur macOS): Whisper als fertige Mac-App,
-  Installation per Doppelklick. <https://goodsnooze.gumroad.com/l/macwhisper>
-- **Angebot der eigenen Hochschule prüfen:** Viele Hochschulen betreiben
-  inzwischen eigene Whisper-Dienste, die datenschutzrechtlich geprüft sind.
-  Das ist dann oft der einfachste konforme Weg.
+**Automatische Transkripte sind Rohmaterial.** Namen, Dialektpassagen
+und Fachbegriffe gehören gegengehört, bevor damit weitergearbeitet
+wird. Bei Namen ist das doppelt wichtig, weil du sie beim nächsten
+Schritt brauchst.
 
-## Online-Interviews: Teams und Google Meet
+**Vor der Cloud kommt die Anonymisierung.** Soll das Transkript
+anschliessend in einen Cloud-Dienst, etwa zum
+[Codieren](../analysieren/qualitativ-codieren.md), führt der Weg über
+[Daten anonymisieren](anonymisieren.md).
 
-Führst du Interviews ohnehin per Videocall, können Microsoft Teams und
-Google Meet direkt mittranskribieren: als Live-Transkript während des
-Gesprächs oder als Transkript zur Aufzeichnung. Für Online-Interviews ist
-das oft der bequemste Einstieg, mit drei Vorbehalten:
+## Grenzen
 
-- **Datenschutz:** Die Verarbeitung läuft in der Cloud des Anbieters. Läuft
-  der Dienst über den Hochschul-Account (Microsoft-365- bzw.
-  Google-Workspace-Vertrag der Institution), ist das häufig der
-  datenschutzrechtlich geregelte Weg; der private Gratis-Account ist es
-  nicht. Vorgaben der Institution prüfen, und die Einwilligung der
-  Teilnehmenden muss Aufzeichnung *und* Transkription abdecken.
-- **Qualität:** Hochdeutsch funktioniert ordentlich, **Schweizerdeutsch
-  schlecht**; dafür bleiben die Whisper-Werkzeuge oben die bessere Wahl.
-  Sprecherzuordnung und Fachbegriffe immer gegenhören.
-- **Verfügbarkeit:** Ob Transkription aktiviert ist, hängt von Lizenz und
-  Admin-Einstellungen der Institution ab.
-
-Verbindlich sind die offiziellen Dokus:
-Teams: <https://support.microsoft.com/en-us/teams/meetings/start-stop-and-download-live-transcripts-in-microsoft-teams-meetings> ·
-Google Meet: <https://support.google.com/meet/answer/12849897>
-
-## Grenzen & Datenschutz
-
-- Lokal heisst: Aufnahmen und Transkripte bleiben auf deinem Rechner. Das
-  löst das Upload-Problem, aber nicht die Aufbewahrung: Aufnahmen und
-  Transkripte weiterhin gemäss deinem Ethik-/Datenmanagementplan sichern
-  und löschen.
-- Automatische Transkripte sind Rohmaterial. Namen, Dialekt-Passagen und
-  Fachbegriffe immer gegenhören und korrigieren, bevor du damit
-  weiterarbeitest.
-- Soll das Transkript danach in einen Cloud-Dienst (etwa zum
-  [Codieren](../analysieren/qualitativ-codieren.md)), führt der Weg zuerst
-  über [Daten anonymisieren](anonymisieren.md).
+- **Lokal löst die Aufbewahrung nicht.** Die Aufnahmen bleiben bei dir,
+  aber Sicherung, Zugriff und Löschung richten sich weiterhin nach
+  deinem Ethik- und Datenmanagementplan.
+- **Whisper halluziniert in Stille.** In Passagen ohne Sprache oder bei
+  Hintergrundgeräuschen kann Text entstehen, der nicht gesprochen wurde.
+  Die Werkzeuge filtern das, aber nicht vollständig.
+- **Sprechertrennung ist nicht verlässlich.** Auch Stimmen, die für das
+  menschliche Ohr klar verschieden klingen, werden manchmal
+  zusammengeworfen.
+- **Nonverbales fehlt.** Lachen, Seufzen und Pausen sind je nach
+  Werkzeug gar nicht oder nur eingeschränkt erfasst. Wer sie für die
+  Analyse braucht, muss beim Werkzeug darauf achten oder nacharbeiten.
 
 ---
 
-Bevor Transkripte in einen Cloud-Dienst dürfen, kommt der wichtigste
-Schritt: [Daten anonymisieren](anonymisieren.md).
+Bevor Transkripte in einen Cloud-Dienst dürfen:
+[Daten anonymisieren](anonymisieren.md).

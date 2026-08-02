@@ -74,7 +74,7 @@ sind nicht aufgeführt; die vollständige Historie liegt im
 
 - **MCP verständlich erklärt.** Was hinter dem Model Context Protocol
   steckt, erklären jetzt die Grundlagen
-  ([Drei Arten, LLMs zu nutzen](../grundlagen/llm-research.md)) und das
+  ([Wie du ein LLM einspannst](../grundlagen/llm-einspannen.md)) und das
   [Glossar](glossar.md). Neu auf
   [Datenschutz & Vertraulichkeit](../grundlagen/datenschutz.md): worauf zu
   achten ist, wenn ein LLM per Anbindung direkt auf eigene Konten zugreift.

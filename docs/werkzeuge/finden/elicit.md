@@ -2,43 +2,64 @@
 werkzeug:
   schwierigkeit: Einsteiger
   kosten: Freemium
-  kosten_zusatz: Kontingente sind eine Schätzung
-  wofuer: LLM-gestützte Literaturreviews
-  stand: Juni 2026
+  verarbeitung: Cloud
+  wofuer: Literatur suchen und Befunde in Vergleichstabellen extrahieren
+  phase: [finden, befragen]
+  stand: August 2026
 ---
 
 # Elicit
 
-## Was ist es?
+Elicit durchsucht wissenschaftliche Literatur und trägt Angaben aus
+mehreren Arbeiten in eine gemeinsame Tabelle ein: eine Zeile pro Paper,
+eine Spalte pro Frage. Statt zehn PDFs nacheinander zu lesen, siehst du
+Stichprobengrösse, Methode oder Ergebnis nebeneinander. Das unterscheidet
+es von einer Suchmaschine, die nur Treffer liefert.
 
-Ein KI-Forschungsassistent, der wissenschaftliche Literatur durchsucht und
-Erkenntnisse aus mehreren Arbeiten in Tabellen zusammenfasst. Gut für
-strukturierte Literaturreviews.
+## Wofür es taugt
 
-## Was bringt es für Research?
+- **Vergleichstabellen bauen.** Du legst die Spalten fest (etwa
+  Stichprobe, Design, Effektstärke), Elicit füllt sie aus den Arbeiten.
+- **Einen Überblick über eine Fragestellung gewinnen**, wenn du das Feld
+  noch nicht kennst und wissen willst, was überhaupt untersucht wurde.
+- **Systematische Reviews vorbereiten.** In den bezahlten Stufen gibt es
+  einen eigenen Ablauf zum Screening grosser Trefferzahlen.
+- **Mit einzelnen Arbeiten chatten**, mit Volltextzugriff und sichtbaren
+  Quellenangaben.
 
-- Forschungsfrage stellen und relevante Arbeiten finden.
-- Daten aus vielen Papers in einer Vergleichstabelle extrahieren.
-- Zusammenfassungen mit Quellenbezug.
+Die Gratis-Stufe kann mehr als erwartet: unbegrenzte Suche über nach
+Anbieterangabe 138 Millionen Arbeiten, unbegrenzte Zusammenfassungen,
+Chat mit Volltext und Import aus Zotero. Begrenzt sind die agentischen
+Funktionen (Research Agent, Research Reports).
 
-## Voraussetzungen
+## Grenzen
 
-- Browser und Konto. Grundfunktionen gratis, mehr über Credits/Abo.
+- **Extraktion ist Interpretation.** Was in der Tabelle steht, hat ein
+  Modell aus dem Text gezogen. Für jede Zahl, die in deine Arbeit wandert,
+  gilt der Abgleich mit dem Original, nicht mit der Tabelle.
+- **Der Export ist kostenpflichtig.** In der Gratis-Stufe bleiben die
+  Ergebnisse in der Oberfläche; RIS, CSV, BIB, PDF und DOCX gibt es erst
+  in den bezahlten Stufen.
+- **Cloud-Dienst mit Konto.** Suchanfragen und hochgeladene Dokumente
+  werden auf fremden Servern verarbeitet. Was das für dein Material
+  bedeutet, klärt die
+  [Grundregel zum Datenschutz](../../grundlagen/datenschutz.md).
+- **Nur so gut wie der Korpus.** Was nicht indexiert ist, wird nicht
+  gefunden. Für eine systematische Recherche ersetzt Elicit die
+  Fachdatenbanken deines Gebiets nicht.
 
-## Einrichtung / Nutzung (High-Level)
+## Wann etwas anderes passt
 
-1. Konto anlegen.
-2. Forschungsfrage eingeben.
-3. Treffer prüfen, Spalten für die Extraktionstabelle wählen, exportieren.
+Wenn du nur suchen und das Umfeld eines Papers sehen willst, sind
+[Semantic Scholar](semantic-scholar.md) und
+[Connected Papers](connected-papers.md) schneller und kosten nichts. Geht
+es darum, mit deinen *eigenen* PDFs zu arbeiten statt mit dem Korpus, ist
+[Gemini Notebook](../dialog/gemini-notebook.md) das passendere Werkzeug. Für
+aktuelle Fragen ausserhalb der Fachliteratur eignet sich
+[Perplexity](../dialog/perplexity.md).
 
-## Grenzen & Datenschutz
-
-- KI-Extraktion immer gegen die Originalarbeit prüfen.
-- Konto-Dienst; bei eigenen Uploads Datenschutz beachten.
-
-## Offizielle Links
-
-- Website: <https://elicit.com>
+Offizielle Seite: <https://elicit.com> ·
+Hilfe: <https://support.elicit.com>
 
 ---
 

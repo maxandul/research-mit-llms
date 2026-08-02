@@ -2,9 +2,14 @@
 
 [LLMs verstehen & verantwortungsvoll nutzen](llms-verstehen.md) klärt die
 Haltungsfrage: Was lässt sich delegieren, was bleibt bei dir? Diese Seite
-geht eine Ebene tiefer. Wer ein paar mechanische Eigenheiten von LLMs kennt,
-versteht, *warum* bestimmte Aufgaben zuverlässig funktionieren und andere
-systematisch schiefgehen. Und kann die Werkzeuge entsprechend einsetzen.
+geht eine Ebene tiefer und erklärt, *warum* bestimmte Aufgaben zuverlässig
+funktionieren und andere systematisch schiefgehen. Fünf Eigenheiten, jede
+mit ihrer praktischen Folge.
+
+!!! merksatz "Worauf alle fünf hinauslaufen"
+    Das Modell setzt Sprache fort, es führt nichts aus. Wo Ausführung
+    nötig ist, also zählen, rechnen, jede Zeile einzeln bearbeiten,
+    braucht es Werkzeuge oder deine Kontrolle.
 
 ## Tokens: das Modell denkt nicht in Wörtern
 
@@ -28,7 +33,7 @@ alles vergessen.
 **Praktische Folge:** "Das habe ich dir doch schon gesagt" funktioniert über
 Sitzungen hinweg nicht. Wissen, das bleiben soll, gehört in eine externe
 Ablage, die du bei Bedarf wieder mitgibst: ein Dokument, ein Template oder
-ein [LLM-Wiki](rag-vs-wiki.md).
+ein [LLM-Wiki](llm-einspannen.md).
 
 ## Die Ausgabe ist probabilistisch
 
@@ -58,8 +63,11 @@ Elemente durchläuft und das LLM nur den Inhalt je Element bearbeitet.
 ## Alles läuft durch das Kontextfenster
 
 Das Modell sieht pro Anfrage nur, was ins Kontextfenster passt: Frage,
-Verlauf und mitgegebene Inhalte. Mehr Material heisst nicht bessere
-Antworten, im Gegenteil. Details dazu auf der Seite
+Verlauf und mitgegebene Inhalte. Mehr Material darin führt nicht zu
+besseren Antworten und kann sie verschlechtern.
+
+**Praktische Folge:** So viel mitgeben wie nötig, so wenig wie möglich.
+Warum das so ist und wie viel sinnvoll ist, steht unter
 [Das Kontextfenster](kontextfenster.md).
 
 ## Zusammenfassung
@@ -72,12 +80,6 @@ Antworten, im Gegenteil. Details dazu auf der Seite
 | Muster statt Schleife | Bei Listenaufgaben Vollständigkeit einfordern, häppchenweise arbeiten, nachzählen |
 | Begrenztes Kontextfenster | So viel wie nötig, so wenig wie möglich mitgeben |
 
-!!! merksatz "Der rote Faden"
-    Fast alle Überraschungen im Alltag mit LLMs gehen auf dieselbe Wurzel
-    zurück: Das Modell setzt Sprache fort, es führt nichts aus. Wo Ausführung
-    nötig ist (zählen, rechnen, jede Zeile bearbeiten), braucht es Werkzeuge
-    oder deine Kontrolle.
-
 ## Tiefer eintauchen
 
 Wer die Funktionsweise im Detail verstehen will: Andrej Karpathy erklärt in
@@ -89,6 +91,6 @@ und ohne Programmierkenntnisse als Voraussetzung:
 
 ---
 
-Weiter in den Grundlagen: [Drei Arten, LLMs zu nutzen](llm-research.md)
-zeigt, wie du diese Mechanik konkret einspannst, im Chat, mit Werkzeugen
-oder als Wissensbasis.
+Weiter in den Grundlagen: [Wie du ein LLM einspannst](llm-einspannen.md)
+zeigt fünf Wege, dem Modell dein Material zugänglich zu machen, vom
+reinen Chat bis zur mitwachsenden Wissensbasis.

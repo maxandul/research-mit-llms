@@ -2,53 +2,73 @@
 werkzeug:
   schwierigkeit: Einsteiger
   schwierigkeit_zusatz: "API-Nutzung: Fortgeschritten"
-  kosten: gratis
-  wofuer: visuelle Literatur-Landkarten
-  stand: Juni 2026
+  kosten: Freemium
+  kosten_zusatz: fünf Graphen pro Monat gratis
+  verarbeitung: Cloud
+  wofuer: Das Umfeld eines Papers als Karte sehen
+  phase: [finden]
+  stand: August 2026
 ---
 
 # Connected Papers
 
-## Was ist es?
+Du gibst ein Paper an, und Connected Papers zeichnet daraus eine Karte
+verwandter Arbeiten. Verwandt heisst hier nicht "zitiert sich
+gegenseitig", sondern "teilt Zitationsmuster": Zwei Arbeiten stehen nah
+beieinander, wenn sie dieselbe Literatur zitieren und von denselben
+Arbeiten zitiert werden. Deshalb tauchen auch Papers auf, die einander
+nie erwähnen, aber am selben Problem arbeiten.
 
-Ein Werkzeug, das aus einem Start-Paper eine visuelle Landkarte ähnlicher
-Arbeiten erzeugt, gruppiert nach inhaltlicher Ähnlichkeit, nicht nur nach
-direkten Zitaten. Basiert auf dem Korpus von
-[Semantic Scholar](semantic-scholar.md).
+Die Daten kommen von [Semantic Scholar](semantic-scholar.md).
 
-## Was bringt es für Research?
+## Wofür es taugt
 
-- Schneller Überblick über ein neues Forschungsfeld.
-- "Prior Works" und "Derivative Works" entdecken.
-- Wichtige, evtl. übersehene Arbeiten visuell erkennen.
+- **Ein unbekanntes Feld überblicken.** Aus einem Paper, das du schon
+  hast, wird sichtbar, welche Gruppen und Stränge es gibt.
+- **Vorläufer und Nachfolger finden.** Die Ansichten "Prior Works" und
+  "Derivative Works" zeigen die einflussreichsten Arbeiten davor und
+  danach.
+- **Lücken in der eigenen Liste entdecken.** Wenn ein grosser Knoten in
+  der Karte in deiner Literaturverwaltung fehlt, hast du etwas übersehen.
+- **Von mehreren Startpunkten ausgehen.** Multi-Origin-Graphen bauen die
+  Karte aus mehreren Papers gleichzeitig auf.
 
-## Voraussetzungen
+## Grenzen
 
-- Nur ein Browser. Im Gratis-Rahmen eine begrenzte Zahl an Graphen.
+- **Fünf Graphen pro Monat in der Gratis-Stufe.** Alle Funktionen sind
+  enthalten, aber die Zahl der Karten ist gedeckelt. Wer ein Feld
+  systematisch erschliesst, ist damit an einem Nachmittag durch. Für
+  unbegrenzte Graphen gibt es einen akademischen Tarif, der deutlich
+  günstiger ist als der geschäftliche.
+- **Ähnlichkeit ist nicht Relevanz.** Die Karte zeigt, was zitatstrukturell
+  zusammengehört. Ob eine Arbeit für deine Fragestellung taugt, sagt sie
+  nicht.
+- **Junge Arbeiten sind unterrepräsentiert.** Ein Paper, das noch kaum
+  zitiert wurde, hat wenig Struktur, an der sich Ähnlichkeit festmachen
+  liesse.
+- **Erbt die Abdeckungslücken von Semantic Scholar.** Was dort fehlt,
+  fehlt auch hier.
 
-## Einrichtung / Nutzung (High-Level)
+Für den Datenschutz unkritisch: Du gibst einen Papertitel oder eine DOI
+ein, keine eigenen Dokumente.
 
-1. Start-Paper suchen (Titel, DOI oder Semantic-Scholar-ID).
-2. Graph erzeugen lassen; Knoten anklicken, um verwandte Arbeiten zu sehen.
-3. Interessante Treffer in deine Literaturverwaltung übernehmen.
+## Wann etwas anderes passt
 
-## Grenzen & Datenschutz
-
-- Öffentliche Daten, keine sensiblen Eingaben.
-- Gratis-Kontingent begrenzt.
+Für die reine Suche ist [Semantic Scholar](semantic-scholar.md) direkter
+und unbegrenzt. Wenn du nicht das Umfeld sehen, sondern Angaben aus
+mehreren Arbeiten vergleichen willst, ist [Elicit](elicit.md) das
+passendere Werkzeug.
 
 ??? randnotiz "Für Fortgeschrittene: die API"
-    Es gibt eine API mit Python- und JS-Client. Sie ist allerdings
-    "early access" (Zugangs-Token per Anfrage) und kommerziell, für den
+    Es gibt eine API mit Python- und JS-Client. Sie ist "early access"
+    (Zugangs-Token auf Anfrage) und kommerziell, für den
     niederschwelligen Einstieg nicht nötig. Token-Anfrage:
-    hello@connectedpapers.com
+    hello@connectedpapers.com ·
     Clients: <https://github.com/ConnectedPapers/connectedpapers-py>
 
-## Offizielle Links
-
-- Website: <https://www.connectedpapers.com>
+Offizielle Seite: <https://www.connectedpapers.com>
 
 ---
 
-Nächstes Werkzeug: [Elicit](elicit.md) fasst Erkenntnisse aus mehreren
-Arbeiten in strukturierten Vergleichstabellen zusammen.
+Nächstes Werkzeug: [Elicit](elicit.md) trägt Angaben aus vielen Arbeiten
+in eine gemeinsame Vergleichstabelle ein.

@@ -2,41 +2,76 @@
 werkzeug:
   schwierigkeit: Einsteiger
   kosten: Freemium
-  wofuer: Notizen und Datenbanken als Wissensbasis
+  verarbeitung: Cloud
+  wofuer: Notizen und Datenbanken als Ablage, an ein LLM anbindbar
+  phase: [verwalten]
+  stand: August 2026
 ---
 
 # Notion
 
-## Was ist es?
+Notion verbindet Notizen mit Datenbanken: Jede Seite kann Felder haben,
+und über die Felder lassen sich Seiten filtern, sortieren und
+gruppieren. Für die Forschung heisst das, Lesenotizen, Projektwissen und
+Aufgaben in einer Struktur zu führen, die man später auswerten kann,
+statt in einer Sammlung loser Dokumente.
 
-Ein flexibles Notiz- und Datenbank-Werkzeug. Per API lässt sich Notion an
-einen LLM-Workflow anbinden, etwa damit ein Custom GPT Zusammenfassungen
-direkt als Einträge in einer Notion-Datenbank ablegt.
+Interessant wird es durch die Anbindung an ein LLM: Ein Modell kann
+Funde direkt als Einträge anlegen, statt dass du sie abtippst.
 
-## Was bringt es für Research?
+## Wofür es taugt
 
-- Strukturierte Ablage von Notizen, Lesenotizen, Projektwissen.
-- Als Ziel für automatisch generierte Zusammenfassungen.
+- **Lesenotizen nach festem Schema ablegen**, mit denselben Feldern für
+  jede Quelle, damit sich später über die Sammlung hinweg vergleichen
+  lässt.
+- **Als Ziel für automatisch erzeugte Zusammenfassungen dienen**, etwa
+  aus dem Workflow
+  [Vom Thema zur Literaturübersicht](../../workflows/thema-zu-uebersicht.md).
+- **Projektwissen an einem Ort halten**, das nicht in die
+  Literaturverwaltung gehört: Entscheidungen, offene Fragen, Notizen aus
+  Besprechungen.
 
-## Voraussetzungen
+## An ein LLM anbinden
 
-- Notion-Konto. Für die Anbindung: eine eigene "Integration" mit Token.
+Notion betreibt seit 2026 einen eigenen **MCP-Server** (siehe
+[Wie du ein LLM einspannst](../../grundlagen/llm-einspannen.md)). Die
+Verbindung läuft über OAuth, für gängige Chat-Programme gibt es eine
+Ein-Klick-Einrichtung. Das ist der einfachere Weg und ersetzt für die
+meisten Zwecke die früher nötige Handarbeit mit selbst angelegten
+Integrationen und Token.
 
-## Einrichtung / Nutzung (High-Level)
+Der ältere Weg über eine eigene Integration mit Zugriffs-Token besteht
+weiter und ist dann sinnvoll, wenn ein Programm kein MCP spricht oder du
+den Zugriff selbst programmieren willst.
 
-1. Konto und gewünschte Datenbank/Seiten anlegen.
-2. Unter den Entwickler-Einstellungen eine Integration erstellen, Token kopieren.
-3. Die Ziel-Datenbank für die Integration freigeben.
-4. Token im anbindenden Werkzeug hinterlegen.
+## Grenzen
 
-## Grenzen & Datenschutz
+- **Der Zugriff ist breit.** Ein angebundenes Modell kann in deinem
+  Arbeitsbereich lesen und schreiben wie du selbst. Die Berechtigungen
+  von Notion gelten weiterhin, aber innerhalb davon gibt es keine
+  Feinsteuerung pro Seite. Für Forschungsdaten heisst das: einen
+  eigenen Arbeitsbereich oder eine eigene Seite für die Anbindung
+  verwenden, nicht den ganzen Bestand freigeben.
+- **Alles liegt in der Notion-Cloud.** Für die Einordnung siehe die
+  [Grundregel zum Datenschutz](../../grundlagen/datenschutz.md).
+- **Kein Literaturverwaltungsprogramm.** Notion kennt keine
+  Zitierstile, erzeugt keine Bibliografien und schreibt nicht in Word.
+  Dafür ist [Zotero](zotero.md) zuständig.
+- **Bindung an einen Anbieter.** Die Inhalte lassen sich exportieren,
+  aber Datenbanken und Verknüpfungen überstehen den Umzug nicht
+  unverändert.
 
-- Inhalte liegen in der Notion-Cloud. Sensible Daten entsprechend behandeln.
+## Wann etwas anderes passt
 
-## Offizielle Links
+Für Referenzen und Zitate ist [Zotero](zotero.md) das richtige Werkzeug,
+Notion ergänzt es höchstens. Wenn das Wissen nicht nur abgelegt, sondern
+vom Modell laufend verdichtet und verknüpft werden soll, ist das
+[LLM-Wiki](llm-wiki.md) der passendere Ansatz, und es kommt ohne
+Anbieterbindung aus, weil es aus Markdown-Dateien besteht.
 
-- Produkt/Entwickler: <https://www.notion.com/product/dev>
-- API-Doku: <https://developers.notion.com>
+Offizielle Seite: <https://www.notion.com> ·
+MCP-Anbindung: <https://www.notion.com/help/notion-mcp> ·
+API-Doku: <https://developers.notion.com>
 
 ---
 

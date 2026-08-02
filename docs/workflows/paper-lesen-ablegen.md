@@ -6,8 +6,8 @@ du sie später wiederfindest und wiederverwenden kannst.
 ### Das Rezept in einem Bild
 
 ```
-PDF / DOI  ->  Befragen (Deep Read)  ->  Lesenotiz nach Schema  ->  Ablage
-               ScholarAI / NotebookLM                              Zotero / Notion
+PDF / DOI  ->  Befragen (Deep Read)   ->  Lesenotiz nach Schema  ->  Ablage
+               ScholarAI / Gem. Notebook                             Zotero / Notion
 ```
 
 ## Ziel
@@ -18,17 +18,17 @@ Lesenotiz erzeugen, ohne das Paper jedes Mal neu durchackern zu müssen.
 ## Beteiligte Werkzeuge
 
 - [ScholarAI](../werkzeuge/dialog/scholarai.md) (Baustein *Deep Read*) oder
-  [NotebookLM](../werkzeuge/dialog/notebooklm.md) zum Befragen
+  [Gemini Notebook](../werkzeuge/dialog/gemini-notebook.md) zum Befragen
 - [Zotero](../werkzeuge/sammeln/zotero.md) und/oder
   [Notion](../werkzeuge/sammeln/notion.md) zur Ablage
 
 ## Schritte
 
 1. **Paper bereitstellen.** PDF, DOI oder Link zur Hand haben. In ScholarAI
-   reicht oft der Titel; in NotebookLM lädst du das PDF als Quelle hoch.
+   reicht oft der Titel; in Gemini Notebook lädst du das PDF als Quelle hoch.
 2. **Gründlich befragen.** Nutze in ScholarAI den Baustein *Deep Read*
    (siehe [ScholarAI-Seite](../werkzeuge/dialog/scholarai.md)) oder stelle in
-   NotebookLM gezielte Fragen zum hochgeladenen PDF.
+   Gemini Notebook gezielte Fragen zum hochgeladenen PDF.
 3. **Lesenotiz nach festem Schema erzeugen.** Gib dem Modell das Schema unten
    vor, damit jede Notiz gleich aufgebaut ist.
 4. **Prüfen.** Stimmen die Aussagen mit dem Originaltext? Sind Seiten- bzw.

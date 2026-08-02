@@ -1,35 +1,42 @@
 ---
 werkzeug:
   schwierigkeit: Einsteiger
+  schwierigkeit_zusatz: "API-Nutzung: Fortgeschritten"
   kosten: gratis
-  wofuer: wissenschaftliche Suchmaschine und Datenbasis
+  verarbeitung: Cloud
+  wofuer: Wissenschaftliche Suchmaschine und Datenbasis vieler anderer Werkzeuge
+  phase: [finden]
+  stand: August 2026
 ---
 
 # Semantic Scholar
 
-## Was ist es?
+Eine Suchmaschine für wissenschaftliche Literatur, betrieben vom
+Non-Profit-Institut Ai2 (Allen Institute for AI). Nach Anbieterangaben
+umfasst der Korpus 214 Millionen Arbeiten, 2,49 Milliarden Zitationen und
+79 Millionen Autorenprofile.
 
-Eine kostenlose, KI-gestützte Suchmaschine für wissenschaftliche Literatur
-mit einem riesigen Paper-Korpus. Viele andere Werkzeuge (u.a.
-[Connected Papers](connected-papers.md)) bauen auf dieser Datenbasis auf,
-deshalb steht Semantic Scholar hier zuoberst.
+Semantic Scholar steht in diesem Bereich zuoberst, weil viele andere
+Werkzeuge darauf aufbauen. [Connected Papers](connected-papers.md) etwa
+bezieht seine Daten von hier. Wer den Unterbau kennt, versteht auch die
+Abdeckungslücken der darauf aufsetzenden Werkzeuge.
 
-## Was bringt es für Research?
+## Wofür es taugt
 
-- Paper suchen und Zusammenfassungen ("TLDR") lesen.
-- Zitationen und referenzierte Arbeiten verfolgen.
-- Stabile Paper-IDs (Corpus-ID / "ShaID"), die andere Tools weiterverwenden.
+- **Suchen und schnell einordnen.** Zu vielen Arbeiten gibt es eine
+  maschinell erzeugte Ein-Satz-Zusammenfassung ("TLDR").
+- **Zitationsnetze verfolgen.** Von einem Paper aus vorwärts zu den
+  zitierenden und rückwärts zu den zitierten Arbeiten.
+- **Stabile Kennungen liefern.** Die Corpus-ID aus der URL nehmen andere
+  Werkzeuge als Ausgangspunkt entgegen.
+- **Als Datenquelle für Agenten dienen**, über die offene API (siehe
+  unten).
 
-## Voraussetzungen
-
-- Nur ein Browser. Konto optional (für gespeicherte Bibliotheken).
-- Für Entwickler:innen gibt es eine kostenlose API (siehe unten).
-
-## Die API: auch ohne Key nutzbar
+## Die API: auch ohne Schlüssel nutzbar
 
 Die Semantic-Scholar-API ist öffentlich und funktioniert **ohne
-Registrierung und ohne API-Key** — praktisch z.B., wenn ein LLM-Agent für
-dich Literatur suchen soll. Eine Suchanfrage ist eine simple URL:
+Registrierung**, praktisch etwa, wenn ein LLM-Agent für dich Literatur
+suchen soll. Eine Suchanfrage ist eine simple URL:
 
 ```text
 https://api.semanticscholar.org/graph/v1/paper/search?query=llm+qualitative+coding&fields=title,authors,year,venue,externalIds
@@ -37,31 +44,47 @@ https://api.semanticscholar.org/graph/v1/paper/search?query=llm+qualitative+codi
 
 Zwei Betriebsarten:
 
-- **Ohne Key:** gemeinsames, striktes Ratenlimit für alle anonymen
-  Nutzer:innen. Für gelegentliche Recherchen völlig ausreichend; bei
-  Überlastung kurz warten und erneut versuchen.
-- **Mit Key** (kostenlos auf Antrag): eigenes Kontingent, derzeit
-  1 Anfrage pro Sekunde. Der Key wird als HTTP-Header `x-api-key`
-  mitgeschickt. Achtung: Der Key ist ein Geheimnis — nie in ein
-  öffentliches Repo committen und nicht in Chats einfügen.
+- **Ohne Schlüssel:** Die meisten Endpunkte sind frei zugänglich, teilen
+  sich aber ein gemeinsames Kontingent von 1000 Anfragen pro Sekunde
+  über alle anonymen Nutzenden hinweg. Bei Andrang wird zusätzlich
+  gedrosselt. Für gelegentliche Recherchen reicht das; bei Fehlern kurz
+  warten und erneut versuchen.
+- **Mit Schlüssel** (kostenlos auf Antrag, kommt per E-Mail): ein eigenes
+  Kontingent von einer Anfrage pro Sekunde, also verlässlich statt
+  geteilt. Der Schlüssel wird als HTTP-Header `x-api-key` mitgeschickt.
 
-## Einrichtung / Nutzung (High-Level)
+!!! warnung "Schlüssel nicht weitergeben"
+    Ein API-Schlüssel ist ein Geheimnis. Er gehört nicht in ein
+    öffentliches Repository und nicht in einen Chat.
 
-1. Seite öffnen und Stichwort oder Paper-Titel suchen.
-2. Auf der Paper-Seite die TLDR-Zusammenfassung, Zitationen und References
-   nutzen, um verwandte Arbeiten zu finden.
-3. Die Paper-ID aus der URL kopieren, wenn ein anderes Tool sie braucht.
+## Grenzen
 
-## Grenzen & Datenschutz
+- **Abdeckung je nach Fachgebiet unterschiedlich**, und erfasst wird nur
+  öffentlich Zugängliches. Die Recherche in den lizenzierten
+  Fachdatenbanken deines Fachs über die Hochschulbibliothek ersetzt das
+  nicht.
+- **TLDR-Zusammenfassungen sind maschinell erzeugt** und teilen die
+  Schwächen jedes generierten Textes. Sie taugen zum Sortieren, nicht zum
+  Zitieren.
+- **Gefundene Quellen bleiben Kandidaten.** Was du verwendest, liest du
+  im Volltext.
 
-- Abdeckung je nach Fachgebiet unterschiedlich; erfasst wird nur öffentlich
-  Zugängliches. **Ersetzt die Recherche in den lizenzierten Fachdatenbanken
-  deines Fachs (via Hochschulbibliothek) nicht.**
-- Gefundene Quellen bleiben Kandidaten: Was du verwenden willst, liest du
-  selbst im Volltext.
-- Öffentliche Suchmaschine; keine sensiblen eigenen Daten nötig.
+Für den Datenschutz ist die Seite unkritisch: Sie ist eine öffentliche
+Suchmaschine, eigene Dokumente lädst du nicht hoch.
 
-## Offizielle Links
+## Wann etwas anderes passt
 
-- Website: <https://www.semanticscholar.org>
-- API-Doku: <https://api.semanticscholar.org>
+Wenn du das Umfeld eines einzelnen Papers *sehen* statt lesen willst,
+zeichnet [Connected Papers](connected-papers.md) daraus eine Karte. Wenn
+du Angaben aus vielen Arbeiten strukturiert nebeneinander brauchst, nimmt
+[Elicit](elicit.md) dir die Tabellenarbeit ab. Beide bauen auf demselben
+Korpus auf, sind also bei Abdeckungslücken keine Alternative, sondern
+teilen sie.
+
+Offizielle Seite: <https://www.semanticscholar.org> ·
+API-Doku: <https://api.semanticscholar.org>
+
+---
+
+Vom Suchen zum Sehen: [Connected Papers](connected-papers.md) macht aus
+einem Start-Paper eine visuelle Landkarte des Forschungsfelds.

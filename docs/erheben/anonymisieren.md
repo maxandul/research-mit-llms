@@ -1,12 +1,3 @@
----
-werkzeug:
-  schwierigkeit: Einsteiger
-  kosten: gratis
-  wofuer: >-
-    sensible Daten so aufbereiten, dass sie in Cloud-Diensten
-    bearbeitet werden können
----
-
 # Daten anonymisieren
 
 Die [Datenschutz-Grundregel](../grundlagen/datenschutz.md) sagt: nichts
@@ -91,10 +82,12 @@ Bei dutzenden Transkripten wird Handarbeit unrealistisch. Dann:
 - **Skript statt Handarbeit:** Ein kleines Such-Ersetz-Skript (das dir ein
   LLM schreiben kann) wendet die Zuordnungstabelle auf alle Dateien an.
   Läuft lokal, die Tabelle bleibt bei dir.
-- **Lokales LLM als zusätzlicher Prüfer:** Ein Modell via Ollama oder
-  LM Studio (siehe [Datenschutz](../grundlagen/datenschutz.md)) kann lokal
-  nach übersehenen Personenbezügen suchen. Es ersetzt das Gegenlesen nicht,
-  ist aber ein gutes zweites Augenpaar, ohne dass Daten den Rechner verlassen.
+- **Lokales LLM als zusätzlicher Prüfer:** Ein Modell über
+  [Ollama oder LM Studio](../werkzeuge/lokal/ollama-lmstudio.md) kann
+  nach übersehenen Personenbezügen suchen, ohne dass die Daten den
+  Rechner verlassen. Es ersetzt das Gegenlesen nicht, ist aber ein
+  zweites Augenpaar. Achte darauf, dass wirklich ein lokales Modell
+  antwortet: Diese Werkzeuge bieten inzwischen auch Cloud-Modelle an.
 
 ## Grenzen & Einordnung
 
