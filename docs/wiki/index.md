@@ -119,8 +119,13 @@ führt zur jeweiligen Seite.
 
   function drawGraph() {
     var container = document.getElementById("wiki-graph");
-    if (!container || container.dataset.rendered) return;
-    container.dataset.rendered = "1";
+    if (!container) return;
+    // Neu zeichnen, wenn schon etwas dasteht: Beim Wechsel zwischen
+    // hellem und dunklem Modus aendern sich die Token-Farben, und der
+    // Graph liest sie nur beim Zeichnen.
+    container.innerHTML = "";
+    var alteLeiste = document.getElementById("wiki-graph-filter");
+    if (alteLeiste) alteLeiste.innerHTML = "";
 
     var namen = { quelle: "Quellnotiz", konzept: "Konzept",
                   synthese: "Synthese", seite: "Website-Seite" };
@@ -241,15 +246,37 @@ führt zur jeweiligen Seite.
       container.innerHTML = '<p style="padding:1em;">Graph-Daten nicht gefunden (graph.json entsteht beim Build).</p>';
     });
   }
-  if (window.document$) { window.document$.subscribe(drawGraph); } else { drawGraph(); }
+  var beobachter = null;
+
+  function start() {
+    var container = document.getElementById("wiki-graph");
+    // Beobachter abbauen, wenn wir den Graphen verlassen haben. Mit
+    // navigation.instant laeuft dieselbe Seite weiter, sonst wuerden
+    // sich die Beobachter bei jedem Seitenwechsel anhaeufen.
+    if (beobachter) { beobachter.disconnect(); beobachter = null; }
+    if (!container) return;
+
+    drawGraph();
+    // Material setzt beim Umschalten das Attribut data-md-color-scheme
+    // auf <body>. Darauf hoeren, statt die Farben fest zu verdrahten.
+    beobachter = new MutationObserver(function () { drawGraph(); });
+    beobachter.observe(document.body,
+      { attributes: true, attributeFilter: ["data-md-color-scheme"] });
+  }
+  if (window.document$) { window.document$.subscribe(start); } else { start(); }
 })();
 </script>
 <script>
 (function () {
   function drawGraph() {
     var container = document.getElementById("wiki-graph");
-    if (!container || container.dataset.rendered) return;
-    container.dataset.rendered = "1";
+    if (!container) return;
+    // Neu zeichnen, wenn schon etwas dasteht: Beim Wechsel zwischen
+    // hellem und dunklem Modus aendern sich die Token-Farben, und der
+    // Graph liest sie nur beim Zeichnen.
+    container.innerHTML = "";
+    var alteLeiste = document.getElementById("wiki-graph-filter");
+    if (alteLeiste) alteLeiste.innerHTML = "";
     container.style.border = "1px solid var(--md-default-fg-color--lightest, #ddd)";
     container.style.borderRadius = "6px";
     var farben = { quelle: "#8da0cb", konzept: "#fc8d62", synthese: "#66c2a5", seite: "#b3b3b3" };
@@ -301,7 +328,24 @@ führt zur jeweiligen Seite.
       container.innerHTML = '<p style="padding:1em;">Graph-Daten nicht gefunden (graph.json entsteht beim Build).</p>';
     });
   }
-  if (window.document$) { window.document$.subscribe(drawGraph); } else { drawGraph(); }
+  var beobachter = null;
+
+  function start() {
+    var container = document.getElementById("wiki-graph");
+    // Beobachter abbauen, wenn wir den Graphen verlassen haben. Mit
+    // navigation.instant laeuft dieselbe Seite weiter, sonst wuerden
+    // sich die Beobachter bei jedem Seitenwechsel anhaeufen.
+    if (beobachter) { beobachter.disconnect(); beobachter = null; }
+    if (!container) return;
+
+    drawGraph();
+    // Material setzt beim Umschalten das Attribut data-md-color-scheme
+    // auf <body>. Darauf hoeren, statt die Farben fest zu verdrahten.
+    beobachter = new MutationObserver(function () { drawGraph(); });
+    beobachter.observe(document.body,
+      { attributes: true, attributeFilter: ["data-md-color-scheme"] });
+  }
+  if (window.document$) { window.document$.subscribe(start); } else { start(); }
 })();
 </script>
 

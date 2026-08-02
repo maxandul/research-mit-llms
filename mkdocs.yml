@@ -7,6 +7,12 @@ site_name: Forschen mit LLMs
 site_description: Niederschwelliger Wegweiser, wie LLMs alle Schritte des Forschungsprozesses unterstützen können
 site_author: "maxandul"
 site_url: https://maxandul.github.io/research-mit-llms/
+repo_url: https://github.com/maxandul/research-mit-llms
+repo_name: maxandul/research-mit-llms
+edit_uri: edit/main/docs/
+copyright: >-
+  Inhalte unter <a href="https://creativecommons.org/licenses/by/4.0/deed.de">CC BY 4.0</a>,
+  gepflegt von <a href="https://github.com/maxandul">maxandul</a>
 
 theme:
   name: material
@@ -29,10 +35,12 @@ theme:
     - navigation.top          # "Nach oben"-Button
     - navigation.instant      # schnelles Navigieren ohne Neuladen
     - navigation.footer       # Vor/Zurück-Links unten
+    - content.action.edit     # "Diese Seite bearbeiten" pro Seite
     - search.suggest          # Suchvorschläge
     - search.highlight        # Treffer hervorheben
     - search.share            # Suchergebnis als Link teilen
     - content.code.copy       # Kopier-Knopf bei Code-Boxen
+    - content.tooltips        # Glossarbegriffe als Tooltip statt title-Attribut
     - toc.follow
   # "custom" heisst: die Farben stehen nicht hier, sondern in
   # docs/assets/stylesheets/tokens.css. Dort ist die einzige Stelle, an
@@ -67,10 +75,15 @@ hooks:
   - tools/wiki_graph.py            # erzeugt graph.json für den Wissensgraphen
   - tools/wiki_komponenten.py      # rendert Notizkopf und Werkzeug-Steckbrief
                                    # aus dem Frontmatter
+  - tools/glossar_abkuerzungen.py  # macht Glossarbegriffe überall zu Tooltips
 
 plugins:
   - search:
       lang: de
+  - tags                           # Schlagwort-Index; die Tags stehen längst
+                                   # im Frontmatter der Wiki-Notizen. Wo die
+                                   # Liste erscheint, sagt der Platzhalter
+                                   # <!-- material/tags --> in schlagworte.md
   - privacy:                       # lädt externe Schriften beim Build herunter und
       enabled: !ENV [CI, false]    # hostet sie selbst: keine Anfragen an Google beim
                                    # Besuch. Lokal aus, damit der Build schnell bleibt.
@@ -88,6 +101,7 @@ plugins:
       fallback_to_build_date: true
 
 markdown_extensions:
+  - abbr                      # Tooltips für Glossarbegriffe
   - admonition                # farbige Hinweis-Boxen (!!! note ...)
   - pymdownx.details          # ausklappbare Boxen
   - pymdownx.superfences      # bessere Code-Boxen
@@ -185,6 +199,7 @@ nav:
           - Qualitative Daten codieren: wiki/synthese/qualitativ-codieren.md
       - Konzeptnotizen: wiki/konzepte/index.md
       - Quellnotizen: wiki/quellen/index.md
+      - Schlagworte: wiki/schlagworte.md
   - Ressourcen:
       - ressourcen/index.md
       - Glossar: ressourcen/glossar.md

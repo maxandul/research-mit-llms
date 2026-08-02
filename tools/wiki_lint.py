@@ -51,7 +51,9 @@ def pruefen(wurzel: Path, heute: dt.date | None = None) -> list[str]:
     notizen: dict[str, dict] = {}
 
     for pfad in sorted(wiki.rglob("*.md")):
-        if pfad.name == "index.md":
+        # index.md und die generierte Schlagwortseite sind Zugaenge zum
+        # Wiki, keine Notizen: kein OKF-Frontmatter, keine Verifikation.
+        if pfad.name in ("index.md", "schlagworte.md"):
             continue
         rel = pfad.relative_to(wiki).as_posix()
         try:
