@@ -36,8 +36,10 @@ sofort ablagefertig im gewünschten Format erhalten.
    Markdown für das Wiki aus.
 4. **Prüfen.** Stichprobe: Stimmen Zitate und Links? Keine erfundenen Quellen?
 
-**Warum das Template der Trick ist.** Indem das Ausgabeformat vorgegeben ist, sind die Funde ohne Nacharbeit
-ablagefertig. Genau das macht aus Einzeltools eine durchgängige Kette.
+Weil das Ausgabeformat vorgegeben ist, sind die Funde ohne Nacharbeit
+ablagefertig. Ohne Template müsstest du jeden Treffer von Hand in die
+Form bringen, die deine Ablage erwartet, und genau dort bricht eine
+Werkzeugkette sonst ab.
 
 !!! warnung "Was dieser Workflow nicht ersetzt"
     LLM-Werkzeuge durchsuchen nur **öffentlich zugängliche** Korpora

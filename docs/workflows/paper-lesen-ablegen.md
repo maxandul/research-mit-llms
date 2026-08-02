@@ -55,9 +55,9 @@ Schema zusammen"). So sind alle Notizen vergleichbar.
 - **Schlagworte:** {tag1, tag2, ...}
 ```
 
-**Konsistenz zahlt sich aus.** Ein einmal festgelegtes Schema ist Gold wert: Du kannst später über
-viele Notizen hinweg vergleichen, filtern und synthetisieren, von Hand
-oder wieder mit einem LLM.
+Halte das Schema über alle Notizen durch. Wo die Felder auseinanderlaufen,
+lässt sich später nicht mehr über die Sammlung hinweg vergleichen oder
+filtern, weder von Hand noch mit einem Modell.
 
 ---
 

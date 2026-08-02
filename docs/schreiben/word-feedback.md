@@ -1,10 +1,9 @@
 # Mit Word-Feedback umgehen
 
-Wer die Arbeit [in Markdown aufbaut](arbeit-in-markdown.md), stösst schnell
-auf die Realität des Wissenschaftsbetriebs: Betreuungspersonen und
-Gutachter:innen kommentieren nun mal im Word-Dokument, mit Kommentaren und
-nachverfolgten Änderungen. Das ist kein Grund, die Kette aufzugeben. Es
-braucht nur eine klare Regel.
+Wer die Arbeit [in Markdown aufbaut](arbeit-in-markdown.md), bekommt das
+Feedback trotzdem in Word: Betreuungspersonen und Gutachter:innen
+kommentieren dort, mit Anmerkungen und nachverfolgten Änderungen. Das
+lässt sich nicht ändern, aber es braucht die Kette nicht zu brechen.
 
 !!! merksatz "Die Regel"
     Feedback wird **nie im Word-Dokument eingearbeitet**. Das Word ist ein
@@ -23,20 +22,22 @@ To-do-Liste abhaken, dann geht nichts verloren.
 
 ## Weg 2: Kommentare maschinell herausziehen (Fortgeschritten)
 
-Pandoc kann das kommentierte Word zurück nach Markdown wandeln und dabei
-Kommentare und nachverfolgte Änderungen sichtbar machen:
+[Pandoc](../werkzeuge/schreiben/pandoc.md) kann das kommentierte Word
+zurück nach Markdown wandeln und dabei Kommentare und nachverfolgte
+Änderungen sichtbar machen:
 
 ```bash
 pandoc feedback.docx --track-changes=all -t markdown -o feedback.md
 ```
 
-In `feedback.md` stehen alle Anmerkungen als Text an der richtigen Stelle.
-Das ist die ideale Grundlage für Weg 3.
+In `feedback.md` stehen alle Anmerkungen als Text an der richtigen
+Stelle, damit auch ein Modell sie lesen kann. Das ist die Grundlage für
+Weg 3.
 
 ## Weg 3: das LLM arbeitet das Feedback ein
 
-Jetzt zahlt sich das Klartext-Format aus. Gib dem Modell beides, das
-extrahierte Feedback und dein Quellkapitel:
+Weil beides Klartext ist, kannst du dem Modell das extrahierte Feedback
+und dein Quellkapitel zusammen geben:
 
 ```text
 Hier ist mein Kapitel (Markdown) und das Feedback meiner Betreuerin
@@ -51,11 +52,27 @@ Arbeite das Feedback in das Kapitel ein. Regeln:
    verstehst, ändere nichts und stelle mir stattdessen eine Rückfrage.
 ```
 
-Die Änderungsliste am Ende ist der wichtige Teil: Du gehst sie durch und
-prüfst jede Stelle, denn die inhaltliche Antwort auf das Feedback bleibt
-deine (siehe [Rollenteilung](../grundlagen/llms-verstehen.md)). Mit einem
-Coding-Agenten (Claude Code, Cursor) geht dasselbe direkt auf den Dateien,
-inklusive sichtbarem Diff pro Änderung.
+Regel 2 ist der Grund, warum der Prompt so aussieht: Ohne
+Änderungsliste müsstest du das ganze Kapitel neu lesen, um zu sehen, was
+passiert ist. Mit ihr gehst du Stelle für Stelle durch. Die inhaltliche
+Antwort auf das Feedback bleibt in jedem Fall deine, siehe
+[Rollenteilung](../grundlagen/llms-verstehen.md).
+
+Mit einem [Coding-Agenten](../werkzeuge/agenten/coding-agenten.md) geht
+dasselbe direkt auf den Dateien, mit sichtbarem Unterschied pro Änderung.
+
+## Grenzen
+
+- **Kommentare sind oft nicht ausformuliert.** "Unklar" oder ein
+  Fragezeichen am Rand verlangen eine Rückfrage bei der Person, nicht
+  eine Vermutung des Modells. Regel 3 im Prompt oben fängt das ab,
+  solange du dich daran hältst.
+- **Nachverfolgte Änderungen sind Vorschläge, keine Anweisungen.** Wer
+  sie ungeprüft übernimmt, übernimmt auch Missverständnisse.
+- **Der Export verliert Feinlayout.** Wenn das Word bereits
+  formatierte Tabellen oder ein Deckblatt enthält, kommt beides beim
+  Rückweg nicht heil an. Der Rückweg ist für den Text gedacht, nicht
+  für das Layout.
 
 ## Versionen im Griff behalten
 

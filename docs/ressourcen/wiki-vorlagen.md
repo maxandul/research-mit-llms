@@ -177,7 +177,7 @@ Phase 2 — Vertiefen (Pflicht vor der Notiz):
 Das vollständige, produktive Schema dieser Website:
 [CLAUDE.md im Repository](https://github.com/maxandul/research-mit-llms/blob/main/CLAUDE.md).
 
-!!! warnung "Verifikation ist der wichtigste Schritt"
+!!! warnung "Verifizieren, bevor geschrieben wird"
     LLMs erfinden Referenzen. Die Regel "verifizieren, bevor irgendetwas
     geschrieben wird" ist der Teil des Schemas, den du am wenigsten
     weglassen solltest — siehe

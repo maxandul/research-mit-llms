@@ -6,10 +6,9 @@ statt Wissen bei jeder Frage neu zusammenzusuchen. Hintergrund:
 
 ### Gelebtes Beispiel auf dieser Website
 
-Dieser Workflow ist keine Theorie: Der
-[Forschungsstand](../wiki/index.md) dieser Website ist genau so ein
-Wiki — Quellnotizen, Konzeptnotizen, Synthesen und ein automatisch
-generierter Wissensgraph, sprintweise aufgebaut. Das zugehörige Schema
+Der [Forschungsstand](../wiki/index.md) dieser Website ist ein solches
+Wiki: Quellnotizen, Konzeptnotizen, Synthesen und ein automatisch
+erzeugter Wissensgraph, sprintweise aufgebaut. Das zugehörige Schema
 ist die [CLAUDE.md im Repository](https://github.com/maxandul/research-mit-llms/blob/main/CLAUDE.md);
 kopierfertige Vorlagen stehen unter
 [Wiki-Vorlagen](../ressourcen/wiki-vorlagen.md).

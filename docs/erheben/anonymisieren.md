@@ -1,10 +1,14 @@
 # Daten anonymisieren
 
-Die [Datenschutz-Grundregel](../grundlagen/datenschutz.md) sagt: nichts
-hochladen, was du nicht auch einer fremden Firma mailen würdest. Interviews,
-Fallnotizen und Befragungsdaten fallen fast immer darunter. Die Lösung ist
-nicht Verzicht, sondern ein sauberer Anonymisierungsschritt **vor** dem
-ersten Upload.
+Ein Upload ist eine Weitergabe an ein fremdes Unternehmen, und ob du
+dazu befugt bist, entscheidet das Material; so steht es in der
+[Datenschutz-Grundregel](../grundlagen/datenschutz.md). Interviews,
+Fallnotizen und Befragungsdaten sind fast immer Material, bei dem sich
+diese Frage stellt.
+
+Das heisst nicht, auf Cloud-Werkzeuge verzichten zu müssen. Ein sauberer
+Anonymisierungsschritt **vor** dem ersten Upload verändert, was du
+überhaupt weitergibst.
 
 ## Anonymisieren oder pseudonymisieren?
 
@@ -17,9 +21,10 @@ ersten Upload.
   vollständig zu erreichen.
 
 Für die Arbeit mit Cloud-LLMs ist die Pseudonymisierung mit lokal
-verwahrtem Schlüssel der praktikable Standard: Sie senkt das Risiko
-drastisch, und du kannst die Ergebnisse später wieder zuordnen. Sie
-entbindet aber nicht von den institutionellen Vorgaben, siehe unten.
+verwahrtem Schlüssel der praktikable Standard: Ohne den Schlüssel sind
+die hochgeladenen Daten für Dritte nicht zuordenbar, für dich aber
+weiterhin. Sie entbindet nicht von den institutionellen Vorgaben, siehe
+unten.
 
 ## Der Workflow
 
@@ -37,7 +42,7 @@ Eine simple zweispaltige Tabelle in Excel: Original und Ersatz.
 Konsistent bleiben: dieselbe Person ist in allen Dokumenten P01. Nur so
 bleiben die Daten auswertbar und die Ergebnisse rückübersetzbar.
 
-!!! warnung "Die Tabelle ist der Schlüssel"
+!!! warnung "Die Zuordnungstabelle bleibt lokal"
     Die Zuordnungstabelle wird **nie** hochgeladen, in keinen Chat, keinen
     Cloud-Speicher, keine E-Mail. Sie liegt getrennt von den Daten, idealerweise
     verschlüsselt oder auf einem anderen Laufwerk.

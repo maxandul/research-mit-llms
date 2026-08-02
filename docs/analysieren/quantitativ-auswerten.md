@@ -5,11 +5,16 @@ und ausführen**: ChatGPT (Funktion "Datenanalyse", früher Code Interpreter)
 und Claude (Analysis) nehmen eine Datentabelle entgegen, schreiben Python-
 oder JavaScript-Code, führen ihn aus und zeigen Ergebnis samt Diagramm.
 
-Das ist der entscheidende Unterschied zum blossen Chat: Nicht das Modell
-"rechnet im Kopf" (das ist unzuverlässig, siehe
-[Wie ein LLM arbeitet](../grundlagen/wie-llms-arbeiten.md)), sondern es
-schreibt ein Programm, und das Programm rechnet. Die Zahlen stimmen dann so
-gut wie der Code.
+Damit rechnet nicht das Modell, sondern ein Programm. Das ist keine
+Feinheit: Ein Modell, das Zahlen im Kopf fortsetzt, liegt regelmässig
+daneben, siehe [Wie ein LLM arbeitet](../grundlagen/wie-llms-arbeiten.md).
+Ein ausgeführtes Programm dagegen ist so richtig wie sein Code, und den
+kannst du lesen.
+
+!!! merksatz "Wenn du nur eines mitnimmst"
+    Lass dir den Code zeigen und heb ihn auf. Er ist dein
+    Analyseprotokoll: ohne ihn ist die Auswertung weder reproduzierbar
+    noch im Methodenteil belegbar.
 
 ## Was gut funktioniert
 
@@ -29,9 +34,8 @@ gut wie der Code.
 
 1. **Nur anonymisierte Daten hochladen.** Auch Tabellen können
    Personenbezug haben, siehe [Daten anonymisieren](../erheben/anonymisieren.md).
-2. **Code anzeigen lassen und aufheben.** Der ausgeführte Code ist dein
-   Analyseprotokoll. Lokal speichern, dann ist die Auswertung
-   reproduzierbar und im Methodenteil belegbar.
+2. **Code anzeigen lassen und aufheben.** Lokal speichern, nicht im Chat
+   liegen lassen; Chatverläufe verschwinden.
 3. **Ergebnisse plausibilisieren.** Stimmen Fallzahlen und Vorzeichen?
    Eine Handvoll Werte von Hand oder in Excel nachprüfen.
 4. **Methodenwahl nicht delegieren.** Das LLM schlägt Tests vor und
@@ -53,12 +57,20 @@ gut wie der Code.
 
 ## Grenzen
 
-- Sehr grosse Datensätze überfordern die Chat-Umgebungen; dann ist ein
-  echtes Statistikprogramm (R, SPSS, Python lokal) die bessere Wahl. Das
-  LLM kann dir dafür weiterhin den Code schreiben und erklären.
-- Die Ausführungsumgebungen haben Zeit- und Speicherlimits; komplexe
-  Modelle (Mehrebenenanalysen, grosse Simulationen) gehören in eine lokale
-  Umgebung.
+- **Der Code kann falsch sein und trotzdem laufen.** Ein Programm, das
+  ohne Fehlermeldung durchläuft, hat nicht bewiesen, dass es das
+  Richtige rechnet. Falsch herum kodierte Variablen, stillschweigend
+  gelöschte Fälle und vertauschte Gruppen erzeugen plausible Zahlen.
+  Deshalb Regel 3.
+- **Sehr grosse Datensätze überfordern die Chat-Umgebungen.** Dann ist
+  ein Statistikprogramm (R, SPSS, Python lokal) die bessere Wahl; den
+  Code dafür kann dir das Modell weiterhin schreiben und erklären.
+- **Die Ausführungsumgebungen haben Zeit- und Speicherlimits.** Komplexe
+  Modelle wie Mehrebenenanalysen oder grosse Simulationen gehören in
+  eine lokale Umgebung.
+- **Zur Korrektheit LLM-generierten Analysecodes gibt es hier noch keine
+  Belege.** Der Recherche-Sprint dazu ist geplant, siehe
+  [Über dieses Wiki](../wiki/index.md).
 
 ---
 

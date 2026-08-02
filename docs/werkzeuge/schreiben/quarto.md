@@ -5,7 +5,7 @@ werkzeug:
   kosten: gratis
   verarbeitung: lokal
   wofuer: Dieselbe Export-Kette wie Pandoc, mit mehr Komfort und Code-Ausgabe
-  phase: [schreiben, analysieren]
+  phase: [schreiben]
   stand: August 2026
 ---
 

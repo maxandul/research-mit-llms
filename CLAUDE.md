@@ -297,6 +297,27 @@ Konkret heisst das:
   `schwierigkeit` muss **Einsteiger**, **Fortgeschritten** oder **Profi**
   sein, nichts dazwischen. Spannen wie "Einsteiger bis Profi" gehören in
   `schwierigkeit_zusatz`; sonst lässt sich nicht danach filtern.
+  `kosten` kennt nur **gratis**, **Freemium** und **kostenpflichtig**;
+  konkrete Preise stehen bewusst nirgends, sie veralten am schnellsten.
+  `verarbeitung` (**lokal**, **Cloud**, **beides**) ist eine technische
+  Angabe zum Rechenort, keine rechtliche Einschätzung.
+
+  **`phase` steuert, wo ein Werkzeug erscheint.** Der Platzhalter
+  `{{ werkzeuge:PHASE }}` in einer Themenseite rendert alle Werkzeuge
+  dieser Phase als Karten, `{{ werkzeuge:alle }}` erzeugt die
+  Vergleichstabelle. Zwei Regeln dazu:
+
+    - **Nur Phasen eintragen, in denen das Werkzeug eine echte Wahl
+      ist.** Eine Nebenfunktion reicht nicht. Quarto kann Code
+      ausführen, ist aber kein Werkzeug, das man zum Auswerten wählt;
+      es steht deshalb nur unter `schreiben`.
+    - **`wofuer` muss in jeder eingetragenen Phase Sinn ergeben**, denn
+      derselbe Satz erscheint in allen. Wo das nicht gelingt, ist die
+      Phasenliste zu breit.
+
+  Der Platzhalter ist nicht überall eine Verbesserung. Wo der Fliesstext
+  die Werkzeuge ohnehin in sinnvoller Reihenfolge nennt, ist ein
+  alphabetisches Kartenraster daneben schlechter; dann weglassen.
 
 - **Farben und Abstände** kommen ausschliesslich aus
   `docs/assets/stylesheets/tokens.css`. In `extra.css` und im Markdown
