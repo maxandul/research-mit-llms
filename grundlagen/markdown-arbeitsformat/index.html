@@ -367,6 +367,30 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../werkzeuge/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2M9 6h6v2H9zm11 12H4v-3h2v1h2v-1h8v1h2v-1h2zm-2-5v-1h-2v1H8v-1H6v1H4v-3h16v3z"/></svg>
+    
+  
+  Werkzeuge
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../wiki/" class="md-tabs__link">
           
   
@@ -488,8 +512,6 @@
       
         
           
-        
-      
         
       
         
@@ -628,42 +650,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm-research/" class="md-nav__link">
+      <a href="../llm-einspannen/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Drei Arten, LLMs zu nutzen
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rag-vs-wiki/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kontext, RAG & LLM-Wiki
+    Wie du ein LLM einspannst
   
 
     
@@ -783,6 +777,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wo-markdown-nicht-reicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wo Markdown nicht reicht
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#regeln-fur-llm-freundliche-markdown-dateien" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -859,14 +864,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
         
       
         
@@ -1123,6 +1120,83 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../werkzeuge/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkzeuge
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1278,6 +1352,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wo-markdown-nicht-reicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wo Markdown nicht reicht
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#regeln-fur-llm-freundliche-markdown-dateien" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1365,10 +1450,9 @@
 
 
 <h1 id="markdown-als-arbeitsformat">Markdown als Arbeitsformat<a class="headerlink" href="#markdown-als-arbeitsformat" title="Permanent link">&para;</a></h1>
-<p>Wer viel mit LLMs arbeitet, merkt schnell: Das Format der eigenen Dateien
-entscheidet mit, wie gut die Zusammenarbeit klappt. Markdown ist dafür das
-beste Arbeitsformat. Diese Seite erklärt warum und gibt konkrete Regeln,
-damit deine Dateien für Claude, ChatGPT und Co. gut les- und bearbeitbar sind.</p>
+<p>Das Format der eigenen Dateien entscheidet mit, wie gut die
+Zusammenarbeit mit einem Modell klappt. Markdown eignet sich dafür besser
+als Word. Warum, und worauf beim Schreiben zu achten ist.</p>
 <h2 id="warum-markdown-statt-word">Warum Markdown statt Word?<a class="headerlink" href="#warum-markdown-statt-word" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Reiner Text.</strong> Ein LLM sieht genau das, was du siehst. Word-Dateien
@@ -1380,9 +1464,16 @@ damit deine Dateien für Claude, ChatGPT und Co. gut les- und bearbeitbar sind.<
 <li><strong>Änderungen sind nachvollziehbar.</strong> Textdateien lassen sich Zeile für
   Zeile vergleichen und mit Git versionieren. Du siehst exakt, was ein LLM
   geändert hat.</li>
-<li><strong>LLMs kennen Markdown bestens.</strong> Modelle sind auf riesigen Mengen
-  Markdown trainiert und geben es auch selbst bevorzugt aus.</li>
+<li><strong>Modelle kennen Markdown gut.</strong> Sie sind auf grossen Mengen davon
+  trainiert und geben es auch selbst bevorzugt aus.</li>
 </ul>
+<h2 id="wo-markdown-nicht-reicht">Wo Markdown nicht reicht<a class="headerlink" href="#wo-markdown-nicht-reicht" title="Permanent link">&para;</a></h2>
+<p>Markdown kennt keine Kommentare und keine Änderungsverfolgung, kein
+Feinlayout und keine Seitenumbrüche. Und die meisten Betreuungspersonen
+kommentieren in Word. Das spricht nicht gegen Markdown als Arbeitsformat,
+verlangt aber einen geregelten Übergang an beiden Enden: den Export nach
+Word und den Rückweg für Kommentare. Beides beschreibt der Bereich
+<a href="../../schreiben/">Schreiben</a>.</p>
 <h2 id="regeln-fur-llm-freundliche-markdown-dateien">Regeln für LLM-freundliche Markdown-Dateien<a class="headerlink" href="#regeln-fur-llm-freundliche-markdown-dateien" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Saubere Überschriften-Hierarchie.</strong> Genau ein <code>#</code> pro Datei als Titel,
@@ -1403,8 +1494,8 @@ damit deine Dateien für Claude, ChatGPT und Co. gut les- und bearbeitbar sind.<
    fürs LLM. Beispiel siehe
    <a href="../../workflows/thema-zu-uebersicht/">Vom Thema zur Literaturübersicht</a>.</li>
 <li><strong>Konsistentes Schema über alle Dateien.</strong> Gleiche Feldnamen, gleiche
-   Reihenfolge, gleiche Tags. Konsistenz ist das, was Sammlungen später
-   auswertbar macht.</li>
+   Reihenfolge, gleiche Tags. Wo die Felder auseinanderlaufen, lässt sich
+   eine Sammlung später nicht mehr im Ganzen auswerten.</li>
 </ol>
 <h2 id="womit-markdown-schreiben-und-lesen">Womit Markdown schreiben und lesen?<a class="headerlink" href="#womit-markdown-schreiben-und-lesen" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1412,12 +1503,12 @@ damit deine Dateien für Claude, ChatGPT und Co. gut les- und bearbeitbar sind.<
   Graph-Ansicht. Guter Standard für Forschungsnotizen.</li>
 <li><strong>VS Code</strong> (gratis): Editor mit Markdown-Vorschau, ideal wenn ohnehin
   Coding-Agents wie Claude Code im Spiel sind.</li>
-<li>Zur Not tut es jeder Texteditor. Das ist genau der Punkt: Markdown ist
-  nicht an ein Programm gebunden.</li>
+<li>Zur Not tut es jeder Texteditor. Markdown ist an kein Programm
+  gebunden.</li>
 </ul>
-<p>Markdown ist nicht nur ein Notizformat. Du kannst deine ganze Arbeit
-darin schreiben und Word nur noch als Exportformat behandeln. Wie das
-geht, zeigt <a href="../../schreiben/arbeit-in-markdown/">Die Arbeit in Markdown aufbauen</a>.</p>
+<p>Das Format taugt nicht nur für Notizen: Du kannst die ganze Arbeit darin
+schreiben und Word nur noch als Exportformat behandeln, siehe
+<a href="../../schreiben/arbeit-in-markdown/">Die Arbeit in Markdown aufbauen</a>.</p>
 <hr />
 <p>Bleibt das Querschnittsthema, das bei jedem Werkzeug mitläuft:
 <a href="../datenschutz/">Datenschutz &amp; Vertraulichkeit</a>.</p>
@@ -1441,7 +1532,7 @@ geht, zeigt <a href="../../schreiben/arbeit-in-markdown/">Die Arbeit in Markdown
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1. August 2026 12:28:48 UTC">1. August 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2. August 2026 09:10:19 UTC">2. August 2026</span>
   </span>
 
     

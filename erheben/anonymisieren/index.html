@@ -367,6 +367,30 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../werkzeuge/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2M9 6h6v2H9zm11 12H4v-3h2v1h2v-1h8v1h2v-1h2zm-2-5v-1h-2v1H8v-1H6v1H4v-3h16v3z"/></svg>
+    
+  
+  Werkzeuge
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../wiki/" class="md-tabs__link">
           
   
@@ -500,8 +524,6 @@
       
         
       
-        
-      
     
     
     
@@ -559,14 +581,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
         
       
         
@@ -1255,6 +1269,83 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../werkzeuge/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkzeuge
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1587,12 +1678,6 @@
 
 
 <h1 id="daten-anonymisieren">Daten anonymisieren<a class="headerlink" href="#daten-anonymisieren" title="Permanent link">&para;</a></h1>
-<div class="fl-steckbrief" markdown="0">
-<div class="fl-steckbrief__feld"><dt>Schwierigkeit</dt><dd><span class="fl-stufe" aria-hidden="true">●○○</span> Einsteiger</dd></div>
-<div class="fl-steckbrief__feld"><dt>Kosten</dt><dd>gratis</dd></div>
-<div class="fl-steckbrief__feld"><dt>Wofür</dt><dd>sensible Daten so aufbereiten, dass sie in Cloud-Diensten bearbeitet werden können</dd></div>
-</div>
-
 <p>Die <a href="../../grundlagen/datenschutz/">Datenschutz-Grundregel</a> sagt: nichts
 hochladen, was du nicht auch einer fremden Firma mailen würdest. Interviews,
 Fallnotizen und Befragungsdaten fallen fast immer darunter. Die Lösung ist
@@ -1680,10 +1765,12 @@ Die Ergebnisse übersetzt du am Schluss lokal mit deiner Tabelle zurück.</p>
 <li><strong>Skript statt Handarbeit:</strong> Ein kleines Such-Ersetz-Skript (das dir ein
   LLM schreiben kann) wendet die Zuordnungstabelle auf alle Dateien an.
   Läuft lokal, die Tabelle bleibt bei dir.</li>
-<li><strong>Lokales LLM als zusätzlicher Prüfer:</strong> Ein Modell via Ollama oder
-  LM Studio (siehe <a href="../../grundlagen/datenschutz/">Datenschutz</a>) kann lokal
-  nach übersehenen Personenbezügen suchen. Es ersetzt das Gegenlesen nicht,
-  ist aber ein gutes zweites Augenpaar, ohne dass Daten den Rechner verlassen.</li>
+<li><strong>Lokales LLM als zusätzlicher Prüfer:</strong> Ein Modell über
+  <a href="../../werkzeuge/lokal/ollama-lmstudio/">Ollama oder LM Studio</a> kann
+  nach übersehenen Personenbezügen suchen, ohne dass die Daten den
+  Rechner verlassen. Es ersetzt das Gegenlesen nicht, ist aber ein
+  zweites Augenpaar. Achte darauf, dass wirklich ein lokales Modell
+  antwortet: Diese Werkzeuge bieten inzwischen auch Cloud-Modelle an.</li>
 </ul>
 <h2 id="grenzen-einordnung">Grenzen &amp; Einordnung<a class="headerlink" href="#grenzen-einordnung" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1718,7 +1805,7 @@ Die Ergebnisse übersetzt du am Schluss lokal mit deiner Tabelle zurück.</p>
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1. August 2026 12:28:48 UTC">1. August 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2. August 2026 09:10:19 UTC">2. August 2026</span>
   </span>
 
     

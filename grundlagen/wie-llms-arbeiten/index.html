@@ -18,7 +18,7 @@
         <link rel="prev" href="../llms-verstehen/">
       
       
-        <link rel="next" href="../llm-research/">
+        <link rel="next" href="../llm-einspannen/">
       
       
         
@@ -367,6 +367,30 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../werkzeuge/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2M9 6h6v2H9zm11 12H4v-3h2v1h2v-1h8v1h2v-1h2zm-2-5v-1h-2v1H8v-1H6v1H4v-3h16v3z"/></svg>
+    
+  
+  Werkzeuge
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../wiki/" class="md-tabs__link">
           
   
@@ -488,8 +512,6 @@
       
         
           
-        
-      
         
       
         
@@ -752,42 +774,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm-research/" class="md-nav__link">
+      <a href="../llm-einspannen/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Drei Arten, LLMs zu nutzen
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rag-vs-wiki/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kontext, RAG & LLM-Wiki
+    Wie du ein LLM einspannst
   
 
     
@@ -903,14 +897,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
         
       
         
@@ -1130,6 +1116,83 @@
     
   
     Haltung
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../werkzeuge/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkzeuge
   
 
     
@@ -1455,9 +1518,15 @@
 <h1 id="wie-ein-llm-arbeitet">Wie ein LLM arbeitet<a class="headerlink" href="#wie-ein-llm-arbeitet" title="Permanent link">&para;</a></h1>
 <p><a href="../llms-verstehen/">LLMs verstehen &amp; verantwortungsvoll nutzen</a> klärt die
 Haltungsfrage: Was lässt sich delegieren, was bleibt bei dir? Diese Seite
-geht eine Ebene tiefer. Wer ein paar mechanische Eigenheiten von LLMs kennt,
-versteht, <em>warum</em> bestimmte Aufgaben zuverlässig funktionieren und andere
-systematisch schiefgehen. Und kann die Werkzeuge entsprechend einsetzen.</p>
+geht eine Ebene tiefer und erklärt, <em>warum</em> bestimmte Aufgaben zuverlässig
+funktionieren und andere systematisch schiefgehen. Fünf Eigenheiten, jede
+mit ihrer praktischen Folge.</p>
+<div class="admonition merksatz">
+<p class="admonition-title">Worauf alle fünf hinauslaufen</p>
+<p>Das Modell setzt Sprache fort, es führt nichts aus. Wo Ausführung
+nötig ist, also zählen, rechnen, jede Zeile einzeln bearbeiten,
+braucht es Werkzeuge oder deine Kontrolle.</p>
+</div>
 <h2 id="tokens-das-modell-denkt-nicht-in-wortern">Tokens: das Modell denkt nicht in Wörtern<a class="headerlink" href="#tokens-das-modell-denkt-nicht-in-wortern" title="Permanent link">&para;</a></h2>
 <p>Text wird für das Modell in "Tokens" zerlegt, also Wortbausteine von wenigen
 Zeichen Länge. Das Modell sieht nie einzelne Buchstaben und rechnet nicht mit
@@ -1475,7 +1544,7 @@ alles vergessen.</p>
 <p><strong>Praktische Folge:</strong> "Das habe ich dir doch schon gesagt" funktioniert über
 Sitzungen hinweg nicht. Wissen, das bleiben soll, gehört in eine externe
 Ablage, die du bei Bedarf wieder mitgibst: ein Dokument, ein Template oder
-ein <a href="../rag-vs-wiki/">LLM-Wiki</a>.</p>
+ein <a href="../llm-einspannen/">LLM-Wiki</a>.</p>
 <h2 id="die-ausgabe-ist-probabilistisch">Die Ausgabe ist probabilistisch<a class="headerlink" href="#die-ausgabe-ist-probabilistisch" title="Permanent link">&para;</a></h2>
 <p>Das Modell wählt das nächste Token nach Wahrscheinlichkeiten, mit einem
 bewussten Zufallsanteil. Derselbe Prompt kann heute eine andere Antwort
@@ -1497,8 +1566,10 @@ Garantiert vollständig wird es erst, wenn eine echte Programmschleife die
 Elemente durchläuft und das LLM nur den Inhalt je Element bearbeitet.</p>
 <h2 id="alles-lauft-durch-das-kontextfenster">Alles läuft durch das Kontextfenster<a class="headerlink" href="#alles-lauft-durch-das-kontextfenster" title="Permanent link">&para;</a></h2>
 <p>Das Modell sieht pro Anfrage nur, was ins Kontextfenster passt: Frage,
-Verlauf und mitgegebene Inhalte. Mehr Material heisst nicht bessere
-Antworten, im Gegenteil. Details dazu auf der Seite
+Verlauf und mitgegebene Inhalte. Mehr Material darin führt nicht zu
+besseren Antworten und kann sie verschlechtern.</p>
+<p><strong>Praktische Folge:</strong> So viel mitgeben wie nötig, so wenig wie möglich.
+Warum das so ist und wie viel sinnvoll ist, steht unter
 <a href="../kontextfenster/">Das Kontextfenster</a>.</p>
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
 <table>
@@ -1531,13 +1602,6 @@ Antworten, im Gegenteil. Details dazu auf der Seite
 </tr>
 </tbody>
 </table>
-<div class="admonition merksatz">
-<p class="admonition-title">Der rote Faden</p>
-<p>Fast alle Überraschungen im Alltag mit LLMs gehen auf dieselbe Wurzel
-zurück: Das Modell setzt Sprache fort, es führt nichts aus. Wo Ausführung
-nötig ist (zählen, rechnen, jede Zeile bearbeiten), braucht es Werkzeuge
-oder deine Kontrolle.</p>
-</div>
 <h2 id="tiefer-eintauchen">Tiefer eintauchen<a class="headerlink" href="#tiefer-eintauchen" title="Permanent link">&para;</a></h2>
 <p>Wer die Funktionsweise im Detail verstehen will: Andrej Karpathy erklärt in
 <em>Deep Dive into LLMs like ChatGPT</em> (YouTube, rund 3,5 Stunden, Englisch,
@@ -1546,9 +1610,9 @@ Training bis zu Halluzinationen und RLHF, bewusst für ein breites Publikum
 und ohne Programmierkenntnisse als Voraussetzung:
 <a href="https://www.youtube.com/watch?v=7xTGNNLPyMI">https://www.youtube.com/watch?v=7xTGNNLPyMI</a></p>
 <hr />
-<p>Weiter in den Grundlagen: <a href="../llm-research/">Drei Arten, LLMs zu nutzen</a>
-zeigt, wie du diese Mechanik konkret einspannst, im Chat, mit Werkzeugen
-oder als Wissensbasis.</p>
+<p>Weiter in den Grundlagen: <a href="../llm-einspannen/">Wie du ein LLM einspannst</a>
+zeigt fünf Wege, dem Modell dein Material zugänglich zu machen, vom
+reinen Chat bis zur mitwachsenden Wissensbasis.</p>
 
 
 
@@ -1569,7 +1633,7 @@ oder als Wissensbasis.</p>
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1. August 2026 12:28:48 UTC">1. August 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2. August 2026 09:10:19 UTC">2. August 2026</span>
   </span>
 
     
@@ -1622,13 +1686,13 @@ oder als Wissensbasis.</p>
         
         
           
-          <a href="../llm-research/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Drei Arten, LLMs zu nutzen">
+          <a href="../llm-einspannen/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Wie du ein LLM einspannst">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Weiter
               </span>
               <div class="md-ellipsis">
-                Drei Arten, LLMs zu nutzen
+                Wie du ein LLM einspannst
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://maxandul.github.io/research-mit-llms/grundlagen/kontextfenster/">
       
       
-        <link rel="prev" href="../rag-vs-wiki/">
+        <link rel="prev" href="../llm-einspannen/">
       
       
         <link rel="next" href="../markdown-arbeitsformat/">
@@ -367,6 +367,30 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../werkzeuge/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2M9 6h6v2H9zm11 12H4v-3h2v1h2v-1h8v1h2v-1h2zm-2-5v-1h-2v1H8v-1H6v1H4v-3h16v3z"/></svg>
+    
+  
+  Werkzeuge
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../wiki/" class="md-tabs__link">
           
   
@@ -488,8 +512,6 @@
       
         
           
-        
-      
         
       
         
@@ -628,42 +650,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm-research/" class="md-nav__link">
+      <a href="../llm-einspannen/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Drei Arten, LLMs zu nutzen
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rag-vs-wiki/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kontext, RAG & LLM-Wiki
+    Wie du ein LLM einspannst
   
 
     
@@ -774,22 +768,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Was das für deine Arbeit heisst">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#praxis-trick-erst-detailliert-zusammenfassen-lassen" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erst-zusammenfassen-lassen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Praxis-Trick: erst detailliert zusammenfassen lassen
+        Erst zusammenfassen lassen
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -876,14 +864,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
         
       
         
@@ -1140,6 +1120,83 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../werkzeuge/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkzeuge
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1314,22 +1371,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Was das für deine Arbeit heisst">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#praxis-trick-erst-detailliert-zusammenfassen-lassen" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erst-zusammenfassen-lassen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Praxis-Trick: erst detailliert zusammenfassen lassen
+        Erst zusammenfassen lassen
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1399,8 +1450,13 @@
 
 
 <h1 id="das-kontextfenster">Das Kontextfenster<a class="headerlink" href="#das-kontextfenster" title="Permanent link">&para;</a></h1>
-<p>Einer der häufigsten Stolpersteine: anzunehmen, mehr Material im Chat führe
-automatisch zu besseren Antworten. Das Gegenteil ist oft der Fall.</p>
+<p>Mehr Material im Chat führt nicht automatisch zu besseren Antworten. Ab
+einem gewissen Punkt verschlechtert es sie.</p>
+<div class="admonition merksatz">
+<p class="admonition-title">Wenn du nur eines mitnimmst</p>
+<p>Gib dem Modell so viel wie nötig und so wenig wie möglich. Relevantes
+Material schlägt viel Material.</p>
+</div>
 <h2 id="was-ist-das-kontextfenster">Was ist das Kontextfenster?<a class="headerlink" href="#was-ist-das-kontextfenster" title="Permanent link">&para;</a></h2>
 <p>Alles, was ein Modell pro Anfrage <em>gleichzeitig</em> sehen kann: deine Frage, der
 bisherige Gesprächsverlauf und hochgeladene Inhalte zusammen. Gemessen wird es
@@ -1417,11 +1473,6 @@ in "Tokens" (grob: Wortbausteine, siehe
 <li>Ein grosses Kontextfenster heisst nicht, dass man es füllen <em>sollte</em>.
   "Passt rein" ist nicht dasselbe wie "wird gut genutzt".</li>
 </ul>
-<div class="admonition warnung">
-<p class="admonition-title">Faustregel</p>
-<p>Gib dem Modell so viel wie nötig und so wenig wie möglich. Relevantes
-Material schlägt viel Material.</p>
-</div>
 <h2 id="was-das-fur-deine-arbeit-heisst">Was das für deine Arbeit heisst<a class="headerlink" href="#was-das-fur-deine-arbeit-heisst" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Nur die relevanten Quellen oder Abschnitte geben, nicht die ganze Sammlung
@@ -1432,25 +1483,30 @@ Material schlägt viel Material.</p>
   Wichtige in wenigen Sätzen mitgeben.</li>
 <li>Bei viel Material lieber gezielt ein Dokument nach dem anderen bearbeiten,
   oder auf RAG bzw. ein LLM-Wiki ausweichen
-  (siehe <a href="../rag-vs-wiki/">Kontext, RAG &amp; LLM-Wiki</a>).</li>
+  (siehe <a href="../llm-einspannen/">Wie du ein LLM einspannst</a>).</li>
 <li>Auch beim Schreiben gilt das Prinzip: Kapitel als einzelne Dateien führen
   und dem Modell nur das relevante Kapitel geben, siehe
   <a href="../../schreiben/arbeit-in-markdown/">Die Arbeit in Markdown aufbauen</a>.</li>
 </ul>
-<h3 id="praxis-trick-erst-detailliert-zusammenfassen-lassen">Praxis-Trick: erst detailliert zusammenfassen lassen<a class="headerlink" href="#praxis-trick-erst-detailliert-zusammenfassen-lassen" title="Permanent link">&para;</a></h3>
+<h2 id="erst-zusammenfassen-lassen">Erst zusammenfassen lassen<a class="headerlink" href="#erst-zusammenfassen-lassen" title="Permanent link">&para;</a></h2>
 <p>Lade ein Paper hoch und bitte zuerst um eine detaillierte
 Zusammenfassung, bevor du inhaltlich weiterarbeitest. Das hat zwei
-handfeste Effekte. Erstens durchläuft das Modell das ganze Dokument
-einmal aktiv und legt das Destillat ans Ende des Gesprächs: genau dort,
-wo Folgeantworten am stärksten hinschauen ("lost in the middle" wird
-entschärft). Zweitens ist die Zusammenfassung ein Kontrollschritt: Du
-siehst sofort, ob die Datei vollständig gelesen wurde oder ob das Tool
-im Hintergrund nur Fragmente geholt hat.</p>
+Effekte. Erstens durchläuft das Modell das ganze Dokument einmal aktiv
+und legt das Destillat ans Ende des Gesprächs, also dorthin, wo
+Folgeantworten am stärksten hinschauen; "lost in the middle" wird damit
+entschärft. Zweitens ist die Zusammenfassung ein Kontrollschritt: Du
+siehst sofort, ob die Datei vollständig gelesen wurde oder ob das
+Werkzeug im Hintergrund nur Fragmente geholt hat.</p>
+<p>Der Kniff stammt aus der Praxis, nicht aus einer Studie. Der Effekt, auf
+dem er beruht, ist dagegen beschrieben.</p>
 <div class="admonition randnotiz">
-<p class="admonition-title">Grösse variiert</p>
+<p class="admonition-title">Stand und Grössen</p>
 <p>Wie gross das Kontextfenster ist, hängt vom Modell ab und wächst mit
-neuen Generationen. Das Grundprinzip bleibt aber bestehen: je näher am
-Limit, desto grösser das Risiko für Qualitätsverlust.</p>
+neuen Generationen; das Grundprinzip bleibt: je näher am Limit, desto
+grösser das Risiko für Qualitätsverlust. Die Aussagen dieser Seite
+sind bisher nicht mit Quellnotizen unterlegt, der Recherche-Sprint zu
+Kontextfenster und Halluzinationen ist geplant (siehe
+<a href="../../wiki/">Über dieses Wiki</a>).</p>
 </div>
 <hr />
 <p>Damit Material überhaupt sauber ins Kontextfenster passt, braucht es das
@@ -1475,7 +1531,7 @@ richtige Format: <a href="../markdown-arbeitsformat/">Markdown als Arbeitsformat
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1. August 2026 12:28:48 UTC">1. August 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2. August 2026 09:10:19 UTC">2. August 2026</span>
   </span>
 
     
@@ -1511,7 +1567,7 @@ richtige Format: <a href="../markdown-arbeitsformat/">Markdown als Arbeitsformat
       <nav class="md-footer__inner md-grid" aria-label="Fußzeile" >
         
           
-          <a href="../rag-vs-wiki/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Kontext, RAG &amp; LLM-Wiki">
+          <a href="../llm-einspannen/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Wie du ein LLM einspannst">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1521,7 +1577,7 @@ richtige Format: <a href="../markdown-arbeitsformat/">Markdown als Arbeitsformat
                 Zurück
               </span>
               <div class="md-ellipsis">
-                Kontext, RAG & LLM-Wiki
+                Wie du ein LLM einspannst
               </div>
             </div>
           </a>

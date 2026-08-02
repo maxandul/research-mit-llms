@@ -367,6 +367,30 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../werkzeuge/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2M9 6h6v2H9zm11 12H4v-3h2v1h2v-1h8v1h2v-1h2zm-2-5v-1h-2v1H8v-1H6v1H4v-3h16v3z"/></svg>
+    
+  
+  Werkzeuge
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../wiki/" class="md-tabs__link">
           
   
@@ -488,8 +512,6 @@
       
         
           
-        
-      
         
       
         
@@ -628,42 +650,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm-research/" class="md-nav__link">
+      <a href="../llm-einspannen/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Drei Arten, LLMs zu nutzen
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rag-vs-wiki/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kontext, RAG & LLM-Wiki
+    Wie du ein LLM einspannst
   
 
     
@@ -822,10 +816,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#der-ausweg-fur-sensible-daten-anonymisieren" class="md-nav__link">
+  <a href="#sensible-daten-anonymisieren-statt-verzichten" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Der Ausweg für sensible Daten: anonymisieren
+        Sensible Daten: anonymisieren statt verzichten
       
     </span>
   </a>
@@ -870,14 +864,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
         
       
         
@@ -1134,6 +1120,83 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../werkzeuge/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkzeuge
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1300,10 +1363,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#der-ausweg-fur-sensible-daten-anonymisieren" class="md-nav__link">
+  <a href="#sensible-daten-anonymisieren-statt-verzichten" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Der Ausweg für sensible Daten: anonymisieren
+        Sensible Daten: anonymisieren statt verzichten
       
     </span>
   </a>
@@ -1387,14 +1450,16 @@
 
 
 <h1 id="datenschutz-vertraulichkeit">Datenschutz &amp; Vertraulichkeit<a class="headerlink" href="#datenschutz-vertraulichkeit" title="Permanent link">&para;</a></h1>
-<p>Ein Querschnittsthema, das bei jedem Werkzeug mitzudenken ist, gerade in
-der Forschung mit unveröffentlichten Manuskripten, fremden Daten oder
-sensiblen Quellen.</p>
+<p>Diese Frage läuft bei jedem Werkzeug auf dieser Website mit. In der
+Forschung geht es dabei selten nur um eigene Daten: unveröffentlichte
+Manuskripte, Interviews mit Dritten, Material unter
+Geheimhaltungsvereinbarung.</p>
 <div class="admonition warnung">
 <p class="admonition-title">Grundregel</p>
-<p>Lade nichts in einen Cloud-Dienst hoch, das du nicht auch per E-Mail an
-eine fremde Firma schicken würdest. Im Zweifel: anonymisieren oder
-weglassen.</p>
+<p>Ein Upload ist keine Werkzeugnutzung, sondern eine Weitergabe an ein
+fremdes Unternehmen. Ob du dazu befugt bist, entscheidet das Material,
+nicht das Werkzeug. Kläre das, bevor du hochlädst; im Zweifel
+anonymisieren oder weglassen.</p>
 </div>
 <h2 id="worauf-achten">Worauf achten?<a class="headerlink" href="#worauf-achten" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1402,11 +1467,18 @@ weglassen.</p>
   fremden Servern, oft ausserhalb der Schweiz/EU.</li>
 <li><strong>Werden Eingaben zum Training genutzt?</strong> Viele Dienste bieten an, das
   abzuschalten. Prüfe die Einstellungen und die Datenschutzerklärung.</li>
-<li><strong>Rechte Dritter.</strong> Urheberrecht, Personendaten in Interviews,
-  Geheimhaltungsvereinbarungen: all das gilt auch beim Hochladen in ein LLM.</li>
-<li><strong>Institutionelle Vorgaben.</strong> Deine Hochschule oder Organisation hat
-  womöglich eigene Regeln zu KI-Werkzeugen und Datenschutz.</li>
+<li><strong>Was für dein Material gilt.</strong> Je nach Fall greifen Datenschutzrecht,
+  Auflagen der Ethikkommission, Bedingungen von Fördergebern,
+  Geheimhaltungsvereinbarungen, Urheberrecht, Verlagsverträge oder ein
+  Berufsgeheimnis. Welche davon, hängt von Fach, Datenart, Institution
+  und Land ab.</li>
+<li><strong>Institutionelle Vorgaben.</strong> Viele Hochschulen haben eigene Regeln zu
+  KI-Werkzeugen. Sie sind der erste Ort zum Nachschauen, ersetzen aber
+  die übrigen Pflichten nicht.</li>
 </ul>
+<p>Diese Seite kann nicht klären, was in deinem Fall gilt, und ersetzt keine
+Rechts- oder Datenschutzberatung. Sie soll nur erreichen, dass du die
+Frage stellst, bevor die Datei hochgeladen ist.</p>
 <h2 id="wenn-das-llm-selbst-zugreift-angebundene-werkzeuge">Wenn das LLM selbst zugreift: angebundene Werkzeuge<a class="headerlink" href="#wenn-das-llm-selbst-zugreift-angebundene-werkzeuge" title="Permanent link">&para;</a></h2>
 <p>Beim Hochladen entscheidest du bei jeder Eingabe neu, was das Modell sieht.
 Anders bei angebundenen Werkzeugen (Actions, Connectors, MCP-Server): Dort
@@ -1421,18 +1493,27 @@ aber eigene Vorsicht:</p>
 <li><strong>Schreibaktionen kontrollieren.</strong> Was das LLM anlegt oder ändert,
   regelmässig durchsehen; LLMs machen Fehler.</li>
 </ul>
-<h2 id="der-ausweg-fur-sensible-daten-anonymisieren">Der Ausweg für sensible Daten: anonymisieren<a class="headerlink" href="#der-ausweg-fur-sensible-daten-anonymisieren" title="Permanent link">&para;</a></h2>
-<p>"Nichts Sensibles hochladen" heisst nicht, auf Cloud-Werkzeuge verzichten zu
-müssen. Mit einer sauberen Pseudonymisierung vor dem ersten Upload lassen
-sich Interviews und andere Personendaten datenschutzkonform bearbeiten.
-Der Schritt-für-Schritt-Workflow:
-<a href="../../erheben/anonymisieren/">Daten anonymisieren</a>.</p>
+<h2 id="sensible-daten-anonymisieren-statt-verzichten">Sensible Daten: anonymisieren statt verzichten<a class="headerlink" href="#sensible-daten-anonymisieren-statt-verzichten" title="Permanent link">&para;</a></h2>
+<p>Die Grundregel oben verlangt keinen Verzicht auf Cloud-Werkzeuge. Mit
+einer sauberen Pseudonymisierung vor dem ersten Upload lassen sich
+Interviews und andere Personendaten bearbeiten, ohne die Regel zu
+verletzen. Wie das Schritt für Schritt geht, steht unter
+<a href="../../erheben/anonymisieren/">Daten anonymisieren</a>; dort stehen auch die
+Grenzen des Verfahrens.</p>
 <h2 id="lokale-alternativen">Lokale Alternativen<a class="headerlink" href="#lokale-alternativen" title="Permanent link">&para;</a></h2>
-<p>Wer mit besonders sensiblen Daten arbeitet, kann LLMs auch <strong>lokal</strong> auf dem
-eigenen Rechner betreiben (Stichworte: Ollama, LM Studio). Dann verlässt
-nichts den eigenen Computer, auf Kosten von etwas mehr Einrichtung. Auch die
-<a href="../../erheben/transkription/">Transkription von Interviews</a> geht komplett
-lokal.</p>
+<p>Wer mit besonders sensiblen Daten arbeitet, kann LLMs auch <strong>lokal</strong> auf
+dem eigenen Rechner betreiben, etwa mit
+<a href="../../werkzeuge/lokal/ollama-lmstudio/">Ollama oder LM Studio</a>. Auch die
+<a href="../../erheben/transkription/">Transkription von Interviews</a> geht
+vollständig lokal.</p>
+<div class="admonition warnung">
+<p class="admonition-title">Werkzeug heisst nicht Verarbeitungsort</p>
+<p>Mehrere dieser Werkzeuge bieten inzwischen zusätzlich Cloud-Modelle
+an, erreichbar aus derselben Oberfläche. Ollama etwa lässt sich
+weiterhin offline betreiben, führt aber auch bezahlte Cloud-Modelle.
+Dass ein Werkzeug installiert ist, sagt also nichts darüber, wo
+gerechnet wird. Prüfe, welches Modell tatsächlich antwortet.</p>
+</div>
 <p>Zur Leistung lohnt sich ein differenzierter Blick, denn "lokal" heisst
 nicht mehr automatisch "deutlich schwächer": Kleine Modelle, die auf
 einem normalen Rechner laufen, fallen bei anspruchsvollen Aufgaben (etwa
@@ -1450,9 +1531,9 @@ Abschnitt "Grenzen &amp; Datenschutz". Die hier genannten Grundregeln gelten
 aber überall.</p>
 </div>
 <hr />
-<p>Damit sind die Grundlagen komplett. Weiter geht es im Forschungsprozess mit
-der Literatur, beginnend beim Fundament der meisten Recherche-Werkzeuge:
-<a href="../../werkzeuge/finden/semantic-scholar/">Semantic Scholar</a>.</p>
+<p>Damit sind die Grundlagen durch. Weiter im Forschungsprozess mit dem
+Bereich <a href="../../literatur/">Literatur</a>: Werkzeuge zum Finden,
+Befragen und Sammeln, dazu drei durchgängige Workflows.</p>
 
 
 
@@ -1473,7 +1554,7 @@ der Literatur, beginnend beim Fundament der meisten Recherche-Werkzeuge:
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1. August 2026 12:28:48 UTC">1. August 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2. August 2026 09:10:19 UTC">2. August 2026</span>
   </span>
 
     
