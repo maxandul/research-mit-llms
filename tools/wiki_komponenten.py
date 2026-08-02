@@ -54,6 +54,18 @@ PHASEN = {
 # Wird in on_files gefuellt: alles, was einen `werkzeug:`-Block hat.
 WERKZEUGE: list = []
 
+# Nachbarschaft im Wiki, ebenfalls in on_files gefuellt.
+# NACHBARN[quelle] = {"raus": [...], "rein": [...]}, je mit Angaben zum Ziel.
+NACHBARN: dict = {}
+WIKI_NOTIZEN: dict = {}
+WIKI_LINK = re.compile(r"\]\(([^)#\s]+\.md)")
+
+SCHICHTEN = {
+    "wiki/quellen/":  "Quellnotiz",
+    "wiki/konzepte/": "Konzept",
+    "wiki/synthese/": "Synthese",
+}
+
 # Platzhalter im Markdown, etwa {{ werkzeuge:transkribieren }} oder
 # {{ werkzeuge:alle }}. Bewusst sichtbar gewaehlt: Wenn der Hook
 # ausfaellt, steht der Platzhalter im Text statt spurlos zu fehlen.
@@ -291,7 +303,93 @@ def on_files(files, config):
             "werkzeug": werkzeug,
         })
     WERKZEUGE.sort(key=lambda w: w["titel"].lower())
+    _nachbarschaft_aufbauen(files)
     return files
+
+
+def _schicht(quelle: str) -> str:
+    for praefix, name in SCHICHTEN.items():
+        if quelle.startswith(praefix):
+            return name
+    return ""
+
+
+def _nachbarschaft_aufbauen(files):
+    """Wer verweist auf wen im Wiki.
+
+    Quell- und Konzeptnotizen stehen bewusst nicht in der Navigation
+    (siehe OHNE_SEITENLEISTE). Damit man von einer Notiz trotzdem
+    weiterkommt, bekommt jede am Ende die Notizen, mit denen sie
+    verbunden ist. Die Beziehungen stammen aus denselben Markdown-Links,
+    aus denen tools/wiki_graph.py den Wissensgraphen baut."""
+    NACHBARN.clear()
+    WIKI_NOTIZEN.clear()
+    rumpfe = {}
+
+    for datei in files.documentation_pages():
+        quelle = datei.src_uri
+        if not quelle.startswith("wiki/") or quelle.endswith("index.md"):
+            continue
+        try:
+            text = Path(datei.abs_src_path).read_text(encoding="utf-8")
+            rumpf, kopf = meta.get_data(text)
+        except Exception:
+            continue
+        kopf = kopf or {}
+        titel = kopf.get("title")
+        if not titel:
+            treffer = re.search(r"^#\s+(.+)$", rumpf, re.M)
+            titel = treffer.group(1).strip() if treffer else quelle
+        WIKI_NOTIZEN[quelle] = {
+            "titel": str(titel),
+            "schicht": _schicht(quelle),
+            "evidenzstufe": kopf.get("evidenzstufe"),
+        }
+        rumpfe[quelle] = rumpf
+
+    for quelle, rumpf in rumpfe.items():
+        for treffer in WIKI_LINK.finditer(rumpf):
+            ziel = posixpath.normpath(
+                posixpath.join(posixpath.dirname(quelle), treffer.group(1)))
+            if ziel not in WIKI_NOTIZEN or ziel == quelle:
+                continue
+            NACHBARN.setdefault(quelle, {"raus": set(), "rein": set()})
+            NACHBARN.setdefault(ziel, {"raus": set(), "rein": set()})
+            NACHBARN[quelle]["raus"].add(ziel)
+            NACHBARN[ziel]["rein"].add(quelle)
+
+
+def _nachbarn_block(quelle: str) -> str:
+    """Liste der verbundenen Notizen, als Markdown ans Seitenende."""
+    eintrag = NACHBARN.get(quelle)
+    if not eintrag:
+        return ""
+    verbunden = sorted(eintrag["raus"] | eintrag["rein"],
+                       key=lambda z: (WIKI_NOTIZEN[z]["schicht"],
+                                      WIKI_NOTIZEN[z]["titel"].lower()))
+    if not verbunden:
+        return ""
+
+    zeilen = ['<div class="fl-nachbarn" markdown>', "",
+              "**Verbunden mit**", ""]
+    for ziel in verbunden:
+        notiz = WIKI_NOTIZEN[ziel]
+        pfad = _relativ(quelle, ziel)
+        marke = notiz["schicht"]
+        if notiz["evidenzstufe"]:
+            marke += f", {notiz['evidenzstufe']}"
+        # Die Richtung nur nennen, wenn sie einseitig ist. Beidseitige
+        # Verlinkung ist der Normalfall und muesste sonst ueberall
+        # dastehen, ohne etwas zu unterscheiden.
+        raus, rein = ziel in eintrag["raus"], ziel in eintrag["rein"]
+        if raus and not rein:
+            marke += " · von hier verlinkt"
+        elif rein and not raus:
+            marke += " · verweist hierher"
+        zeilen.append(f'- [{notiz["titel"]}]({pfad})  \n'
+                      f'  <span class="fl-kurzangabe">{_e(marke)}</span>')
+    zeilen += ["", "</div>"]
+    return "\n".join(zeilen)
 
 
 def _relativ(von: str, nach: str) -> str:
@@ -348,14 +446,55 @@ def _uebersicht(seite: str) -> str:
         for eintrag in treffer:
             werkzeug = eintrag["werkzeug"]
             ziel = _relativ(seite, eintrag["quelle"])
+            # Die Zusaetze gehoeren in die Uebersicht, sonst steht dort
+            # etwa "kostenpflichtig" bei einem Dienst, den man ueber die
+            # Hochschullizenz nutzt, ohne selbst zu zahlen.
+            def feld(schluessel):
+                wert = werkzeug.get(schluessel, "")
+                zusatz = werkzeug.get(f"{schluessel}_zusatz")
+                if wert and zusatz:
+                    return f'{wert}<br><span class="fl-kurzangabe">{_e(zusatz)}</span>'
+                return str(wert)
+
             teile.append(
                 f'| [{eintrag["titel"]}]({ziel}) '
-                f'| {werkzeug.get("schwierigkeit", "")} '
-                f'| {werkzeug.get("kosten", "")} '
-                f'| {werkzeug.get("verarbeitung", "")} '
+                f'| {feld("schwierigkeit")} '
+                f'| {feld("kosten")} '
+                f'| {feld("verarbeitung")} '
                 f'| {werkzeug.get("wofuer", "")} |')
         teile.append("")
     return "\n".join(teile)
+
+
+def _graph_als_liste(seite: str) -> str:
+    """Der Wissensgraph in Textform.
+
+    Der Graph braucht JavaScript und ist mit einer Tastatur oder einem
+    Screenreader nicht bedienbar. Dieselben Verbindungen stehen deshalb
+    zusaetzlich als Liste da, aufgeklappt zu bekommen."""
+    if not WIKI_NOTIZEN:
+        return ""
+    nach_schicht: dict = {}
+    for quelle, notiz in WIKI_NOTIZEN.items():
+        nach_schicht.setdefault(notiz["schicht"] or "Übrige", []).append(quelle)
+
+    zeilen = ['??? randnotiz "Dieselben Verbindungen als Liste"', ""]
+    for schicht in ("Synthese", "Konzept", "Quellnotiz"):
+        eintraege = sorted(nach_schicht.get(schicht, []),
+                           key=lambda q: WIKI_NOTIZEN[q]["titel"].lower())
+        if not eintraege:
+            continue
+        zeilen.append(f"    **{schicht}**")
+        zeilen.append("")
+        for quelle in eintraege:
+            notiz = WIKI_NOTIZEN[quelle]
+            nachbarn = NACHBARN.get(quelle, {"raus": set(), "rein": set()})
+            anzahl = len(nachbarn["raus"] | nachbarn["rein"])
+            pfad = _relativ(seite, quelle)
+            zeilen.append(f'    - [{notiz["titel"]}]({pfad}) '
+                          f'({anzahl} Verbindungen)')
+        zeilen.append("")
+    return "\n".join(zeilen)
 
 
 def _platzhalter_ersetzen(markdown: str, seite: str) -> str:
@@ -363,6 +502,8 @@ def _platzhalter_ersetzen(markdown: str, seite: str) -> str:
         was = treffer.group(1)
         if was == "alle":
             return _uebersicht(seite)
+        if was == "graphliste":
+            return _graph_als_liste(seite)
         if was in PHASEN:
             return _karten(was, seite)
         # Unbekannte Phase sichtbar lassen, damit der Tippfehler auffaellt.
@@ -381,6 +522,11 @@ def on_page_markdown(markdown, page, config, files):
         page.meta["hide"] = verstecken
 
     markdown = _platzhalter_ersetzen(markdown, page.file.src_uri)
+
+    if kopf.get("type") in OHNE_SEITENLEISTE:
+        block = _nachbarn_block(page.file.src_uri)
+        if block:
+            markdown = markdown.rstrip() + "\n\n" + block + "\n"
 
     if kopf.get("type") == "Quellnotiz":
         return _einfuegen(markdown, _notizkopf(kopf, heute))

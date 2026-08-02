@@ -58,9 +58,9 @@ vorläufig sind oder als überholt gelten, tragen in der Navigation eine
 **Statusmarke**. Und im Wissensgraphen unten zeigt der Tooltip eines Knotens
 jetzt zusätzlich die Evidenzstufe.
 
-Der eigentliche Gewinn liegt hinter den Kulissen: Was vorher als Fliesstext
-in den Notizen stand (Evidenzstufe, Prüfdatum, Prüfumfang, verwendete
-Modelle), ist jetzt zusätzlich maschinell abfragbar. Das Skript
+Hinter den Kulissen ändert sich mehr: Was vorher als Fliesstext in den
+Notizen stand (Evidenzstufe, Prüfdatum, Prüfumfang, verwendete Modelle),
+ist jetzt maschinell abfragbar. Das Skript
 `tools/wiki_lint.py` meldet damit selbständig, welche Notiz nur auf einem
 Abstract beruht, welche Policy zur Nachprüfung fällig ist und welche Notiz
 verwaist. Vorher war das Handarbeit, und Handarbeit unterbleibt.
@@ -97,9 +97,153 @@ Website-Seiten bilden einen Graphen, der bei jedem Build automatisch aus
 den Markdown-Links erzeugt wird. Ziehen, zoomen, klicken — jeder Knoten
 führt zur jeweiligen Seite.
 
-<div id="wiki-graph" style="width:100%;height:480px;"></div>
-<p id="wiki-graph-legende" style="font-size:.8em;opacity:.75;"></p>
+<div class="fl-graph">
+  <div class="fl-graph__steuerung" id="wiki-graph-filter"></div>
+  <div id="wiki-graph" role="img"
+       aria-label="Interaktiver Wissensgraph. Dieselben Verbindungen stehen darunter als Liste."></div>
+  <p class="fl-graph__hinweis">
+    Ziehen, zoomen, klicken. Beim Zeigen auf einen Knoten wird seine
+    Nachbarschaft hervorgehoben; Beschriftungen erscheinen ab mittlerer
+    Zoomstufe.
+  </p>
+</div>
+
+{{ werkzeuge:graphliste }}
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+(function () {
+  function stil(name) {
+    return getComputedStyle(document.body).getPropertyValue(name).trim();
+  }
+
+  function drawGraph() {
+    var container = document.getElementById("wiki-graph");
+    if (!container || container.dataset.rendered) return;
+    container.dataset.rendered = "1";
+
+    var namen = { quelle: "Quellnotiz", konzept: "Konzept",
+                  synthese: "Synthese", seite: "Website-Seite" };
+    // Farben aus den Design-Tokens, damit der Graph im dunklen Modus stimmt.
+    var farben = {
+      quelle:   stil("--fl-ev-preprint-linie"),
+      konzept:  stil("--fl-accent"),
+      synthese: stil("--fl-ev-peer-linie"),
+      seite:    stil("--fl-text-leise")
+    };
+    var aus = {};
+
+    fetch("graph.json").then(function (r) { return r.json(); }).then(function (data) {
+      var w = container.clientWidth, h = container.clientHeight || 480;
+      var svg = d3.select(container).append("svg")
+        .attr("width", w).attr("height", h)
+        .attr("viewBox", [0, 0, w, h]);
+      var g = svg.append("g");
+
+      // Knotengroesse nach Anzahl Verbindungen: was viel verknuepft
+      // ist, ist im Wiki auch zentral.
+      var grad = {};
+      data.links.forEach(function (l) {
+        grad[l.source] = (grad[l.source] || 0) + 1;
+        grad[l.target] = (grad[l.target] || 0) + 1;
+      });
+      var radius = function (d) { return 5 + Math.min(7, (grad[d.id] || 0) * 0.9); };
+
+      var zoomstufe = 1;
+      var zoom = d3.zoom().scaleExtent([0.3, 4]).on("zoom", function (ev) {
+        g.attr("transform", ev.transform);
+        zoomstufe = ev.transform.k;
+        text.attr("display", zoomstufe >= 1.4 ? null : "none");
+      });
+      svg.call(zoom);
+
+      var sim = d3.forceSimulation(data.nodes)
+        .force("link", d3.forceLink(data.links).id(function (d) { return d.id; }).distance(70))
+        .force("charge", d3.forceManyBody().strength(-240))
+        .force("center", d3.forceCenter(w / 2, h / 2))
+        .force("collide", d3.forceCollide(20));
+
+      var link = g.selectAll("line").data(data.links).join("line")
+        .attr("stroke", stil("--fl-linie-stark")).attr("stroke-opacity", 0.6);
+
+      var node = g.selectAll("circle").data(data.nodes).join("circle")
+        .attr("r", radius)
+        .attr("fill", function (d) { return farben[d.layer] || farben.seite; })
+        .style("cursor", "pointer")
+        .call(d3.drag()
+          .on("start", function (ev, d) { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+          .on("drag", function (ev, d) { d.fx = ev.x; d.fy = ev.y; })
+          .on("end", function (ev, d) { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }))
+        .on("click", function (ev, d) { window.location.href = d.url; });
+
+      node.append("title").text(function (d) {
+        var zusatz = [namen[d.layer] || ""];
+        if (d.evidenzstufe) zusatz.push(d.evidenzstufe);
+        if (d.status === "draft") zusatz.push("vorläufig");
+        if (d.status === "deprecated") zusatz.push("überholt");
+        return d.label + " (" + zusatz.filter(Boolean).join(", ") + ")";
+      });
+
+      var text = g.selectAll("text").data(data.nodes).join("text")
+        .text(function (d) { return d.label.length > 34 ? d.label.slice(0, 33) + "…" : d.label; })
+        .attr("font-size", "9px")
+        .attr("fill", stil("--fl-text-sekundaer"))
+        .attr("pointer-events", "none")
+        .attr("display", "none");
+
+      // Nachbarschaft beim Zeigen hervorheben, den Rest daempfen.
+      var nachbarn = {};
+      data.links.forEach(function (l) {
+        var s = l.source.id || l.source, t = l.target.id || l.target;
+        (nachbarn[s] = nachbarn[s] || {})[t] = 1;
+        (nachbarn[t] = nachbarn[t] || {})[s] = 1;
+      });
+      node.on("mouseenter", function (ev, d) {
+        node.attr("opacity", function (o) {
+          return o.id === d.id || (nachbarn[d.id] || {})[o.id] ? 1 : 0.15;
+        });
+        link.attr("stroke-opacity", function (l) {
+          var s = l.source.id || l.source, t = l.target.id || l.target;
+          return s === d.id || t === d.id ? 0.9 : 0.05;
+        });
+        text.attr("display", function (o) {
+          return o.id === d.id || (nachbarn[d.id] || {})[o.id] ? null : "none";
+        });
+      }).on("mouseleave", function () {
+        node.attr("opacity", function (o) { return aus[o.layer] ? 0.12 : 1; });
+        link.attr("stroke-opacity", 0.6);
+        text.attr("display", zoomstufe >= 1.4 ? null : "none");
+      });
+
+      // Filter nach Schicht.
+      var leiste = d3.select("#wiki-graph-filter");
+      Object.keys(namen).forEach(function (k) {
+        leiste.append("button")
+          .attr("class", "fl-graph__chip")
+          .attr("type", "button")
+          .attr("aria-pressed", "true")
+          .html('<span class="fl-graph__punkt" style="background:' + farben[k] + '"></span>' + namen[k])
+          .on("click", function () {
+            aus[k] = !aus[k];
+            d3.select(this).attr("aria-pressed", aus[k] ? "false" : "true");
+            node.attr("opacity", function (o) { return aus[o.layer] ? 0.12 : 1; });
+            text.attr("opacity", function (o) { return aus[o.layer] ? 0.12 : 1; });
+          });
+      });
+
+      sim.on("tick", function () {
+        link.attr("x1", function (d) { return d.source.x; }).attr("y1", function (d) { return d.source.y; })
+            .attr("x2", function (d) { return d.target.x; }).attr("y2", function (d) { return d.target.y; });
+        node.attr("cx", function (d) { return d.x; }).attr("cy", function (d) { return d.y; });
+        text.attr("x", function (d) { return d.x + radius(d) + 3; }).attr("y", function (d) { return d.y + 3; });
+      });
+    }).catch(function () {
+      container.innerHTML = '<p style="padding:1em;">Graph-Daten nicht gefunden (graph.json entsteht beim Build).</p>';
+    });
+  }
+  if (window.document$) { window.document$.subscribe(drawGraph); } else { drawGraph(); }
+})();
+</script>
 <script>
 (function () {
   function drawGraph() {
