@@ -105,7 +105,7 @@ def pruefen(wurzel: Path, heute: dt.date | None = None) -> list[str]:
         if eingehend[rel] == 0:
             befunde.append(f"{rel}: verwaist, kein eingehender Link aus dem Wiki")
 
-    befunde += _pruefen_seiten(wurzel)
+    befunde += _pruefen_seiten(wurzel, heute)
     return befunde
 
 
@@ -122,8 +122,24 @@ DUBLETTEN = {
     r"^\*\*Geprüft:\*\*": "Pruefvermerk als Fliesstext statt im Frontmatter",
 }
 
-WERKZEUG_PFLICHT = ("schwierigkeit", "kosten", "wofuer")
+WERKZEUG_PFLICHT = ("schwierigkeit", "kosten", "verarbeitung", "wofuer",
+                    "phase", "stand")
 STUFEN = ("Einsteiger", "Fortgeschritten", "Profi")
+
+# Kontrollierte Werte. Konkrete Preise stehen bewusst nicht auf den
+# Seiten: Sie veralten am schnellsten von allem und muessten dann
+# ueberall nachgezogen werden. Die Kategorie reicht zum Aussortieren.
+KOSTEN = ("gratis", "Freemium", "kostenpflichtig")
+# Wo gerechnet wird. Technische Angabe, keine rechtliche Einschaetzung.
+VERARBEITUNG = ("lokal", "Cloud", "beides")
+PHASEN = ("finden", "befragen", "verwalten", "transkribieren",
+          "analysieren", "schreiben", "lokal", "agentisch")
+
+# Werkzeugangaben veralten schneller als Studien, nicht langsamer.
+WERKZEUG_FRIST_MONATE = 12
+MONATE = {"januar": 1, "februar": 2, "maerz": 3, "märz": 3, "april": 4,
+          "mai": 5, "juni": 6, "juli": 7, "august": 8, "september": 9,
+          "oktober": 10, "november": 11, "dezember": 12}
 
 # Zugelassene Hinweisbox-Typen: drei Boxen und die Randnotiz, die keine
 # Box ist. Mehr nicht. Alles andere ist entweder ein Tippfehler oder ein
@@ -136,7 +152,30 @@ BOX_RE = re.compile(r"^(?:!!!|\?\?\?\+?)\s+([a-zA-Z-]+)", re.M)
 MAX_MERKSATZ = 1
 
 
-def _pruefen_seiten(wurzel: Path) -> list[str]:
+def _stand_pruefen(rel: str, stand, heute: dt.date) -> list[str]:
+    """Meldet Werkzeugangaben, die aelter als WERKZEUG_FRIST_MONATE sind.
+
+    `stand` steht als "August 2026" in der Datei, damit es lesbar bleibt;
+    hier wird daraus ein Datum."""
+    if not stand:
+        return []  # fehlend meldet schon die Pflichtfeldpruefung
+    treffer = re.match(r"([A-Za-zÄÖÜäöü]+)\s+(\d{4})", str(stand).strip())
+    if not treffer:
+        return [f"{rel}: `werkzeug.stand` nicht lesbar ('{stand}'), "
+                f"erwartet wird etwa 'August 2026'"]
+    monat = MONATE.get(treffer.group(1).lower())
+    if not monat:
+        return [f"{rel}: `werkzeug.stand` nennt keinen deutschen Monat "
+                f"('{treffer.group(1)}')"]
+    geprueft = dt.date(int(treffer.group(2)), monat, 1)
+    alter = (heute.year - geprueft.year) * 12 + (heute.month - geprueft.month)
+    if alter > WERKZEUG_FRIST_MONATE:
+        return [f"{rel}: Werkzeugangaben seit {stand} nicht geprueft "
+                f"({alter} Monate), Kosten und Funktionsumfang nachziehen"]
+    return []
+
+
+def _pruefen_seiten(wurzel: Path, heute: dt.date) -> list[str]:
     docs = (wurzel / "docs").resolve()
     wiki = (docs / "wiki").resolve()
     befunde: list[str] = []
@@ -163,14 +202,35 @@ def _pruefen_seiten(wurzel: Path) -> list[str]:
             if fehlend:
                 befunde.append(f"{rel}: `werkzeug:` unvollstaendig, fehlt: "
                                f"{', '.join(fehlend)}")
+
             stufe = werkzeug.get("schwierigkeit")
             if stufe and stufe not in STUFEN:
                 befunde.append(f"{rel}: Schwierigkeit '{stufe}' ist keine der "
                                f"drei Stufen ({', '.join(STUFEN)}); Spannen und "
                                f"Vorbehalte gehoeren in `schwierigkeit_zusatz`")
-            if not werkzeug.get("stand"):
-                befunde.append(f"{rel}: `werkzeug.stand` fehlt, Angaben zu "
-                               f"Kosten und Funktionsumfang sind undatiert")
+
+            kosten = werkzeug.get("kosten")
+            if kosten and kosten not in KOSTEN:
+                befunde.append(f"{rel}: Kosten '{kosten}' ist kein zugelassener "
+                               f"Wert ({', '.join(KOSTEN)}); Details gehoeren "
+                               f"in `kosten_zusatz`")
+
+            verarbeitung = werkzeug.get("verarbeitung")
+            if verarbeitung and verarbeitung not in VERARBEITUNG:
+                befunde.append(f"{rel}: Verarbeitung '{verarbeitung}' ist kein "
+                               f"zugelassener Wert ({', '.join(VERARBEITUNG)})")
+
+            phasen = werkzeug.get("phase") or []
+            if isinstance(phasen, str):
+                befunde.append(f"{rel}: `phase` muss eine Liste sein, auch bei "
+                               f"nur einem Wert")
+                phasen = [phasen]
+            for phase in phasen:
+                if phase not in PHASEN:
+                    befunde.append(f"{rel}: unbekannte Phase '{phase}', "
+                                   f"zugelassen sind {', '.join(PHASEN)}")
+
+            befunde += _stand_pruefen(rel, werkzeug.get("stand"), heute)
 
         typen = [t.group(1) for t in BOX_RE.finditer(rumpf)]
         for typ in sorted(set(typen)):

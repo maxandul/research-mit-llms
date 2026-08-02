@@ -4,3 +4,4 @@
 # irgendein spaeterer Push den Build unangekuendigt brechen.
 mkdocs-material>=9.7,<10
 mkdocs-git-revision-date-localized-plugin>=1.5,<2
+mkdocs-redirects>=1.2,<2

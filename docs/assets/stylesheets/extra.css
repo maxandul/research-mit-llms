@@ -480,6 +480,38 @@
   max-width: none;
 }
 
+/* Werkzeugkarten mitten im Fliesstext einer Themenseite. Sie werden von
+   tools/wiki_komponenten.py aus dem `werkzeug:`-Frontmatter erzeugt,
+   dort wo im Text {{ werkzeuge:phase }} steht. Etwas kompakter als die
+   Karten auf den Bereichs-Startseiten, weil sie den Lesefluss
+   unterbrechen und nicht die Seite tragen. */
+.md-typeset .grid.cards.fl-werkzeugkarten > ul {
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  grid-gap: var(--fl-space-s);
+}
+
+.md-typeset .grid.cards.fl-werkzeugkarten > ul > li {
+  padding: var(--fl-space-s) var(--fl-space-m);
+}
+
+.md-typeset .grid.cards.fl-werkzeugkarten > ul > li > p:first-child strong a {
+  font-size: 1em;
+}
+
+.md-typeset .grid.cards.fl-werkzeugkarten > ul > li > hr {
+  margin: var(--fl-space-xs) 0;
+}
+
+/* Die Kurzangabe unter der Beschreibung: Schwierigkeit, Kosten,
+   Verarbeitungsort in einer Zeile. */
+.md-typeset .fl-kurzangabe {
+  display: block;
+  margin-top: var(--fl-space-2xs);
+  font-size: .66rem;
+  color: var(--fl-text-leise);
+  letter-spacing: .01em;
+}
+
 
 /* --- 4d. Chips ------------------------------------------------------
    Kleine Marken fuer Evidenzstufe, Pruefvermerk und Status. Sie tragen

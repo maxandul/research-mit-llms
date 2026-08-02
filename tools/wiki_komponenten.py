@@ -18,7 +18,11 @@ Eine Notiz kann also faellig werden, ohne dass jemand die Datei anfasst.
 """
 import datetime as dt
 import html
+import posixpath
 import re
+from pathlib import Path
+
+from mkdocs.utils import meta
 
 # Wie lange vor `stale_after` die Ampel von gruen auf gelb springt.
 VORWARNUNG_TAGE = 90
@@ -32,6 +36,28 @@ EVIDENZ_SCHLUESSEL = {
 }
 
 SCHWIERIGKEIT_STUFEN = ["Einsteiger", "Fortgeschritten", "Profi"]
+
+# Die Phasen des Forschungsprozesses, in der Reihenfolge, in der sie
+# vorkommen. Ein Werkzeug kann zu mehreren gehoeren; Zotero etwa
+# verwaltet Literatur und liefert die Bibliografie beim Schreiben.
+PHASEN = {
+    "finden":         "Literatur finden",
+    "befragen":       "Literatur befragen",
+    "verwalten":      "Sammeln und verwalten",
+    "transkribieren": "Transkribieren",
+    "analysieren":    "Daten analysieren",
+    "schreiben":      "Schreiben und exportieren",
+    "lokal":          "Lokal betreiben",
+    "agentisch":      "Agentisch arbeiten",
+}
+
+# Wird in on_files gefuellt: alles, was einen `werkzeug:`-Block hat.
+WERKZEUGE: list = []
+
+# Platzhalter im Markdown, etwa {{ werkzeuge:transkribieren }} oder
+# {{ werkzeuge:alle }}. Bewusst sichtbar gewaehlt: Wenn der Hook
+# ausfaellt, steht der Platzhalter im Text statt spurlos zu fehlen.
+PLATZHALTER = re.compile(r"^\{\{\s*werkzeuge:([a-z]+)\s*\}\}\s*$", re.M)
 
 
 def _e(wert) -> str:
@@ -197,7 +223,9 @@ def _steckbrief(werkzeug: dict) -> str:
             + "</dd></div>"
         )
 
-    for schluessel, label in (("kosten", "Kosten"), ("wofuer", "Wofür")):
+    for schluessel, label in (("kosten", "Kosten"),
+                              ("verarbeitung", "Verarbeitung"),
+                              ("wofuer", "Wofür")):
         wert = werkzeug.get(schluessel)
         if not wert:
             continue
@@ -238,6 +266,110 @@ def _einfuegen(markdown: str, block: str) -> str:
 OHNE_SEITENLEISTE = {"Quellnotiz", "Konzeptnotiz"}
 
 
+def on_files(files, config):
+    """Registry aller Werkzeuge aufbauen, bevor Seiten gerendert werden.
+
+    Damit kann jede Themenseite die zu ihr passenden Werkzeuge anzeigen,
+    ohne dass sie irgendwo doppelt gepflegt werden."""
+    WERKZEUGE.clear()
+    for datei in files.documentation_pages():
+        try:
+            text = Path(datei.abs_src_path).read_text(encoding="utf-8")
+            rumpf, kopf = meta.get_data(text)
+        except Exception:
+            continue
+        werkzeug = (kopf or {}).get("werkzeug")
+        if not isinstance(werkzeug, dict):
+            continue
+        titel = kopf.get("title")
+        if not titel:
+            treffer = re.search(r"^#\s+(.+)$", rumpf, re.M)
+            titel = treffer.group(1).strip() if treffer else datei.src_uri
+        WERKZEUGE.append({
+            "titel": titel,
+            "quelle": datei.src_uri,
+            "werkzeug": werkzeug,
+        })
+    WERKZEUGE.sort(key=lambda w: w["titel"].lower())
+    return files
+
+
+def _relativ(von: str, nach: str) -> str:
+    """Markdown-Link von einer Seite zur anderen, damit MkDocs ihn
+    aufloest und `--strict` ihn mitpruefen kann."""
+    return posixpath.relpath(nach, posixpath.dirname(von)) or nach
+
+
+def _kurzangabe(werkzeug: dict) -> str:
+    teile = []
+    for schluessel in ("schwierigkeit", "kosten", "verarbeitung"):
+        wert = werkzeug.get(schluessel)
+        if wert:
+            teile.append(str(wert))
+    return " · ".join(teile)
+
+
+def _karten(phase: str, seite: str) -> str:
+    """Kartenraster der Werkzeuge einer Phase, als Markdown."""
+    treffer = [w for w in WERKZEUGE
+               if phase in (w["werkzeug"].get("phase") or [])]
+    if not treffer:
+        return ""
+    zeilen = ['<div class="grid cards fl-werkzeugkarten" markdown>', ""]
+    for eintrag in treffer:
+        werkzeug = eintrag["werkzeug"]
+        ziel = _relativ(seite, eintrag["quelle"])
+        zeilen.append(f'-   **[{eintrag["titel"]}]({ziel})**')
+        zeilen.append("")
+        zeilen.append("    ---")
+        zeilen.append("")
+        wofuer = werkzeug.get("wofuer")
+        if wofuer:
+            zeilen.append(f"    {wofuer}")
+            zeilen.append("")
+        zeilen.append(f'    <span class="fl-kurzangabe">{_e(_kurzangabe(werkzeug))}</span>')
+        zeilen.append("")
+    zeilen.append("</div>")
+    return "\n".join(zeilen)
+
+
+def _uebersicht(seite: str) -> str:
+    """Alle Werkzeuge nach Phase, als Tabelle. Fuer die Vergleichsansicht."""
+    teile = []
+    for phase, beschriftung in PHASEN.items():
+        treffer = [w for w in WERKZEUGE
+                   if phase in (w["werkzeug"].get("phase") or [])]
+        if not treffer:
+            continue
+        teile.append(f"### {beschriftung}")
+        teile.append("")
+        teile.append("| Werkzeug | Schwierigkeit | Kosten | Verarbeitung | Wofür |")
+        teile.append("|---|---|---|---|---|")
+        for eintrag in treffer:
+            werkzeug = eintrag["werkzeug"]
+            ziel = _relativ(seite, eintrag["quelle"])
+            teile.append(
+                f'| [{eintrag["titel"]}]({ziel}) '
+                f'| {werkzeug.get("schwierigkeit", "")} '
+                f'| {werkzeug.get("kosten", "")} '
+                f'| {werkzeug.get("verarbeitung", "")} '
+                f'| {werkzeug.get("wofuer", "")} |')
+        teile.append("")
+    return "\n".join(teile)
+
+
+def _platzhalter_ersetzen(markdown: str, seite: str) -> str:
+    def ersatz(treffer):
+        was = treffer.group(1)
+        if was == "alle":
+            return _uebersicht(seite)
+        if was in PHASEN:
+            return _karten(was, seite)
+        # Unbekannte Phase sichtbar lassen, damit der Tippfehler auffaellt.
+        return treffer.group(0)
+    return PLATZHALTER.sub(ersatz, markdown)
+
+
 def on_page_markdown(markdown, page, config, files):
     kopf = page.meta or {}
     heute = dt.date.today()
@@ -247,6 +379,8 @@ def on_page_markdown(markdown, page, config, files):
         if "navigation" not in verstecken:
             verstecken.append("navigation")
         page.meta["hide"] = verstecken
+
+    markdown = _platzhalter_ersetzen(markdown, page.file.src_uri)
 
     if kopf.get("type") == "Quellnotiz":
         return _einfuegen(markdown, _notizkopf(kopf, heute))
