@@ -1560,11 +1560,17 @@
 und ausführen</strong>: ChatGPT (Funktion "Datenanalyse", früher Code Interpreter)
 und Claude (Analysis) nehmen eine Datentabelle entgegen, schreiben Python-
 oder JavaScript-Code, führen ihn aus und zeigen Ergebnis samt Diagramm.</p>
-<p>Das ist der entscheidende Unterschied zum blossen Chat: Nicht das Modell
-"rechnet im Kopf" (das ist unzuverlässig, siehe
-<a href="../../grundlagen/wie-llms-arbeiten/">Wie ein LLM arbeitet</a>), sondern es
-schreibt ein Programm, und das Programm rechnet. Die Zahlen stimmen dann so
-gut wie der Code.</p>
+<p>Damit rechnet nicht das Modell, sondern ein Programm. Das ist keine
+Feinheit: Ein Modell, das Zahlen im Kopf fortsetzt, liegt regelmässig
+daneben, siehe <a href="../../grundlagen/wie-llms-arbeiten/">Wie ein LLM arbeitet</a>.
+Ein ausgeführtes Programm dagegen ist so richtig wie sein Code, und den
+kannst du lesen.</p>
+<div class="admonition merksatz">
+<p class="admonition-title">Wenn du nur eines mitnimmst</p>
+<p>Lass dir den Code zeigen und heb ihn auf. Er ist dein
+Analyseprotokoll: ohne ihn ist die Auswertung weder reproduzierbar
+noch im Methodenteil belegbar.</p>
+</div>
 <h2 id="was-gut-funktioniert">Was gut funktioniert<a class="headerlink" href="#was-gut-funktioniert" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Deskriptive Statistik:</strong> Verteilungen, Mittelwerte, Kreuztabellen,
@@ -1583,9 +1589,8 @@ gut wie der Code.</p>
 <ol>
 <li><strong>Nur anonymisierte Daten hochladen.</strong> Auch Tabellen können
    Personenbezug haben, siehe <a href="../../erheben/anonymisieren/">Daten anonymisieren</a>.</li>
-<li><strong>Code anzeigen lassen und aufheben.</strong> Der ausgeführte Code ist dein
-   Analyseprotokoll. Lokal speichern, dann ist die Auswertung
-   reproduzierbar und im Methodenteil belegbar.</li>
+<li><strong>Code anzeigen lassen und aufheben.</strong> Lokal speichern, nicht im Chat
+   liegen lassen; Chatverläufe verschwinden.</li>
 <li><strong>Ergebnisse plausibilisieren.</strong> Stimmen Fallzahlen und Vorzeichen?
    Eine Handvoll Werte von Hand oder in Excel nachprüfen.</li>
 <li><strong>Methodenwahl nicht delegieren.</strong> Das LLM schlägt Tests vor und
@@ -1607,12 +1612,20 @@ gut wie der Code.</p>
 </ol>
 <h2 id="grenzen">Grenzen<a class="headerlink" href="#grenzen" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Sehr grosse Datensätze überfordern die Chat-Umgebungen; dann ist ein
-  echtes Statistikprogramm (R, SPSS, Python lokal) die bessere Wahl. Das
-  LLM kann dir dafür weiterhin den Code schreiben und erklären.</li>
-<li>Die Ausführungsumgebungen haben Zeit- und Speicherlimits; komplexe
-  Modelle (Mehrebenenanalysen, grosse Simulationen) gehören in eine lokale
-  Umgebung.</li>
+<li><strong>Der Code kann falsch sein und trotzdem laufen.</strong> Ein Programm, das
+  ohne Fehlermeldung durchläuft, hat nicht bewiesen, dass es das
+  Richtige rechnet. Falsch herum kodierte Variablen, stillschweigend
+  gelöschte Fälle und vertauschte Gruppen erzeugen plausible Zahlen.
+  Deshalb Regel 3.</li>
+<li><strong>Sehr grosse Datensätze überfordern die Chat-Umgebungen.</strong> Dann ist
+  ein Statistikprogramm (R, SPSS, Python lokal) die bessere Wahl; den
+  Code dafür kann dir das Modell weiterhin schreiben und erklären.</li>
+<li><strong>Die Ausführungsumgebungen haben Zeit- und Speicherlimits.</strong> Komplexe
+  Modelle wie Mehrebenenanalysen oder grosse Simulationen gehören in
+  eine lokale Umgebung.</li>
+<li><strong>Zur Korrektheit LLM-generierten Analysecodes gibt es hier noch keine
+  Belege.</strong> Der Recherche-Sprint dazu ist geplant, siehe
+  <a href="../../wiki/">Über dieses Wiki</a>.</li>
 </ul>
 <hr />
 <p>Die Ergebnisse wollen aufgeschrieben sein. Wie die ganze Arbeit in
@@ -1638,7 +1651,7 @@ Markdown entsteht und Word nur noch Exportformat ist:
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2. August 2026 09:10:19 UTC">2. August 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2. August 2026 10:43:38 UTC">2. August 2026</span>
   </span>
 
     

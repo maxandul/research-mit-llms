@@ -902,6 +902,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#grenzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grenzen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#versionen-im-griff-behalten" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1262,6 +1273,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#grenzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grenzen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#versionen-im-griff-behalten" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1338,11 +1360,10 @@
 
 
 <h1 id="mit-word-feedback-umgehen">Mit Word-Feedback umgehen<a class="headerlink" href="#mit-word-feedback-umgehen" title="Permanent link">&para;</a></h1>
-<p>Wer die Arbeit <a href="../arbeit-in-markdown/">in Markdown aufbaut</a>, stösst schnell
-auf die Realität des Wissenschaftsbetriebs: Betreuungspersonen und
-Gutachter:innen kommentieren nun mal im Word-Dokument, mit Kommentaren und
-nachverfolgten Änderungen. Das ist kein Grund, die Kette aufzugeben. Es
-braucht nur eine klare Regel.</p>
+<p>Wer die Arbeit <a href="../arbeit-in-markdown/">in Markdown aufbaut</a>, bekommt das
+Feedback trotzdem in Word: Betreuungspersonen und Gutachter:innen
+kommentieren dort, mit Anmerkungen und nachverfolgten Änderungen. Das
+lässt sich nicht ändern, aber es braucht die Kette nicht zu brechen.</p>
 <div class="admonition merksatz">
 <p class="admonition-title">Die Regel</p>
 <p>Feedback wird <strong>nie im Word-Dokument eingearbeitet</strong>. Das Word ist ein
@@ -1357,15 +1378,17 @@ neue Version zurückschicken.</p>
 <p>Praktisch: In der Markdown-Datei erledigte Punkte mit einer kurzen
 To-do-Liste abhaken, dann geht nichts verloren.</p>
 <h2 id="weg-2-kommentare-maschinell-herausziehen-fortgeschritten">Weg 2: Kommentare maschinell herausziehen (Fortgeschritten)<a class="headerlink" href="#weg-2-kommentare-maschinell-herausziehen-fortgeschritten" title="Permanent link">&para;</a></h2>
-<p>Pandoc kann das kommentierte Word zurück nach Markdown wandeln und dabei
-Kommentare und nachverfolgte Änderungen sichtbar machen:</p>
+<p><a href="../../werkzeuge/schreiben/pandoc/">Pandoc</a> kann das kommentierte Word
+zurück nach Markdown wandeln und dabei Kommentare und nachverfolgte
+Änderungen sichtbar machen:</p>
 <div class="highlight"><pre><span></span><code>pandoc<span class="w"> </span>feedback.docx<span class="w"> </span>--track-changes<span class="o">=</span>all<span class="w"> </span>-t<span class="w"> </span>markdown<span class="w"> </span>-o<span class="w"> </span>feedback.md
 </code></pre></div>
-<p>In <code>feedback.md</code> stehen alle Anmerkungen als Text an der richtigen Stelle.
-Das ist die ideale Grundlage für Weg 3.</p>
+<p>In <code>feedback.md</code> stehen alle Anmerkungen als Text an der richtigen
+Stelle, damit auch ein Modell sie lesen kann. Das ist die Grundlage für
+Weg 3.</p>
 <h2 id="weg-3-das-llm-arbeitet-das-feedback-ein">Weg 3: das LLM arbeitet das Feedback ein<a class="headerlink" href="#weg-3-das-llm-arbeitet-das-feedback-ein" title="Permanent link">&para;</a></h2>
-<p>Jetzt zahlt sich das Klartext-Format aus. Gib dem Modell beides, das
-extrahierte Feedback und dein Quellkapitel:</p>
+<p>Weil beides Klartext ist, kannst du dem Modell das extrahierte Feedback
+und dein Quellkapitel zusammen geben:</p>
 <div class="highlight"><pre><span></span><code>Hier ist mein Kapitel (Markdown) und das Feedback meiner Betreuerin
 (aus Word extrahiert, Kommentare im Text markiert).
 
@@ -1377,11 +1400,26 @@ Arbeite das Feedback in das Kapitel ein. Regeln:
 3. Wenn ein Kommentar mehrere Lösungen zulässt oder du ihn nicht
    verstehst, ändere nichts und stelle mir stattdessen eine Rückfrage.
 </code></pre></div>
-<p>Die Änderungsliste am Ende ist der wichtige Teil: Du gehst sie durch und
-prüfst jede Stelle, denn die inhaltliche Antwort auf das Feedback bleibt
-deine (siehe <a href="../../grundlagen/llms-verstehen/">Rollenteilung</a>). Mit einem
-Coding-Agenten (Claude Code, Cursor) geht dasselbe direkt auf den Dateien,
-inklusive sichtbarem Diff pro Änderung.</p>
+<p>Regel 2 ist der Grund, warum der Prompt so aussieht: Ohne
+Änderungsliste müsstest du das ganze Kapitel neu lesen, um zu sehen, was
+passiert ist. Mit ihr gehst du Stelle für Stelle durch. Die inhaltliche
+Antwort auf das Feedback bleibt in jedem Fall deine, siehe
+<a href="../../grundlagen/llms-verstehen/">Rollenteilung</a>.</p>
+<p>Mit einem <a href="../../werkzeuge/agenten/coding-agenten/">Coding-Agenten</a> geht
+dasselbe direkt auf den Dateien, mit sichtbarem Unterschied pro Änderung.</p>
+<h2 id="grenzen">Grenzen<a class="headerlink" href="#grenzen" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Kommentare sind oft nicht ausformuliert.</strong> "Unklar" oder ein
+  Fragezeichen am Rand verlangen eine Rückfrage bei der Person, nicht
+  eine Vermutung des Modells. Regel 3 im Prompt oben fängt das ab,
+  solange du dich daran hältst.</li>
+<li><strong>Nachverfolgte Änderungen sind Vorschläge, keine Anweisungen.</strong> Wer
+  sie ungeprüft übernimmt, übernimmt auch Missverständnisse.</li>
+<li><strong>Der Export verliert Feinlayout.</strong> Wenn das Word bereits
+  formatierte Tabellen oder ein Deckblatt enthält, kommt beides beim
+  Rückweg nicht heil an. Der Rückweg ist für den Text gedacht, nicht
+  für das Layout.</li>
+</ul>
 <h2 id="versionen-im-griff-behalten">Versionen im Griff behalten<a class="headerlink" href="#versionen-im-griff-behalten" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Exporte datieren (<code>arbeit_2026-07-04.docx</code>), damit klar ist, auf welchem
@@ -1415,7 +1453,7 @@ KI-Einsatz sauber offen? <a href="../../haltung/ki-deklarieren/">KI-Nutzung dekl
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2. August 2026 09:10:19 UTC">2. August 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2. August 2026 10:43:38 UTC">2. August 2026</span>
   </span>
 
     

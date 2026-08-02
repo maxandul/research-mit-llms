@@ -714,6 +714,110 @@
 }
 
 
+/* --- 4h. Nachbarnotizen ---------------------------------------------
+   Quell- und Konzeptnotizen stehen nicht in der Navigation. Am Ende
+   jeder Notiz steht deshalb, womit sie verbunden ist, erzeugt aus
+   denselben Links wie der Wissensgraph. Bewusst zurueckhaltend: Es ist
+   eine Weiterleitung, nicht Inhalt. */
+
+.md-typeset .fl-nachbarn {
+  margin-top: var(--fl-space-2xl);
+  padding-top: var(--fl-space-m);
+  border-top: var(--fl-linie-duenn) solid var(--fl-linie);
+  font-size: .76rem;
+}
+
+.md-typeset .fl-nachbarn > p:first-child {
+  margin: 0 0 var(--fl-space-xs);
+  color: var(--fl-text-leise);
+  font-size: .66rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.md-typeset .fl-nachbarn ul {
+  margin: 0;
+  padding-left: var(--fl-space-m);
+  columns: 2;
+  column-gap: var(--fl-space-l);
+}
+
+.md-typeset .fl-nachbarn li {
+  break-inside: avoid;
+  margin-bottom: var(--fl-space-xs);
+}
+
+@media screen and (max-width: 60em) {
+  .md-typeset .fl-nachbarn ul { columns: 1; }
+}
+
+
+/* --- 4i. Wissensgraph ------------------------------------------------
+   Der Graph zeigt bei mehr als ein paar Dutzend Notizen sonst nur noch
+   ein Knaeuel. Drei Massnahmen dagegen: Beschriftungen erst ab
+   Zoomstufe, Nachbarschaft beim Zeigen hervorheben, Filter nach
+   Schicht. Die Farben kommen aus den Tokens, damit der dunkle Modus
+   stimmt. Darunter stehen dieselben Verbindungen als Liste, fuer
+   Tastatur, Screenreader und den Fall ohne JavaScript. */
+
+.md-typeset .fl-graph {
+  margin: var(--fl-space-m) 0 var(--fl-space-l);
+}
+
+.md-typeset .fl-graph__steuerung {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--fl-space-2xs);
+  margin-bottom: var(--fl-space-xs);
+}
+
+.md-typeset .fl-graph__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .35em;
+  padding: .1em .7em;
+  border: var(--fl-linie-duenn) solid var(--fl-linie);
+  border-radius: var(--fl-radius-pille);
+  background-color: var(--fl-bg-karte);
+  color: var(--fl-text-sekundaer);
+  font-size: .66rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity var(--fl-uebergang), border-color var(--fl-uebergang);
+}
+
+.md-typeset .fl-graph__chip:hover {
+  border-color: var(--fl-linie-stark);
+}
+
+/* Ausgeschaltete Schicht: gedaempft, aber weiter lesbar */
+.md-typeset .fl-graph__chip[aria-pressed="false"] {
+  opacity: .45;
+  text-decoration: line-through;
+}
+
+.md-typeset .fl-graph__punkt {
+  width: .6em;
+  height: .6em;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.md-typeset #wiki-graph {
+  width: 100%;
+  height: 480px;
+  border: var(--fl-linie-duenn) solid var(--fl-linie);
+  border-radius: var(--fl-radius);
+  background-color: var(--fl-bg-karte);
+}
+
+.md-typeset .fl-graph__hinweis {
+  margin: var(--fl-space-2xs) 0 0;
+  font-size: .66rem;
+  color: var(--fl-text-leise);
+}
+
+
 /* --- 5. Fusszeile und Kleinigkeiten -------------------------------- */
 
 .md-footer-meta {
