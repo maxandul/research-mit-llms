@@ -119,7 +119,7 @@ führt zur jeweiligen Seite.
 
   function drawGraph() {
     var container = document.getElementById("wiki-graph");
-    if (!container) return;
+    if (!container || !window.d3) return;
     // Neu zeichnen, wenn schon etwas dasteht: Beim Wechsel zwischen
     // hellem und dunklem Modus aendern sich die Token-Farben, und der
     // Graph liest sie nur beim Zeichnen.
@@ -139,10 +139,18 @@ führt zur jeweiligen Seite.
     var aus = {};
 
     fetch("graph.json").then(function (r) { return r.json(); }).then(function (data) {
-      var w = container.clientWidth, h = container.clientHeight || 480;
+      // Die Breite kommt aus dem Layout. Steht das noch nicht (mit
+      // navigation.instant feuert document$ vorher), waere sie 0 und der
+      // Graph unsichtbar. Deshalb messen wir defensiv und zeichnen bei
+      // Groessenaenderung neu.
+      var w = Math.round(container.getBoundingClientRect().width)
+              || (container.parentElement && container.parentElement.clientWidth)
+              || 800;
+      var h = container.clientHeight || 480;
       var svg = d3.select(container).append("svg")
-        .attr("width", w).attr("height", h)
-        .attr("viewBox", [0, 0, w, h]);
+        .attr("width", "100%").attr("height", h)
+        .attr("viewBox", [0, 0, w, h])
+        .attr("preserveAspectRatio", "xMidYMid meet");
       var g = svg.append("g");
 
       // Knotengroesse nach Anzahl Verbindungen: was viel verknuepft
@@ -247,6 +255,22 @@ führt zur jeweiligen Seite.
     });
   }
   var beobachter = null;
+  var groessenbeobachter = null;
+  var letzteBreite = 0;
+  var warteUhr = null;
+
+  // Mit navigation.instant tauscht Material den Seiteninhalt aus, ohne
+  // neu zu laden. Dann kann dieser Code vor d3 laufen; ohne d3 wirft das
+  // Zeichnen und der Graph bleibt leer. Also kurz warten statt scheitern.
+  // Kommt d3 gar nicht, bleibt die Liste darunter als Ersatz stehen.
+  function mitD3(weiter) {
+    if (window.d3) { weiter(); return; }
+    var versuche = 0;
+    warteUhr = setInterval(function () {
+      if (window.d3) { clearInterval(warteUhr); warteUhr = null; weiter(); }
+      else if (++versuche > 100) { clearInterval(warteUhr); warteUhr = null; }
+    }, 100);
+  }
 
   function start() {
     var container = document.getElementById("wiki-graph");
@@ -254,91 +278,22 @@ führt zur jeweiligen Seite.
     // navigation.instant laeuft dieselbe Seite weiter, sonst wuerden
     // sich die Beobachter bei jedem Seitenwechsel anhaeufen.
     if (beobachter) { beobachter.disconnect(); beobachter = null; }
+    if (groessenbeobachter) { groessenbeobachter.disconnect(); groessenbeobachter = null; }
+    if (warteUhr) { clearInterval(warteUhr); warteUhr = null; }
     if (!container) return;
 
-    drawGraph();
-    // Material setzt beim Umschalten das Attribut data-md-color-scheme
-    // auf <body>. Darauf hoeren, statt die Farben fest zu verdrahten.
-    beobachter = new MutationObserver(function () { drawGraph(); });
-    beobachter.observe(document.body,
-      { attributes: true, attributeFilter: ["data-md-color-scheme"] });
-  }
-  if (window.document$) { window.document$.subscribe(start); } else { start(); }
-})();
-</script>
-<script>
-(function () {
-  function drawGraph() {
-    var container = document.getElementById("wiki-graph");
-    if (!container) return;
-    // Neu zeichnen, wenn schon etwas dasteht: Beim Wechsel zwischen
-    // hellem und dunklem Modus aendern sich die Token-Farben, und der
-    // Graph liest sie nur beim Zeichnen.
-    container.innerHTML = "";
-    var alteLeiste = document.getElementById("wiki-graph-filter");
-    if (alteLeiste) alteLeiste.innerHTML = "";
-    container.style.border = "1px solid var(--md-default-fg-color--lightest, #ddd)";
-    container.style.borderRadius = "6px";
-    var farben = { quelle: "#8da0cb", konzept: "#fc8d62", synthese: "#66c2a5", seite: "#b3b3b3" };
-    var namen = { quelle: "Quellnotiz", konzept: "Konzept", synthese: "Synthese", seite: "Website-Seite" };
-    var legende = document.getElementById("wiki-graph-legende");
-    if (legende) legende.innerHTML = Object.keys(farben).map(function (k) {
-      return '<span style="color:' + farben[k] + ';">&#9679;</span> ' + namen[k];
-    }).join(" &nbsp; ");
-    fetch("graph.json").then(function (r) { return r.json(); }).then(function (data) {
-      var w = container.clientWidth, h = container.clientHeight;
-      var svg = d3.select(container).append("svg").attr("width", w).attr("height", h);
-      var g = svg.append("g");
-      svg.call(d3.zoom().scaleExtent([0.3, 4]).on("zoom", function (ev) { g.attr("transform", ev.transform); }));
-      var sim = d3.forceSimulation(data.nodes)
-        .force("link", d3.forceLink(data.links).id(function (d) { return d.id; }).distance(70))
-        .force("charge", d3.forceManyBody().strength(-220))
-        .force("center", d3.forceCenter(w / 2, h / 2))
-        .force("collide", d3.forceCollide(18));
-      var link = g.selectAll("line").data(data.links).join("line")
-        .attr("stroke", "#999").attr("stroke-opacity", 0.5);
-      var node = g.selectAll("circle").data(data.nodes).join("circle")
-        .attr("r", function (d) { return d.layer === "konzept" ? 9 : 7; })
-        .attr("fill", function (d) { return farben[d.layer] || "#b3b3b3"; })
-        .style("cursor", "pointer")
-        .call(d3.drag()
-          .on("start", function (ev, d) { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
-          .on("drag", function (ev, d) { d.fx = ev.x; d.fy = ev.y; })
-          .on("end", function (ev, d) { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }))
-        .on("click", function (ev, d) { window.location.href = d.url; });
-      node.append("title").text(function (d) {
-        var zusatz = [];
-        if (d.evidenzstufe) zusatz.push(d.evidenzstufe);
-        if (d.status === "draft") zusatz.push("vorläufig");
-        if (d.status === "deprecated") zusatz.push("überholt");
-        return d.label + (zusatz.length ? " (" + zusatz.join(", ") + ")" : "");
-      });
-      var text = g.selectAll("text").data(data.nodes).join("text")
-        .text(function (d) { return d.label; })
-        .attr("font-size", "9px")
-        .attr("fill", "var(--md-default-fg-color, #333)")
-        .attr("pointer-events", "none");
-      sim.on("tick", function () {
-        link.attr("x1", function (d) { return d.source.x; }).attr("y1", function (d) { return d.source.y; })
-            .attr("x2", function (d) { return d.target.x; }).attr("y2", function (d) { return d.target.y; });
-        node.attr("cx", function (d) { return d.x; }).attr("cy", function (d) { return d.y; });
-        text.attr("x", function (d) { return d.x + 11; }).attr("y", function (d) { return d.y + 3; });
-      });
-    }).catch(function () {
-      container.innerHTML = '<p style="padding:1em;">Graph-Daten nicht gefunden (graph.json entsteht beim Build).</p>';
+    // Zeichnet, sobald der Container eine echte Breite hat, und erneut
+    // bei nennenswerter Aenderung (Fenster, Seitenleiste, Drehung).
+    letzteBreite = 0;
+    groessenbeobachter = new ResizeObserver(function (eintraege) {
+      var breite = Math.round(eintraege[0].contentRect.width);
+      if (breite > 0 && Math.abs(breite - letzteBreite) > 40) {
+        letzteBreite = breite;
+        drawGraph();
+      }
     });
-  }
-  var beobachter = null;
-
-  function start() {
-    var container = document.getElementById("wiki-graph");
-    // Beobachter abbauen, wenn wir den Graphen verlassen haben. Mit
-    // navigation.instant laeuft dieselbe Seite weiter, sonst wuerden
-    // sich die Beobachter bei jedem Seitenwechsel anhaeufen.
-    if (beobachter) { beobachter.disconnect(); beobachter = null; }
-    if (!container) return;
-
-    drawGraph();
+    groessenbeobachter.observe(container);
+    mitD3(drawGraph);
     // Material setzt beim Umschalten das Attribut data-md-color-scheme
     // auf <body>. Darauf hoeren, statt die Farben fest zu verdrahten.
     beobachter = new MutationObserver(function () { drawGraph(); });
@@ -348,7 +303,6 @@ führt zur jeweiligen Seite.
   if (window.document$) { window.document$.subscribe(start); } else { start(); }
 })();
 </script>
-
 ## Arbeitsweise
 
 Pro Thema läuft ein Recherche-Sprint in zwei Phasen. **Sichten:** Suche
