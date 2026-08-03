@@ -9,8 +9,14 @@ fehlendes oder unvollstaendiges Frontmatter, vorlaeufige Notizen (nur
 Abstract geprueft), fehlende Verifikation, abgelaufene Pruefdaten,
 ueberholte Notizen, verwaiste Notizen und tote interne Links.
 
+Auf den Inhaltsseiten ausserhalb von `docs/wiki/` kommt dazu: unvollstaendige
+`werkzeug:`-Bloecke, unbekannte Hinweisbox-Typen und Abkuerzungen, die weder
+im Glossar noch in KUERZEL_AUSNAHMEN stehen.
+
 Inhaltliche Aufgaben aus CLAUDE.md bleiben Handarbeit: Widersprueche
-zwischen Konzepten markiert dieses Skript nicht.
+zwischen Konzepten markiert dieses Skript nicht. Die Kuerzel-Pruefung
+findet nur Grossbuchstaben-Abkuerzungen; erklaerungsbeduerftige Woerter
+wie "Frontmatter" oder "Freemium" muss weiterhin ein Mensch bemerken.
 
 Rueckgabewert: 0 wenn keine Befunde, sonst 1 (fuer CI verwendbar).
 """
@@ -153,6 +159,67 @@ BOX_RE = re.compile(r"^(?:!!!|\?\?\?\+?)\s+([a-zA-Z-]+)", re.M)
 # Der Merksatz ist der eine Satz einer Seite. Zwei davon heben sich auf.
 MAX_MERKSATZ = 1
 
+# Abkuerzungen, die keinen Glossareintrag brauchen: Eigennamen, gaengige
+# Dateiendungen, Platzhalter. Alles andere meldet die Pruefung, damit ein
+# neuer Fachbegriff nicht unerklaert stehen bleibt. Wer hier etwas
+# eintraegt, behauptet: das versteht die Leserschaft ohne Erklaerung.
+KUERZEL_AUSNAHMEN = {
+    # Dateiformate und Alltagstechnik
+    "PDF", "HTML", "CSS", "XML", "JSON", "TXT", "RTF", "DOC", "DOCX", "XLSX",
+    "PPTX", "ZIP", "PNG", "JPG", "SVG", "URL", "HTTP", "HTTPS", "REST",
+    "CPU", "GPU", "RAM", "USB", "OCR", "PC",
+    # Hochschulen, Verlage, Zeitschriften, Gremien
+    "UZH", "ZHAW", "ETH", "PNAS", "JAMA", "BMC", "EPJ", "CHI", "ACM", "IEEE",
+    "WAME", "DOAJ", "SJR", "CINAHL", "PRISMA", "USA", "EU",
+    # Produkte und Firmen
+    "MAXQDA", "ATLAS", "NVIDIA", "CUDA", "VERBI", "SPSS", "MIT", "GPL",
+    "CLAUDE", "OKF",
+    # Platzhalter in Vorlagen und Beispielen
+    "JJJJ", "MM", "TT", "P01", "P02",
+}
+
+# Nur Grossbuchstaben-Kuerzel ab drei Zeichen. Kuerzere sind zu oft
+# normale Woerter, laengere Wortmarken faengt die Ausnahmeliste.
+KUERZEL_RE = re.compile(r"\b[A-ZÄÖÜ][A-ZÄÖÜ0-9]{2,}\b")
+# Code, Links und Frontmatter enthalten Kuerzel, die niemand liest.
+CODE_RE = re.compile(r"```.*?```|`[^`]*`", re.S)
+URL_RE = re.compile(r"https?://\S+|<[^>]+>")
+
+
+def _glossar_tokens(docs: Path) -> set[str]:
+    """Alle Kuerzel, die im Glossar erklaert sind.
+
+    Die Begriffe kommen aus derselben Datei und mit demselben Muster wie
+    die Tooltips (`tools/glossar_abkuerzungen.py`), damit Erklaerung und
+    Pruefung nicht auseinanderlaufen. Aus "QDA-Software" wird "QDA".
+    """
+    glossar = docs / "ressourcen" / "glossar.md"
+    if not glossar.exists():
+        return set()
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from glossar_abkuerzungen import EINTRAG
+    tokens: set[str] = set()
+    for treffer in EINTRAG.finditer(glossar.read_text(encoding="utf-8")):
+        tokens |= set(KUERZEL_RE.findall(treffer.group(1)))
+    return tokens
+
+
+def _kuerzel_pruefen(rel: str, rumpf: str, bekannt: set[str]) -> list[str]:
+    """Meldet Abkuerzungen ohne Glossareintrag.
+
+    Der Tooltip entsteht automatisch, sobald ein Begriff im Glossar
+    steht. Fehlt er dort, steht das Kuerzel unerklaert auf der Seite,
+    und genau das faellt beim Schreiben am wenigsten auf.
+    """
+    text = URL_RE.sub(" ", CODE_RE.sub(" ", rumpf))
+    offen = {k for k in KUERZEL_RE.findall(text)
+             if k not in bekannt and k not in KUERZEL_AUSNAHMEN}
+    if not offen:
+        return []
+    return [f"{rel}: Kuerzel ohne Glossareintrag: {', '.join(sorted(offen))} "
+            f"(erklaeren in docs/ressourcen/glossar.md oder, wenn "
+            f"selbsterklaerend, in KUERZEL_AUSNAHMEN aufnehmen)"]
+
 
 def _stand_pruefen(rel: str, stand, heute: dt.date) -> list[str]:
     """Meldet Werkzeugangaben, die aelter als WERKZEUG_FRIST_MONATE sind.
@@ -181,6 +248,9 @@ def _pruefen_seiten(wurzel: Path, heute: dt.date) -> list[str]:
     docs = (wurzel / "docs").resolve()
     wiki = (docs / "wiki").resolve()
     befunde: list[str] = []
+    # Nur die Inhaltsseiten: Wiki-Notizen richten sich an Leser, die den
+    # Forschungsstand vertiefen, und tragen Fachkuerzel aus den Quellen.
+    glossar_tokens = _glossar_tokens(docs)
 
     for pfad in sorted(docs.rglob("*.md")):
         if wiki in pfad.parents or pfad == wiki:
@@ -242,6 +312,9 @@ def _pruefen_seiten(wurzel: Path, heute: dt.date) -> list[str]:
         if typen.count("merksatz") > MAX_MERKSATZ:
             befunde.append(f"{rel}: {typen.count('merksatz')} Merksaetze, "
                            f"hoechstens {MAX_MERKSATZ} pro Seite")
+
+        if rel != "ressourcen/glossar.md":
+            befunde += _kuerzel_pruefen(rel, rumpf, glossar_tokens)
 
     return befunde
 

@@ -55,6 +55,30 @@ meisten es anders machen. "Das Codebuch ist das Herzstück" besteht ihn
 nicht, weil niemand das Gegenteil täte. Besteht ein Satz den Test nicht,
 gehört er in den Fliesstext oder gar nicht auf die Seite.
 
+### Begriffe erklären
+
+Wer eine Seite ändert oder neu anlegt, geht sie danach auf
+erklärungsbedürftige Begriffe durch: Fachbegriffe, Abkürzungen,
+Dateiformate, Preis- und Produktkategorien. Für jeden die gleiche Frage:
+Steht er in `docs/ressourcen/glossar.md`? Wenn nein, Eintrag nachtragen.
+Die Zielgruppe sind Forschende ohne technischen Hintergrund; was im
+eigenen Fach selbstverständlich klingt, ist es für sie oft nicht.
+
+Verlinkt wird nichts von Hand. `tools/glossar_abkuerzungen.py` macht aus
+jedem Glossareintrag eine Kurzdefinition und hängt sie an jede Seite an,
+sodass der Begriff überall im Text einen Tooltip bekommt. Der **erste
+Satz** des Eintrags ist dieser Tooltip: Er muss für sich allein
+verständlich sein, denn der Rest des Eintrags erscheint dort nicht.
+
+Zwei Fallstricke:
+
+- Der Tooltip greift nur bei genau der Schreibweise des Eintrags. Wer
+  "eigenen GPT" schreibt, während "Custom GPT" im Glossar steht, bekommt
+  keinen. Im Zweifel den Begriff benennen statt ihn zu umschreiben.
+- `python tools/wiki_lint.py` meldet Grossbuchstaben-Kürzel ohne
+  Glossareintrag, aber nur diese. Wörter wie "Frontmatter" oder
+  "Freemium" erkennt es nicht; darauf muss ein Mensch achten.
+
 ## Das Wiki: vier Schichten
 
 ```text
@@ -259,6 +283,13 @@ Seit Juli 2026 prüft es zusätzlich die Inhaltsseiten ausserhalb von
 Schwierigkeitsstufen ausserhalb der drei erlaubten Werte, unbekannte
 Hinweisbox-Typen und Rückfälle in die alte Prosa-Schreibweise
 (`**Evidenzstufe:**`, `**Geprüft:**`, `!!! info "Auf einen Blick"`).
+
+Seit August 2026 meldet es ausserdem Grossbuchstaben-Kürzel, die weder
+im Glossar noch in `KUERZEL_AUSNAHMEN` stehen (siehe
+[Begriffe erklären](#begriffe-erklaren)). Eigennamen, gängige
+Dateiendungen und Platzhalter gehören in die Ausnahmeliste, alles andere
+ins Glossar. Wiki-Notizen sind ausgenommen: Sie richten sich an Leser,
+die den Forschungsstand vertiefen, und tragen die Kürzel ihrer Quellen.
 
 Von Hand bleibt: **Widersprüche zwischen Konzepten markieren**, nicht
 stillschweigend glätten. Und inhaltlich prüfen, ob eine als fällig

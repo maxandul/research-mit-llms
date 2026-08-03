@@ -20,6 +20,7 @@ import datetime as dt
 import html
 import posixpath
 import re
+import sys
 from pathlib import Path
 
 from mkdocs.utils import meta
@@ -212,9 +213,42 @@ def _notizkopf(kopf: dict, heute: dt.date) -> str:
     return "\n".join(teile)
 
 
-def _steckbrief(werkzeug: dict) -> str:
+_GLOSSAR: dict = {}
+
+
+def _glossar(config) -> dict:
+    """Begriff -> Kurzdefinition, aus dem Glossar.
+
+    Der Steckbrief ist fertiges HTML, und die Tooltip-Erweiterung fasst
+    HTML-Bloecke nicht an. "Freemium" stuende dort also unerklaert,
+    ausgerechnet an der Stelle, an der ein Leser dem Wort zuerst
+    begegnet. Darum hier derselbe Griff ins Glossar wie beim Fliesstext:
+    gelesen wird dieselbe Datei mit demselben Muster, damit es nur eine
+    Quelle fuer die Definition gibt.
+    """
+    if _GLOSSAR:
+        return _GLOSSAR
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from glossar_abkuerzungen import EINTRAG, _erster_satz
+    pfad = Path(config["docs_dir"]) / "ressourcen" / "glossar.md"
+    if not pfad.exists():
+        return _GLOSSAR
+    for treffer in EINTRAG.finditer(pfad.read_text(encoding="utf-8")):
+        _GLOSSAR[treffer.group(1).strip()] = _erster_satz(treffer.group(2))
+    return _GLOSSAR
+
+
+def _wert_mit_tooltip(wert: str, glossar: dict) -> str:
+    erklaerung = glossar.get(wert)
+    if not erklaerung:
+        return _e(wert)
+    return f'<abbr title="{html.escape(erklaerung)}">{_e(wert)}</abbr>'
+
+
+def _steckbrief(werkzeug: dict, glossar: dict | None = None) -> str:
     if not isinstance(werkzeug, dict):
         return ""
+    glossar = glossar or {}
     teile = ['<div class="fl-steckbrief" markdown="0">']
 
     stufe = str(werkzeug.get("schwierigkeit", "")).strip()
@@ -244,7 +278,8 @@ def _steckbrief(werkzeug: dict) -> str:
         zusatz = werkzeug.get(f"{schluessel}_zusatz")
         teile.append(
             '<div class="fl-steckbrief__feld">'
-            f"<dt>{label}</dt><dd>{_e(str(wert).strip())}"
+            f"<dt>{label}</dt><dd>"
+            f"{_wert_mit_tooltip(str(wert).strip(), glossar)}"
             + (f'<span class="fl-zusatz">{_e(zusatz)}</span>' if zusatz else "")
             + "</dd></div>"
         )
@@ -532,7 +567,7 @@ def on_page_markdown(markdown, page, config, files):
         return _einfuegen(markdown, _notizkopf(kopf, heute))
 
     if kopf.get("werkzeug"):
-        block = _steckbrief(kopf["werkzeug"])
+        block = _steckbrief(kopf["werkzeug"], _glossar(config))
         if block:
             return _einfuegen(markdown, block)
 

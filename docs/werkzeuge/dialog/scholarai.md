@@ -37,7 +37,7 @@ kombinieren.
 - **Mehrere Arbeiten in einem Durchgang befragen**, über die
   Projekt-Funktion.
 
-## Einen eigenen GPT einrichten
+## Einen Custom GPT einrichten
 
 1. API-Schlüssel unter <https://app.scholarai.io/profile/api> erzeugen
    und kopieren.
@@ -138,7 +138,7 @@ So sind Funde ohne Nacharbeit ablagefertig.
 - **An ChatGPT gebunden.** ScholarAI wird als Action eingebunden, nicht
   über den offenen [MCP-Standard](../../grundlagen/llm-einspannen.md).
   Wer mit einem anderen Chat-Programm arbeitet, kann es so nicht nutzen.
-- **Ein eigener GPT braucht Pflege.** Der Anbieter aktualisiert das
+- **Ein Custom GPT braucht Pflege.** Der Anbieter aktualisiert das
   Schema; nach einem Funktionsupdate muss man es im eigenen GPT von Hand
   neu importieren, sonst fehlen neue Funktionen stillschweigend.
 - **Die Schnittstelle ist als Alpha gekennzeichnet.** Verhalten und
