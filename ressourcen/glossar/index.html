@@ -1382,11 +1382,26 @@ einem "API-Key" (Zugangsschlüssel) abgesichert.</p>
 <p><strong>Markdown</strong>: Einfaches Textformat mit leichter Formatierung. Grundlage von
 LLM-Wikis und dieser Seite. Siehe
 <a href="../../grundlagen/markdown-arbeitsformat/">Markdown als Arbeitsformat</a>.</p>
+<p><strong>Frontmatter</strong>: Block mit Metadaten am Anfang einer Markdown-Datei,
+oben und unten durch drei Bindestriche abgetrennt. Hier stehen Angaben
+wie Titel, Datum oder Schlagworte maschinenlesbar, ohne im Text
+aufzutauchen.</p>
+<p><strong>YAML</strong>: Schreibweise für strukturierte Angaben nach dem Muster
+Schlüssel, Doppelpunkt, Wert. Einrückung ersetzt Klammern. Wird für
+Frontmatter und Konfigurationsdateien verwendet, etwa <code>mkdocs.yml</code>.</p>
 <p><strong>ingest / query / lint</strong>: Die drei Operationen eines LLM-Wikis: Quellen
 einpflegen, Fragen stellen, Wissensbasis prüfen.</p>
+<p><strong>OKF</strong>: Open Knowledge Format, eine offene Spezifikation dafür, welche
+Felder im Frontmatter eines LLM-Wikis stehen. Siehe
+<a href="../../werkzeuge/sammeln/llm-wiki/">Ein eigenes LLM-Wiki</a>.</p>
 <p><strong>Diarisierung</strong>: Automatisches Erkennen und Unterscheiden von
 Sprecher:innen in einer Audioaufnahme, wichtig bei der
 <a href="../../erheben/transkription/">Transkription</a> von Interviews.</p>
+<p><strong>SRT</strong>: Untertitelformat, das den Text in Blöcke mit Zeitstempeln
+teilt. Transkriptionswerkzeuge geben es neben reinem Text aus; damit
+lässt sich eine Textstelle im Audio wiederfinden.</p>
+<p><strong>VTT</strong>: Ebenfalls ein Untertitelformat mit Zeitstempeln (WebVTT),
+etwas neuer als SRT und im Web verbreitet.</p>
 <p><strong>Pseudonymisierung</strong>: Ersetzen von Identifikatoren durch Platzhalter
 (P01, Stadt B) mit einer lokal verwahrten Zuordnungstabelle. Rückgängig
 machbar, darum rechtlich weiterhin Personendaten. Siehe
@@ -1396,12 +1411,54 @@ Zusatzwissen nicht mehr herstellbar ist. Strenger als Pseudonymisierung.</p>
 <p><strong>Codebuch</strong>: Verzeichnis aller Codes einer qualitativen Auswertung, je
 mit Definition, Ankerbeispiel und Abgrenzung. Grundlage für das
 <a href="../../analysieren/qualitativ-codieren/">Codieren mit LLMs</a>.</p>
+<p><strong>QDA-Software</strong>: Programme für die qualitative Datenanalyse wie MAXQDA
+oder ATLAS.ti, in denen Material codiert, geordnet und ausgewertet wird.</p>
+<p><strong>COREQ</strong>: Prüfliste mit 32 Punkten dafür, was ein Bericht über eine
+qualitative Studie offenlegen soll (Consolidated Criteria for Reporting
+Qualitative Research). Für LLM-gestütztes Codieren ist eine Erweiterung
+"COREQ + LLM" vorgeschlagen worden, die Modell, Prompts und Prüfschritte
+mitverlangt.</p>
 <p><strong>Pandoc</strong>: Freies Kommandozeilen-Werkzeug, das Dokumentformate
 konvertiert, z. B. Markdown nach Word. Herzstück des Workflows
 <a href="../../schreiben/arbeit-in-markdown/">Die Arbeit in Markdown aufbauen</a>.</p>
 <p><strong>CSL</strong>: Citation Style Language. Dateiformat für Zitierstile (etwa APA),
 das Pandoc und Zotero nutzen, um Zitate und Literaturverzeichnisse
 automatisch zu formatieren.</p>
+<p><strong>APA</strong>: Zitierstil der American Psychological Association, in den
+Sozial- und Geisteswissenschaften weit verbreitet.</p>
+<p><strong>MLA</strong>: Zitierstil der Modern Language Association, vor allem in den
+Sprach- und Literaturwissenschaften verbreitet.</p>
+<p><strong>DOI</strong>: Dauerhafte Kennung einer Publikation, die sich als Link
+auflösen lässt und gültig bleibt, auch wenn die Verlagsseite umzieht.
+Die zuverlässigste Art, eine Quelle eindeutig anzugeben.</p>
+<p><strong>RIS</strong>: Austauschformat für Literaturangaben, das die meisten
+Fachdatenbanken exportieren und alle gängigen Literaturverwaltungen
+einlesen.</p>
+<p><strong>BIB</strong>: Dateiendung für BibTeX, ein Textformat für Literaturangaben.
+Wird vor allem zusammen mit LaTeX, Pandoc und Quarto verwendet.</p>
+<p><strong>CSV</strong>: Tabelle als reine Textdatei, eine Zeile pro Datensatz, die
+Felder durch Komma oder Semikolon getrennt. Jedes Tabellenprogramm liest
+sie, und sie lässt sich gut in einen Chat einfügen.</p>
+<p><strong>TLDR</strong>: Kurz für "too long, didn't read", also eine sehr knappe
+Zusammenfassung. Auf Semantic Scholar bezeichnet TLDR die maschinell
+erzeugte Ein-Satz-Zusammenfassung eines Papers.</p>
+<p><strong>Freemium</strong>: Preismodell mit kostenlosem Grundangebot und
+kostenpflichtigen Zusatzfunktionen. Auf dieser Website eine der drei
+Kostenstufen im Steckbrief oben auf den Werkzeugseiten.</p>
+<p><strong>VRAM</strong>: Arbeitsspeicher der Grafikkarte. Er begrenzt, wie gross ein
+Modell sein darf, das lokal auf dem eigenen Rechner läuft.</p>
+<p><strong>ICMJE</strong>: Gremium von Herausgebern medizinischer Fachzeitschriften,
+dessen Empfehlungen zu Autorschaft und Offenlegung weit über die Medizin
+hinaus als Massstab gelten.</p>
+<p><strong>COPE</strong>: Committee on Publication Ethics, ein Zusammenschluss von
+Verlagen und Zeitschriften, der Leitlinien zu Publikationsethik und zum
+Umgang mit Fehlverhalten herausgibt.</p>
+<p><strong>DSGVO</strong>: Datenschutz-Grundverordnung der EU. Sie regelt, wie
+Personendaten verarbeitet werden dürfen. In der Schweiz gilt
+sinngemäss das revidierte Datenschutzgesetz (revDSG).</p>
+<p><strong>RLHF</strong>: Nachtraining eines Sprachmodells anhand menschlicher
+Bewertungen (Reinforcement Learning from Human Feedback). Es prägt, wie
+hilfsbereit und wie zustimmend ein Modell antwortet.</p>
 
 
 
@@ -1422,7 +1479,7 @@ automatisch zu formatieren.</p>
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2. August 2026 09:10:19 UTC">2. August 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 08:31:39 UTC">3. August 2026</span>
   </span>
 
     

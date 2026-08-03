@@ -2536,12 +2536,12 @@ Terminal.</p>
 <h2 id="ein-standard-zeichnet-sich-ab-das-open-knowledge-format">Ein Standard zeichnet sich ab: das Open Knowledge Format<a class="headerlink" href="#ein-standard-zeichnet-sich-ab-das-open-knowledge-format" title="Permanent link">&para;</a></h2>
 <p>Bisher hat jedes <abbr title="Grosses Sprachmodell (Large Language Model), z.B. hinter ChatGPT, Claude oder Gemini.">LLM</abbr>-Wiki seine eigenen Konventionen erfunden. Im Juni
 2026 hat Google Cloud dazu eine offene Spezifikation veröffentlicht, das
-<strong>Open Knowledge Format (OKF)</strong>, im Juli 2026 gefolgt von Version 0.2.
+<strong>Open Knowledge Format (<abbr title="Open Knowledge Format, eine offene Spezifikation dafür, welche Felder im Frontmatter eines LLM-Wikis stehen.">OKF</abbr>)</strong>, im Juli 2026 gefolgt von Version 0.2.
 Sie beschreibt in verbindlicher Form, was Karpathy skizziert hat: ein
-Verzeichnis von <abbr title="Einfaches Textformat mit leichter Formatierung.">Markdown</abbr>-Dateien, jede mit einem kleinen YAML-Block am
+Verzeichnis von <abbr title="Einfaches Textformat mit leichter Formatierung.">Markdown</abbr>-Dateien, jede mit einem kleinen <abbr title="Schreibweise für strukturierte Angaben nach dem Muster Schlüssel, Doppelpunkt, Wert.">YAML</abbr>-Block am
 Anfang, Querverweise als normale <abbr title="Einfaches Textformat mit leichter Formatierung.">Markdown</abbr>-Links.</p>
 <p>Pflicht ist dabei genau ein Feld, <code>type</code>. Alles Weitere ist freiwillig,
-eigene Zusatzfelder sind ausdrücklich erlaubt, und Programme, die OKF
+eigene Zusatzfelder sind ausdrücklich erlaubt, und Programme, die <abbr title="Open Knowledge Format, eine offene Spezifikation dafür, welche Felder im Frontmatter eines LLM-Wikis stehen.">OKF</abbr>
 lesen, müssen unbekannte Felder und kaputte Links tolerieren. Ein
 bestehendes <abbr title="Einfaches Textformat mit leichter Formatierung.">Markdown</abbr>-Wiki wird damit meist mit wenig Aufwand kompatibel,
 ohne seine Struktur aufzugeben.</p>
@@ -2581,11 +2581,11 @@ kann sein Wiki so filtern, dass nur menschlich geprüfte Notizen in eine
 Arbeit einfliessen.</p>
 <div class="admonition randnotiz">
 <p class="admonition-title">Wie neu das ist</p>
-<p>OKF ist als Entwurf gekennzeichnet und wenige Wochen alt; zwischen
+<p><abbr title="Open Knowledge Format, eine offene Spezifikation dafür, welche Felder im Frontmatter eines LLM-Wikis stehen.">OKF</abbr> ist als Entwurf gekennzeichnet und wenige Wochen alt; zwischen
 v0.1 und v0.2 wurden bereits zwei Felder umbenannt. Es ist ein
 Vorschlag mit Gewicht, kein etablierter Standard. Wer heute ein Wiki
 aufbaut, kann die Felder trotzdem übernehmen: Sie sind auch dann
-nützlich, wenn sich OKF nicht durchsetzt, weil sie die eigene
+nützlich, wenn sich <abbr title="Open Knowledge Format, eine offene Spezifikation dafür, welche Felder im Frontmatter eines LLM-Wikis stehen.">OKF</abbr> nicht durchsetzt, weil sie die eigene
 Qualitätskontrolle maschinell prüfbar machen.</p>
 <p>Das <a href="../../../wiki/">Forschungsstand-Wiki dieser Website</a> ist im
 Juli 2026 auf diese Felder umgestellt worden, ohne die Notizen selbst
@@ -2617,7 +2617,7 @@ nicht, sondern liegt darüber.</p>
 <p>Karpathys Idee:
 <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</a> ·
 Umsetzung von Goekce: <a href="https://github.com/mehmetgoekce/llm-wiki">https://github.com/mehmetgoekce/llm-wiki</a> ·
-OKF-Spezifikation:
+<abbr title="Open Knowledge Format, eine offene Spezifikation dafür, welche Felder im Frontmatter eines LLM-Wikis stehen.">OKF</abbr>-Spezifikation:
 <a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf">https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf</a></p>
 <p>Wie so ein Wiki Schritt für Schritt entsteht, zeigt der Workflow
 <a href="../../../workflows/forschungs-wiki/">Eigenes Forschungs-Wiki aufbauen</a>;
