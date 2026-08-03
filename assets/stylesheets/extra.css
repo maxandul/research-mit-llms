@@ -480,6 +480,43 @@
   max-width: none;
 }
 
+/* Die ganze Kachel ist der Klickbereich, nicht nur der Titel.
+
+   Die Kachel hebt sich beim Zeigen an und faerbt den Rand ein; wer
+   daneben klickt, landet trotzdem nirgends. Der Titel-Link legt darum
+   ein unsichtbares Feld ueber die ganze Kachel. Im HTML bleibt es ein
+   einziger Link mit lesbarem Linktext, Tastatur und Screenreader
+   aendern sich also nicht. */
+.md-typeset .grid.cards > ul > li {
+  position: relative;
+}
+
+.md-typeset .grid.cards > ul > li > p:first-child strong a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--fl-radius-karte);
+}
+
+/* Die Tastatur bekommt dieselbe Rueckmeldung wie die Maus. Ohne das
+   laege der Fokusrahmen nur um den Titel, waehrend die ganze Kachel
+   klickbar ist. */
+.md-typeset .grid.cards > ul > li:focus-within {
+  border-color: var(--fl-primary);
+}
+
+.md-typeset .grid.cards > ul > li:focus-within > p:first-child strong a {
+  color: var(--fl-primary);
+}
+
+/* Ein weiterer Link im Kachelkoerper laege sonst unter dem Klickfeld
+   und waere nicht erreichbar. */
+.md-typeset .grid.cards > ul > li > p:not(:first-child) a,
+.md-typeset .grid.cards > ul > li > ul a {
+  position: relative;
+  z-index: 1;
+}
+
 /* Werkzeugkarten mitten im Fliesstext einer Themenseite. Sie werden von
    tools/wiki_komponenten.py aus dem `werkzeug:`-Frontmatter erzeugt,
    dort wo im Text {{ werkzeuge:phase }} steht. Etwas kompakter als die
